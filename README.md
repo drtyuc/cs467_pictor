@@ -14,6 +14,7 @@ game.py # doesn't have to be called this, but we have the main game file in the 
 ./tests  #all tests go here   
 ./savedgames  #used at run time to save the game   
 ./data # holds game data   
+./DMT  # holds code associated with data management
  
 
 
