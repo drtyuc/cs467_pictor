@@ -17,7 +17,7 @@
 		"name": "AP",
 		"longDescription": "Alternate Plane Long Description",
 		"shortDescription": "Alternate Plane Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Flames1", "Eye1"],
 		"exits": ["AP1"]
@@ -26,7 +26,7 @@
 		"name": "AR",
 		"longDescription": "Armory Long Description",
 		"shortDescription": "Armory Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Sword2", "Armor1", "Warhammer1", "Helment1"],
 		"exits": ["AR1", "AR2", "AR3"]
@@ -35,7 +35,7 @@
 		"name": "BD",
 		"longDescription": "Bedroom Long Description",
 		"shortDescription": "Bedroom Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Bed2", "Nightstand1", "Safe1", "Shelf3", "Gem1", "Lever1", "Trunk2", "Key1"],
 		"exits": ["BD1", "BD2"]
@@ -44,7 +44,7 @@
 		"name": "BH",
 		"longDescription": "Banquet Hall Long Description",
 		"shortDescription": "Banquet Hall Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Dinnerware2", "Chandelier1", "Table3", "Dinnerware3", "Bottle1"],
 		"exits": ["BH1", "BH2"]
@@ -53,7 +53,7 @@
 		"name": "CA",
 		"longDescription": "Common Area Long Description",
 		"shortDescription": "Common Area Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Dinnerware1", "Stools1", "Table1", "Painting1", "Note1"],
 		"exits": ["CA1", "CA2"]
@@ -62,7 +62,7 @@
 		"name": "CE",
 		"longDescription": "Cave Entrance Long Description",
 		"shortDescription": "Cave Entrance Short Description",
-		"discoved": true,
+		"discovered": true,
 		"lighted": true,
 		"objects": ["Bones1", "Sword1"],
 		"exits": ["CE1", "CE2"]
@@ -71,7 +71,7 @@
 		"name": "CL",
 		"longDescription": "Cell Long Description",
 		"shortDescription": "Cell Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
 		"objects": ["Bones3", "Mattress1", "Book2", "Stool1"],
 		"exits": ["CL1"]
@@ -80,7 +80,7 @@
 		"name": "CT",
 		"longDescription": "Closet Long Description",
 		"shortDescription": "Closet Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
 		"objects": ["Armoire1", "Cloak1"],
 		"exits": ["CT1"]
@@ -89,7 +89,7 @@
 		"name": "HW",
 		"longDescription": "Hallway Long Description",
 		"shortDescription": "Hallway Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Rug2", "Painting2"],
 		"exits": ["HW1", "HW2", "HW3"]
@@ -98,7 +98,7 @@
 		"name": "JL",
 		"longDescription": "Jail Long Description",
 		"shortDescription": "Jail Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
 		"objects": ["Chair1", "Scroll1", "Desk1", "Key-rung1", "Bottle2"],
 		"exits": ["JL1", "JL2"]
@@ -107,7 +107,7 @@
 		"name": "KT",
 		"longDescription": "Kitchen Long Description",
 		"shortDescription": "Kitchen Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Matches1", "Tools1", "Hearth1", "Apple1", "Knife1", "Table2"],
 		"exits": ["KT1", "KT2", "KT3"]
@@ -116,7 +116,7 @@
 		"name": "OT",
 		"longDescription": "Outside Long Description",
 		"shortDescription": "Outside Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Tree1", "Sign1"],
 		"exits": ["OUT"]
@@ -125,7 +125,7 @@
 		"name": "PW",
 		"longDescription": "Passage Way Long Description",
 		"shortDescription": "Passage Way Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
 		"objects": ["Rocks1", "Bones2"],
 		"exits": ["PW1", "PW2"]
@@ -134,16 +134,16 @@
 		"name": "SQ",
 		"longDescription": "Sleeping Quarters Long Description",
 		"shortDescription": "Sleeping Quarters Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
-		"objects": ["Bed2", "Nightstand1", "Safe1", "Shelf3", "Gem1", "Lever1", "Trunk2", "Key1"],
+		"objects": ["Bed1", "Book3", "Table5", "Chair2", "Lantern2", "Bearskin1", "Apple2"],
 		"exits": ["SQ1", "SQ2"]
 	}, {
 		"filename": "storeroom.json",
 		"name": "SR",
 		"longDescription": "Storeroom Long Description",
 		"shortDescription": "Storeroom Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
 		"objects": ["Lookpick1", "Mushrooms1", "Rug1", "Shelf1", "Trapdoor1"],
 		"exits": ["SR1", "SR2"]
@@ -152,7 +152,7 @@
 		"name": "TR",
 		"longDescription": "Treasure Room Long Description",
 		"shortDescription": "Treasure Room Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": false,
 		"objects": ["Treasure1", "Trunk1", "Tapestries1", "Altar1", "Ring1"],
 		"exits": ["TR1"]
@@ -161,7 +161,7 @@
 		"name": "WL",
 		"longDescription": "Wizard's Laboratory Long Description",
 		"shortDescription": "Wizard's Laboratory Short Description",
-		"discoved": false,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["Shelf2", "Book1", "Axe1", "Runes1", "Table4", "Lantern1"],
 		"exits": ["WL1", "HW2", "HW3"]
@@ -174,8 +174,8 @@
 		"shortDescription": "AP1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["WL"]
+		"keyObject": "",
+		"toRoom": "WL"
 	}, {
 		"filename": "",
 		"name": "AR1",
@@ -184,8 +184,8 @@
 		"shortDescription": "AR1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["HW"]
+		"keyObject": "",
+		"toRoom": "HW"
 	}, {
 		"filename": "",
 		"name": "AR2",
@@ -194,8 +194,8 @@
 		"shortDescription": "AR2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["JL"]
+		"keyObject": "",
+		"toRoom": "JL"
 	}, {
 		"filename": "",
 		"name": "AR3",
@@ -204,8 +204,8 @@
 		"shortDescription": "AR3 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["SQ"]
+		"keyObject": "",
+		"toRoom": "SQ"
 	}, {
 		"filename": "",
 		"name": "BD1",
@@ -214,8 +214,8 @@
 		"shortDescription": "BD1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["SQ"]
+		"keyObject": "",
+		"toRoom": "SQ"
 	}, {
 		"filename": "",
 		"name": "BD2",
@@ -224,8 +224,8 @@
 		"shortDescription": "BD2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["CT"]
+		"keyObject": "",
+		"toRoom": "CT"
 	}, {
 		"filename": "",
 		"name": "BH1",
@@ -234,8 +234,8 @@
 		"shortDescription": "BH1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["KT"]
+		"keyObject": "",
+		"toRoom": "KT"
 	}, {
 		"filename": "",
 		"name": "BH2",
@@ -244,8 +244,8 @@
 		"shortDescription": "BH2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["HW"]
+		"keyObject": "",
+		"toRoom": "HW"
 	}, {
 		"filename": "",
 		"name": "CA1",
@@ -254,8 +254,8 @@
 		"shortDescription": "CA1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["PW"]
+		"keyObject": "",
+		"toRoom": "PW"
 	}, {
 		"filename": "",
 		"name": "CA2",
@@ -264,8 +264,8 @@
 		"shortDescription": "CA2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["KT"]
+		"keyObject": "",
+		"toRoom": "KT"
 	}, {
 		"filename": "",
 		"name": "CE1",
@@ -274,8 +274,8 @@
 		"shortDescription": "CE1 Short Description",
 		"visible": true,
 		"unlocked": false,
-		"keyObjects": ["Key1"],
-		"toRoom": ["OT"]
+		"keyObject": "Key1",
+		"toRoom": "OT"
 	}, {
 		"filename": "",
 		"name": "CE2",
@@ -284,8 +284,8 @@
 		"shortDescription": "CE2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["PW"]
+		"keyObject": "",
+		"toRoom": "PW"
 	}, {
 		"filename": "",
 		"name": "CL1",
@@ -294,8 +294,8 @@
 		"shortDescription": "CL1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["JL"]
+		"keyObject": "",
+		"toRoom": "JL"
 	}, {
 		"filename": "",
 		"name": "CT1",
@@ -304,8 +304,8 @@
 		"shortDescription": "CT1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["BD"]
+		"keyObject": "",
+		"toRoom": "BD"
 	}, {
 		"filename": "",
 		"name": "HW1",
@@ -314,8 +314,8 @@
 		"shortDescription": "HW1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["BH"]
+		"keyObject": "",
+		"toRoom": "BH"
 	}, {
 		"filename": "",
 		"name": "HW2",
@@ -324,8 +324,8 @@
 		"shortDescription": "HW2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["WL"]
+		"keyObject": "",
+		"toRoom": "WL"
 	}, {
 		"filename": "",
 		"name": "HW3",
@@ -334,8 +334,8 @@
 		"shortDescription": "HW3 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["AR"]
+		"keyObject": "",
+		"toRoom": "AR"
 	}, {
 		"filename": "",
 		"name": "JL1",
@@ -344,8 +344,8 @@
 		"shortDescription": "JL1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["AR"]
+		"keyObject": "",
+		"toRoom": "AR"
 	}, {
 		"filename": "",
 		"name": "JL2",
@@ -354,8 +354,8 @@
 		"shortDescription": "JL2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["CL"]
+		"keyObject": "",
+		"toRoom": "CL"
 	}, {
 		"filename": "",
 		"name": "KT1",
@@ -364,8 +364,8 @@
 		"shortDescription": "KT1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["CA"]
+		"keyObject": "",
+		"toRoom": "CA"
 	}, {
 		"filename": "",
 		"name": "KT2",
@@ -374,8 +374,8 @@
 		"shortDescription": "KT2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["SR"]
+		"keyObject": "",
+		"toRoom": "SR"
 	}, {
 		"filename": "",
 		"name": "KT3",
@@ -384,8 +384,8 @@
 		"shortDescription": "KT3 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["BH"]
+		"keyObject": "",
+		"toRoom": "BH"
 	}, {
 		"filename": "",
 		"name": "OUT",
@@ -394,8 +394,8 @@
 		"shortDescription": "OUT Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["CE"]
+		"keyObject": "",
+		"toRoom": "CE"
 	}, {
 		"filename": "",
 		"name": "PW1",
@@ -404,8 +404,8 @@
 		"shortDescription": "PW1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["CE"]
+		"keyObject": "",
+		"toRoom": "CE"
 	}, {
 		"filename": "",
 		"name": "PW2",
@@ -414,8 +414,8 @@
 		"shortDescription": "PW2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["CA"]
+		"keyObject": "",
+		"toRoom": "CA"
 	}, {
 		"filename": "",
 		"name": "SQ1",
@@ -424,8 +424,8 @@
 		"shortDescription": "SQ1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["AR"]
+		"keyObject": "",
+		"toRoom": "AR"
 	}, {
 		"filename": "",
 		"name": "SQ2",
@@ -434,8 +434,8 @@
 		"shortDescription": "SQ2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["BD"]
+		"keyObject": "",
+		"toRoom": "BD"
 	}, {
 		"filename": "",
 		"name": "SR1",
@@ -444,8 +444,8 @@
 		"shortDescription": "SR1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["KT"]
+		"keyObject": "",
+		"toRoom": "KT"
 	}, {
 		"filename": "",
 		"name": "SR2",
@@ -454,8 +454,8 @@
 		"shortDescription": "SR2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["TR"]
+		"keyObject": "",
+		"toRoom": "TR"
 	}, {
 		"filename": "",
 		"name": "TR1",
@@ -464,8 +464,8 @@
 		"shortDescription": "TR1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["SR"]
+		"keyObject": "",
+		"toRoom": "SR"
 	}, {
 		"filename": "",
 		"name": "WL1",
@@ -474,8 +474,8 @@
 		"shortDescription": "WL1 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["HW"]
+		"keyObject": "",
+		"toRoom": "HW"
 	}, {
 		"filename": "",
 		"name": "WL2",
@@ -484,8 +484,8 @@
 		"shortDescription": "WL2 Short Description",
 		"visible": true,
 		"unlocked": true,
-		"keyObjects": [],
-		"toRoom": ["AP"]
+		"keyObject": "",
+		"toRoom": "AP"
 	}],
 	"objects": [{
 		"filename": "",
