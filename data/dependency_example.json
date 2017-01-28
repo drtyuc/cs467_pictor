@@ -6,29 +6,32 @@
 				"method": "isObjectVisible()",
 				"parameter": "table2",
 				"expectedvalue": true,
-				"text": "Cannot see table2"
+				"hint": "Cannot see table2"
 			}, {
 				"method": "isRoomLighted()",
 				"parameter": "",
 				"expectedvalue": true,
-				"text": "Room is dark, cannot see table2"
+				"hint": "Room is dark, cannot see table2"
 			}, {
 				"method": "isObjectInRoom()",
 				"parameter": "table2",
 				"expectedvalue": true,
-				"text": "table2 is not in this room"
+				"hint": "table2 is not in this room"
 			}],
 			"actions": [{
 				"method": "setObjectVisible()",
 				"parameter": "apple1",
+                "state": true,
 				"text": "apple1 is on table2"
 			}, {
 				"method": "setObjectVisible()",
 				"parameter": "knife1",
+                "state": true,
 				"text": "knife1 is on table2"
 			}, {
 				"method": "setObjectVisible()",
 				"parameter": "matches1",
+                "state": true,
 				"text": "matches1 is on table2"
 			}]
 		}, {
@@ -37,16 +40,17 @@
 				"method": "isObjectInInventory()",
 				"parameter": "helmet1",
 				"expectedvalue": true,
-				"text": "helmet1 is not in your inventory"
+				"hint": "helmet1 is not in your inventory"
 			}, {
 				"method": "isObjectEquipped()",
 				"parameter": "helmet1",
 				"expectedvalue": false,
-				"text": "helmet1 is already equipped"
+				"hint": "helmet1 is already equipped"
 			}],
 			"actions": [{
 				"method": "setObjectEquipped()",
 				"parameter": "helmet1",
+                "state": true,
 				"text": "helmet1 is now equipped"
 			}]
 		}, {
@@ -55,21 +59,22 @@
 				"method": "isObjectInInventory()",
 				"parameter": "axe1",
 				"expectedvalue": true,
-				"text": "axe1 is not in your inventory"
+				"hint": "axe1 is not in your inventory"
 			}, {
 				"method": "isGhostInRoom()",
 				"parameter": "",
 				"expectedvalue": true,
-				"text": "No ghosts are in the room"
+				"hint": "No ghosts are in the room"
 			}, {
 				"method": "isGhostVisible()",
 				"parameter": "",
 				"expectedvalue": true,
-				"text": "Cannot see any ghosts"
+				"hint": "Cannot see any ghosts"
 			}],
 			"actions": [{
 				"method": "setGhostHealth()",
 				"parameter": "axe1",
+                "state": false,
 				"text": ""
 			}]
 		}, {
@@ -78,15 +83,17 @@
 				"method": "isObjectInInventory()",
 				"parameter": "bottle1",
 				"expectedvalue": true,
-				"text": "bottle1 is not in your inventory"
+				"hint": "bottle1 is not in your inventory"
 			}],
 			"actions": [{
 				"method": "removeInventoryObject()",
 				"parameter": "bottle1",
+                "state": false,
 				"text": "bottle1 is consumed"
 			}, {
 				"method": "setPlayerHealth()",
 				"parameter": "bottle1",
+                "state": false,
 				"text": "player's health has increased"
 			}]
 		}
