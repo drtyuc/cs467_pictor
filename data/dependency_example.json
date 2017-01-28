@@ -1,101 +1,99 @@
 {
-	"commands": [
-		{
-			"tuple": "look at table2",
-			"dependencies": [{
-				"method": "isObjectVisible()",
-				"parameter": "table2",
-				"expectedvalue": true,
-				"hint": "Cannot see table2"
-			}, {
-				"method": "isRoomLighted()",
-				"parameter": "",
-				"expectedvalue": true,
-				"hint": "Room is dark, cannot see table2"
-			}, {
-				"method": "isObjectInRoom()",
-				"parameter": "table2",
-				"expectedvalue": true,
-				"hint": "table2 is not in this room"
-			}],
-			"actions": [{
-				"method": "setObjectVisible()",
-				"parameter": "apple1",
-                "state": true,
-				"text": "apple1 is on table2"
-			}, {
-				"method": "setObjectVisible()",
-				"parameter": "knife1",
-                "state": true,
-				"text": "knife1 is on table2"
-			}, {
-				"method": "setObjectVisible()",
-				"parameter": "matches1",
-                "state": true,
-				"text": "matches1 is on table2"
-			}]
+	"commands": [{
+		"tuple": "look at table2",
+		"dependencies": [{
+			"method": "isObjectVisible()",
+			"parameter": "table2",
+			"expectedvalue": true,
+			"hint": "Cannot see table2"
 		}, {
-			"tuple": "equip helmet1",
-			"dependencies": [{
-				"method": "isObjectInInventory()",
-				"parameter": "helmet1",
-				"expectedvalue": true,
-				"hint": "helmet1 is not in your inventory"
-			}, {
-				"method": "isObjectEquipped()",
-				"parameter": "helmet1",
-				"expectedvalue": false,
-				"hint": "helmet1 is already equipped"
-			}],
-			"actions": [{
-				"method": "setObjectEquipped()",
-				"parameter": "helmet1",
-                "state": true,
-				"text": "helmet1 is now equipped"
-			}]
+			"method": "isRoomLighted()",
+			"parameter": "",
+			"expectedvalue": true,
+			"hint": "Room is dark, cannot see table2"
 		}, {
-			"tuple": "wield axe1",
-			"dependencies": [{
-				"method": "isObjectInInventory()",
-				"parameter": "axe1",
-				"expectedvalue": true,
-				"hint": "axe1 is not in your inventory"
-			}, {
-				"method": "isGhostInRoom()",
-				"parameter": "",
-				"expectedvalue": true,
-				"hint": "No ghosts are in the room"
-			}, {
-				"method": "isGhostVisible()",
-				"parameter": "",
-				"expectedvalue": true,
-				"hint": "Cannot see any ghosts"
-			}],
-			"actions": [{
-				"method": "setGhostHealth()",
-				"parameter": "axe1",
-                "state": false,
-				"text": ""
-			}]
+			"method": "isObjectInRoom()",
+			"parameter": "table2",
+			"expectedvalue": true,
+			"hint": "table2 is not in this room"
+		}],
+		"actions": [{
+			"method": "setObjectVisible()",
+			"parameter": "apple1",
+			"state": true,
+			"text": "apple1 is on table2"
 		}, {
-			"tuple": "drink bottle1",
-			"dependencies": [{
-				"method": "isObjectInInventory()",
-				"parameter": "bottle1",
-				"expectedvalue": true,
-				"hint": "bottle1 is not in your inventory"
-			}],
-			"actions": [{
-				"method": "removeInventoryObject()",
-				"parameter": "bottle1",
-                "state": false,
-				"text": "bottle1 is consumed"
-			}, {
-				"method": "setPlayerHealth()",
-				"parameter": "bottle1",
-                "state": false,
-				"text": "player's health has increased"
-			}]
-		}
-	]
+			"method": "setObjectVisible()",
+			"parameter": "knife1",
+			"state": true,
+			"text": "knife1 is on table2"
+		}, {
+			"method": "setObjectVisible()",
+			"parameter": "matches1",
+			"state": true,
+			"text": "matches1 is on table2"
+		}]
+	}, {
+		"tuple": "equip helmet1",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"parameter": "helmet1",
+			"expectedvalue": true,
+			"hint": "helmet1 is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"parameter": "helmet1",
+			"expectedvalue": false,
+			"hint": "helmet1 is already equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"parameter": "helmet1",
+			"state": true,
+			"text": "helmet1 is now equipped"
+		}]
+	}, {
+		"tuple": "wield axe1",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"parameter": "axe1",
+			"expectedvalue": true,
+			"hint": "axe1 is not in your inventory"
+		}, {
+			"method": "isGhostInRoom()",
+			"parameter": "",
+			"expectedvalue": true,
+			"hint": "No ghosts are in the room"
+		}, {
+			"method": "isGhostVisible()",
+			"parameter": "",
+			"expectedvalue": true,
+			"hint": "Cannot see any ghosts"
+		}],
+		"actions": [{
+			"method": "setGhostHealth()",
+			"parameter": "axe1",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "drink bottle1",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"parameter": "bottle1",
+			"expectedvalue": true,
+			"hint": "bottle1 is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"parameter": "bottle1",
+			"state": false,
+			"text": "bottle1 is consumed"
+		}, {
+			"method": "setPlayerHealth()",
+			"parameter": "bottle1",
+			"state": false,
+			"text": "player's health has increased"
+		}]
+	}]
 }
