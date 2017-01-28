@@ -28,7 +28,7 @@
 		"shortDescription": "Armory Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["Sword2", "Armor1", "Warhammer1", "Helment1"],
+		"objects": ["Sword2", "Armor1", "Warhammer1", "Helmet1"],
 		"exits": ["AR1", "AR2", "AR3"]
 	}, {
 		"filename": "bedroom.json",
