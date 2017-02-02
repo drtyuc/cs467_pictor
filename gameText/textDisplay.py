@@ -6,7 +6,7 @@ class textDisplay():
 		self.roomList = ['CA', 'KT', 'SR', 'TR', 'PW', 'BH', 'TR', 'PW', 'BH', 'HA', 'WL', 'AP', 'CE', 'CO', 'AR', 'JA', 'CL', 'OU', 'BR', 'SQ']
 
 		self.roomDescriptsLong = {'CA': 'You are in the common area.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'KT': 'You are in the kichen.\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
+		'KT': 'You are in the kichen.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
 		'SR': 'You are in the storeroom.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n'}
 
 		self.roomDescriptsShort = {'CA': 'You are in the common area...', 'KT': 'You are in the kitchen...', 'SR': 'You are in the storeroom...',
@@ -19,15 +19,13 @@ class textDisplay():
 	def generateRoomDescription(self, roomLocation, visitedBool):
 
 		if visitedBool:
-			print roomDescriptsShort[roomLocation]
+			print self.roomDescriptsShort[roomLocation]
 		else:
-			print roomDescriptsLong[roomLocation]
-
-	def textDisplay(self):
-		#for testing etc. 
-		for x in range(3):
-			generateRoomDescription(self.roomList[x], True)
+			print self.roomDescriptsLong[roomLocation]
 
 
 if __name__ == '__main__':
-	textDisplay()
+	td = textDisplay()
+
+	for x in range(3):
+		td.generateRoomDescription(td.roomList[x], False)
