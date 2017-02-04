@@ -1,0 +1,6023 @@
+{
+	"commands": [{
+		"tuple": "drink bottle of gatorade",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not in your inventory"
+		}, {
+			"method": "isObjectDrinkable()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not drinkable"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "bottle of gatorade",
+			"state": false,
+			"text": "Bottle of gatorade is consumed"
+		}, {
+			"method": "adjustPlayerHealth()",
+			"object": "bottle of gatorade",
+			"state": false,
+			"text": "Your health has increased!"
+		}]
+	}, {
+		"tuple": "drink bottle of water",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of gatorade is not in your inventory"
+		}, {
+			"method": "isObjectDrinkable()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of gatorade is not drinkable"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "bottle of water",
+			"state": false,
+			"text": "Bottle of water is consumed"
+		}, {
+			"method": "adjustPlayerHealth()",
+			"object": "bottle of water",
+			"state": false,
+			"text": "Your health has increased!"
+		}]
+	}, {
+		"tuple": "drop armor",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "armor",
+			"expect": false,
+			"hint": "You have to unequip the armor first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "armor",
+			"state": false,
+			"text": "Armor removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "armor",
+			"state": false,
+			"text": "Armor placed in room"
+		}]
+	}, {
+		"tuple": "drop axe",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "axe",
+			"expect": false,
+			"hint": "You have to unequip the axe first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "axe",
+			"state": false,
+			"text": "Axe removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "axe",
+			"state": false,
+			"text": "Axe placed in room"
+		}]
+	}, {
+		"tuple": "drop book of locks",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "book of locks",
+			"state": false,
+			"text": "Book of locks removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "book of locks",
+			"state": false,
+			"text": "Book of locks placed in room"
+		}]
+	}, {
+		"tuple": "drop book of spells",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "book of spells",
+			"state": false,
+			"text": "Book of spells removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "book of spells",
+			"state": false,
+			"text": "Book of spells placed in room"
+		}]
+	}, {
+		"tuple": "drop bottle of gatorade",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "bottle of gatorade",
+			"state": false,
+			"text": "Bottle of gatorade removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "bottle of gatorade",
+			"state": false,
+			"text": "Bottle of gatorade placed in room"
+		}]
+	}, {
+		"tuple": "drop bottle of water",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of water is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "bottle of water",
+			"state": false,
+			"text": "Bottle of water removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "bottle of water",
+			"state": false,
+			"text": "Bottle of water placed in room"
+		}]
+	}, {
+		"tuple": "drop bottleopener",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "Bottleopener is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "bottleopener",
+			"state": false,
+			"text": "Bottleopener removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "bottleopener",
+			"state": false,
+			"text": "Bottleopener placed in room"
+		}]
+	}, {
+		"tuple": "drop brass lantern",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "brass lantern",
+			"state": false,
+			"text": "Brass lantern removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "brass lantern",
+			"state": false,
+			"text": "Brass lantern placed in room"
+		}]
+	}, {
+		"tuple": "drop broken lantern",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "Broken lantern is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "broken lantern",
+			"state": false,
+			"text": "Broken lantern removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "broken lantern",
+			"state": false,
+			"text": "Broken lantern placed in room"
+		}]
+	}, {
+		"tuple": "drop cloak",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "cloak",
+			"expect": false,
+			"hint": "You have to unequip the cloak first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "cloak",
+			"state": false,
+			"text": "Cloak removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "cloak",
+			"state": false,
+			"text": "Cloak placed in room"
+		}]
+	}, {
+		"tuple": "drop earthenware",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "Earthenware is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "earthenware",
+			"state": false,
+			"text": "Earthenware removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "earthenware",
+			"state": false,
+			"text": "Earthenware placed in room"
+		}]
+	}, {
+		"tuple": "drop fine china",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "Fine china is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "fine china",
+			"state": false,
+			"text": "Fine china removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "fine china",
+			"state": false,
+			"text": "Fine china placed in room"
+		}]
+	}, {
+		"tuple": "drop gem",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "gem",
+			"expect": false,
+			"hint": "You have to unequip the gem first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "gem",
+			"state": false,
+			"text": "Gem removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "gem",
+			"state": false,
+			"text": "Gem placed in room"
+		}]
+	}, {
+		"tuple": "drop golden key",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "Golden key is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "golden key",
+			"state": false,
+			"text": "Golden key removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "golden key",
+			"state": false,
+			"text": "Golden key placed in room"
+		}]
+	}, {
+		"tuple": "drop green apple",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "green apple",
+			"state": false,
+			"text": "Green apple removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "green apple",
+			"state": false,
+			"text": "Green apple placed in room"
+		}]
+	}, {
+		"tuple": "drop helmet",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "helmet",
+			"expect": false,
+			"hint": "You have to unequip the helmet first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "helmet",
+			"state": false,
+			"text": "Helmet removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "helmet",
+			"state": false,
+			"text": "Gem placed in helmet"
+		}]
+	}, {
+		"tuple": "drop kitchen knife",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "kitchen knife",
+			"expect": false,
+			"hint": "You have to unequip the kitchen knife first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "kitchen knife",
+			"state": false,
+			"text": "Kitchen knife removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "kitchen knife",
+			"state": false,
+			"text": "Kitchen knife placed in helmet"
+		}]
+	}, {
+		"tuple": "drop lockpick",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "Lockpick is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "lockpick",
+			"state": false,
+			"text": "Lockpick removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "lockpick",
+			"state": false,
+			"text": "Lockpick placed in room"
+		}]
+	}, {
+		"tuple": "drop machete",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "machete",
+			"expect": false,
+			"hint": "You have to unequip the machete first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "machete",
+			"state": false,
+			"text": "Machete removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "machete",
+			"state": false,
+			"text": "Machete placed in helmet"
+		}]
+	}, {
+		"tuple": "drop magical ring",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "magical ring",
+			"expect": false,
+			"hint": "You have to unequip the magical ring first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "magical ring",
+			"state": false,
+			"text": "Magical ring removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "magical ring",
+			"state": false,
+			"text": "Magical ring placed in helmet"
+		}]
+	}, {
+		"tuple": "drop matches",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "matches",
+			"expect": true,
+			"hint": "Matches are not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "matches",
+			"state": false,
+			"text": "Matches removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "matches",
+			"state": false,
+			"text": "Matches placed in room"
+		}]
+	}, {
+		"tuple": "drop mushrooms",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms are not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "mushrooms",
+			"state": false,
+			"text": "Mushrooms removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "mushrooms",
+			"state": false,
+			"text": "Mushrooms placed in room"
+		}]
+	}, {
+		"tuple": "drop note",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "note",
+			"state": false,
+			"text": "Note removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "note",
+			"state": false,
+			"text": "Note placed in room"
+		}]
+	}, {
+		"tuple": "drop red apple",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "red apple",
+			"state": false,
+			"text": "Red apple removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "red apple",
+			"state": false,
+			"text": "Red apple placed in room"
+		}]
+	}, {
+		"tuple": "drop sabre",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "sabre",
+			"expect": false,
+			"hint": "You have to unequip the sabre first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "sabre",
+			"state": false,
+			"text": "Sabre removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "sabre",
+			"state": false,
+			"text": "Sabre placed in helmet"
+		}]
+	}, {
+		"tuple": "drop scroll",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Scroll is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "scroll",
+			"state": false,
+			"text": "Scroll removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "scroll",
+			"state": false,
+			"text": "Scroll placed in room"
+		}]
+	}, {
+		"tuple": "drop shale rocks",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "Shale rocks is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "shale rocks",
+			"state": false,
+			"text": "Shale rocks removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "shale rocks",
+			"state": false,
+			"text": "Shale rocks placed in room"
+		}]
+	}, {
+		"tuple": "drop slate rocks",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "Slate rocks is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "slate rocks",
+			"state": false,
+			"text": "Slate rocks removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "slate rocks",
+			"state": false,
+			"text": "Slate rocks placed in room"
+		}]
+	}, {
+		"tuple": "drop stoneware",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "Stoneware is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "stoneware",
+			"state": false,
+			"text": "Stoneware removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "stoneware",
+			"state": false,
+			"text": "Stoneware placed in room"
+		}]
+	}, {
+		"tuple": "drop treasure",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "Treasure is not in your inventory"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "treasure",
+			"state": false,
+			"text": "Treasure removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "treasure",
+			"state": false,
+			"text": "Treasure placed in room"
+		}]
+	}, {
+		"tuple": "drop warhammer",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "warhammer",
+			"expect": false,
+			"hint": "You have to unequip the warhammer first"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "warhammer",
+			"state": false,
+			"text": "Warhammer removed from your inventory"
+		}, {
+			"method": "addRoomObject()",
+			"object": "warhammer",
+			"state": false,
+			"text": "Warhammer placed in helmet"
+		}]
+	}, {
+		"tuple": "eat green apple",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not in your inventory"
+		}, {
+			"method": "isObjectEdible()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not edible"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "green apple",
+			"state": false,
+			"text": "Green apple is consumed"
+		}, {
+			"method": "adjustPlayerHealth()",
+			"object": "green apple",
+			"state": false,
+			"text": "Your health has increased!"
+		}]
+	}, {
+		"tuple": "eat mushrooms",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms are not in your inventory"
+		}, {
+			"method": "isObjectEdible()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms are not edible"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "mushrooms",
+			"state": false,
+			"text": "Mushrooms are consumed"
+		}, {
+			"method": "adjustPlayerHealth()",
+			"object": "mushrooms",
+			"state": false,
+			"text": "Your health has increased!"
+		}]
+	}, {
+		"tuple": "eat red apple",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not in your inventory"
+		}, {
+			"method": "isObjectEdible()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not edible"
+		}],
+		"actions": [{
+			"method": "removeInventoryObject()",
+			"object": "red apple",
+			"state": false,
+			"text": "Red apple is consumed"
+		}, {
+			"method": "adjustPlayerHealth()",
+			"object": "red apple",
+			"state": false,
+			"text": "Your health has increased!"
+		}]
+	}, {
+		"tuple": "equip kitchen knife",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "kitchen knife",
+			"expect": false,
+			"hint": "Kitchen knife is already equipped"
+		}, {
+			"method": "isObjectEquippable()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "You already have a weapon equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "kitchen knife",
+			"state": true,
+			"text": "You are now armed with the kitchen knife"
+		}]
+	}, {
+		"tuple": "equip machete",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "machete",
+			"expect": false,
+			"hint": "Machete is already equipped"
+		}, {
+			"method": "isObjectEquippable()",
+			"object": "machete",
+			"expect": true,
+			"hint": "You already have a weapon equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "machete",
+			"state": true,
+			"text": "You are now armed with the machete"
+		}]
+	}, {
+		"tuple": "equip magical ring",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "magical ring",
+			"expect": false,
+			"hint": "Magical ring is already equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "magical ring",
+			"state": true,
+			"text": "The magical ring is now equipped"
+		}]
+	}, {
+		"tuple": "equip sabre",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "sabre",
+			"expect": false,
+			"hint": "Sabre is already equipped"
+		}, {
+			"method": "isObjectEquippable()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "You already have a weapon equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "sabre",
+			"state": true,
+			"text": "You are now armed with the sabre"
+		}]
+	}, {
+		"tuple": "equip warhammer",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "warhammer",
+			"expect": false,
+			"hint": "Warhammer is already equipped"
+		}, {
+			"method": "isObjectEquippable()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "You already have a weapon equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "warhammer",
+			"state": true,
+			"text": "You are now armed with the warhammer"
+		}]
+	}, {
+		"tuple": "go south",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "south",
+			"expect": true,
+			"hint": "There is no exit going south"
+		}, {
+			"method": "isExitVisible()",
+			"object": "south",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "south",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "south",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go north",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "north",
+			"expect": true,
+			"hint": "There is no exit going north"
+		}, {
+			"method": "isExitVisible()",
+			"object": "north",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "north",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "north",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "west",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "west",
+			"expect": true,
+			"hint": "There is no exit going west"
+		}, {
+			"method": "isExitVisible()",
+			"object": "west",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "west",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "west",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "east",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "east",
+			"expect": true,
+			"hint": "There is no exit going east"
+		}, {
+			"method": "isExitVisible()",
+			"object": "east",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "east",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "east",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "south",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "south",
+			"expect": true,
+			"hint": "There is no exit going south"
+		}, {
+			"method": "isExitVisible()",
+			"object": "south",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "south",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "south",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "north",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "north",
+			"expect": true,
+			"hint": "There is no exit going north"
+		}, {
+			"method": "isExitVisible()",
+			"object": "north",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "north",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "north",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "lay on altar",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Cannot see the altar"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Cannot lay on altar"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "altar",
+			"state": false,
+			"text": "You feel sick ... lost some health points"
+		}]
+	}, {
+		"tuple": "lay on bearskin",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bearskin is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Cannot see the bearskin"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Cannot lay on bearskin"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "bearskin",
+			"state": false,
+			"text": "You have improved your health"
+		}]
+	}, {
+		"tuple": "lay on bunk bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Bunk bed is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Cannot see the bunk bed"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Cannot lay on bunk bed"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "bunk bed",
+			"state": false,
+			"text": "You have improved your health"
+		}]
+	}, {
+		"tuple": "lay on mattress",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Cannot see the mattress"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Cannot lay on mattress"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "mattress",
+			"state": false,
+			"text": "More aches and pains ... lost health points"
+		}]
+	}, {
+		"tuple": "lay on turkish rug",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Turkish rug is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Cannot see the turkish rug"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Cannot lay on turkish rug"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "turkish rug",
+			"state": false,
+			"text": "You feel drained ... lost health points"
+		}]
+	}, {
+		"tuple": "lay on twin bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Twin bed is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Cannot see the twin bed"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Cannot lay on twin bed"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "twin bed",
+			"state": false,
+			"text": "You have improved your health"
+		}]
+	}, {
+		"tuple": "lay on wool rug",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see anything"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Wool rug is not in the room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Cannot see the wool rug"
+		}, {
+			"method": "isObjectLayable()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Cannot lay on wool rug"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "wool rug",
+			"state": false,
+			"text": "Not feeling rested ... no improvement to your health"
+		}]
+	}, {
+		"tuple": "light brass lantern",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern is not in your inventory"
+		}, {
+			"method": "isObjectLighted()",
+			"object": "brass lantern",
+			"expect": false,
+			"hint": "Brass lantern is already lit"
+		}, {
+			"method": "isObjectLightable()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "You cannot light the brass lantern"
+		}, {
+			"method": "isObjectKeyInInventory()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "You need some matches!"
+		}],
+		"actions": [{
+			"method": "setObjectLighted()",
+			"object": "brass lantern",
+			"state": true,
+			"text": "The brass lantern is lit"
+		}]
+	}, {
+		"tuple": "look above altar",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see altar"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not visible"
+		}, {
+			"method": "isLookAbovePossible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "You cannot look above altar"
+		}],
+		"actions": [{
+			"method": "setAboveObjectsVisible()",
+			"object": "altar",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at altar",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see altar"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "altar",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at armoire",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see armoire"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "armoire",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at armor",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see armor"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "armor",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at axe",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see axe"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "axe",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bar stool",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bar stool"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bar stool",
+			"expect": true,
+			"hint": "Bar stool is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bar stool",
+			"expect": true,
+			"hint": "Bar stool is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bar stool",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bat skeleton",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bat skeleton"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bat skeleton",
+			"expect": true,
+			"hint": "Bat skeleton is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bat skeleton",
+			"expect": true,
+			"hint": "Bat skeleton is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bat skeleton",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bearskin",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bearskin"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bearskin is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bearskin is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bearskin",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at book of locks",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of locks"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "book of locks",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at book of spells",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of spells"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "book of spells",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bottle of gatorade",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bottle of gatorade"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bottle of gatorade",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bottle of water",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bottle of water"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of water is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of water is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bottle of gatorade",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bottleopener",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bottleopener"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "Bottleopener is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "Bottleopener is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bottleopener",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at brass lantern",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see brass lantern"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "brass lantern",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at broken lantern",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see broken lantern"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "Broken lantern is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "Broken lantern is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "broken lantern",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at bunk bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bunk bed"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Bunk bed is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Bunk bed is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "bunk bed",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at carver chair",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see carver chair"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "carver chair",
+			"expect": true,
+			"hint": "Carver chair is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "carver chair",
+			"expect": true,
+			"hint": "Carver chair is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "carver chair",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at cat skeleton",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cat skeleton"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "cat skeleton",
+			"expect": true,
+			"hint": "Cat skeleton is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cat skeleton",
+			"expect": true,
+			"hint": "Cat skeleton is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "cat skeleton",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at cedar trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cedar trunk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "cedar trunk",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at chandelier",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see chandelier"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "chandelier",
+			"expect": true,
+			"hint": "Chandelier is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "chandelier",
+			"expect": true,
+			"hint": "Chandelier is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "chandelier",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at cloak",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cloak"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "cloak",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at cooking hearth",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cooking hearth"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "cooking hearth",
+			"expect": true,
+			"hint": "Cooking hearth is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cooking hearth",
+			"expect": true,
+			"hint": "Cooking hearth is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "cooking hearth",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at corner shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see corner shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "corner shelves",
+			"expect": true,
+			"hint": "Corner shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "corner shelves",
+			"expect": true,
+			"hint": "Corner shelves are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "corner shelves",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at desk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see desk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "desk",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at dining table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see dining table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "dining table",
+			"expect": true,
+			"hint": "Dining table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "dining table",
+			"expect": true,
+			"hint": "Dining table is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "dining table",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at earthenware",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see earthenware"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "Earthenware is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "Earthenware is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "earthenware",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at gateleg table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see gateleg table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "gateleg table",
+			"expect": true,
+			"hint": "Gateleg table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "gateleg table",
+			"expect": true,
+			"hint": "Gateleg table is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "gateleg table",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at gem",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see gem"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "gem",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at golden key",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see golden key"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "Golden key is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "Golden key is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "golden key",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at green apple",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see green apple"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "green apple",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at helmet",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see helmet"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "helmet",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at high table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see high table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "high table",
+			"expect": true,
+			"hint": "High table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "high table",
+			"expect": true,
+			"hint": "High table is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "high table",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at human skeleton",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see human skeleton"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "human skeleton",
+			"expect": true,
+			"hint": "Human skeleton is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "human skeleton",
+			"expect": true,
+			"hint": "Human skeleton is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "human skeleton",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at iron lever",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see iron lever"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "iron lever",
+			"expect": true,
+			"hint": "Iron lever is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "iron lever",
+			"expect": true,
+			"hint": "Iron lever is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "iron lever",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at iron trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see iron trunk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "iron trunk",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at key rung",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see key rung"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "key rung",
+			"expect": true,
+			"hint": "Key rung is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "key rung",
+			"expect": true,
+			"hint": "Key rung is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "key rung",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at kitchen knife",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see kitchen knife"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "kitchen knife",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at kitchen table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see kitchen table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "kitchen table",
+			"expect": true,
+			"hint": "Kitchen table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "kitchen table",
+			"expect": true,
+			"hint": "Kitchen table is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "kitchen table",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at lidless eye",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see lidless eye"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "lidless eye",
+			"expect": true,
+			"hint": "Lidless eye is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "lidless eye",
+			"expect": true,
+			"hint": "Lidless eye is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "lidless eye",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at lockpick",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see lockpick"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "Lockpick is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "Lockpick is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "lockpick",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at machete",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see machete"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "machete",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at magical ring",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see magical ring"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "magical ring",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at matches",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see matches"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "matches",
+			"expect": true,
+			"hint": "Matches are not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "matches",
+			"expect": true,
+			"hint": "Matches are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "matches",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at mattress",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see mattress"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "mattress",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at metal shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see metal shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "metal shelves",
+			"expect": true,
+			"hint": "Metal shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "metal shelves",
+			"expect": true,
+			"hint": "Metal shelves are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "metal shelves",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at milking stool",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see milking stool"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "milking stool",
+			"expect": true,
+			"hint": "Milking stool is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "milking stool",
+			"expect": true,
+			"hint": "Milking stool is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "milking stool",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at mushrooms",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see mushrooms"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms are not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "mushrooms",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at note",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see note"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "note",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at painting",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see painting"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "painting",
+			"expect": true,
+			"hint": "Painting is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "painting",
+			"expect": true,
+			"hint": "Painting is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "painting",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at portrait",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see portrait"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "portrait",
+			"expect": true,
+			"hint": "Portrait is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "portrait",
+			"expect": true,
+			"hint": "Portrait is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "portrait",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at red apple",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see red apple"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "red apple",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at rocking chair",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see rocking chair"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "rocking chair",
+			"expect": true,
+			"hint": "Rocking chair is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "rocking chair",
+			"expect": true,
+			"hint": "Rocking chair is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "rocking chair",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at round table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see round table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "round table",
+			"expect": true,
+			"hint": "Round table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "round table",
+			"expect": true,
+			"hint": "Round table is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "round table",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at sabre",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see sabre"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "sabre",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at safe",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see safe"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "safe",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at scroll",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see scroll"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Scroll is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Scroll is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "scroll",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at shale rocks",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see shale rocks"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "Shale rocks are not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "Shale rocks are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "shale rocks",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at sign",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see sign"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "sign",
+			"expect": true,
+			"hint": "Sign is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "sign",
+			"expect": true,
+			"hint": "Sign is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "sign",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at slate of runes",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see slate of runes"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "slate of runes",
+			"expect": true,
+			"hint": "Slate of runes are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "slate of runes",
+			"expect": true,
+			"hint": "Slate of runes are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "slate of runes",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at slate rocks",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see slate rocks"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "Slate rocks are not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "Slate rocks are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "slate rocks",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at stoneware",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see stoneware"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "Stoneware is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "Stoneware is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "stoneware",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at tapestries",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see tapestries"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "tapestries",
+			"expect": true,
+			"hint": "Tapestries are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "tapestries",
+			"expect": true,
+			"hint": "Tapestries are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "tapestries",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at tools",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see tools"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "tools",
+			"expect": true,
+			"hint": "Tools are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "tools",
+			"expect": true,
+			"hint": "Tools are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "tools",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at trapdoor",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see trapdoor"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "trapdoor",
+			"expect": true,
+			"hint": "Trapdoor is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "trapdoor",
+			"expect": true,
+			"hint": "Trapdoor is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "trapdoor",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at treasure",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see treasure"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "Treasure is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "Treasure is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "treasure",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at tree",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see tree"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "tree",
+			"expect": true,
+			"hint": "Tree is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "tree",
+			"expect": true,
+			"hint": "Tree is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "tree",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at trestle table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see trestle table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "trestle table",
+			"expect": true,
+			"hint": "Trestle table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "trestle table",
+			"expect": true,
+			"hint": "Trestle table is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "trestle table",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at turkish rug",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see turkish rug"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Turkish rug is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Turkish rug is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "turkish rug",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at twin bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see twin bed"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Twin bed is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Twin bed is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "twin bed",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at wall of flames",
+		"dependencies": [{
+			"method": "isObjectAccessible()",
+			"object": "wall of flames",
+			"expect": true,
+			"hint": "Wall of flames are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wall of flames",
+			"expect": true,
+			"hint": "Wall of flames are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "wall of flames",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at warhammer",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see warhammer"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "warhammer",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at wooden lever",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wooden lever"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "wooden lever",
+			"expect": true,
+			"hint": "Wooden lever is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wooden lever",
+			"expect": true,
+			"hint": "Wooden lever is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "wooden lever",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at wooden shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wooden shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "Wooden shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "Wooden shelves are not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "wooden shelves",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look at wool rug",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wool rug"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Wool rug is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Wool rug is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "wool rug",
+			"state": false,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look behind portrait",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see portrait"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "portrait",
+			"expect": true,
+			"hint": "Portrait is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "portrait",
+			"expect": true,
+			"hint": "Portrait is not visible"
+		}, {
+			"method": "isLookBehindPossible()",
+			"object": "portrait",
+			"expect": true,
+			"hint": "You cannot look behind portrait"
+		}],
+		"actions": [{
+			"method": "setBehindObjectsVisible()",
+			"object": "portrait",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look behind wooden shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wooden shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "Wooden shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "Wooden shelves are not visible"
+		}, {
+			"method": "isLookBehindPossible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "You cannot look behind wooden shelves"
+		}],
+		"actions": [{
+			"method": "setBehindObjectsVisible()",
+			"object": "wooden shelves",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look inside armoire",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see armoire"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "You cannot look inside armoire"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "armoire",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look inside cedar trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cedar trunk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "You cannot look inside cedar trunk"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "cedar trunk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look inside desk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see desk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "You cannot look inside desk"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "desk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look inside iron trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see iron trunk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "You cannot look inside iron trunk"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "iron trunk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look inside safe",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see safe"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "You cannot look inside safe"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "safe",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on altar",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see altar"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "Altar is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "altar",
+			"expect": true,
+			"hint": "You cannot look on altar"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "altar",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on corner shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see corner shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "corner shelves",
+			"expect": true,
+			"hint": "Corner shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "corner shelves",
+			"expect": true,
+			"hint": "Corner shelves are not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "corner shelves",
+			"expect": true,
+			"hint": "You cannot look on corner shelves"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "corner shelves",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on desk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see desk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "You cannot look on desk"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "desk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on dining table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see dining table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "dining table",
+			"expect": true,
+			"hint": "Dining table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "dining table",
+			"expect": true,
+			"hint": "Dining table is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "dining table",
+			"expect": true,
+			"hint": "You cannot look on dining table"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "dining table",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on gateleg table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see gateleg table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "gateleg table",
+			"expect": true,
+			"hint": "Gateleg table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "gateleg table",
+			"expect": true,
+			"hint": "Gateleg table is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "gateleg table",
+			"expect": true,
+			"hint": "You cannot look on gateleg table"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "gateleg table",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on high table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see high table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "high table",
+			"expect": true,
+			"hint": "High table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "high table",
+			"expect": true,
+			"hint": "High table is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "high table",
+			"expect": true,
+			"hint": "You cannot look on high table"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "high table",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on kitchen table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see kitchen table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "kitchen table",
+			"expect": true,
+			"hint": "Kitchen table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "kitchen table",
+			"expect": true,
+			"hint": "Kitchen table is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "kitchen table",
+			"expect": true,
+			"hint": "You cannot look on kitchen table"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "kitchen table",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on mattress",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see mattress"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "You cannot look on mattress"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "mattress",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on metal shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see metal shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "metal shelves",
+			"expect": true,
+			"hint": "Metal shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "metal shelves",
+			"expect": true,
+			"hint": "Metal shelves are not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "metal shelves",
+			"expect": true,
+			"hint": "You cannot look on metal shelves"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "metal shelves",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on round table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see round table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "round table",
+			"expect": true,
+			"hint": "Round table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "round table",
+			"expect": true,
+			"hint": "Round table is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "round table",
+			"expect": true,
+			"hint": "You cannot look on round table"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "round table",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on trestle table",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see trestle table"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "trestle table",
+			"expect": true,
+			"hint": "Trestle table is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "trestle table",
+			"expect": true,
+			"hint": "Trestle table is not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "trestle table",
+			"expect": true,
+			"hint": "You cannot look on trestle table"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "trestle table",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look on wooden shelves",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wooden shelves"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "Wooden shelves are not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "Wooden shelves are not visible"
+		}, {
+			"method": "isLookOnPossible()",
+			"object": "wooden shelves",
+			"expect": true,
+			"hint": "You cannot look on wooden shelves"
+		}],
+		"actions": [{
+			"method": "setOnObjectsVisible()",
+			"object": "wooden shelves",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look under bearskin",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bearskin"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bearskin is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bearskin is not visible"
+		}, {
+			"method": "isLookUnderPossible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "You cannot look under bearskin"
+		}],
+		"actions": [{
+			"method": "setUnderObjectsVisible()",
+			"object": "bearskin",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look under bunk bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bunk bed"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bunk bed is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "Bunk bed is not visible"
+		}, {
+			"method": "isLookUnderPossible()",
+			"object": "bearskin",
+			"expect": true,
+			"hint": "You cannot look under bunk bed"
+		}],
+		"actions": [{
+			"method": "setUnderObjectsVisible()",
+			"object": "bearskin",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look under mattress",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see mattress"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "Mattress is not visible"
+		}, {
+			"method": "isLookUnderPossible()",
+			"object": "mattress",
+			"expect": true,
+			"hint": "You cannot look under mattress"
+		}],
+		"actions": [{
+			"method": "setUnderObjectsVisible()",
+			"object": "mattress",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look under turkish rug",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see Turkish rug"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Turkish rug is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "Turkish rug is not visible"
+		}, {
+			"method": "isLookUnderPossible()",
+			"object": "turkish rug",
+			"expect": true,
+			"hint": "You cannot look under Turkish rug"
+		}],
+		"actions": [{
+			"method": "setUnderObjectsVisible()",
+			"object": "turkish rug",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look under wool rug",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wool rug"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Wool rug is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "Wool rug is not visible"
+		}, {
+			"method": "isLookUnderPossible()",
+			"object": "wool rug",
+			"expect": true,
+			"hint": "You cannot look under wool rug"
+		}],
+		"actions": [{
+			"method": "setUnderObjectsVisible()",
+			"object": "wool run",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "pull wooden lever",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see wooden lever"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "wooden lever",
+			"expect": true,
+			"hint": "Wooden lever is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "wooden lever",
+			"expect": true,
+			"hint": "Wooden lever is not visible"
+		}, {
+			"method": "isObjectPullable()",
+			"object": "wooden lever",
+			"expect": true,
+			"hint": "You cannot pull the wooden lever"
+		}],
+		"actions": [{
+			"method": "changeLocation()",
+			"object": "wooden lever",
+			"state": false,
+			"text": "You are transported to another room!"
+		}]
+	}, {
+		"tuple": "pull trapdoor",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see trapdoor"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "trapdoor",
+			"expect": true,
+			"hint": "Trapdoor is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "trapdoor",
+			"expect": true,
+			"hint": "Trapdoor is not visible"
+		}, {
+			"method": "isObjectPullable()",
+			"object": "trapdoor",
+			"expect": true,
+			"hint": "You cannot pull the trapdoor"
+		}],
+		"actions": [{
+			"method": "changeLocation()",
+			"object": "trapdoor",
+			"state": false,
+			"text": "You are transported to another room!"
+		}]
+	}, {
+		"tuple": "push iron lever",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see iron lever"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "iron lever",
+			"expect": true,
+			"hint": "Iron lever is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "iron lever",
+			"expect": true,
+			"hint": "Iron lever is not visible"
+		}, {
+			"method": "isObjectPushable()",
+			"object": "iron lever",
+			"expect": true,
+			"hint": "You cannot push the iron lever"
+		}],
+		"actions": [{
+			"method": "changeLocation()",
+			"object": "iron lever",
+			"state": false,
+			"text": "You are transported to another room!"
+		}]
+	}, {
+		"tuple": "read book of locks",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of locks"
+		}, {
+			"method": "isObjectInInventory()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks is not in your inventory"
+		}, {
+			"method": "isObjectReadable()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "You cannot read the book"
+		}, {
+			"method": "isObjectRead()",
+			"object": "book of locks",
+			"expect": false,
+			"hint": "You have already read the book"
+		}],
+		"actions": [{
+			"method": "setObjectRead()",
+			"object": "book of locks",
+			"state": true,
+			"text": "You read the book of locks"
+		}]
+	}, {
+		"tuple": "read book of spells",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of spells"
+		}, {
+			"method": "isObjectInInventory()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells is not in your inventory"
+		}, {
+			"method": "isObjectReadable()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "You cannot read the book"
+		}, {
+			"method": "isObjectRead()",
+			"object": "book of spells",
+			"expect": false,
+			"hint": "You have already read the book"
+		}],
+		"actions": [{
+			"method": "setObjectRead()",
+			"object": "book of spells",
+			"state": true,
+			"text": "You read the book of spells"
+		}]
+	}, {
+		"tuple": "read note",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see note"
+		}, {
+			"method": "isObjectInInventory()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note is not in your inventory"
+		}, {
+			"method": "isObjectReadable()",
+			"object": "note",
+			"expect": true,
+			"hint": "You cannot read the note"
+		}, {
+			"method": "isObjectRead()",
+			"object": "note",
+			"expect": false,
+			"hint": "You have already read the note"
+		}],
+		"actions": [{
+			"method": "setObjectRead()",
+			"object": "note",
+			"state": true,
+			"text": "You now know the combination to the safe"
+		}, {
+			"method": "setObjectKeyObject()",
+			"object": "safe",
+			"state": "",
+			"text": ""
+		}]
+	}, {
+		"tuple": "read scroll",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of spells"
+		}, {
+			"method": "isObjectInInventory()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Book of spells is not in your inventory"
+		}, {
+			"method": "isObjectReadable()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "You cannot read the book"
+		}, {
+			"method": "isObjectRead()",
+			"object": "scroll",
+			"expect": false,
+			"hint": "You have already read the book"
+		}],
+		"actions": [{
+			"method": "setObjectRead()",
+			"object": "scroll",
+			"state": true,
+			"text": "You read the scroll"
+		}]
+	}, {
+		"tuple": "read sign",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see sign"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "sign",
+			"expect": true,
+			"hint": "Sign is not in current room"
+		}, {
+			"method": "isObjectReadable()",
+			"object": "sign",
+			"expect": true,
+			"hint": "You cannot read the sign"
+		}, {
+			"method": "isObjectRead()",
+			"object": "sign",
+			"expect": false,
+			"hint": "You have already read the sign"
+		}],
+		"actions": [{
+			"method": "setObjectRead()",
+			"object": "sign",
+			"state": true,
+			"text": "You read the sign"
+		}]
+	}, {
+		"tuple": "read slate of runes",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see slate of runes"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "slate of runes",
+			"expect": true,
+			"hint": "Slate of runes is not in current room"
+		}, {
+			"method": "isObjectReadable()",
+			"object": "slate of runes",
+			"expect": true,
+			"hint": "You cannot read the slate of ruins"
+		}, {
+			"method": "isObjectRead()",
+			"object": "slate of runes",
+			"expect": false,
+			"hint": "You have already read the slate of ruins"
+		}],
+		"actions": [{
+			"method": "setObjectRead()",
+			"object": "slate of runes",
+			"state": true,
+			"text": "You read the slate of ruins"
+		}]
+	}, {
+		"tuple": "sit on bar stool",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bar stool"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bar stool",
+			"expect": true,
+			"hint": "Bar stool is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bar stool",
+			"expect": true,
+			"hint": "Bar stool is not visible"
+		}, {
+			"method": "isObjectSitable()",
+			"object": "bar stool",
+			"expect": true,
+			"hint": "You cannot sit on bar stool"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "bar stool",
+			"state": true,
+			"text": "You catch your breath ... gain some health"
+		}]
+	}, {
+		"tuple": "sit on bunk bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bunk bed"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Bunk bed is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "Bunk bed is not visible"
+		}, {
+			"method": "isObjectSitable()",
+			"object": "bunk bed",
+			"expect": true,
+			"hint": "You cannot sit on bunk bed"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "bunk bed",
+			"state": true,
+			"text": "You catch your breath ... gain some health"
+		}]
+	}, {
+		"tuple": "sit on carver chair",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see carver chair"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "carver chair",
+			"expect": true,
+			"hint": "Carver chair is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "carver chair",
+			"expect": true,
+			"hint": "Carver chair is not visible"
+		}, {
+			"method": "isObjectSitable()",
+			"object": "carver chair",
+			"expect": true,
+			"hint": "You cannot sit on carver chair"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "carver chair",
+			"state": true,
+			"text": "You catch your breath ... gain some health"
+		}]
+	}, {
+		"tuple": "sit on milking stool",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see milking stool"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "milking stool",
+			"expect": true,
+			"hint": "Milking stool is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "milking stool",
+			"expect": true,
+			"hint": "Milking stool is not visible"
+		}, {
+			"method": "isObjectSitable()",
+			"object": "milking stool",
+			"expect": true,
+			"hint": "You cannot sit on milking stool"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "milking stool",
+			"state": true,
+			"text": "You catch your breath ... gain some health"
+		}]
+	}, {
+		"tuple": "sit on rocking chair",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see rocking chair"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "rocking chair",
+			"expect": true,
+			"hint": "Rocking chair is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "rocking chair",
+			"expect": true,
+			"hint": "Rocking chair is not visible"
+		}, {
+			"method": "isObjectSitable()",
+			"object": "rocking chair",
+			"expect": true,
+			"hint": "You cannot sit on rocking chair"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "rocking chair",
+			"state": true,
+			"text": "You catch your breath ... gain some health"
+		}]
+	}, {
+		"tuple": "sit on twin bed",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see twin bed"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Twin bed is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "Twin bed is not visible"
+		}, {
+			"method": "isObjectSitable()",
+			"object": "twin bed",
+			"expect": true,
+			"hint": "You cannot sit on twin bed"
+		}],
+		"actions": [{
+			"method": "adjustPlayerHealth()",
+			"object": "twin bed",
+			"state": true,
+			"text": "You catch your breath ... gain some health"
+		}]
+	}, {
+		"tuple": "take armor",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "armor",
+			"expect": false,
+			"hint": "You already have armor in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see armor"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "armor",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take armor"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "armor",
+			"state": true,
+			"text": "Added armor to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "armor",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take axe",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "axe",
+			"expect": false,
+			"hint": "You already have axe in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see axe"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "axe",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take axe"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "axe",
+			"state": true,
+			"text": "Added axe to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "axe",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take book of locks",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "book of locks",
+			"expect": false,
+			"hint": "You already have book of locks in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of locks"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take book of locks"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "book of locks",
+			"expect": true,
+			"hint": "Book of locks cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "book of locks",
+			"state": true,
+			"text": "Added book of locks to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "book of locks",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take book of spells",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "book of spells",
+			"expect": false,
+			"hint": "You already have book of spells in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see book of spells"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take book of spells"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "book of spells",
+			"expect": true,
+			"hint": "Book of spells cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "book of spells",
+			"state": true,
+			"text": "Added book of spells to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "book of spells",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take book of gatorade",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottle of gatorade",
+			"expect": false,
+			"hint": "You already have bottle of gatorade in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bottle of gatorade"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take bottle of gatorade"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "bottle of gatorade",
+			"expect": true,
+			"hint": "Bottle of gatorade cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "bottle of gatorade",
+			"state": true,
+			"text": "Added bottle of gatorade to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "bottle of gatorade",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take book of water",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottle of water",
+			"expect": false,
+			"hint": "You already have bottle of water in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bottle of water"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of water is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of water is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take bottle of water"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "bottle of water",
+			"expect": true,
+			"hint": "Bottle of water cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "bottle of water",
+			"state": true,
+			"text": "Added bottle of water to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "bottle of water",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take bottleopener",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "bottleopener",
+			"expect": false,
+			"hint": "You already have bottleopener in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see bottleopener"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "Bottleopener is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "Bottleopener is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take bottleopener"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "Bottleopener cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "bottleopener",
+			"state": true,
+			"text": "Added bottleopener to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "bottleopener",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take brass lantern",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "brass lantern",
+			"expect": false,
+			"hint": "You already have brass lantern in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see brass lantern"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take brass lantern"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "brass lantern",
+			"expect": true,
+			"hint": "Brass lantern cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "brass lantern",
+			"state": true,
+			"text": "Added brass lantern to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "brass lantern",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take broken lantern",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "broken lantern",
+			"expect": false,
+			"hint": "You already have broken lantern in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see broken lantern"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "Broken lantern is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "Broken lantern is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take broken lantern"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "broken lantern",
+			"expect": true,
+			"hint": "Broken lantern cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "broken lantern",
+			"state": true,
+			"text": "Added broken lantern to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "broken lantern",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take cloak",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "cloak",
+			"expect": false,
+			"hint": "You already have cloak in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cloak"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take cloak"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "cloak",
+			"state": true,
+			"text": "Added cloak to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "cloak",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take earthenware",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "earthenware",
+			"expect": false,
+			"hint": "You already have earthenware in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see earthenware"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "Earthenware is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "Earthenware is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take earthenware"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "earthenware",
+			"expect": true,
+			"hint": "Earthenware cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "earthenware",
+			"state": true,
+			"text": "Added earthenware to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "earthenware",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take fine china",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "fine china",
+			"expect": false,
+			"hint": "You already have fine china in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see fine china"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "Fine china is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "Fine china is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take fine china"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "Fine china cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "fine china",
+			"state": true,
+			"text": "Added fine china to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "fine china",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take gem",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "gem",
+			"expect": false,
+			"hint": "You already have gem in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see gem"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "gem",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take gem"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "gem",
+			"state": true,
+			"text": "Added gem to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "gem",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take golden key",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "golden key",
+			"expect": false,
+			"hint": "You already have golden key in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see golden key"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "Golden key is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "Golden key is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take golden key"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "golden key",
+			"expect": true,
+			"hint": "Golden key cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "golden key",
+			"state": true,
+			"text": "Added golden key to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "golden key",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take green apple",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "green apple",
+			"expect": false,
+			"hint": "You already have green apple in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see green apple"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take green apple"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "green apple",
+			"expect": true,
+			"hint": "Green apple cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "green apple",
+			"state": true,
+			"text": "Added green apple to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "green apple",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take helmet",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "helmet",
+			"expect": false,
+			"hint": "You already have helmet in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see helmet"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take helmet"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "helmet",
+			"state": true,
+			"text": "Added helmet to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "helmet",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take kitchen knife",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "kitchen knife",
+			"expect": false,
+			"hint": "You already have kitchen knife in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see kitchen knife"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take kitchen knife"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "kitchen knife",
+			"state": true,
+			"text": "Added kitchen knife to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "kitchen knife",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take lockpick",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "lockpick",
+			"expect": false,
+			"hint": "You already have lockpick in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see lockpick"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "Lockpick is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "Lockpick is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take lockpick"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "lockpick",
+			"expect": true,
+			"hint": "Lockpick cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "lockpick",
+			"state": true,
+			"text": "Added lockpick to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "lockpick",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take machete",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "machete",
+			"expect": false,
+			"hint": "You already have machete in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see machete"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "machete",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take machete"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "machete",
+			"state": true,
+			"text": "Added machete to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "machete",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take magical ring",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "magical ring",
+			"expect": false,
+			"hint": "You already have magical ring in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see magical ring"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take magical ring"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "magical ring",
+			"state": true,
+			"text": "Added magical ring to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "magical ring",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take matches",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "matches",
+			"expect": false,
+			"hint": "You already have matches in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see matches"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "matches",
+			"expect": true,
+			"hint": "Matches is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "matches",
+			"expect": true,
+			"hint": "Matches is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "matches",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take matches"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "matches",
+			"expect": true,
+			"hint": "Matches cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "matches",
+			"state": true,
+			"text": "Added matches to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "matches",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take mushrooms",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "mushrooms",
+			"expect": false,
+			"hint": "You already have mushrooms in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see mushrooms"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take mushrooms"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "mushrooms",
+			"expect": true,
+			"hint": "Mushrooms cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "mushrooms",
+			"state": true,
+			"text": "Added mushrooms to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "mushrooms",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take note",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "note",
+			"expect": false,
+			"hint": "You already have note in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see note"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "note",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take note"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "note",
+			"expect": true,
+			"hint": "Note cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "note",
+			"state": true,
+			"text": "Added note to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "note",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take red apple",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "red apple",
+			"expect": false,
+			"hint": "You already have red apple in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see red apple"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take red apple"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "red apple",
+			"expect": true,
+			"hint": "Red apple cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "red apple",
+			"state": true,
+			"text": "Added red apple to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "red apple",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take sabre",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "sabre",
+			"expect": false,
+			"hint": "You already have sabre in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see sabre"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take sabre"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "sabre",
+			"state": true,
+			"text": "Added sabre to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "sabre",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take scroll",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "scroll",
+			"expect": false,
+			"hint": "You already have scroll in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see scroll"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Scroll is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Scroll is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take scroll"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "scroll",
+			"expect": true,
+			"hint": "Scroll cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "scroll",
+			"state": true,
+			"text": "Added scroll to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "scroll",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take shale rocks",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "shale rocks",
+			"expect": false,
+			"hint": "You already have shale rooks in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see shale rocks"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "Shale rocks are not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "Shale rocks are is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take shale rocks"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "shale rocks",
+			"expect": true,
+			"hint": "Shale rocks cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "shale rocks",
+			"state": true,
+			"text": "Added shale rocks to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "shale rocks",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take slate rocks",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "slate rocks",
+			"expect": false,
+			"hint": "You already have slate rooks in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see slate rocks"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "Slate rocks are not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "Slate rocks are is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take slate rocks"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "slate rocks",
+			"expect": true,
+			"hint": "Slate rocks cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "slate rocks",
+			"state": true,
+			"text": "Added slate rocks to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "slate rocks",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take stoneware",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "stoneware",
+			"expect": false,
+			"hint": "You already have stoneware in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see stoneware"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "Stoneware is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "Stoneware is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take stoneware"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "stoneware",
+			"expect": true,
+			"hint": "Stoneware cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "stoneware",
+			"state": true,
+			"text": "Added stoneware to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "stoneware",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take treasure",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "treasure",
+			"expect": false,
+			"hint": "You already have treasure in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see treasure"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "Treasure is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "Treasure is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take treasure"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "treasure",
+			"expect": true,
+			"hint": "Treasure cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "treasure",
+			"state": true,
+			"text": "Added treasure to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "treasure",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "take warhammer",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "warhammer",
+			"expect": false,
+			"hint": "You already have warhammer in your inventory"
+		}, {
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see warhammer"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not in room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not visible"
+		}, {
+			"method": "isSpaceInInventory()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "You are carrying to much, cannot take warhammer"
+		}, {
+			"method": "isObjectAquirable()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer cannot be taken"
+		}],
+		"actions": [{
+			"method": "addInventoryObject()",
+			"object": "warhammer",
+			"state": true,
+			"text": "Added warhammer to your inventory"
+		}, {
+			"method": "removeRoomObject()",
+			"object": "warhammer",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "unequip armor",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "armor",
+			"expect": false,
+			"hint": "Armor is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "armor",
+			"state": true,
+			"text": "Armor has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip axe",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "axe",
+			"expect": false,
+			"hint": "Axe is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "axe",
+			"state": true,
+			"text": "Axe has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip cloak",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "cloak",
+			"expect": false,
+			"hint": "Cloak is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "cloak",
+			"state": true,
+			"text": "Cloak has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip gem",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "gem",
+			"expect": false,
+			"hint": "Gem is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "gem",
+			"state": true,
+			"text": "Gem has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip helmet",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "helmet",
+			"expect": false,
+			"hint": "Helmet is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "helmet",
+			"state": true,
+			"text": "Helmet has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip kitchen knife",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "kitchen knife",
+			"expect": false,
+			"hint": "Kitchen knife is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "kitchen knife",
+			"state": true,
+			"text": "Kitchen knife has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip machete",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "machete",
+			"expect": false,
+			"hint": "Machete is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "machete",
+			"state": true,
+			"text": "Machete has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip magical ring",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "magical ring",
+			"expect": true,
+			"hint": "Magical ring is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "magical ring",
+			"expect": false,
+			"hint": "Magical ring is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "magical ring",
+			"state": true,
+			"text": "Magical ring has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip sabre",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "sabre",
+			"expect": false,
+			"hint": "Sabre is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "sabre",
+			"state": true,
+			"text": "Sabre has been unequipped"
+		}]
+	}, {
+		"tuple": "unequip warhammer",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "warhammer",
+			"expect": false,
+			"hint": "Warhammer is already unequipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "warhammer",
+			"state": true,
+			"text": "Warhammer has been unequipped"
+		}]
+	}, {
+		"tuple": "unlock west",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "west",
+			"expect": true,
+			"hint": "No exit going that direction"
+		}, {
+			"method": "isExitVisible()",
+			"object": "west",
+			"expect": true,
+			"hint": "Cannot see the exit"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "west",
+			"expect": false,
+			"hint": "Exit is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "west",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "west",
+			"state": true,
+			"text": "Exit has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock east",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "east",
+			"expect": true,
+			"hint": "No exit going that direction"
+		}, {
+			"method": "isExitVisible()",
+			"object": "east",
+			"expect": true,
+			"hint": "Cannot see the exit"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "east",
+			"expect": false,
+			"hint": "Exit is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "east",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "east",
+			"state": true,
+			"text": "Exit has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock north",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "north",
+			"expect": true,
+			"hint": "No exit going that direction"
+		}, {
+			"method": "isExitVisible()",
+			"object": "north",
+			"expect": true,
+			"hint": "Cannot see the exit"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "north",
+			"expect": false,
+			"hint": "Exit is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "north",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "north",
+			"state": true,
+			"text": "Exit has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock south",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "south",
+			"expect": true,
+			"hint": "No exit going that direction"
+		}, {
+			"method": "isExitVisible()",
+			"object": "south",
+			"expect": true,
+			"hint": "Cannot see the exit"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "south",
+			"expect": false,
+			"hint": "Exit is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "south",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "south",
+			"state": true,
+			"text": "Exit has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock iron trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see iron trunk"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk not visible"
+		}, {
+			"method": "isObjUnlocked()",
+			"object": "iron trunk",
+			"expect": false,
+			"hint": "Iron trunk is already unlocked"
+		}, {
+			"method": "isObjectKeyInInventory()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setOnjectUnlocked()",
+			"object": "iron trunk",
+			"state": true,
+			"text": "Iron trunk has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock safe",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see safe"
+		}, {
+			"method": "isObjectInRoom()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not visible"
+		}, {
+			"method": "isObjUnlocked()",
+			"object": "safe",
+			"expect": false,
+			"hint": "Safe is already unlocked"
+		}, {
+			"method": "isObjectKeyInInventory()",
+			"object": "safe",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setOnjectUnlocked()",
+			"object": "safe",
+			"state": true,
+			"text": "Safe has been unlocked"
+		}]
+	}, {
+		"tuple": "wield axe",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not equipped"
+		}],
+		"actions": [{
+			"method": "adjustGhostHealth()",
+			"object": "axe",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "wield kitchen knife",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "kitchen knife",
+			"expect": true,
+			"hint": "Kitchen knife is not equipped"
+		}],
+		"actions": [{
+			"method": "adjustGhostHealth()",
+			"object": "kitchen knife",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "wield machete",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "machete",
+			"expect": true,
+			"hint": "Machete is not equipped"
+		}],
+		"actions": [{
+			"method": "adjustGhostHealth()",
+			"object": "machete",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "wield sabre",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "sabre",
+			"expect": true,
+			"hint": "Sabre is not equipped"
+		}],
+		"actions": [{
+			"method": "adjustGhostHealth()",
+			"object": "sabre",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "wield warhammer",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "warhammer",
+			"expect": true,
+			"hint": "Warhammer is not equipped"
+		}],
+		"actions": [{
+			"method": "adjustGhostHealth()",
+			"object": "warhammer",
+			"state": true,
+			"text": ""
+		}]
+	}]
+}

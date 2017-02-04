@@ -19,7 +19,7 @@
 		"shortDescription": "Alternate Plane Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["flames1", "eye1"],
+		"objects": ["wall of flames", "lidless eye"],
 		"exits": ["ap1"]
 	}, {
 		"filename": "armory.json",
@@ -28,7 +28,7 @@
 		"shortDescription": "Armory Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["sword2", "armor1", "warhammer1", "helmet1", "table6"],
+		"objects": ["sabre", "armor", "warhammer", "helmet", "trestle table"],
 		"exits": ["ar1", "ar2", "ar3"]
 	}, {
 		"filename": "bedroom.json",
@@ -37,8 +37,8 @@
 		"shortDescription": "Bedroom Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["bed2", "safe1", "shelf3", "gem1", "lever1", "trunk2", "key1"],
-		"exits": ["bd1", "bd2"]
+		"objects": ["twin bed", "safe", "wooden shelves", "gem", "wooden lever", "cedar trunk", "golden key"],
+		"exits": ["bd1"]
 	}, {
 		"filename": "banquethall.json",
 		"name": "bh",
@@ -46,7 +46,7 @@
 		"shortDescription": "Banquet Hall Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["dinnerware2", "chandelier1", "table3", "dinnerware3", "bottle1"],
+		"objects": ["fine china", "chandelier", "dining table", "earthenware", "bottle of water"],
 		"exits": ["bh1", "bh2"]
 	}, {
 		"filename": "common.json",
@@ -55,7 +55,7 @@
 		"shortDescription": "Common Area Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["dinnerware1", "stool1", "table1", "painting1", "note1"],
+		"objects": ["stoneware", "bar stool", "gateleg table", "portrait", "note"],
 		"exits": ["ca1", "ca2"]
 	}, {
 		"filename": "entrance.json",
@@ -64,7 +64,7 @@
 		"shortDescription": "Cave Entrance Short Description",
 		"discovered": true,
 		"lighted": true,
-		"objects": ["bones1", "sword1", "rocks1"],
+		"objects": ["bat skeleton", "machete", "shale rocks"],
 		"exits": ["ce1", "ce2"]
 	}, {
 		"filename": "cell.json",
@@ -73,7 +73,7 @@
 		"shortDescription": "Cell Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["bones3", "mattress1", "book2", "stool2"],
+		"objects": ["human skeleton", "mattress", "book of locks", "milking stool"],
 		"exits": ["cl1"]
 	}, {
 		"filename": "closet.json",
@@ -82,8 +82,8 @@
 		"shortDescription": "Closet Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["armoire1", "cloak1", "lever2"],
-		"exits": ["ct1"]
+		"objects": ["armoire", "cloak", "iron lever"],
+		"exits": []
 	}, {
 		"filename": "hallway.json",
 		"name": "hw",
@@ -91,7 +91,7 @@
 		"shortDescription": "Hallway Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["rug2", "painting2"],
+		"objects": ["wool rug", "painting"],
 		"exits": ["hw1", "hw2", "hw3"]
 	}, {
 		"filename": "jail.json",
@@ -100,7 +100,7 @@
 		"shortDescription": "Jail Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["chair1", "scroll1", "desk1", "keyrung1", "bottle2", "bottleopener1"],
+		"objects": ["carver chair", "scroll", "desk", "key rung", "bottle of gatorade", "bottleopener"],
 		"exits": ["jl1", "jl2"]
 	}, {
 		"filename": "kitchen.json",
@@ -109,7 +109,7 @@
 		"shortDescription": "Kitchen Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["matches1",  "hearth1", "apple1", "knife1", "table2"],
+		"objects": ["matches",  "cooking hearth", "green apple", "kitchen knife", "kitchen table"],
 		"exits": ["kt1", "kt2", "kt3"]
 	}, {
 		"filename": "outside.json",
@@ -118,7 +118,7 @@
 		"shortDescription": "Outside Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["tree1", "sign1"],
+		"objects": ["tree", "sign"],
 		"exits": ["out"]
 	}, {
 		"filename": "passageway.json",
@@ -127,7 +127,7 @@
 		"shortDescription": "Passage Way Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["rocks2", "bones2", "tools1"],
+		"objects": ["slate rocks", "cat skeleton", "tools"],
 		"exits": ["pw1", "pw2"]
 	}, {
 		"filename": "sleeping.json",
@@ -136,7 +136,7 @@
 		"shortDescription": "Sleeping Quarters Short Description",
 		"discovered": false,
 		"lighted": true,
-		"objects": ["bed1", "table5", "chair2", "lantern2", "bearskin1", "apple2"],
+		"objects": ["bunk bed", "round table", "rocking chair", "brass lantern", "bearskin", "red apple"],
 		"exits": ["sq1", "sq2"]
 	}, {
 		"filename": "storeroom.json",
@@ -145,8 +145,8 @@
 		"shortDescription": "Storeroom Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["lockpick1", "mushrooms1", "rug1", "shelf1", "trapdoor1"],
-		"exits": ["sr1", "sr2"]
+		"objects": ["lockpick", "mushrooms", "turkish rug", "metal shelves", "trapdoor"],
+		"exits": ["sr1"]
 	}, {
 		"filename": "treasureroom.json",
 		"name": "tr",
@@ -154,7 +154,7 @@
 		"shortDescription": "Treasure Room Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["treasure1", "trunk1", "tapestries1", "altar1", "ring1"],
+		"objects": ["treasure", "iron trunk", "tapestries", "altar", "magical ring", "axe"],
 		"exits": ["tr1"]
 	}, {
 		"filename": "laboratory.json",
@@ -163,7 +163,7 @@
 		"shortDescription": "Wizard's Laboratory Short Description",
 		"discovered": false,
 		"lighted": false,
-		"objects": ["shelf2", "book1", "axe1", "runes1", "table4", "lantern1"],
+		"objects": ["corner shelves", "book of spells", "slate of runes", "high table", "broken lantern"],
 		"exits": ["wl1", "wl2"]
 	}],
 	"exits": [{
@@ -264,7 +264,7 @@
 		"shortDescription": "Exit going south",
 		"visible": true,
 		"unlocked": false,
-		"keyObject": "key1",
+		"keyObject": "golden key",
 		"toRoom": "ot"
 	}, {
 		"filename": "",
@@ -459,7 +459,7 @@
 	}],
 	"objects": [{
 		"filename": "",
-		"name": "altar1",
+		"name": "altar",
 		"longDescription": "Altar1 Long Description",
 		"shortDescription": "Altar1 Short Description",
         "acquirable": false,
@@ -495,7 +495,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "apple1",
+		"name": "green apple",
 		"longDescription": "Apple1 Long Description",
 		"shortDescription": "Apple1 Short Description",
         "acquirable": true,
@@ -523,7 +523,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "table2",
+        "location": "kitchen table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -531,7 +531,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "apple2",
+		"name": "red apple",
 		"longDescription": "Apple2 Long Description",
 		"shortDescription": "Apple2 Short Description",
         "acquirable": true,
@@ -559,7 +559,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "bed1",
+        "location": "bunk bed",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -567,7 +567,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "armoire1",
+		"name": "armoire",
 		"longDescription": "Armoire1 Long Description",
 		"shortDescription": "Armoire1 Short Description",
         "acquirable": false,
@@ -603,7 +603,7 @@
         "unlocked": true     
 	}, {
 		"filename": "",
-		"name": "armor1",
+		"name": "armor",
 		"longDescription": "Armor1 Long Description",
 		"shortDescription": "Armor1 Short Description",
         "acquirable": true,
@@ -631,7 +631,7 @@
 		"protectionPoints": 20,        
 		"weight": 80,
         "keyObject": "",
-        "location": "table6",
+        "location": "trestle table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -639,7 +639,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "axe1",
+		"name": "axe",
 		"longDescription": "Axe1 Long Description",
 		"shortDescription": "Axe1 Short Description",
         "acquirable": true,
@@ -667,7 +667,7 @@
 		"protectionPoints": 0,        
 		"weight": 20,
         "keyObject": "",
-        "location": "altar1",
+        "location": "altar",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -675,7 +675,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bearskin1",
+		"name": "bearskin",
 		"longDescription": "Bearskin1 Long Description",
 		"shortDescription": "Bearskin1 Short Description",
         "acquirable": false,
@@ -711,7 +711,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bed1",
+		"name": "bunk bed",
 		"longDescription": "Bed1 Long Description",
 		"shortDescription": "Bed1 Short Description",
         "acquirable": false,
@@ -747,7 +747,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bed2",
+		"name": "twin bed",
 		"longDescription": "Bed2 Long Description",
 		"shortDescription": "Bed2 Short Description",
         "acquirable": false,
@@ -783,7 +783,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bones1",
+		"name": "bat skeleton",
 		"longDescription": "Bones1 Long Description",
 		"shortDescription": "Bones1 Short Description",
         "acquirable": false,
@@ -819,7 +819,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bones2",
+		"name": "cat skeleton",
 		"longDescription": "Bones2 Long Description",
 		"shortDescription": "Bones2 Short Description",
         "acquirable": false,
@@ -855,7 +855,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bones3",
+		"name": "human skeleton",
 		"longDescription": "Bones3 Long Description",
 		"shortDescription": "Bones3 Short Description",
         "acquirable": false,
@@ -883,7 +883,7 @@
 		"protectionPoints": 0,        
 		"weight": 25,
         "keyObject": "",
-        "location": "mattress1",
+        "location": "mattress",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -891,7 +891,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "book1",
+		"name": "book of spells",
 		"longDescription": "Book1 Long Description",
 		"shortDescription": "Book1 Short Description",
         "acquirable": true,
@@ -919,7 +919,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "shelf2",
+        "location": "corner shelves",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -927,7 +927,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "book2",
+		"name": "book of locks",
 		"longDescription": "Book2 Long Description",
 		"shortDescription": "Book2 Short Description",
         "acquirable": true,
@@ -955,7 +955,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "mattress1",
+        "location": "mattress",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -963,7 +963,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bottle1",
+		"name": "bottle of water",
 		"longDescription": "Bottle1 Long Description",
 		"shortDescription": "Bottle1 Short Description",
         "acquirable": true,
@@ -990,8 +990,8 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 5,
-        "keyObject": "bottleopener1",
-        "location": "table3",
+        "keyObject": "bottleopener",
+        "location": "dining table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -999,7 +999,7 @@
         "unlocked": true
     }, {
 		"filename": "",
-		"name": "bottle2",
+		"name": "bottle of gatorade",
 		"longDescription": "Bottle2 Long Description",
 		"shortDescription": "Bottle2 Short Description",
         "acquirable": true,
@@ -1026,8 +1026,8 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 5,
-        "keyObject": "bottleopener1",
-        "location": "desk1",
+        "keyObject": "bottleopener",
+        "location": "desk",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1035,7 +1035,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "bottleopener1",
+		"name": "bottleopener",
 		"longDescription": "BottleOpener1 Long Description",
 		"shortDescription": "BottleOpener1 Short Description",
         "acquirable": true,
@@ -1063,7 +1063,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "desk1",
+        "location": "desk",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1071,7 +1071,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "chair1",
+		"name": "carver chair",
 		"longDescription": "Chair1 Long Description",
 		"shortDescription": "Chair1 Short Description",
         "acquirable": false,
@@ -1107,7 +1107,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "chair2",
+		"name": "rocking chair",
 		"longDescription": "Chair2 Long Description",
 		"shortDescription": "Chair2 Short Description",
         "acquirable": false,
@@ -1143,7 +1143,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "chandelier1",
+		"name": "chandelier",
 		"longDescription": "Chandelier1 Long Description",
 		"shortDescription": "Chandelier1 Short Description",
         "acquirable": false,
@@ -1151,7 +1151,7 @@
         "edible": false,
         "equippable": false,
         "layable": false,
-        "lightable": true,
+        "lightable": false,
         "lockable": false,
         "pullable": false,
         "pushable": false,
@@ -1170,7 +1170,7 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 200,
-        "keyObject": "matches1",
+        "keyObject": "",
         "location": "bh",
         "visible": true,
         "lighted": false,
@@ -1179,7 +1179,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "cloak1",
+		"name": "cloak",
 		"longDescription": "Cloak1 Long Description",
 		"shortDescription": "Cloak1 Short Description",
         "acquirable": true,
@@ -1207,7 +1207,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "armoire1",
+        "location": "armoire",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1215,7 +1215,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "desk1",
+		"name": "desk",
 		"longDescription": "Desk1 Long Description",
 		"shortDescription": "Desk1 Short Description",
         "acquirable": false,
@@ -1251,7 +1251,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "dinnerware1",
+		"name": "stoneware",
 		"longDescription": "Dinnerware1 Long Description",
 		"shortDescription": "Dinnerware1 Short Description",
         "acquirable": true,
@@ -1279,7 +1279,7 @@
 		"protectionPoints": 0,        
 		"weight": 50,
         "keyObject": "",
-        "location": "table1",
+        "location": "gateleg table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1287,7 +1287,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "dinnerware2",
+		"name": "fine china",
 		"longDescription": "Dinnerware2 Long Description",
 		"shortDescription": "Dinnerware2 Short Description",
         "acquirable": true,
@@ -1315,7 +1315,7 @@
 		"protectionPoints": 0,        
 		"weight": 50,
         "keyObject": "",
-        "location": "table3",
+        "location": "dining table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1323,7 +1323,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "dinnerware3",
+		"name": "earthenware",
 		"longDescription": "Dinnerware3 Long Description",
 		"shortDescription": "Dinnerware3 Short Description",
         "acquirable": true,
@@ -1359,7 +1359,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "eye1",
+		"name": "lidless eye",
 		"longDescription": "Eye1 Long Description",
 		"shortDescription": "Eye1 Short Description",
         "acquirable": false,
@@ -1395,7 +1395,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "flames1",
+		"name": "wall of flames",
 		"longDescription": "Flames1 Long Description",
 		"shortDescription": "Flames1 Short Description",
         "acquirable": false,
@@ -1431,7 +1431,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "gem1",
+		"name": "gem",
 		"longDescription": "Gem1 Long Description",
 		"shortDescription": "Gem1 Short Description",
         "acquirable": true,
@@ -1459,7 +1459,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "safe1",
+        "location": "safe",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1467,7 +1467,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "hearth1",
+		"name": "cooking hearth",
 		"longDescription": "Hearth1 Long Description",
 		"shortDescription": "Hearth1 Short Description",
         "acquirable": false,
@@ -1503,7 +1503,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "helmet1",
+		"name": "helmet",
 		"longDescription": "Helmet1 Long Description",
 		"shortDescription": "Helmet1 Short Description",
         "acquirable": true,
@@ -1531,7 +1531,7 @@
 		"protectionPoints": 5,        
 		"weight": 30,
         "keyObject": "",
-        "location": "table6",
+        "location": "trestle table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1539,7 +1539,7 @@
         "unlocked": true
     }, {
 		"filename": "",
-		"name": "key1",
+		"name": "golden key",
 		"longDescription": "Key1 Long Description",
 		"shortDescription": "Key1 Short Description",
         "acquirable": true,
@@ -1567,7 +1567,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "trunk2",
+        "location": "cedar trunk",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1575,7 +1575,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "keyrung1",
+		"name": "key rung",
 		"longDescription": "Keyrung1 Long Description",
 		"shortDescription": "Keyrung1 Short Description",
         "acquirable": false,
@@ -1611,7 +1611,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "knife1",
+		"name": "kitchen knife",
 		"longDescription": "Knife1 Long Description",
 		"shortDescription": "Knife1 Short Description",
         "acquirable": true,
@@ -1639,7 +1639,7 @@
 		"protectionPoints": 0,        
 		"weight": 10,
         "keyObject": "",
-        "location": "table2",
+        "location": "kitchen table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1647,7 +1647,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "lantern1",
+		"name": "broken lantern",
 		"longDescription": "Lantern1 Long Description",
 		"shortDescription": "Lantern1 Short Description",
         "acquirable": true,
@@ -1674,8 +1674,8 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 15,
-        "keyObject": "matches1",
-        "location": "table4",
+        "keyObject": "matches",
+        "location": "high table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1683,7 +1683,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "lantern2",
+		"name": "brass lantern",
 		"longDescription": "Lantern2 Long Description",
 		"shortDescription": "Lantern2 Short Description",
         "acquirable": true,
@@ -1710,8 +1710,8 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 15,
-        "keyObject": "matches1",
-        "location": "table5",
+        "keyObject": "matches",
+        "location": "round table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1719,7 +1719,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "lever1",
+		"name": "wooden lever",
 		"longDescription": "Lever1 Long Description",
 		"shortDescription": "Lever1 Short Description",
         "acquirable": false,
@@ -1747,7 +1747,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "ct",
-        "location": "shelf3",
+        "location": "wooden shelves",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1755,7 +1755,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "lever2",
+		"name": "iron lever",
 		"longDescription": "Lever2 Long Description",
 		"shortDescription": "Lever2 Short Description",
         "acquirable": false,
@@ -1791,7 +1791,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "lockpick1",
+		"name": "lockpick",
 		"longDescription": "Lockpick1 Long Description",
 		"shortDescription": "Lockpick1 Short Description",
         "acquirable": true,
@@ -1819,7 +1819,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "shelf1",
+        "location": "metal shelves",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1827,7 +1827,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "matches1",
+		"name": "matches",
 		"longDescription": "Matches1 Long Description",
 		"shortDescription": "Matches1 Short Description",
         "acquirable": true,
@@ -1835,7 +1835,7 @@
         "edible": false,
         "equippable": false,
         "layable": false,
-        "lightable": true,
+        "lightable": false,
         "lockable": false,
         "pullable": false,
         "pushable": false,
@@ -1855,7 +1855,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "table2",
+        "location": "kitchen table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1863,7 +1863,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "mattress1",
+		"name": "mattress",
 		"longDescription": "Mattress1 Long Description",
 		"shortDescription": "Mattress1 Short Description",
         "acquirable": false,
@@ -1899,7 +1899,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "mushrooms1",
+		"name": "mushrooms",
 		"longDescription": "Mushrooms1 Long Description",
 		"shortDescription": "Mushrooms1 Short Description",
         "acquirable": true,
@@ -1927,7 +1927,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "shelf1",
+        "location": "metal shelves",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1935,7 +1935,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "note1",
+		"name": "note",
 		"longDescription": "Note1 Long Description",
 		"shortDescription": "Note1 Short Description",
         "acquirable": true,
@@ -1963,7 +1963,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "painting1",
+        "location": "portrait",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -1971,7 +1971,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "painting1",
+		"name": "portrait",
 		"longDescription": "Painting1 Long Description",
 		"shortDescription": "Painting1 Short Description",
         "acquirable": false,
@@ -2007,7 +2007,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "painting2",
+		"name": "painting",
 		"longDescription": "Painting2 Long Description",
 		"shortDescription": "Painting2 Short Description",
         "acquirable": false,
@@ -2043,7 +2043,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "ring1",
+		"name": "magical ring",
 		"longDescription": "Ring1 Long Description",
 		"shortDescription": "Ring1 Short Description",
         "acquirable": true,
@@ -2071,7 +2071,7 @@
 		"protectionPoints": 0,        
 		"weight": 1,
         "keyObject": "",
-        "location": "altar1",
+        "location": "altar",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -2079,7 +2079,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "rocks1",
+		"name": "shale rocks",
 		"longDescription": "Rocks1 Long Description",
 		"shortDescription": "Rocks1 Short Description",
         "acquirable": true,
@@ -2115,7 +2115,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "rocks2",
+		"name": "slate rocks",
 		"longDescription": "Rocks2 Long Description",
 		"shortDescription": "Rocks2 Short Description",
         "acquirable": true,
@@ -2151,7 +2151,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "rug1",
+		"name": "turkish rug",
 		"longDescription": "Rug1 Long Description",
 		"shortDescription": "Rug1 Short Description",
         "acquirable": false,
@@ -2187,7 +2187,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "rug2",
+		"name": "wool rug",
 		"longDescription": "Rug2 Long Description",
 		"shortDescription": "Rug2 Short Description",
         "acquirable": false,
@@ -2223,7 +2223,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "runes1",
+		"name": "slate of runes",
 		"longDescription": "Runes1 Long Description",
 		"shortDescription": "Runes1 Short Description",
         "acquirable": false,
@@ -2259,7 +2259,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "safe1",
+		"name": "safe",
 		"longDescription": "Safe1 Long Description",
 		"shortDescription": "Safe1 Short Description",
         "acquirable": false,
@@ -2286,7 +2286,7 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 1000,
-        "keyObject": "note1",
+        "keyObject": "lock",
         "location": "bd",
         "visible": true,
         "lighted": false,
@@ -2295,7 +2295,7 @@
         "unlocked": false
 	}, {
 		"filename": "",
-		"name": "scroll1",
+		"name": "scroll",
 		"longDescription": "Scroll1 Long Description",
 		"shortDescription": "Scroll1 Short Description",
         "acquirable": true,
@@ -2323,7 +2323,7 @@
 		"protectionPoints": 0,        
 		"weight": 5,
         "keyObject": "",
-        "location": "desk1",
+        "location": "desk",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -2331,7 +2331,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "shelf1",
+		"name": "metal shelves",
 		"longDescription": "Shelf1 Long Description",
 		"shortDescription": "Shelf1 Short Description",
         "acquirable": false,
@@ -2367,7 +2367,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "shelf2",
+		"name": "corner shelves",
 		"longDescription": "Shelf2 Long Description",
 		"shortDescription": "Shelf2 Short Description",
         "acquirable": false,
@@ -2403,7 +2403,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "shelf3",
+		"name": "wooden shelves",
 		"longDescription": "Shelf3 Long Description",
 		"shortDescription": "Shelf3 Short Description",
         "acquirable": false,
@@ -2439,7 +2439,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "sign1",
+		"name": "sign",
 		"longDescription": "Sign1 Long Description",
 		"shortDescription": "Sign1 Short Description",
         "acquirable": false,
@@ -2475,7 +2475,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "stool1",
+		"name": "bar stool",
 		"longDescription": "Stool1 Long Description",
 		"shortDescription": "Stool1 Short Description",
         "acquirable": false,
@@ -2511,7 +2511,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "stool2",
+		"name": "milking stool",
 		"longDescription": "Stool2 Long Description",
 		"shortDescription": "Stool2 Short Description",
         "acquirable": false,
@@ -2547,7 +2547,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "sword1",
+		"name": "machete",
 		"longDescription": "Sword1 Long Description",
 		"shortDescription": "Sword1 Short Description",
         "acquirable": true,
@@ -2583,7 +2583,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "sword2",
+		"name": "sabre",
 		"longDescription": "Sword2 Long Description",
 		"shortDescription": "Sword2 Short Description",
         "acquirable": true,
@@ -2611,7 +2611,7 @@
 		"protectionPoints": 0,        
 		"weight": 30,
         "keyObject": "",
-        "location": "table6",
+        "location": "trestle table",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -2619,7 +2619,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "table1",
+		"name": "gateleg table",
 		"longDescription": "Table1 Long Description",
 		"shortDescription": "Table1 Short Description",
         "acquirable": false,
@@ -2655,7 +2655,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "table2",
+		"name": "kitchen table",
 		"longDescription": "Table2 Long Description",
 		"shortDescription": "Table2 Short Description",
         "acquirable": false,
@@ -2691,7 +2691,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "table3",
+		"name": "dining table",
 		"longDescription": "Table3 Long Description",
 		"shortDescription": "Table3 Short Description",
         "acquirable": false,
@@ -2727,7 +2727,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "table4",
+		"name": "high table",
 		"longDescription": "Table4 Long Description",
 		"shortDescription": "Table4 Short Description",
         "acquirable": false,
@@ -2763,7 +2763,7 @@
         "unlocked": true
     }, {
 		"filename": "",
-		"name": "table5",
+		"name": "round table",
 		"longDescription": "Table5 Long Description",
 		"shortDescription": "Table5 Short Description",
         "acquirable": false,
@@ -2799,7 +2799,7 @@
         "unlocked": true
     }, {
 		"filename": "",
-		"name": "table6",
+		"name": "trestle table",
 		"longDescription": "Table6 Long Description",
 		"shortDescription": "Table6 Short Description",
         "acquirable": false,
@@ -2835,7 +2835,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "tapestries1",
+		"name": "tapestries",
 		"longDescription": "Tapestries1 Long Description",
 		"shortDescription": "Tapestries1 Short Description",
         "acquirable": false,
@@ -2871,7 +2871,7 @@
         "unlocked": true
     }, {
 		"filename": "",
-		"name": "tools1",
+		"name": "tools",
 		"longDescription": "Tools1 Long Description",
 		"shortDescription": "Tools1 Short Description",
         "acquirable": false,
@@ -2907,7 +2907,7 @@
         "unlocked": true  
     }, {
 		"filename": "",
-		"name": "trapdoor1",
+		"name": "trapdoor",
 		"longDescription": "Trapdoor1 Long Description",
 		"shortDescription": "Trapdoor1 Short Description",
         "acquirable": false,
@@ -2935,7 +2935,7 @@
 		"protectionPoints": 0,        
 		"weight": 10,
         "keyObject": "tr",
-        "location": "rug1",
+        "location": "turkish rug",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -2943,7 +2943,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "treasure1",
+		"name": "treasure",
 		"longDescription": "Treasure1 Long Description",
 		"shortDescription": "Treasure1 Short Description",
         "acquirable": true,
@@ -2971,7 +2971,7 @@
 		"protectionPoints": 0,        
 		"weight": 100,
         "keyObject": "",
-        "location": "trunk1",
+        "location": "iron trunk",
         "visible": false,
         "lighted": false,
         "equipped": false,
@@ -2979,7 +2979,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "tree1",
+		"name": "tree",
 		"longDescription": "Tree1 Long Description",
 		"shortDescription": "Tree1 Short Description",
         "acquirable": false,
@@ -3015,7 +3015,7 @@
         "unlocked": true
 	}, {
 		"filename": "",
-		"name": "trunk1",
+		"name": "iron trunk",
 		"longDescription": "Trunk1 Long Description",
 		"shortDescription": "Trunk1 Short Description",
         "acquirable": false,
@@ -3042,7 +3042,7 @@
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 50,
-        "keyObject": "lockpick1",
+        "keyObject": "lockpick",
         "location": "tr",
         "visible": true,
         "lighted": false,
@@ -3051,7 +3051,7 @@
         "unlocked": false
 	}, {
 		"filename": "",
-		"name": "trunk2",
+		"name": "cedar trunk",
 		"longDescription": "Trunk2 Long Description",
 		"shortDescription": "Trunk2 Short Description",
         "acquirable": false,
@@ -3087,7 +3087,7 @@
         "unlocked": true        
 	}, {
 		"filename": "",
-		"name": "warhammer1",
+		"name": "warhammer",
 		"longDescription": "Warhammer1 Long Description",
 		"shortDescription": "Warhamer1 Short Description",
         "acquirable": true,
@@ -3115,7 +3115,7 @@
 		"protectionPoints": 0,        
 		"weight": 50,
         "keyObject": "",
-        "location": "table6",
+        "location": "trestle table",
         "visible": false,
         "lighted": false,
         "equipped": false,

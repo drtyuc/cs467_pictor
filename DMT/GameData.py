@@ -28,7 +28,7 @@ import json
 
 
 PRIMITIVE_FILENAME = 'data/primitives.json'
-DEPENDENCY_FILENAME = 'data/dependency_example.json'
+DEPENDENCY_FILENAME = 'data/dependency.json'
 
 #Used to load class instance using a dedicated json file
 class Filename():
@@ -75,16 +75,11 @@ class DataManager():
         for i in self.__primitives['ghosts']:
 			self.__ghosts.append(Data(i))
 			
-    #----------------------- Print commands -----------------------
-    def printCommands(self):
+    #-------------------- Dependencies---------------------------
+    def getDependencies(self):
+        return json.loads(open(DEPENDENCY_FILENAME).read())
 
-        self.commands = json.loads(open(DEPENDENCY_FILENAME).read())
-           
-           
-        for i in self.commands['commands']:
-            print i['tuple']
 	
-			
 	#------------------ Player Methods ---------------------------		
     def getPlayerHealth(self):
 		return self.__players[0].health
@@ -175,9 +170,14 @@ class DataManager():
 		self.__rooms[index].discovered = status
 	
     def isRoomLighted(self):
-		location = self.getPlayerLocation()
-		index = self.getRoomIndex(location)
-		return self.__rooms[index].lighted
+        location = self.getPlayerLocation()
+        index = self.getRoomIndex(location)
+        objectlighted = False
+        for i in self.__objects:
+            if i.lighted:
+                if (self.isObjectInInventory(i.name) or self.isObjectInRoom(i.name)):
+                    objectlighted = True   
+        return (self.__rooms[index].lighted or objectlighted)
 	
     def setRoomLighted(self, status):
 		location = self.getPlayerLocation()
@@ -313,6 +313,11 @@ class DataManager():
         
     def isObjectEquippable(self, name):
         index = self.getObjectIndex(name)
+        if self.__objects[index].wieldable:
+            for i in self.getInventoryObjects():
+                idx = self.getObjectIndex(i)
+                if self.__objects[index].wieldable == True:
+                    return False
         return self.__objects[index].equippable
 	
     def isObjectEquipped(self, name):
@@ -454,6 +459,10 @@ class DataManager():
     def setObjectRead(self, name, status):
 		index = self.getObjectIndex(name)
 		self.__objects[index].read = status
+
+    def setObjectKeyObject(self, name, value):
+		index = self.getObjectIndex(name)
+		self.__objects[index].keyObject	= value
 
     def getObjectNames(self):
         objects = []

@@ -4,11 +4,10 @@ import unittest
 dm = DataManager()
 dm.loadNewGame()
 
-
 class Player(unittest.TestCase):
     #P1  
     def test_adjustPlayerHealth(self):
-        dm.adjustPlayerHealth('apple1')
+        dm.adjustPlayerHealth('green apple')
         self.assertEqual(dm.getPlayerHealth(), 115, "#P1: FAILED adjustPlayerHealth")
     #P2
     def test_isPlayerVisible(self):
@@ -45,40 +44,39 @@ class Inventory(unittest.TestCase):
         self.assertEqual(dm.getInventoryCapacity(), 150,  "1#I1  FAILED InventoryCapacity")
     #I2
     def test_addInventoryObject(self):
-        olist = ['armor1', 'sword1', 'bottle1']
+        olist = ['armor', 'machete', 'bottle of water']
         dm.clearInventoryObjects()
-        dm.addInventoryObject("armor1")
-        dm.addInventoryObject("sword1")
-        dm.addInventoryObject("bottle1")
+        dm.addInventoryObject("armor")
+        dm.addInventoryObject("machete")
+        dm.addInventoryObject("bottle of water")
         self.assertItemsEqual(dm.getInventoryObjects(), olist,  "#I2  FAILED addInventoryObject")
-        self.assertEqual(dm.getObjectLocation('bottle1'), 'inventory', "#I2   FAILED addInventoryObject")
+        self.assertEqual(dm.getObjectLocation('bottle of water'), 'inventory', "#I2   FAILED addInventoryObject")
     #I3
     def test_removeInventoryObject(self):
-        olist = ['armor1', 'bottle1']
+        olist = ['armor', 'bottle of water']
         dm.clearInventoryObjects()
-        dm.addInventoryObject("armor1")
-        dm.addInventoryObject("sword1")
-        dm.addInventoryObject("bottle1")
-        dm.removeInventoryObject("sword1")
+        dm.addInventoryObject("armor")
+        dm.addInventoryObject("machete")
+        dm.addInventoryObject("bottle of water")
+        dm.removeInventoryObject("machete")
         self.assertItemsEqual(dm.getInventoryObjects(), olist,  "#I3  FAILED removeInventoryObject")
       
     #I4
     def test_getInventoryWeight(self):
         dm.clearInventoryObjects()       
-        dm.addInventoryObject("armor1")
-        dm.addInventoryObject("apple1")
+        dm.addInventoryObject("armor")
+        dm.addInventoryObject("green apple")
         self.assertEqual(dm.getInventoryWeight(),  85, "#I4  FAILED getInventoryWeight")
     #I5
     def test_isSpaceInInventory1(self):
         dm.clearInventoryObjects()
-        dm.addInventoryObject("armor1")
-        self.assertTrue(dm.isSpaceInInventory("apple1"), "#I5  FAILED  isSpaceInInventory")
+        dm.addInventoryObject("armor")
+        self.assertTrue(dm.isSpaceInInventory("green apple"), "#I5  FAILED  isSpaceInInventory")
     #I6
     def test_isSpaceInInventory2(self):
         dm.clearInventoryObjects() 
-        dm.addInventoryObject("armor1")
-        self.assertFalse(dm.isSpaceInInventory("safe1"), "#I6  FAILED  isSpaceInInventory")
- 
+        dm.addInventoryObject("armor")
+        self.assertFalse(dm.isSpaceInInventory("safe"), "#I6  FAILED  isSpaceInInventory")
  
  
 class Rooms(unittest.TestCase):  
@@ -105,10 +103,24 @@ class Rooms(unittest.TestCase):
         dm.setPlayerLocation('kt')
         dm.setRoomDiscovered(False)
         self.assertFalse(dm.isRoomDiscovered(), "#R5  Failed  setRoomDiscovered")
+   
     #R6
     def test_isRoomLighted(self):
         dm.setPlayerLocation('kt')
-        dm.setRoomLighted(True)
+        self.assertTrue(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
+        dm.setPlayerLocation('bd')
+        self.assertFalse(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
+        dm.addInventoryObject('brass lantern')
+        self.assertFalse(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
+        dm.setObjectLighted('brass lantern', True)
+        self.assertTrue(dm.isObjectLighted('brass lantern'), "#R6  Failed  isRoomLighted")
+        self.assertTrue(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
+        dm.removeInventoryObject('brass lantern')
+        dm.addRoomObject('brass lantern')
+        self.assertTrue(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
+        dm.setPlayerLocation('jl')
+        self.assertFalse(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
+        dm.setPlayerLocation('bd')
         self.assertTrue(dm.isRoomLighted(), "#R6  Failed  isRoomLighted")
     #R7
     def test_setRoomLighted(self):
@@ -205,7 +217,7 @@ class Exits(unittest.TestCase):
     def test_isExitKeyInInventory(self):
         dm.clearInventoryObjects()
         self.assertFalse(dm.isExitKeyInInventory('ce1'), "#E9  Failed  isExitKeyInInventory")
-        dm.addInventoryObject('key1')
+        dm.addInventoryObject('golden key')
         self.assertTrue(dm.isExitKeyInInventory('ce1'), "#E9  Failed  isExitKeyInInventory")
         self.assertTrue(dm.isExitKeyInInventory('ce2'), "#E9  Failed  isExitKeyInInventory")        
         
@@ -215,101 +227,111 @@ class Objects(unittest.TestCase):
     #O1
     def test_isObjectInInventory(self):
         dm.clearInventoryObjects()
-        dm.addInventoryObject('apple1')
-        self.assertTrue(dm.isObjectInInventory('apple1'), "#O1 Failed  isObjectInInventory")
-        self.assertFalse(dm.isObjectInInventory('armor1'), "#O1 Failed  isObjectInInventory")
+        dm.addInventoryObject('green apple')
+        self.assertTrue(dm.isObjectInInventory('green apple'), "#O1 Failed  isObjectInInventory")
+        self.assertFalse(dm.isObjectInInventory('armor'), "#O1 Failed  isObjectInInventory")
     #O2
     def test_isObjectInRoom(self):
         dm.setPlayerLocation('ap')
         dm.clearRoomObjects()
-        dm.addRoomObject('apple1')
-        self.assertTrue(dm.isObjectInRoom('apple1'), "#O2 Failed  isObjectInRoom")
-        self.assertFalse(dm.isObjectInRoom('armor1'), "#O2 Failed  isObjectInRoom")
-    #O3
-    def test_isObjectKeyInInventory(self):
-        dm.clearInventoryObjects()
-        self.assertFalse(dm.isObjectKeyInInventory('safe1'), "#O3  Failed  isObjectKeyInInventory")
-        dm.addInventoryObject('note1')
-        self.assertTrue(dm.isObjectKeyInInventory('safe1'), "#O3  Failed  isObjectKeyInInventory")
-        self.assertTrue(dm.isObjectKeyInInventory('apple1'), "#O3  Failed  isObjectKeyInInventory")
+        dm.addRoomObject('green apple')
+        self.assertTrue(dm.isObjectInRoom('green apple'), "#O2 Failed  isObjectInRoom")
+        self.assertFalse(dm.isObjectInRoom('armor'), "#O2 Failed  isObjectInRoom")
+ 
     #O4
     def test_ObjectsVisible(self):
-        self.assertFalse(dm.isObjectVisible('lockpick1'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('mushrooms1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('shelf1'), [], "#O4  Failed  ObjectsVisible")
-        dm.setOnObjectsVisible('shelf1', True)
-        self.assertTrue(dm.isObjectVisible('lockpick1'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('mushrooms1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('shelf1'), ['lockpick1', 'mushrooms1'], "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('scroll1'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('bottle2'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('bottleopener1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('desk1'), [], "#O4  Failed  ObjectsVisible")
-        dm.setOnObjectsVisible('desk1', True)
-        self.assertFalse(dm.isObjectVisible('scroll1'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('bottle2'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('bottleopener1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('desk1'), ['bottle2', 'bottleopener1'], "#O4  Failed  ObjectsVisible")
-        dm.setInsideObjectsVisible('desk1', True)
-        self.assertTrue(dm.isObjectVisible('scroll1'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('bottle2'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('bottleopener1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getInsideObjectsVisible('desk1'), ['scroll1'], "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('lever1'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('lockpick'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('mushrooms'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getOnObjectsVisible('metal shelves'), [], "#O4  Failed  ObjectsVisible")
+        dm.setOnObjectsVisible('metal shelves', True)
+        self.assertTrue(dm.isObjectVisible('lockpick'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('mushrooms'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getOnObjectsVisible('metal shelves'), ['lockpick', 'mushrooms'], "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('scroll'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('bottle of gatorade'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('bottleopener'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getOnObjectsVisible('desk'), [], "#O4  Failed  ObjectsVisible")
+        dm.setOnObjectsVisible('desk', True)
+        self.assertFalse(dm.isObjectVisible('scroll'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('bottle of gatorade'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('bottleopener'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getOnObjectsVisible('desk'), ['bottle of gatorade', 'bottleopener'], "#O4  Failed  ObjectsVisible")
+        dm.setInsideObjectsVisible('desk', True)
+        self.assertTrue(dm.isObjectVisible('scroll'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('bottle of gatorade'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('bottleopener'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getInsideObjectsVisible('desk'), ['scroll'], "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('wooden lever'), "#O4  Failed  ObjectsVisible")
         self.assertItemsEqual(dm.getBehindObjectsVisible(''), [], "#O4  Failed  ObjectsVisible")
-        dm.setBehindObjectsVisible('shelf3', True)
-        self.assertTrue(dm.isObjectVisible('lever1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getBehindObjectsVisible('shelf3'), ['lever1'], "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('book2'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('bones3'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getUnderObjectsVisible('mattress1'), [], "#O4  Failed  ObjectsVisible")
-        dm.setUnderObjectsVisible('mattress1', True)
-        self.assertTrue(dm.isObjectVisible('book2'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('bones3'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getUnderObjectsVisible('mattress1'), ['book2'], "#O4  Failed  ObjectsVisible")
-        dm.setOnObjectsVisible('mattress1', True)
-        self.assertTrue(dm.isObjectVisible('book2'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('bones3'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('mattress1'), ['bones3'], "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('axe1'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('ring1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getUnderObjectsVisible('altar1'), [], "#O4  Failed  ObjectsVisible")
-        dm.setAboveObjectsVisible('altar1', True)
-        self.assertTrue(dm.isObjectVisible('axe1'), "#O4  Failed  ObjectsVisible")
-        self.assertFalse(dm.isObjectVisible('ring1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getAboveObjectsVisible('altar1'), ['axe1'], "#O4  Failed  ObjectsVisible")
-        dm.setOnObjectsVisible('altar1', True)
-        self.assertTrue(dm.isObjectVisible('axe1'), "#O4  Failed  ObjectsVisible")
-        self.assertTrue(dm.isObjectVisible('ring1'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('altar1'), ['ring1'], "#O4  Failed  ObjectsVisible")
+        dm.setBehindObjectsVisible('wooden shelves', True)
+        self.assertTrue(dm.isObjectVisible('wooden lever'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getBehindObjectsVisible('wooden shelves'), ['wooden lever'], "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('book of locks'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('human skeleton'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getUnderObjectsVisible('mattress'), [], "#O4  Failed  ObjectsVisible")
+        dm.setUnderObjectsVisible('mattress', True)
+        self.assertTrue(dm.isObjectVisible('book of locks'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('human skeleton'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getUnderObjectsVisible('mattress'), ['book of locks'], "#O4  Failed  ObjectsVisible")
+        dm.setOnObjectsVisible('mattress', True)
+        self.assertTrue(dm.isObjectVisible('book of locks'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('human skeleton'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getOnObjectsVisible('mattress'), ['human skeleton'], "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('axe'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('magical ring'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getUnderObjectsVisible('altar'), [], "#O4  Failed  ObjectsVisible")
+        dm.setAboveObjectsVisible('altar', True)
+        self.assertTrue(dm.isObjectVisible('axe'), "#O4  Failed  ObjectsVisible")
+        self.assertFalse(dm.isObjectVisible('magical ring'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getAboveObjectsVisible('altar'), ['axe'], "#O4  Failed  ObjectsVisible")
+        dm.setOnObjectsVisible('altar', True)
+        self.assertTrue(dm.isObjectVisible('axe'), "#O4  Failed  ObjectsVisible")
+        self.assertTrue(dm.isObjectVisible('magical ring'), "#O4  Failed  ObjectsVisible")
+        self.assertItemsEqual(dm.getOnObjectsVisible('altar'), ['magical ring'], "#O4  Failed  ObjectsVisible")
     #O5
     def test_setObjectUnlocked(self):
-        self.assertFalse(dm.isObjectUnlocked('safe1'), "#O5  Failed ObjectUnlocked")
-        dm.setObjectUnlocked('safe1', True)
-        self.assertTrue(dm.isObjectUnlocked('safe1'), "#O5  Failed ObjectUnlocked")
+        self.assertFalse(dm.isObjectUnlocked('safe'), "#O5  Failed ObjectUnlocked")
+        dm.setObjectUnlocked('safe', True)
+        self.assertTrue(dm.isObjectUnlocked('safe'), "#O5  Failed ObjectUnlocked")
     #O6
     def test_changeLocation(self):
-        dm.changeLocation('lever1')
+        dm.changeLocation('wooden lever')
         self.assertEqual(dm.getPlayerLocation(), 'ct', "#O6  Failed changeLocation")
-        dm.changeLocation('lever2')
+        dm.changeLocation('iron lever')
         self.assertEqual(dm.getPlayerLocation(), 'bd', "#O6  Failed changeLocation") 
-        dm.changeLocation('trapdoor1')
+        dm.changeLocation('trapdoor')
         self.assertEqual(dm.getPlayerLocation(), 'tr', "#O6  Failed changeLocation")     
     #O7 
     def test_setObjectRead(self):
-        self.assertFalse(dm.isObjectRead('note1'), "#07  Failed ObjectRead")
-        dm.setObjectRead('note1', True)
-        self.assertTrue(dm.isObjectRead('note1'), "#07  Failed ObjectRead")
-    #O7 
-    def test_setObjectEquipped(self):
-        self.assertFalse(dm.isObjectEquipped('armor1'), "#07  Failed ObjectEquipped")
-        dm.setObjectEquipped('armor1', True)
-        self.assertTrue(dm.isObjectEquipped('armor1'), "#07  Failed ObjectEquipped")     
+        self.assertFalse(dm.isObjectRead('note'), "#07  Failed ObjectRead")
+        dm.setObjectRead('note', True)
+        self.assertTrue(dm.isObjectRead('note'), "#07  Failed ObjectRead")
     #O8 
+    def test_setObjectEquipped(self):
+        self.assertFalse(dm.isObjectEquipped('armor'), "#08  Failed ObjectEquipped")
+        dm.setObjectEquipped('armor', True)
+        self.assertTrue(dm.isObjectEquipped('armor'), "#08  Failed ObjectEquipped")     
+    #O9 
     def test_setObjectLighted(self):
-        self.assertFalse(dm.isObjectLighted('lantern1'), "#08  Failed ObjectLighted")
-        dm.setObjectLighted('lantern1', True)
-        self.assertTrue(dm.isObjectLighted('lantern1'), "#08  Failed ObjectLighted")         
-       
+        self.assertFalse(dm.isObjectLighted('broken lantern'), "#09  Failed ObjectLighted")
+        dm.setObjectLighted('broken lantern', True)
+        self.assertTrue(dm.isObjectLighted('broken lantern'), "#09  Failed ObjectLighted")       
+    #O10
+    def test_isObjectEquippable(self):  
+        dm.clearInventoryObjects() 
+        self.assertFalse(dm.isObjectEquippable('green apple'),  "#O10  Failed isObjectEquippable")
+        self.assertTrue(dm.isObjectEquippable('axe'),  "#O10  Failed isObjectEquippable")
+        self.assertTrue(dm.isObjectEquippable('machete'),  "#O10  Failed isObjectEquippable")
+        dm.addInventoryObject("axe")
+        self.assertFalse(dm.isObjectEquippable('machete'),  "#O10  Failed isObjectEquippable")
+        dm.removeInventoryObject("axe")
+        self.assertTrue(dm.isObjectEquippable('machete'),  "#O10  Failed isObjectEquippable")
+
+    #O11
+    def test_setObjectKeyObject(self):
+        self.assertEqual(dm.getObjectKeyObject('safe'), 'lock',  "#O11  Failed setObjectKeyObject")
+        dm.setObjectKeyObject('safe', '')
+        self.assertEqual(dm.getObjectKeyObject('safe'), '',  "#O11  Failed setObjectKeyObject")
+
 if __name__ == '__main__':
 	unittest.main()
