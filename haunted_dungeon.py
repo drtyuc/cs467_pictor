@@ -33,7 +33,7 @@ class HauntedDungeon():
 
 
     def newGame(self):
-        """ From Jerry's example """
+	# TODO(DL): add working new game functionality
         self.dm = DataManager()
         self.dm.loadNewGame()
         self.dep = self.dm.getDependencies()
@@ -43,6 +43,7 @@ class HauntedDungeon():
 
 
     def loadGame(self):
+	# TODO(DL): add load game functionality
         return
 
     
