@@ -1,15 +1,30 @@
 #!/usr/bin/env python
-"""#####################################
-   
-    Haunted Dungeon Game
-
-    Team Pictor
-    Andrew Bagwell
-    Jerry Hayes
-    Daniel Loughlin
-
-    OSU CS 467 Winter 2017
-#####################################"""
+###############################################
+#   
+#  Haunted Dungeon Game
+#
+#  By Team Pictor:
+#      Andrew Bagwell
+#      Jerry Hayes
+#      Daniel Loughlin
+#
+#  OSU CS 467 Winter 2017
+#
+#  FILENAME : haunted_dungeon.py
+#
+#  DESCRIPTION : 
+#      This is the main game file.
+#
+#  NOTES :
+# 
+#
+#  AUTHOR : Daniel Loughlin START DATE : 02/05/2017
+#
+#  CHANGES :  Initial Version  
+# 
+#  VERSION     DATE      WHO        DETAIL
+#    0.1    02/04/2017   DL    Initial Version
+###############################################
 
 from DMT.GameData import DataManager
 
