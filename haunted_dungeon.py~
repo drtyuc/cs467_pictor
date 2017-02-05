@@ -22,8 +22,8 @@ class HauntedDungeon():
         self.dm = DataManager()
         self.dm.loadNewGame()
         self.dep = self.dm.getDependencies()
-        for i in self.dep['commands']:
-            print(i['tuple'])
+        for self.i in self.dep['commands']:
+            print(self.i['tuple'])
         return
 
 
@@ -32,20 +32,20 @@ class HauntedDungeon():
 
     
     def showMenu(self):
-        choice = "" 
-        while (choice != "1") and (choice != "2") and (choice != "3"):
+        self.choice = "" 
+        while (self.choice != "1") and (self.choice != "2") and (self.choice != "3"):
             print "HAUNTED DUNGEON!!"
             print
             print "1) Start A New Game"
             print "2) Load A New Game"
             print "3) Exit"
             print
-            choice = str(raw_input("Enter your choice> "))
-        if choice == "1":
+            self.choice = str(raw_input("Enter your choice> "))
+        if self.choice == "1":
        	    self.newGame()
-        if choice == "2":
+        if self.choice == "2":
             self.loadGame()
-        if choice == "3":
+        if self.choice == "3":
             exit() 
         return
 
@@ -53,6 +53,8 @@ class HauntedDungeon():
     def runit(self):
 	self.showMenu()
 
+
+    def __init__(self):
 
 
 """ MAIN """
