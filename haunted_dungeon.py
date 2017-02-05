@@ -34,6 +34,7 @@ class HauntedDungeon():
 
     def newGame(self):
 	# TODO(DL): add working new game functionality
+	# From Jerry's example
         self.dm = DataManager()
         self.dm.loadNewGame()
         self.dep = self.dm.getDependencies()
@@ -61,8 +62,6 @@ class HauntedDungeon():
        	    self.newGame()
         if choice == "2":
             self.loadGame()
-        if choice == "3":
-            exit() 
         return
 
 
