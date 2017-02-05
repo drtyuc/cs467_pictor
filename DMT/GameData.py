@@ -8,27 +8,26 @@
 #      of the class instances.
 #
 #  NOTES :
-#      This file has beed tested for basic functionally,
-#      however rigorous unit testing remains to be done. 
-#      Missing 'LoadSavedGame' and SaveGame' methods
-#  
-#  CHANGES IN LATEST RELEASE
+#      This file has been tested for basic functionally
+#      using attribute accuracy using testDataMethods.py     
+#      and testDataAttributes.py
 # 
 #
 #  AUTHOR : Jerry Hayes        START DATE : 01/27/2017
 #
-#  CHANGES :  Updated methods according to methods identified
-#             in 'State Dependency Details' spreadsheet.  
+#  CHANGES :  Added loadSavedGame and saveGame methods.  
 # 
 #  VERSION     DATE      WHO        DETAIL
 #    0.1    01/27/2017   JH    Initial Beta Version
 #    0.2    02/02/2017   JH    
+#    0.3    02/04/2017   JH
 ########################################################
 import json
-
+import os.path
 
 PRIMITIVE_FILENAME = 'data/primitives.json'
 DEPENDENCY_FILENAME = 'data/dependency.json'
+SAVED_GAME_DIRECTORY = 'savedgames/'
 
 #Used to load class instance using a dedicated json file
 class Filename():
@@ -42,20 +41,35 @@ class Data():
 
 #Main class used to manage game data
 class DataManager():
-
+    
     def __init__(self):
-		self.__players = []
-		self.__bags = []
-		self.__rooms = []
-		self.__exits = []
-		self.__objects = []
-		self.__ghosts = []
+        self.__players = []
+        self.__bags = []
+        self.__rooms = []
+        self.__exits = []
+        self.__objects = []
+        self.__ghosts = []
+        self.__help = []
+        self.__dependencies = []
 	
-	#----------------------- Load New Game -----------------------
+	#--------------------- Load New Game -----------------------
     def loadNewGame(self):
+        self.loadHelper(PRIMITIVE_FILENAME)
         
+    #-------------------- Load Saved Game -----------------------
+    def loadSavedGame(self):
+        response = raw_input("Please enter a filename: ")
+        filename = SAVED_GAME_DIRECTORY + response
         
-        self.__primitives = json.loads(open(PRIMITIVE_FILENAME).read())
+        if os.path.isfile(filename):
+            self.loadHelper(filename)
+        else:
+            print("File not found!")
+        
+    #----------------------- Load Helper -------------------------    
+    def loadHelper(self, filename):
+            
+        self.__primitives = json.loads(open(filename).read())
            
         for i in self.__primitives['players']:
             self.__players.append(Data(i))		
@@ -74,10 +88,47 @@ class DataManager():
         
         for i in self.__primitives['ghosts']:
 			self.__ghosts.append(Data(i))
-			
+            
+        for i in self.__primitives['help']:
+            self.__help.append(Data(i))
+            
+        self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
+
+    #----------------------- Save Game -----------------------
+    def saveGame(self):
+        s = {}
+        s["players"] = []
+        s["bags"] = []
+        s["rooms"] = []
+        s["exits"] = []
+        s["objects"] = []
+        s["ghosts"] = []
+        s["help"] = []
+
+        for i in self.__players:
+	        s["players"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__bags:
+	        s["bags"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__rooms:
+	        s["rooms"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__exits:
+	        s["exits"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__objects:
+	        s["objects"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__ghosts:
+	        s["ghosts"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__help:
+	        s["help"].append(json.loads(json.dumps(i.__dict__)))
+
+        response = raw_input("Please enter a filename: ")
+        filename = SAVED_GAME_DIRECTORY + response
+
+        with open(filename,'w') as outfile:
+	        json.dump(s, outfile, indent=4)		
+            
     #-------------------- Dependencies---------------------------
     def getDependencies(self):
-        return json.loads(open(DEPENDENCY_FILENAME).read())
+        return self.__dependencies
 
 	
 	#------------------ Player Methods ---------------------------		
@@ -672,5 +723,39 @@ class DataManager():
 			index += 1
 		return -1
 
+#----------------- Miscellaneous Methods -------------------  
 
+    def getHelpVerbs(self):
+        verbs = []
+        for i in self.__help:
+            verbs.append(i.verb)
+        return verbs
+        
+    def getHelpDescriptions(self):
+        descriptions = []
+        for i in self.__help:
+            descriptions.append(i.description)
+        return descriptions
 
+    def getEquippedObjects(self):
+        objects = []
+        for i in self.getInventoryObjects():
+            index = self.getObjectIndex(i)
+            if self.__objects[index].equipped:
+                objects.append(i)
+        return objects
+    
+    def getCommandTuples(self):
+        commands = []
+        for i in self.__dependencies['commands']:
+            commands.append(i['tuple'])
+        return commands
+
+    def isCommandTuple(self, command):
+        for i in self.__dependencies['commands']:
+            if command == i['tuple']:
+                return True
+        return False
+   
+            
+    
