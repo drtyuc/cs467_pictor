@@ -759,6 +759,106 @@
 			"text": "Your health has increased!"
 		}]
 	}, {
+		"tuple": "equip armor",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "armor",
+			"expect": true,
+			"hint": "Armor is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "armor",
+			"expect": false,
+			"hint": "Armor is already equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "armor",
+			"state": true,
+			"text": "You are now wearing the armor"
+		}]
+	}, {
+		"tuple": "equip axe",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "axe",
+			"expect": true,
+			"hint": "Axe is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "axe",
+			"expect": false,
+			"hint": "Axe is already equipped"
+		}, {
+			"method": "isObjectEquippable()",
+			"object": "axe",
+			"expect": true,
+			"hint": "You already have a weapon equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "axe",
+			"state": true,
+			"text": "You are now armed with the axe"
+		}]
+	}, {
+		"tuple": "equip cloak",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "cloak",
+			"expect": true,
+			"hint": "Cloak is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "cloak",
+			"expect": false,
+			"hint": "Cloak is already equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "cloak",
+			"state": true,
+			"text": "You are now wearing the cloak"
+		}]
+	}, {
+		"tuple": "equip gem",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "gem",
+			"expect": true,
+			"hint": "Gem is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "gem",
+			"expect": false,
+			"hint": "Gem is already equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "gem",
+			"state": true,
+			"text": "The gem is now equipped"
+		}]
+	}, {
+		"tuple": "equip helmet",
+		"dependencies": [{
+			"method": "isObjectInInventory()",
+			"object": "helmet",
+			"expect": true,
+			"hint": "Helmet is not in your inventory"
+		}, {
+			"method": "isObjectEquipped()",
+			"object": "helmet",
+			"expect": false,
+			"hint": "Helmet is already equipped"
+		}],
+		"actions": [{
+			"method": "setObjectEquipped()",
+			"object": "helmet",
+			"state": true,
+			"text": "You are now wearing the helmet"
+		}]
+	}, {
 		"tuple": "equip kitchen knife",
 		"dependencies": [{
 			"method": "isObjectInInventory()",
@@ -872,6 +972,54 @@
 			"object": "warhammer",
 			"state": true,
 			"text": "You are now armed with the warhammer"
+		}]
+	}, {
+		"tuple": "go west",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "west",
+			"expect": true,
+			"hint": "There is no exit going west"
+		}, {
+			"method": "isExitVisible()",
+			"object": "west",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "west",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "west",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go east",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "east",
+			"expect": true,
+			"hint": "There is no exit going east"
+		}, {
+			"method": "isExitVisible()",
+			"object": "east",
+			"expect": true,
+			"hint": "The exit is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "east",
+			"expect": true,
+			"hint": "The exit is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "east",
+			"state": false,
+			"text": "You moved to another room"
 		}]
 	}, {
 		"tuple": "go south",
@@ -1014,6 +1162,726 @@
 		"actions": [{
 			"method": "movePlayer()",
 			"object": "north",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go bell archway",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "There is no bell archway"
+		}, {
+			"method": "isExitVisible()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "Bell archway is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "Bell archway is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "bell archway",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go corrugated steel door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "There is no corrugated steel door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "Corrugated steel door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "Corrugated steel door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "corrugated steel door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go creaking cell door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "There is no creaking cell door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "Creaking cell door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "Creaking cell door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "creaking cell door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go long dark tunnel",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "There is no long dark tunnel"
+		}, {
+			"method": "isExitVisible()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "Long dark tunnel is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "Long dark tunnel is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "long dark tunnel",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go monstrous archway",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "There is no monstrous archway"
+		}, {
+			"method": "isExitVisible()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "Monstrous archway is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "Monstrous archwary is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "monstrous archway",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go oblivion gate",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "There is no oblivion gate"
+		}, {
+			"method": "isExitVisible()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "Oblivion gate is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "Oblivion gate is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "oblivion gate",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go old wooden door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "There is no old wooden door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "Old wooden door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "Old wooden door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "old wooden door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go rolling shutter door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "There is no rolling shutter door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "Rolling shutter door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "Folling shutter door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "rolling shutter door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go rusted spiral staircase",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "There is no rusted spiral staircase"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "Rusted spiral staircase is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "Rusted spiral staircase is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "rusted spiral staircase",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go rusting iron door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "There is no rusting iron door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "Rusting iron door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "Rusting iron door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "rusting iron door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go smoky glazed doors",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "There are no smoky glazed doors"
+		}, {
+			"method": "isExitVisible()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "Smoky glazed doors are not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "Smoky glazed doors are locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "smoky glazed doors",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go solid metal door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "There is no solid metal door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "Solid metal door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "Solid metal door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "solid metal door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go splintered double doors",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "There are no splintered double doors"
+		}, {
+			"method": "isExitVisible()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "Splintered double doors are not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "Splintered double doors is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "splintered double doors",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go swinging door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "There is no swinging door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "Swinging door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "Swinging door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "swinging door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "go winder stairs",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "There are no winder stairs"
+		}, {
+			"method": "isExitVisible()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "Winder stairs are not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "Winder stairs are locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "winder stairs",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "bell archway",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "There is no bell archway"
+		}, {
+			"method": "isExitVisible()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "Bell archway is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "Bell archway is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "bell archway",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "corrugated steel door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "There is no corrugated steel door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "Corrugated steel door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "Corrugated steel door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "corrugated steel door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "creaking cell door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "There is no creaking cell door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "Creaking cell door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "Creaking cell door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "creaking cell door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "long dark tunnel",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "There is no long dark tunnel"
+		}, {
+			"method": "isExitVisible()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "Long dark tunnel is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "Long dark tunnel is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "long dark tunnel",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "monstrous archway",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "There is no monstrous archway"
+		}, {
+			"method": "isExitVisible()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "Monstrous archway is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "Monstrous archwary is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "monstrous archway",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "oblivion gate",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "There is no oblivion gate"
+		}, {
+			"method": "isExitVisible()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "Oblivion gate is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "Oblivion gate is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "oblivion gate",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "old wooden door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "There is no old wooden door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "Old wooden door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "Old wooden door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "old wooden door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "rolling shutter door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "There is no rolling shutter door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "Rolling shutter door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "Folling shutter door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "rolling shutter door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "rusted spiral staircase",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "There is no rusted spiral staircase"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "Rusted spiral staircase is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "Rusted spiral staircase is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "rusted spiral staircase",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "rusting iron door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "There is no rusting iron door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "Rusting iron door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "Rusting iron door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "rusting iron door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "smoky glazed doors",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "There are no smoky glazed doors"
+		}, {
+			"method": "isExitVisible()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "Smoky glazed doors are not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "Smoky glazed doors are locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "smoky glazed doors",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "solid metal door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "There is no solid metal door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "Solid metal door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "Solid metal door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "solid metal door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "splintered double doors",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "There are no splintered double doors"
+		}, {
+			"method": "isExitVisible()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "Splintered double doors are not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "Splintered double doors is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "splintered double doors",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "swinging door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "There is no swinging door"
+		}, {
+			"method": "isExitVisible()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "Swinging door is not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "Swinging door is locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "swinging door",
+			"state": false,
+			"text": "You moved to another room"
+		}]
+	}, {
+		"tuple": "winder stairs",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "There are no winder stairs"
+		}, {
+			"method": "isExitVisible()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "Winder stairs are not visible"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "Winder stairs are locked"
+		}],
+		"actions": [{
+			"method": "movePlayer()",
+			"object": "winder stairs",
 			"state": false,
 			"text": "You moved to another room"
 		}]
@@ -5923,6 +6791,441 @@
 			"object": "safe",
 			"state": true,
 			"text": "Safe has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock bell archway",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "No bell archway in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "Cannot see the bell archway"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "bell archway",
+			"expect": false,
+			"hint": "Bell archway is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "bell archway",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "bell archway",
+			"state": true,
+			"text": "Bell archway has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock corrugated steel door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "No corrugated steel door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "Cannot see the corrugated steel door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "corrugated steel door",
+			"expect": false,
+			"hint": "Corrugated steel door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "corrugated steel door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "corrugated steel door",
+			"state": true,
+			"text": "Corrugated steel door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock creaking cell door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "No creaking cell door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "Cannot see the creaking cell door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "creaking cell door",
+			"expect": false,
+			"hint": "Creaking cell door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "creaking cell door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "creaking cell door",
+			"state": true,
+			"text": "Creaking cell door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock long dark tunnel",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "No long dark tunnel in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "Cannot see the long dark tunnel"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "long dark tunnel",
+			"expect": false,
+			"hint": "Long dark tunnel is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "long dark tunnel",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "long dark tunnel",
+			"state": true,
+			"text": "Long dark tunnel has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock monstrous archway",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "No monstrous archway in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "Cannot see the monstrous archway"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "monstrous archway",
+			"expect": false,
+			"hint": "Monstrous archway is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "monstrous archway",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "monstrous archway",
+			"state": true,
+			"text": "Monstrous archway has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock oblivion gate",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "No oblivion gate in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "Cannot see the oblivion gate"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "oblivion gate",
+			"expect": false,
+			"hint": "Oblivion gate is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "oblivion gate",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "oblivion gate",
+			"state": true,
+			"text": "Oblivion gate has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock old wooden door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "No old wooden door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "Cannot see the old wooden door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "old wooden door",
+			"expect": false,
+			"hint": "Old wooden door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "old wooden door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "old wooden door",
+			"state": true,
+			"text": "Old wooden door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock rolling shutter door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "No rolling shutter door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "Cannot see the rolling shutter door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rolling shutter door",
+			"expect": false,
+			"hint": "Rolling shutter door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "rolling shutter door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "rolling shutter door",
+			"state": true,
+			"text": "Rolling shutter door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock rusted spiral staircase",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "No rusted spiral staircase in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "Cannot see the rusted spiral staircase"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rusted spiral staircase",
+			"expect": false,
+			"hint": "Rusted spiral staircase is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "rusted spiral staircase",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "rusted spiral staircase",
+			"state": true,
+			"text": "Rusted spiral staircase has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock rusting iron door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "No rusting iron door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "Cannot see the rusting iron door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "rusting iron door",
+			"expect": false,
+			"hint": "Rusting iron door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "rusting iron door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "rusting iron door",
+			"state": true,
+			"text": "Rusting iron door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock smoky glazed doors",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "No smoky glazed doors in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "Cannot see the smoky glazed doors"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "smoky glazed doors",
+			"expect": false,
+			"hint": "Smoky glazed doors are already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "smoky glazed doors",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "smoky glazed doors",
+			"state": true,
+			"text": "Smoky glazed doors have been unlocked"
+		}]
+	}, {
+		"tuple": "unlock solid metal door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "No solid metal door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "Cannot see the solid metal door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "solid metal door",
+			"expect": false,
+			"hint": "Solid metal door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "solid metal door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "solid metal door",
+			"state": true,
+			"text": "Solid metal door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock splintered double doors",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "No splintered double doors in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "Cannot see the splintered double doors"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "splintered double doors",
+			"expect": false,
+			"hint": "Splintered double doors are already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "splintered double doors",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "splintered double doors",
+			"state": true,
+			"text": "Splintered double doors have been unlocked"
+		}]
+	}, {
+		"tuple": "unlock swinging door",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "No swinging door in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "Cannot see the swinging door"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "swinging door",
+			"expect": false,
+			"hint": "Swinging door is already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "swinging door",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "swinging door",
+			"state": true,
+			"text": "Swinging door has been unlocked"
+		}]
+	}, {
+		"tuple": "unlock winder stairs",
+		"dependencies": [{
+			"method": "isExitInRoom()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "No winder stairs in this room"
+		}, {
+			"method": "isExitVisible()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "Cannot see the winder stairs"
+		}, {
+			"method": "isExitUnlocked()",
+			"object": "winder stairs",
+			"expect": false,
+			"hint": "Winder stairs are already unlocked"
+		}, {
+			"method": "isExitKeyInInventory()",
+			"object": "winder stairs",
+			"expect": true,
+			"hint": "You don't have the right key"
+		}],
+		"actions": [{
+			"method": "setExitUnlocked()",
+			"object": "winder stairs",
+			"state": true,
+			"text": "Winder stairs have been unlocked"
 		}]
 	}, {
 		"tuple": "wield axe",

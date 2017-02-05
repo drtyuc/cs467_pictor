@@ -33,7 +33,7 @@ class Player(unittest.TestCase):
     #P7
     def test_movePlayer2(self):
         dm.setPlayerLocation('ce')
-        dm.movePlayer('Exit going north')
+        dm.movePlayer('long dark tunnel')
         self.assertEqual(dm.getPlayerLocation(), 'pw', "#P7  FAILED movePlayer2")
 
 
@@ -162,7 +162,7 @@ class Exits(unittest.TestCase):
         self.assertEqual(dm.getExitLongDescription('kt1'), "KT1 Long Description", "#E2 Failed  getExitLongDesciption")
     #E3
     def test_getExitShortDescription(self):
-        self.assertEqual(dm.getExitShortDescription('kt1'), "Exit going west", "#E3 Failed  getExitShortDesciption")
+        self.assertEqual(dm.getExitShortDescription('kt1'), "smoky glazed doors", "#E3 Failed  getExitShortDesciption")
     #E4
     def test_isExitVisible(self):
         dm.setExitVisible('kt1', False)
@@ -209,7 +209,7 @@ class Exits(unittest.TestCase):
         dm.setPlayerLocation('ce')
         self.assertTrue(dm.isExitInRoom('ce1'), "#E8  Failed isExitInRoom")
         self.assertTrue(dm.isExitInRoom('south'), "#E8  Failed isExitInRoom")
-        self.assertTrue(dm.isExitInRoom('Exit going south'), "#E8  Failed isExitInRoom")
+        self.assertTrue(dm.isExitInRoom('corrugated steel door'), "#E8  Failed isExitInRoom")
         self.assertFalse(dm.isExitInRoom('bh1'), "#E8  Failed isExitInRoom")
         self.assertFalse(dm.isExitInRoom('west'), "#E8  Failed isExitInRoom")
         self.assertFalse(dm.isExitInRoom('Exit going west'), "#E8  Failed isExitInRoom")
@@ -308,6 +308,7 @@ class Objects(unittest.TestCase):
         self.assertTrue(dm.isObjectRead('note'), "#07  Failed ObjectRead")
     #O8 
     def test_setObjectEquipped(self):
+        dm.setObjectEquipped('armor', False)
         self.assertFalse(dm.isObjectEquipped('armor'), "#08  Failed ObjectEquipped")
         dm.setObjectEquipped('armor', True)
         self.assertTrue(dm.isObjectEquipped('armor'), "#08  Failed ObjectEquipped")     
@@ -332,6 +333,90 @@ class Objects(unittest.TestCase):
         self.assertEqual(dm.getObjectKeyObject('safe'), 'lock',  "#O11  Failed setObjectKeyObject")
         dm.setObjectKeyObject('safe', '')
         self.assertEqual(dm.getObjectKeyObject('safe'), '',  "#O11  Failed setObjectKeyObject")
+    #O12
+    def test_getEquippedObjects(self):
+        dm.clearInventoryObjects()
+        self.assertItemsEqual(dm.getEquippedObjects(), [], "#O12  Failed getEquippedObjects")
+        dm.addInventoryObject('armor')
+        dm.addInventoryObject('green apple')
+        dm.addInventoryObject('machete')
+        self.assertItemsEqual(dm.getEquippedObjects(), [], "#O12  Failed getEquippedObjects")
+        dm.setObjectEquipped('armor', True)
+        self.assertItemsEqual(dm.getEquippedObjects(), ['armor'], "#O12  Failed getEquippedObjects")
+        dm.setObjectEquipped('machete', True)
+        self.assertItemsEqual(dm.getEquippedObjects(), ['armor', 'machete'], "#O12  Failed getEquippedObjects")
+        dm.setObjectEquipped('armor', False)
+        self.assertItemsEqual(dm.getEquippedObjects(), ['machete'], "#O12  Failed getEquippedObjects")
+  
+  
+   
+class GoToRoom(unittest.TestCase):
+    data = [ {'room':'ap',   'exit':'west',                   'expected':'wl'}, 
+             {'room':'ap',   'exit':'oblivion gate',          'expected':'wl'},
+             {'room':'ar',   'exit':'north',                  'expected':'hw'},
+             {'room':'ar',   'exit':'winder stairs',          'expected':'hw'},
+             {'room':'ar',   'exit':'east',                   'expected':'jl'},
+             {'room':'ar',   'exit':'rusting iron door',      'expected':'jl'},
+             {'room':'ar',   'exit':'south',                  'expected':'sq'},
+             {'room':'ar',   'exit':'solid metal door',       'expected':'sq'},   
+             {'room':'bd',   'exit':'east',                   'expected':'sq'},
+             {'room':'bd',   'exit':'old wooden door',        'expected':'sq'},
+             {'room':'bh',   'exit':'north',                  'expected':'kt'},
+             {'room':'bh',   'exit':'splintered double doors','expected':'kt'},
+             {'room':'bh',   'exit':'east',                   'expected':'hw'},
+             {'room':'bh',   'exit':'monstrous archway',      'expected':'hw'},
+             {'room':'ca',   'exit':'south',                  'expected':'pw'},
+             {'room':'ca',   'exit':'rolling shutter door',   'expected':'pw'},
+             {'room':'ca',   'exit':'east',                   'expected':'kt'},
+             {'room':'ca',   'exit':'smoky glazed doors',     'expected':'kt'},
+             {'room':'ce',   'exit':'south',                  'expected':'ot'},
+             {'room':'ce',   'exit':'corrugated steel door',  'expected':'ot'},
+             {'room':'ce',   'exit':'north',                  'expected':'pw'},
+             {'room':'ce',   'exit':'long dark tunnel',       'expected':'pw'},
+             {'room':'cl',   'exit':'west',                   'expected':'jl'},
+             {'room':'cl',   'exit':'creaking cell door',     'expected':'jl'},
+             {'room':'hw',   'exit':'west',                   'expected':'bh'},
+             {'room':'hw',   'exit':'monstrous archway',      'expected':'bh'},
+             {'room':'hw',   'exit':'east',                   'expected':'wl'},
+             {'room':'hw',   'exit':'bell archway',           'expected':'wl'},
+             {'room':'hw',   'exit':'south',                  'expected':'ar'},
+             {'room':'hw',   'exit':'winder stairs',          'expected':'ar'},
+             {'room':'jl',   'exit':'west',                   'expected':'ar'},
+             {'room':'jl',   'exit':'rusting iron door',      'expected':'ar'},       
+             {'room':'jl',   'exit':'east',                   'expected':'cl'},
+             {'room':'jl',   'exit':'creaking cell door',     'expected':'cl'},          
+             {'room':'kt',   'exit':'west',                   'expected':'ca'},
+             {'room':'kt',   'exit':'smoky glazed doors',     'expected':'ca'},   
+             {'room':'kt',   'exit':'east',                   'expected':'sr'},
+             {'room':'kt',   'exit':'swinging door',          'expected':'sr'}, 
+             {'room':'kt',   'exit':'south',                  'expected':'bh'},
+             {'room':'kt',   'exit':'splintered double doors','expected':'bh'},
+             {'room':'ot',   'exit':'north',                  'expected':'ce'},
+             {'room':'ot',   'exit':'corrugated steel door',  'expected':'ce'},
+             {'room':'pw',   'exit':'south',                  'expected':'ce'},
+             {'room':'pw',   'exit':'long dark tunnel',       'expected':'ce'},
+             {'room':'pw',   'exit':'north',                  'expected':'ca'},
+             {'room':'pw',   'exit':'rolling steel door',     'expected':'ca'}, 
+             {'room':'sq',   'exit':'north',                  'expected':'ar'},
+             {'room':'sq',   'exit':'solid metal door',       'expected':'ar'},
+             {'room':'sq',   'exit':'west',                   'expected':'bd'},
+             {'room':'sq',   'exit':'old wooden door',        'expected':'bd'},          
+             {'room':'sr',   'exit':'west',                   'expected':'kt'},
+             {'room':'sr',   'exit':'swinging door',          'expected':'kt'}, 
+             {'room':'tr',   'exit':'west',                   'expected':'sr'},
+             {'room':'tr',   'exit':'rusted spiral staircase','expected':'sr'},
+             {'room':'wl',   'exit':'west',                   'expected':'hw'},
+             {'room':'wl',   'exit':'bell archway',           'expected':'hw'},
+             {'room':'wl',   'exit':'east',                   'expected':'ap'},
+             {'room':'wl',   'exit':'obilivion gate',         'expected':'ap'}]
+             
+    def test_GoToRoom(self):
+        for i in self.data:
+            dm.setPlayerLocation(i['room'])
+            dm.movePlayer(i['exit'])
+            self.assertEqual(dm.getPlayerLocation(),  i['expected'],  "Failed: " + i['exit'])
+ 
+
 
 if __name__ == '__main__':
 	unittest.main()

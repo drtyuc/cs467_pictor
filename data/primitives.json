@@ -171,7 +171,7 @@
 		"name": "ap1",
 		"longDescription": "AP1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "oblivion gate",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -181,7 +181,7 @@
 		"name": "ar1",
 		"longDescription": "AR1 Long Description",
 		"direction": "north",
-		"shortDescription": "Exit going north",
+		"shortDescription": "winder stairs",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -191,7 +191,7 @@
 		"name": "ar2",
 		"longDescription": "AR2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "rusting iron door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -201,7 +201,7 @@
 		"name": "ar3",
 		"longDescription": "AR3 Long Description",
 		"direction": "south",
-		"shortDescription": "Exit going south",
+		"shortDescription": "solid metal door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -211,7 +211,7 @@
 		"name": "bd1",
 		"longDescription": "BD1 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "old wooden door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -221,7 +221,7 @@
 		"name": "bh1",
 		"longDescription": "BH1 Long Description",
 		"direction": "north",
-		"shortDescription": "Exit going north",
+		"shortDescription": "splintered double doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -231,7 +231,7 @@
 		"name": "bh2",
 		"longDescription": "BH2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "monstrous archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -241,7 +241,7 @@
 		"name": "ca1",
 		"longDescription": "CA1 Long Description",
 		"direction": "south",
-		"shortDescription": "Exit going south",
+		"shortDescription": "rolling shutter door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -251,7 +251,7 @@
 		"name": "ca2",
 		"longDescription": "CA2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "smoky glazed doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -261,7 +261,7 @@
 		"name": "ce1",
 		"longDescription": "CE1 Long Description",
 		"direction": "south",
-		"shortDescription": "Exit going south",
+		"shortDescription": "corrugated steel door",
 		"visible": true,
 		"unlocked": false,
 		"keyObject": "golden key",
@@ -271,7 +271,7 @@
 		"name": "ce2",
 		"longDescription": "CE2 Long Description",
 		"direction": "north",
-		"shortDescription": "Exit going north",
+		"shortDescription": "long dark tunnel",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -281,7 +281,7 @@
 		"name": "cl1",
 		"longDescription": "CL1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "creaking cell door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -291,7 +291,7 @@
 		"name": "hw1",
 		"longDescription": "HW1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "monstrous archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -301,7 +301,7 @@
 		"name": "hw2",
 		"longDescription": "HW2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "bell archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -311,7 +311,7 @@
 		"name": "hw3",
 		"longDescription": "HW3 Long Description",
 		"direction": "south",
-		"shortDescription": "Exit going south",
+		"shortDescription": "winder stairs",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -321,7 +321,7 @@
 		"name": "jl1",
 		"longDescription": "JL1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "rusting iron door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -331,7 +331,7 @@
 		"name": "jl2",
 		"longDescription": "JL2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "creaking cell door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -341,7 +341,7 @@
 		"name": "kt1",
 		"longDescription": "KT1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "smoky glazed doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -351,7 +351,7 @@
 		"name": "kt2",
 		"longDescription": "KT2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "swinging door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -361,7 +361,7 @@
 		"name": "kt3",
 		"longDescription": "KT3 Long Description",
 		"direction": "south",
-		"shortDescription": "Exit going south",
+		"shortDescription": "splintered double doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -371,7 +371,7 @@
 		"name": "out",
 		"longDescription": "OUT Long Description",
 		"direction": "north",
-		"shortDescription": "Exit going north",
+		"shortDescription": "corrugated steel door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -381,7 +381,7 @@
 		"name": "pw1",
 		"longDescription": "PW1 Long Description",
 		"direction": "south",
-		"shortDescription": "Exit going south",
+		"shortDescription": "long dark tunnel",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -391,7 +391,7 @@
 		"name": "pw2",
 		"longDescription": "PW2 Long Description",
 		"direction": "north",
-		"shortDescription": "Exit going north",
+		"shortDescription": "rolling steel door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -401,7 +401,7 @@
 		"name": "sq1",
 		"longDescription": "SQ1 Long Description",
 		"direction": "north",
-		"shortDescription": "Exit going north",
+		"shortDescription": "solid metal door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -411,7 +411,7 @@
 		"name": "sq2",
 		"longDescription": "SQ2 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "old wooden door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -421,7 +421,7 @@
 		"name": "sr1",
 		"longDescription": "SR1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "swinging door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -431,7 +431,7 @@
 		"name": "tr1",
 		"longDescription": "TR1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "rusted spiral staircase",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -441,7 +441,7 @@
 		"name": "wl1",
 		"longDescription": "WL1 Long Description",
 		"direction": "west",
-		"shortDescription": "Exit going west",
+		"shortDescription": "bell archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -451,7 +451,7 @@
 		"name": "wl2",
 		"longDescription": "WL2 Long Description",
 		"direction": "east",
-		"shortDescription": "Exit going east",
+		"shortDescription": "oblivion gate",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -698,7 +698,7 @@
         "lookAbove": false,
         "lookBehind": false,
         "lookUnder": true,
-		"healthPoints": 0,
+		"healthPoints": 2,
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 100,
@@ -1886,7 +1886,7 @@
         "lookAbove": false,
         "lookBehind": false,
         "lookUnder": true,
-		"healthPoints": 10,
+		"healthPoints": -5,
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 100,
@@ -2174,7 +2174,7 @@
         "lookAbove": false,
         "lookBehind": false,
         "lookUnder": true,
-		"healthPoints": 5,
+		"healthPoints": -5,
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 100,
@@ -2210,7 +2210,7 @@
         "lookAbove": false,
         "lookBehind": false,
         "lookUnder": true,
-		"healthPoints": 5,
+		"healthPoints": 0,
 		"damagePoints": 0,
 		"protectionPoints": 0,        
 		"weight": 100,
@@ -3158,5 +3158,90 @@
 		"location": "sq",
 		"health": 40,
 		"damagePoints": 5
-	}]
+	}],
+    "help": [{
+		"verb": "active",
+		"description": "active: Used to list inventory objects that are equipped"
+    }, {
+        "verb": "drink {object}",
+		"description": "drink {object}: Used to certain objects to restore health"
+	}, {
+        "verb": "drop {object}",
+		"description": "drop {object}: Used to remove objects from inventory"
+    }, {
+        "verb": "eat {object}",
+		"description": "eat {object}: Used on certain objects to restore heatlh"
+    }, {
+        "verb": "equip {object}",
+		"description": "equip {object}: Used to activate wearable and wieldable objects"
+    }, {
+        "verb": "go {direction or exit description}",
+		"description": "go {direction or exit description}: Used to move a player to another room"
+    }, {
+        "verb": "{direction or exit description}",
+		"description": "{direction or exit description}: Used to move a player to another room"
+    }, {
+        "verb": "help",
+		"description": "help: Used to list supported verbs"
+    }, {
+        "verb": "inventory",
+		"description": "inventory: Used to list all objects in the player's inventory"
+    }, {
+        "verb": "lay on {object}",
+		"description": "lay on {object}: Used on certain objects to modify health"
+    }, {
+        "verb": "light {object}",
+		"description": "light {object}: Used to light certain objects"    
+    }, {
+        "verb": "loadgame",
+		"description": "loadgame: Loads a saved game"
+    }, {
+        "verb": "look",
+		"description": "look: Used to display long descriptions of room and exits"
+    }, {
+        "verb": "look above {object}",
+		"description": "look above {object}: Used to look above an object"
+    }, {
+        "verb": "look at {object}",
+		"description": "look at {object}: Used to display long description of an object"
+    }, {
+        "verb": "look behind {object}",
+		"description": "look behind {object}: Used to look behind an object"
+    }, {
+        "verb": "look inside {object}",
+		"description": "look inside {object}: Used to look inside an object"
+    }, {
+        "verb": "look on {object}",
+		"description": "look on {object}: Used to look on an object"    
+    }, {
+        "verb": "look under {object}",
+		"description": "look under {object}: Used to look under an object"       
+    }, {
+        "verb": "pull {object}",
+		"description": "pull {object}: Used to pull on an object"
+    }, {
+        "verb": "push {object}",
+		"description": "push {object}: Used to push on an object"
+    }, {
+        "verb": "read {object}",
+		"description": "read {object}: Used to read an object"    
+    }, {
+        "verb": "savegame",
+		"description": "savegame: Used to save the game state to a file"     
+    }, {
+        "verb": "sit on {object}",
+		"description": "sit on {object}: Used to sit on certain objects to restore health"
+    }, {
+        "verb": "take {object}",
+		"description": "take {object}: Used to place an object in the player's inventory"    
+    }, {
+        "verb": "unequip {object}",
+		"description": "unequip {object}: Used to deactivate wearable and wieldable objects"   
+    }, {
+        "verb": "unlock {object, direction, or exit description}",
+		"description": "unlock {object, direction or exit description}: Used to unlock an object or a door"    
+    }, {
+        "verb": "wield {object}",
+        "description": "wield {object}: Used to swing a weapon at a ghost"
+    }]
 }
