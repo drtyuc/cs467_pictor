@@ -84,9 +84,11 @@ class PerformAction():
 	    print dep["method"]
 	    #cmd = "self.__dm." + dep["method"]
 	    #index = cmd.find(')')
-	    #merge_object = cmd[:index] + "self.__dm." + dep["object"] + cmd[index:] 
+	    #merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
 	    #cmd = merge_object
 	    #print cmd
+	    #result = eval(cmd)
+	    #print result
 	return 
 
 
