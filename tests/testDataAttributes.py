@@ -92,7 +92,7 @@ class RoomDiscovered(unittest.TestCase):
              {'room':'bd',   'expected':False},
              {'room':'bh',   'expected':False},
              {'room':'ca',   'expected':False},
-             {'room':'ce',   'expected':True},              
+             {'room':'ce',   'expected':False},              
              {'room':'cl',   'expected':False},
              {'room':'ct',   'expected':False},
              {'room':'hw',   'expected':False}, 

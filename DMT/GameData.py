@@ -20,7 +20,8 @@
 #  VERSION     DATE      WHO        DETAIL
 #    0.1    01/27/2017   JH    Initial Beta Version
 #    0.2    02/02/2017   JH    
-#    0.3    02/04/2017   JH
+#    0.3    02/04/2017   JH    loadSavedGame, saveGame
+#    0.4    02/06/2017   JH    Standardized method calls
 ########################################################
 import json
 import os.path
@@ -141,7 +142,7 @@ class DataManager():
     def isPlayerVisible(self):
 	    return self.__players[0].visible
 	    
-    def adjustPlayerHealth(self, name):
+    def adjustPlayerHealth(self, name, status=None):
 		index = self.getObjectIndex(name)
 		self.__players[0].health += self.__objects[index].healthPoints
 	
@@ -151,7 +152,7 @@ class DataManager():
     def setPlayerVisible(self, visible):
 		self.__players[0].visible = visible
 		
-    def movePlayer(self, direction):
+    def movePlayer(self, direction, status=None):
         index = self.getExitIndex(direction)
         self.__players[0].location = self.__exits[index].toRoom	
 	
@@ -184,12 +185,12 @@ class DataManager():
 		else:
 			return False
 
-    def addInventoryObject(self, name):
+    def addInventoryObject(self, name, status=None):
         self.__bags[0].objects.append(name)
         index = self.getObjectIndex(name)
         self.__objects[index].location = "inventory"	
 		
-    def removeInventoryObject(self, name):
+    def removeInventoryObject(self, name, status=None):
 	    self.__bags[0].objects.remove(name) 
     
      
@@ -220,7 +221,7 @@ class DataManager():
 		index = self.getRoomIndex(location)
 		self.__rooms[index].discovered = status
 	
-    def isRoomLighted(self):
+    def isRoomLighted(self, obj=None):
         location = self.getPlayerLocation()
         index = self.getRoomIndex(location)
         objectlighted = False
@@ -240,14 +241,14 @@ class DataManager():
 		index = self.getRoomIndex(location)
 		return self.__rooms[index].objects
 	
-    def addRoomObject(self, name):
+    def addRoomObject(self, name, status=None):
         location = self.getPlayerLocation()
         index = self.getRoomIndex(location)
         self.__rooms[index].objects.append(name)
         oindex = self.getObjectIndex(name)
         self.__objects[oindex].location = location		
 		
-    def removeRoomObject(self, name):
+    def removeRoomObject(self, name, status=None):
 		location = self.getPlayerLocation()
 		index = self.getRoomIndex(location)
 		self.__rooms[index].objects.remove(name)
@@ -323,7 +324,7 @@ class DataManager():
 
 		
     #------------------- Object Methods ----------------------  
-    def changeLocation(self, name):
+    def changeLocation(self, name, status=None):
         index = self.getObjectIndex(name)
         self.__players[0].location = self.__objects[index].keyObject	
     

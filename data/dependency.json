@@ -29,12 +29,12 @@
 			"method": "isObjectInInventory()",
 			"object": "bottle of water",
 			"expect": true,
-			"hint": "Bottle of gatorade is not in your inventory"
+			"hint": "Bottle of water is not in your inventory"
 		}, {
 			"method": "isObjectDrinkable()",
 			"object": "bottle of water",
 			"expect": true,
-			"hint": "Bottle of gatorade is not drinkable"
+			"hint": "Bottle of water is not drinkable"
 		}],
 		"actions": [{
 			"method": "removeInventoryObject()",
@@ -374,7 +374,7 @@
 			"method": "addRoomObject()",
 			"object": "helmet",
 			"state": false,
-			"text": "Gem placed in helmet"
+			"text": "Helmet placed in room"
 		}]
 	}, {
 		"tuple": "drop kitchen knife",
@@ -398,7 +398,7 @@
 			"method": "addRoomObject()",
 			"object": "kitchen knife",
 			"state": false,
-			"text": "Kitchen knife placed in helmet"
+			"text": "Kitchen knife placed in room"
 		}]
 	}, {
 		"tuple": "drop lockpick",
@@ -441,7 +441,7 @@
 			"method": "addRoomObject()",
 			"object": "machete",
 			"state": false,
-			"text": "Machete placed in helmet"
+			"text": "Machete placed in room"
 		}]
 	}, {
 		"tuple": "drop magical ring",
@@ -465,7 +465,7 @@
 			"method": "addRoomObject()",
 			"object": "magical ring",
 			"state": false,
-			"text": "Magical ring placed in helmet"
+			"text": "Magical ring placed in room"
 		}]
 	}, {
 		"tuple": "drop matches",
@@ -565,7 +565,7 @@
 			"method": "addRoomObject()",
 			"object": "sabre",
 			"state": false,
-			"text": "Sabre placed in helmet"
+			"text": "Sabre placed in room"
 		}]
 	}, {
 		"tuple": "drop scroll",
@@ -684,7 +684,7 @@
 			"method": "addRoomObject()",
 			"object": "warhammer",
 			"state": false,
-			"text": "Warhammer placed in helmet"
+			"text": "Warhammer placed in room"
 		}]
 	}, {
 		"tuple": "eat green apple",
@@ -1349,7 +1349,7 @@
 			"method": "isExitUnlocked()",
 			"object": "rolling shutter door",
 			"expect": true,
-			"hint": "Folling shutter door is locked"
+			"hint": "Rolling shutter door is locked"
 		}],
 		"actions": [{
 			"method": "movePlayer()",
@@ -1469,7 +1469,7 @@
 			"method": "isExitUnlocked()",
 			"object": "splintered double doors",
 			"expect": true,
-			"hint": "Splintered double doors is locked"
+			"hint": "Splintered double doors are locked"
 		}],
 		"actions": [{
 			"method": "movePlayer()",
@@ -1709,7 +1709,7 @@
 			"method": "isExitUnlocked()",
 			"object": "rolling shutter door",
 			"expect": true,
-			"hint": "Folling shutter door is locked"
+			"hint": "Rolling shutter door is locked"
 		}],
 		"actions": [{
 			"method": "movePlayer()",
@@ -2406,7 +2406,7 @@
 		}],
 		"actions": [{
 			"method": "getObjectLongDescription()",
-			"object": "bottle of gatorade",
+			"object": "bottle of water",
 			"state": false,
 			"text": ""
 		}]
@@ -4799,12 +4799,12 @@
 			"method": "isRoomLighted()",
 			"object": "",
 			"expect": true,
-			"hint": "Room is dark ... cannot see book of spells"
+			"hint": "Room is dark ... cannot see scroll"
 		}, {
 			"method": "isObjectInInventory()",
 			"object": "scroll",
 			"expect": true,
-			"hint": "Book of spells is not in your inventory"
+			"hint": "Scroll is not in your inventory"
 		}, {
 			"method": "isObjectReadable()",
 			"object": "scroll",
@@ -5231,7 +5231,7 @@
 			"text": ""
 		}]
 	}, {
-		"tuple": "take book of gatorade",
+		"tuple": "take bottle of gatorade",
 		"dependencies": [{
 			"method": "isObjectInInventory()",
 			"object": "bottle of gatorade",
@@ -5275,7 +5275,7 @@
 			"text": ""
 		}]
 	}, {
-		"tuple": "take book of water",
+		"tuple": "take bottle of water",
 		"dependencies": [{
 			"method": "isObjectInInventory()",
 			"object": "bottle of water",
@@ -6219,7 +6219,7 @@
 			"method": "isObjectVisible()",
 			"object": "shale rocks",
 			"expect": true,
-			"hint": "Shale rocks are is not visible"
+			"hint": "Shale rocks are not visible"
 		}, {
 			"method": "isSpaceInInventory()",
 			"object": "shale rocks",
@@ -6263,7 +6263,7 @@
 			"method": "isObjectVisible()",
 			"object": "slate rocks",
 			"expect": true,
-			"hint": "Slate rocks are is not visible"
+			"hint": "Slate rocks are not visible"
 		}, {
 			"method": "isSpaceInInventory()",
 			"object": "slate rocks",

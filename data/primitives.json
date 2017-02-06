@@ -62,7 +62,7 @@
 		"name": "ce",
 		"longDescription": "Cave Entrance Long Description",
 		"shortDescription": "Cave Entrance Short Description",
-		"discovered": true,
+		"discovered": false,
 		"lighted": true,
 		"objects": ["bat skeleton", "machete", "shale rocks"],
 		"exits": ["ce1", "ce2"]
