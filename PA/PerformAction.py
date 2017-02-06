@@ -24,21 +24,24 @@
 #  VERSION     DATE      WHO        DETAIL
 #    0.1    02/05/2017   DL    Initial Version
 ###############################################
+import json
+from ..DMT.GameData import DataManager
 
-from DMT.GameData import DataManager
-
+del path
 
 class PerformAction():
 
 
-    def __init__(self, command):
-	""" Constructor """
+    def __init__(self, command, dm):
+	""" Constructor - need command & data manager object """
 	self.command = command
+	self.dm = dm
 
 
     def getCommandDependencies(self):
 	""" returns list of dependency methods """
 	# TODO(DL): flesh out
+        print self.dm.getDependencies()
 	return 
   
 
@@ -76,3 +79,10 @@ class PerformAction():
 	""" triggers after player peforms one action """
 	# TODO(DL): flesh out
 	return 
+
+
+if "__name__" == "__main__":
+    dm = DataManager()
+    dm.loadNewGame()
+    pa = PerformAction("go north", dm)
+    pa.getCommandDependencies()
