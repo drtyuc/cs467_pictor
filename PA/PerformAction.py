@@ -25,7 +25,7 @@
 #    0.1    02/05/2017   DL    Initial Version
 ###############################################
 import json
-import os
+import os.path
 import sys
 
 pathparent = os.path.abspath(os.path.join(
@@ -40,20 +40,53 @@ class PerformAction():
 
     def __init__(self, command, dm):
 	""" Constructor - need command & data manager object """
-	self.command = command
-	self.dm = dm
+	self.__command = command                       # The command (eg. go north)
+	self.__dm = dm                                 # add the singleton game dm object as an attr for ease of access
+	self.__valid = self.__isCommandValid()         # Is this a valid command
+	if self.__valid:   		               # Get dependencies and actions
+	    self.__getCommandDependenciesAndActions()
 
 
-    def getCommandDependencies(self):
-	""" returns list of dependency methods """
-	# TODO(DL): flesh out
-        print self.dm.getDependencies()
+    def __isCommandValid(self):
+	""" Is the command valid """
+        dep = self.__dm.getDependencies()
+	for cmd in dep["commands"]:
+	    if self.__command == cmd["tuple"]:
+		return True
+	return False 
+
+
+    def __getCommandDependenciesAndActions(self):
+	""" initializes list of dependency and action for object """
+        dep = self.__dm.getDependencies()
+	for cmd in dep["commands"]:
+	    if self.__command == cmd["tuple"]:
+		self.__dependencies = cmd["dependencies"]
+		self.__actions = cmd["actions"]
+		break
 	return 
   
 
+    def isCommandValid(self):
+	""" Public is the command valid """
+	return self.__valid
+
+
+    def getCommand(self):
+	""" Public return the command used to build PA object """
+	return self.__command
+
+
     def areCommandDependenciesMet(self):
-	""" Answers are all dependencies met """
-	# TODO(DL): flesh out
+	""" Answers the question are all dependencies met """
+	# TODO(DL): WIP flesh out trying to figure out how to craft the method and evaluate it
+	for dep in self.__dependencies:
+	    print dep["method"]
+	    #cmd = "self.__dm." + dep["method"]
+	    #index = cmd.find(')')
+	    #merge_object = cmd[:index] + "self.__dm." + dep["object"] + cmd[index:] 
+	    #cmd = merge_object
+	    #print cmd
 	return 
 
 
@@ -75,12 +108,6 @@ class PerformAction():
 	return 
 
 
-    def isCommandValid(self):
-	""" Is the command valid """
-	# TODO(DL): flesh out
-	return 
-
-
     def setGhostActions(self):
 	""" triggers after player peforms one action """
 	# TODO(DL): flesh out
@@ -91,4 +118,4 @@ if __name__ == "__main__":
     dm = DataManager()
     dm.loadNewGame()
     pa = PerformAction("go north", dm)
-    pa.getCommandDependencies()
+    pa.areCommandDependenciesMet()
