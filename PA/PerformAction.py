@@ -25,9 +25,15 @@
 #    0.1    02/05/2017   DL    Initial Version
 ###############################################
 import json
-from ..DMT.GameData import DataManager
+import os
+import sys
 
-del path
+pathparent = os.path.abspath(os.path.join(
+    os.path.dirname(__file__), os.path.pardir))
+sys.path.insert(0, pathparent)
+
+from DMT.GameData import DataManager
+
 
 class PerformAction():
 
@@ -81,7 +87,7 @@ class PerformAction():
 	return 
 
 
-if "__name__" == "__main__":
+if __name__ == "__main__":
     dm = DataManager()
     dm.loadNewGame()
     pa = PerformAction("go north", dm)
