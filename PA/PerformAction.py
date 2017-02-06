@@ -116,6 +116,7 @@ class PerformAction():
 	return 
 
 
+""" using this so i can test functionality """
 if __name__ == "__main__":
     dm = DataManager()
     dm.loadNewGame()
