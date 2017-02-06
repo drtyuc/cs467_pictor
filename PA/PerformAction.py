@@ -41,24 +41,25 @@ class PerformAction():
     def __init__(self, command, dm):
 	""" Constructor - need command & data manager object """
 	self.__command = command                       # The command (eg. go north)
-	self.__dm = dm                                 # add the singleton game dm object as an attr for ease of access
-	self.__valid = self.__isCommandValid()         # Is this a valid command
+	self.__valid = self.__isCommandValid(dm)         # Is this a valid command
 	if self.__valid:   		               # Get dependencies and actions
-	    self.__getCommandDependenciesAndActions()
+	    self.__getCommandDependenciesAndActions(dm)
+	    self.__evalCommandDependenciesMet(dm)
+	    self.__getCommandDependenciesHint(dm)
 
 
-    def __isCommandValid(self):
+    def __isCommandValid(self, dm):
 	""" Is the command valid """
-        dep = self.__dm.getDependencies()
+        dep = dm.getDependencies()
 	for cmd in dep["commands"]:
 	    if self.__command == cmd["tuple"]:
 		return True
 	return False 
 
 
-    def __getCommandDependenciesAndActions(self):
+    def __getCommandDependenciesAndActions(self, dm):
 	""" initializes list of dependency and action for object """
-        dep = self.__dm.getDependencies()
+        dep = dm.getDependencies()
 	for cmd in dep["commands"]:
 	    if self.__command == cmd["tuple"]:
 		self.__dependencies = cmd["dependencies"]
@@ -66,6 +67,36 @@ class PerformAction():
 		break
 	return 
   
+
+    def __evalCommandDependenciesMet(self, dm):
+	""" Answers the question are all dependencies met """
+	self.__all_met = True
+	for dep in self.__dependencies:
+	    cmd = "dm." + dep["method"]
+	    if 'object' in dep:                        # If we have an object, insert it
+	        index = cmd.find(')')
+	        merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
+	        cmd = merge_object
+	    result = eval(cmd)
+	    if result != dep["expect"]:
+               self.__all_met = False
+	return
+
+
+    def __getCommandDependenciesHint(self, dm):
+	""" Gets first failed dependency hint """
+	self.__hint = ""
+	for dep in self.__dependencies:
+	    cmd = "dm." + dep["method"]
+	    if 'object' in dep:                        # If we have an object, insert it
+	        index = cmd.find(')')
+	        merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
+	        cmd = merge_object
+	    result = eval(cmd)
+	    if result != dep["expect"]:
+               self.__hint = dep["hint"]
+	return 
+
 
     def isCommandValid(self):
 	""" Public is the command valid """
@@ -78,35 +109,37 @@ class PerformAction():
 
 
     def areCommandDependenciesMet(self):
-	""" Answers the question are all dependencies met """
-	# TODO(DL): WIP flesh out trying to figure out how to craft the method and evaluate it
-	for dep in self.__dependencies:
-	    print dep["method"]
-	    #cmd = "self.__dm." + dep["method"]
-	    #index = cmd.find(')')
-	    #merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
-	    #cmd = merge_object
-	    #print cmd
-	    #result = eval(cmd)
-	    #print result
-	return 
+	""" Returns if all dependencies were met """
+	return self.__all_met
 
 
     def getCommandDependenciesHint(self):
-	""" Gets first failed dependency hint """
-	# TODO(DL): flesh out
-	return 
-
-
-    def getCommandActions(self):
-	""" gets list of action methods and params """
-	# TODO(DL): flesh out
-	return 
+	""" Return the hint for the failed dependency """
+	return self.__hint
 
 
     def doCommandActions(self):
-	""" Execute the action methods """
-	# TODO(DL): flesh out
+	""" BROKEN - Execute the action methods """
+	# TODO(DL) - fix this and alter dm object
+	for dep in self.__actions:
+	    cmd = "self.dm." + dep["method"]
+	    index = cmd.find(')')
+	    if 'object' in dep and 'state' in dep:     # If we have an object, insert it
+		if dep["state"] == True:
+	            merge_object = cmd[:index] + "'" + dep["object"] + "', True"  + cmd[index:] 
+		if dep["state"] == False:
+	            merge_object = cmd[:index] + "'" + dep["object"] + "'"  + cmd[index:] 
+	        cmd = merge_object
+	    elif 'object' in dep:
+	        merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
+	        cmd = merge_object
+	    elif 'state' in dep:
+		if dep["state"] == True:
+	            merge_object = cmd[:index] + "True"  + cmd[index:] 
+	            cmd = merge_object
+	    result = eval(cmd)
+	    print cmd
+	    print result
 	return 
 
 
@@ -120,5 +153,13 @@ class PerformAction():
 if __name__ == "__main__":
     dm = DataManager()
     dm.loadNewGame()
+    print "Test go north"
     pa = PerformAction("go north", dm)
-    pa.areCommandDependenciesMet()
+    print pa.areCommandDependenciesMet()
+    print pa.getCommandDependenciesHint()
+#    pa.doCommandActions()
+    print "Test go west"
+    pa2 = PerformAction("go west", dm)
+    print pa2.areCommandDependenciesMet()
+    print pa2.getCommandDependenciesHint()
+#    pa2.doCommandActions()
