@@ -85,6 +85,7 @@ class PerformAction():
 
     def __getCommandDependenciesHint(self, dm):
 	""" Gets first failed dependency hint """
+	# TODO(DL) modify to set display module with text instead of returning text
 	self.__hint = ""
 	for dep in self.__dependencies:
 	    cmd = "dm." + dep["method"]
@@ -120,6 +121,7 @@ class PerformAction():
 
     def doCommandActions(self, dm):
 	""" Execute the action methods return list of success text """
+	# TODO(DL) modify to set display module with text instead of returning text
 	success = []
 	for dep in self.__actions:
 	    cmd = "dm." + dep["method"]
