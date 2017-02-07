@@ -114,33 +114,21 @@ class PerformAction():
 
 
     def getCommandDependenciesHint(self):
-	""" Return the hint for the failed dependency """
+	""" Return the hint as a string for the failed dependency """
 	return self.__hint
 
 
-    def doCommandActions(self):
-	""" BROKEN - Execute the action methods """
-	# TODO(DL) - fix this and alter dm object
+    def doCommandActions(self, dm):
+	""" Execute the action methods return list of success text """
+	success = []
 	for dep in self.__actions:
-	    cmd = "self.dm." + dep["method"]
+	    cmd = "dm." + dep["method"]
 	    index = cmd.find(')')
-	    if 'object' in dep and 'state' in dep:     # If we have an object, insert it
-		if dep["state"] == True:
-	            merge_object = cmd[:index] + "'" + dep["object"] + "', True"  + cmd[index:] 
-		if dep["state"] == False:
-	            merge_object = cmd[:index] + "'" + dep["object"] + "'"  + cmd[index:] 
-	        cmd = merge_object
-	    elif 'object' in dep:
-	        merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
-	        cmd = merge_object
-	    elif 'state' in dep:
-		if dep["state"] == True:
-	            merge_object = cmd[:index] + "True"  + cmd[index:] 
-	            cmd = merge_object
+	    merge_object = cmd[:index] + "'" + dep["object"] + "', " + str(dep["state"]) + cmd[index:] 
+	    cmd = merge_object
 	    result = eval(cmd)
-	    print cmd
-	    print result
-	return 
+	    success.append(dep["text"])
+	return success 
 
 
     def setGhostActions(self):
@@ -157,9 +145,9 @@ if __name__ == "__main__":
     pa = PerformAction("go north", dm)
     print pa.areCommandDependenciesMet()
     print pa.getCommandDependenciesHint()
-#    pa.doCommandActions()
+    print pa.doCommandActions(dm)
     print "Test go west"
     pa2 = PerformAction("go west", dm)
     print pa2.areCommandDependenciesMet()
     print pa2.getCommandDependenciesHint()
-#    pa2.doCommandActions()
+    print pa2.doCommandActions(dm)
