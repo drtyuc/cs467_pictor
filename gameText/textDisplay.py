@@ -21,100 +21,107 @@ from GameData import DataManager
 		
 
 class textDisplay():
-	def __init__(self):
 
+	'''
+
+	This creates the object instance....I'm adding these other properties because I can use 
+	setter methods to set these with the return value from game data APIs.
+
+	'''
+
+	def __init__(self):
+		self.__roomLD = None
+		self.__roomSD = None
+		self.__playerHealth = None
 		self.__actionText = None 
 
-		'''
-		OBSOLETE CODE - will keep around for a second
-		#the goal is to have a loader function to load these into the instance.....
 
-		self.__roomList = ['ca', 'kt', 'sr', 'tr', 'pw', 'bh', 'tr', 'hw', 'wl', 'ap', 'ce', 'ct', 'ar', 'jl', 'cl', 'ot', 'bd', 'sq']
-
-		self.__roomDescriptsLong = {
-		'ca': 'You are in the common area.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'kt': 'You are in the kichen.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'sr': 'You are in the storeroom.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'tr': 'You are in the Treasure Room.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'pw': 'You are in the Passage Way.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'bh': 'You are in the Banquet Hall.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'hw': 'You are in the Hallway.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'wl': 'You are in the Wizard\'s Laboratory.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'ap': 'You are in the Alternate Plane.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'ce': 'You are in the Cave Entrance.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'ct': 'You are in the Closet.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'ar': 'You are in the Armory.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'jl': 'You are in the Jail.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'sr': 'You are in the Jail.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'cl': 'You are inside the Cell.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'ot': 'You are outside.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'bd': 'You are in the Bedroom.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n',
-		'sq': 'You are in the Sleeping Quarters.\n\n Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac viverra nunc. Phasellus quam orci, dapibus venenatis risus sit amet, semper fringilla risus. Morbi lacinia nisl dolor, id dapibus tortor eleifend quis. Nunc sagittis gravida semper. Curabitur vulputate odio pretium ligula tincidunt tincidunt. Curabitur eu tempus justo. Suspendisse efficitur pharetra euismod. Quisque nec fringilla est. Nulla fermentum mollis auctor. Mauris varius suscipit scelerisque. Ut eu arcu sed eros aliquam pharetra. Phasellus et diam justo. Quisque vitae dui sit amet nibh varius rutrum eget sit amet est. Aliquam hendrerit eget augue lacinia mattis. Pellentesque dapibus fermentum massa.\n'}
-
-
-
-		self.__roomDescriptsShort = 
-		{'ca': 'You are in the common area...', 
-		'kt': 'You are in the kitchen...', 
-		'sr': 'You are in the storeroom...',
-		'tr': 'You are in the Treasure Room', 
-		'pw': 'You are in the passage way...', 
-		'bh': 'You are in the Banquet Hall...', 
-		'hw': 'You are in the Hallway...', 
-		'wl': 'You are in the Wizard\'s Laboratory', 
-		'ap': 'You are in the Alternate Plane...',
-		'ce':'You are looking at the Cave Entrance..', 
-		'ct': 'You are back inside the Closet...', 
-		'ar': 'You are in the Armory...', 
-		'jl': 'You are back at the jail...',
-		'cl':'You are inside the cell....', 
-		'ot': 'You are outside!', 
-		'bd': 'In the Bedroom', 
-		'sq': 'You are in the sleeping quarters'}
-
-		self.__exitDescript = {
-
-
-
-		}
+	'''
 	
-		'''
-
-
-
-	'''
-	Description: takes the roomLocation produced by a call to gameData's getPlayerLocation() 
-	and returns the long description. This will normally be called within generateRoomDescription - see below. 
+	Description: this accessor method returns the action text of the textDisplay instance...s
 
 	'''
 
-	def getLongRoomDescription():
-		return self.roomDescriptionLong[roomLocation]
+	def getActionText(self):
+		return self.__actionText
 
 
 	'''
-	Description: takes the roomLocation produced by a call to gameData's getPlayerLocation() and returns 
-	the short description. This will normally be called within generateRoomDescription - see below. 
+
+	Description: This mutator method takes an external string and sets the actionText property to that string
 
 	'''
 
-	def getShortRoomDescription(roomLocation):
-		return self.roomDescriptsShort[roomLocation]
+	def setActionText(self, textPassed):
+
+		self.__actionText = textPassed
+
 
 	'''
-	Description: takes the roomLocation and whether it was vistied and then prints the roomDescription to console
-
-	Ideally, this would accept the return values of gameData's getPlayerLocation() and isRoomDiscovered()
+	Description: This function will generate the display text for the game. 
 
 	'''
-	def generateRoomDescription(self, roomLocation, visitedBool):
+	def generateText(self):
 
-		if visitedBool:
-			print getShortRoomDescription(roomLocation)
+		dm = DataManager() #this won't be the same instance that is running in the game module, so this probably won't work
+
+		#reset the actionText to None
+		self.setActionText(None)
+
+		#print header info
+
+		print "Haunted Dungeon\t\t\t", "Health: " , dm.getPlayerHealth()
+
+		if dm.isRoomDiscovered() == False:
+			#print appropriate room description
+
+			print dm.getRoomLongDescription()
+
+			#get the objects in the room and print the visible ones 
+
+			objectsAvailable = dm.getRoomObjects()
+
+			print "You see these items..."
+
+			for item in objects:
+				if dm.isObjectVisible(item):
+					print "*", item 
+
+			#get the room exits and print the visible 
+			print "You see these exits..."
+			roomExits = dm.getRoomsExits()
+
+			for exit in roomExits:
+				if dm.isExitVisible(exit):
+					print "To the " + dm.getExitDirection(exit), "..." + dm.getExitLongDescription(exit)
+
 		else:
-			print getRoomLongDescription[roomLocation]
+			print dm.getRoomShortDescription()
+			objectsAvailable = dm.getRoomObjects()
+
+			print "You see these items..."
+
+			for item in objects:
+				if dm.isObjectVisible(item):
+					print "*", item 
+
+			print "You see these exits..."
+			roomExits = dm.getRoomsExits()
+
+			for exit in roomExits:
+				if dm.isExitVisible(exit):
+					print "To the " + dm.getExitDirection(exit), "..." + dm.getExitShortDescription(exit)
+
+		#This will only 
+
+		ghosts = dm.getGhostsNames()
+
+		for g in ghosts:
+			if dm.getGhostLocation(g) == dm.getPlayerLocation():
+				if dm.isGhostVisible(g):
+					print "You see " + dm.getGhostShortDescription(g) 
 
 
-
+	
 if __name__ == '__main__':
 	textDisplay()
