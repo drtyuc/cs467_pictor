@@ -36,7 +36,7 @@ class nlp():
 
 	def buildSynonymDict(self):
 
-		synonymFilePath = self.cwd + "/synonymFile.txt" #file source: https://justenglish.me/2014/04/18/synonyms-for-the-96-most-commonly-used-words-in-english/
+		synonymFilePath = self.cwd + "/data/synonymFile.txt" #file source: https://justenglish.me/2014/04/18/synonyms-for-the-96-most-commonly-used-words-in-english/
 		with open(synonymFilePath, 'r') as f:
 			for line in f:
 				splitLine = line.split('-')
