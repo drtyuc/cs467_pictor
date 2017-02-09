@@ -24,9 +24,12 @@
 # 
 #  VERSION     DATE      WHO        DETAIL
 #    0.1    02/04/2017   DL    Initial Version
+#    0.2    02/08/2017   AB    added generateText()
+#    0.3    02/08/2017   DL    updated newGame()
 ###############################################
 
 from DMT.GameData import DataManager
+from commandNLP.nlp import nlp
 
 
 class HauntedDungeon():
@@ -34,12 +37,23 @@ class HauntedDungeon():
 
     def newGame(self):
 	# TODO(DL): add working new game functionality
-	# From Jerry's example
+	# this will break when you type a command that
+	# like go south
         self.dm = DataManager()
         self.dm.loadNewGame()
+	self.nlp = nlp()
+	self.nlp.buildSynonymDict()
 	# while not end of game
+	# print display text for current locale to player
 	self.generateText()
 	# get input
+	commandTuple = ()
+	while not any(commandTuple):
+	    command = raw_input("Your move: ")
+	    commandTuple = self.nlp.buildTuple(command)
+	    if not any(commandTuple):
+		print "I don't understand..."
+	print commandTuple
 	# do action
         return
 
