@@ -37,7 +37,10 @@ class HauntedDungeon():
 	# From Jerry's example
         self.dm = DataManager()
         self.dm.loadNewGame()
+	# while not end of game
 	self.generateText()
+	# get input
+	# do action
         return
 
 
