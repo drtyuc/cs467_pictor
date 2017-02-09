@@ -37,9 +37,7 @@ class HauntedDungeon():
 	# From Jerry's example
         self.dm = DataManager()
         self.dm.loadNewGame()
-        self.dep = self.dm.getDependencies()
-        for i in self.dep['commands']:
-            print(i['tuple'])
+	self.generateText()
         return
 
 
@@ -75,11 +73,9 @@ class HauntedDungeon():
     '''
     def generateText(self):
 
-        self.dm = DataManager() #this won't be the same instance that is running in the game module, so this probably won't work
-
         #print header info
 
-        print "Haunted Dungeon\t\t\t", "Health: " , dm.getPlayerHealth()
+        print "Haunted Dungeon\t\t\t", "Health: " , self.dm.getPlayerHealth()
 
         if self.dm.isRoomDiscovered() == False:
             #print appropriate room description
@@ -98,14 +94,14 @@ class HauntedDungeon():
 
             #get the room exits and print the visible 
             print "You see these exits..."
-            roomExits = self.dm.getRoomsExits()
+            roomExits = self.dm.getRoomExits()
 
             for exit in roomExits:
                 if self.dm.isExitVisible(exit):
                     print "To the " + self.dm.getExitDirection(exit), "..." + self.dm.getExitLongDescription(exit)
 
         else:
-            print dm.getRoomShortDescription()
+            print self.dm.getRoomShortDescription()
             objectsAvailable = self.dm.getRoomObjects()
 
             print "You see these items..."
@@ -115,18 +111,18 @@ class HauntedDungeon():
                     print "*", item 
 
             print "You see these exits..."
-            roomExits = self.dm.getRoomsExits()
+            roomExits = self.dm.getRoomExits()
 
             for exit in roomExits:
                 if self.dm.isExitVisible(exit):
                     print "To the " + self.dm.getExitDirection(exit), "..." + self.dm.getExitShortDescription(exit)
 
-        ghosts = self.dm.getGhostsNames()
+        ghosts = self.dm.getGhostNames()
 
         for g in ghosts:
-            if self.dm.getGhostLocation(g) == dm.getPlayerLocation():
+            if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
                 if self.dm.isGhostVisible(g):
-                    print "You see " + dm.getGhostShortDescription(g) 
+                    print "You see " + self.dm.getGhostShortDescription(g) 
 
 
 
