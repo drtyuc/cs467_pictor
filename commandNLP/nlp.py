@@ -13,8 +13,8 @@ class nlp():
 		
 		self.__cwd = os.getcwd()
 
-		self.__gameVerbs = ["drink", "drop", "eat", "equip", "go", "help", "hit", "inventory", "loadgame", "look", "pull", "push",
-						  "savegame", "take", "use", "wear", "wield"]
+		self.__gameVerbs = ["drink", "drop", "east", "eat", "equip", "go", "help", "hit", "inventory", "lay", "light", "loadgame", "look", "north", 
+							"pull", "push", "read", "savegame", "sit", "south", "take", "unequip", "unlock", "use", "wear", "west", "wield"]
 
 		self.__prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
 
@@ -23,10 +23,13 @@ class nlp():
                  			"lantern", "lever", "lockpick", "matches", "mattress", "mushrooms", "nightstand", "note",
 	  						"painting", "paintings", "ring", "rocks", "rug", "runes", "safe", "scroll", "shelf", "shelves", "sign", "stool",
                  			"stools", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer"]
-		self.__verbPrepositionCombos = {'look':['at', 'under', 'above', 'into', 'behind'], 'take': [], 
-							'help': ['with'], 'inventory': [], 'use': ['on', 'with'], 'drop' : ['at', 'behind', 'into', 'on'], 'eat': [],
-							'drink':[], 'pull': [], 'hit': [], 'put': [], 'put': ['on', 'into', 'under', 'above', 'with'],
-							'push': ['on'], 'wield': [], 'wear': [], 'go':[]}
+
+		self.__verbPrepositionCombos = {'drink':[], 'drop' : ['at', 'behind', 'into', 'on'], "east": [], 'eat': [], 'equip': [], 'go':[], 
+										'help': ['with'], 'hit': [], 'inventory': [], 'lay' : ['on'], 'light': [],  'look':['at', 'under', 'above', 'into', 'behind'], 
+										"north": [], 'pull': [],  'put': ['on', 'into', 'under', 'above', 'with'], 'push': ['on'], 'read' : [], 
+										'sit': ['on'], "south": [], 'take': [], 'unequip': [], 'unlock': [], 'use': ['on', 'with'], 'wear': [], "west": [], 'wield': []}
+		
+
 		self.__synonymsDictionary = {}
 
 	
