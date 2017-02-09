@@ -7,30 +7,50 @@ import unittest
 
 
 class nlp():
-	"""docstring for ClassName"""
+	"""I have the values for the properties already loaded here. See below function for the likely
+	future state of the constructor """
 	def __init__(self):
 		
-		self.cwd = os.getcwd()
+		self.__cwd = os.getcwd()
 
-		self.gameVerbs = ["drink", "drop", "eat", "help", "hit", "inventory", "loadgame", "look", "pull", "push",
+		self.__gameVerbs = ["drink", "drop", "eat", "equip", "go", "help", "hit", "inventory", "loadgame", "look", "pull", "push",
 						  "savegame", "take", "use", "wear", "wield"]
 
-		self.prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
+		self.__prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
 
-		self.gameObjects = [ "altar", "apple", "armor", "axe", "bearskin", "bed", "book", "books", "bones", "bottle", "chair", "chairs",
+		self.__gameObjects = [ "altar", "apple", "armor", "axe", "bearskin", "bed", "book", "books", "bones", "bottle", "chair", "chairs",
                  			"chandelier", "cloak", "desk", "dinnerware", "gem", "hearth", "helmet", "key", "key-rung", "knife",
                  			"lantern", "lever", "lockpick", "matches", "mattress", "mushrooms", "nightstand", "note",
 	  						"painting", "paintings", "ring", "rocks", "rug", "runes", "safe", "scroll", "shelf", "shelves", "sign", "stool",
                  			"stools", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer"]
-		self.verbPrepositionCombos = {'look':['at', 'under', 'above', 'into', 'behind'], 'take': [], 
+		self.__verbPrepositionCombos = {'look':['at', 'under', 'above', 'into', 'behind'], 'take': [], 
 							'help': ['with'], 'inventory': [], 'use': ['on', 'with'], 'drop' : ['at', 'behind', 'into', 'on'], 'eat': [],
-							'drink':[], 'pull': [], 'hit': [], 'put': [], 'hit': [], 'put': ['on', 'into', 'under', 'above', 'with'],
-							'push': ['on'], 'wield': [], 'wear': [],}
-		self.synonymsDictionary = {}
+							'drink':[], 'pull': [], 'hit': [], 'put': [], 'put': ['on', 'into', 'under', 'above', 'with'],
+							'push': ['on'], 'wield': [], 'wear': [], 'go':[]}
+		self.__synonymsDictionary = {}
+
+	
+	'''
+
+	Definition: this function sets the properties that will be used by the nlp object to potentially match
+	strings. It will likely take the string returned by the call to dm.getObjectList(). I may move this
+	into the constructor but for right now it easier for testing purposes to do it with this function
 
 	'''
 
-	Definition: builds the dictionary used to check if a command issued is synonymous with 
+
+	def loadProperties(verbList, prepList, objList, vpComboList):
+
+		self.__gameVerbs = verbList
+		self.__prepositions = prepList
+		self.__gameObjects = objList
+		self.__verbPrepositionCombos = vpComboList
+
+
+
+	'''
+
+	Definition: builds the dictionary used to check if a command issued is synonymous with a supported game word (verbs/prepositions)
 
 	'''
 
@@ -52,7 +72,7 @@ class nlp():
 
 	Definition: parses command passed by user into tokens 
 
-	Post Conditions: Returns 
+	Post Conditions: Returns a list of token strings
 
 	'''
 
@@ -120,7 +140,7 @@ class nlp():
 
 
 	'''
-	Function used for unit Testing 
+	Definition: Function used for unit Testing 
 
 	'''
 
