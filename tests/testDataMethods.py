@@ -125,7 +125,7 @@ class Rooms(unittest.TestCase):
     #R7
     def test_setRoomLighted(self):
         dm.setPlayerLocation('kt')
-        dm.setRoomLighted(False)
+        dm.setRoomLighted('kt', False)
         self.assertFalse(dm.isRoomLighted(), "#R7  Failed setRoomLighted")
     #R8
     def test_addRoomObject(self):
@@ -396,7 +396,7 @@ class GoToRoom(unittest.TestCase):
              {'room':'pw',   'exit':'south',                  'expected':'ce'},
              {'room':'pw',   'exit':'long dark tunnel',       'expected':'ce'},
              {'room':'pw',   'exit':'north',                  'expected':'ca'},
-             {'room':'pw',   'exit':'rolling steel door',     'expected':'ca'}, 
+             {'room':'pw',   'exit':'rolling shutter door',     'expected':'ca'}, 
              {'room':'sq',   'exit':'north',                  'expected':'ar'},
              {'room':'sq',   'exit':'solid metal door',       'expected':'ar'},
              {'room':'sq',   'exit':'west',                   'expected':'bd'},

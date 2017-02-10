@@ -4507,23 +4507,23 @@
 			"hint": "Room is dark ... cannot see bunk bed"
 		}, {
 			"method": "isObjectAccessible()",
-			"object": "bearskin",
+			"object": "bunk bed",
 			"expect": true,
 			"hint": "Bunk bed is not in this room"
 		}, {
 			"method": "isObjectVisible()",
-			"object": "bearskin",
+			"object": "bunk bed",
 			"expect": true,
 			"hint": "Bunk bed is not visible"
 		}, {
 			"method": "isLookUnderPossible()",
-			"object": "bearskin",
+			"object": "bunk bed",
 			"expect": true,
 			"hint": "You cannot look under bunk bed"
 		}],
 		"actions": [{
 			"method": "setUnderObjectsVisible()",
-			"object": "bearskin",
+			"object": "bunk bed",
 			"state": true,
 			"text": ""
 		}]
@@ -4788,9 +4788,9 @@
 			"state": true,
 			"text": "You now know the combination to the safe"
 		}, {
-			"method": "setObjectKeyObject()",
+			"method": "setObjectUnlocked()",
 			"object": "safe",
-			"state": "",
+			"state": "true",
 			"text": ""
 		}]
 	}, {
@@ -5082,7 +5082,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take armor"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "armor",
 			"expect": true,
 			"hint": "Armor cannot be taken"
@@ -5126,7 +5126,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take axe"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "axe",
 			"expect": true,
 			"hint": "Axe cannot be taken"
@@ -5170,7 +5170,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take book of locks"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "book of locks",
 			"expect": true,
 			"hint": "Book of locks cannot be taken"
@@ -5214,7 +5214,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take book of spells"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "book of spells",
 			"expect": true,
 			"hint": "Book of spells cannot be taken"
@@ -5258,7 +5258,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take bottle of gatorade"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "bottle of gatorade",
 			"expect": true,
 			"hint": "Bottle of gatorade cannot be taken"
@@ -5302,7 +5302,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take bottle of water"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "bottle of water",
 			"expect": true,
 			"hint": "Bottle of water cannot be taken"
@@ -5346,7 +5346,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take bottleopener"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "bottleopener",
 			"expect": true,
 			"hint": "Bottleopener cannot be taken"
@@ -5390,7 +5390,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take brass lantern"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "brass lantern",
 			"expect": true,
 			"hint": "Brass lantern cannot be taken"
@@ -5434,7 +5434,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take broken lantern"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "broken lantern",
 			"expect": true,
 			"hint": "Broken lantern cannot be taken"
@@ -5478,7 +5478,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take cloak"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "cloak",
 			"expect": true,
 			"hint": "Cloak cannot be taken"
@@ -5522,7 +5522,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take earthenware"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "earthenware",
 			"expect": true,
 			"hint": "Earthenware cannot be taken"
@@ -5566,7 +5566,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take fine china"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "fine china",
 			"expect": true,
 			"hint": "Fine china cannot be taken"
@@ -5610,7 +5610,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take gem"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "gem",
 			"expect": true,
 			"hint": "Gem cannot be taken"
@@ -5654,7 +5654,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take golden key"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "golden key",
 			"expect": true,
 			"hint": "Golden key cannot be taken"
@@ -5698,7 +5698,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take green apple"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "green apple",
 			"expect": true,
 			"hint": "Green apple cannot be taken"
@@ -5742,7 +5742,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take helmet"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "helmet",
 			"expect": true,
 			"hint": "Helmet cannot be taken"
@@ -5786,7 +5786,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take kitchen knife"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "kitchen knife",
 			"expect": true,
 			"hint": "Kitchen knife cannot be taken"
@@ -5830,7 +5830,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take lockpick"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "lockpick",
 			"expect": true,
 			"hint": "Lockpick cannot be taken"
@@ -5874,7 +5874,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take machete"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "machete",
 			"expect": true,
 			"hint": "Machete cannot be taken"
@@ -5918,7 +5918,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take magical ring"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "magical ring",
 			"expect": true,
 			"hint": "Magical ring cannot be taken"
@@ -5962,7 +5962,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take matches"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "matches",
 			"expect": true,
 			"hint": "Matches cannot be taken"
@@ -6006,7 +6006,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take mushrooms"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "mushrooms",
 			"expect": true,
 			"hint": "Mushrooms cannot be taken"
@@ -6050,7 +6050,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take note"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "note",
 			"expect": true,
 			"hint": "Note cannot be taken"
@@ -6094,7 +6094,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take red apple"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "red apple",
 			"expect": true,
 			"hint": "Red apple cannot be taken"
@@ -6138,7 +6138,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take sabre"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "sabre",
 			"expect": true,
 			"hint": "Sabre cannot be taken"
@@ -6182,7 +6182,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take scroll"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "scroll",
 			"expect": true,
 			"hint": "Scroll cannot be taken"
@@ -6226,7 +6226,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take shale rocks"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "shale rocks",
 			"expect": true,
 			"hint": "Shale rocks cannot be taken"
@@ -6270,7 +6270,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take slate rocks"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "slate rocks",
 			"expect": true,
 			"hint": "Slate rocks cannot be taken"
@@ -6314,7 +6314,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take stoneware"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "stoneware",
 			"expect": true,
 			"hint": "Stoneware cannot be taken"
@@ -6358,7 +6358,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take treasure"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "treasure",
 			"expect": true,
 			"hint": "Treasure cannot be taken"
@@ -6402,7 +6402,7 @@
 			"expect": true,
 			"hint": "You are carrying to much, cannot take warhammer"
 		}, {
-			"method": "isObjectAquirable()",
+			"method": "isObjectAcquirable()",
 			"object": "warhammer",
 			"expect": true,
 			"hint": "Warhammer cannot be taken"
@@ -6428,13 +6428,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "armor",
-			"expect": false,
+			"expect": true,
 			"hint": "Armor is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "armor",
-			"state": true,
+			"state": false,
 			"text": "Armor has been unequipped"
 		}]
 	}, {
@@ -6447,13 +6447,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "axe",
-			"expect": false,
+			"expect": true,
 			"hint": "Axe is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "axe",
-			"state": true,
+			"state": false,
 			"text": "Axe has been unequipped"
 		}]
 	}, {
@@ -6466,13 +6466,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "cloak",
-			"expect": false,
+			"expect": true,
 			"hint": "Cloak is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "cloak",
-			"state": true,
+			"state": false,
 			"text": "Cloak has been unequipped"
 		}]
 	}, {
@@ -6485,13 +6485,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "gem",
-			"expect": false,
+			"expect": true,
 			"hint": "Gem is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "gem",
-			"state": true,
+			"state": false,
 			"text": "Gem has been unequipped"
 		}]
 	}, {
@@ -6504,13 +6504,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "helmet",
-			"expect": false,
+			"expect": true,
 			"hint": "Helmet is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "helmet",
-			"state": true,
+			"state": false,
 			"text": "Helmet has been unequipped"
 		}]
 	}, {
@@ -6523,13 +6523,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "kitchen knife",
-			"expect": false,
+			"expect": true,
 			"hint": "Kitchen knife is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "kitchen knife",
-			"state": true,
+			"state": false,
 			"text": "Kitchen knife has been unequipped"
 		}]
 	}, {
@@ -6542,13 +6542,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "machete",
-			"expect": false,
+			"expect": true,
 			"hint": "Machete is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "machete",
-			"state": true,
+			"state": false,
 			"text": "Machete has been unequipped"
 		}]
 	}, {
@@ -6561,13 +6561,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "magical ring",
-			"expect": false,
+			"expect": true,
 			"hint": "Magical ring is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "magical ring",
-			"state": true,
+			"state": false,
 			"text": "Magical ring has been unequipped"
 		}]
 	}, {
@@ -6580,13 +6580,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "sabre",
-			"expect": false,
+			"expect": true,
 			"hint": "Sabre is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "sabre",
-			"state": true,
+			"state": false,
 			"text": "Sabre has been unequipped"
 		}]
 	}, {
@@ -6599,13 +6599,13 @@
 		}, {
 			"method": "isObjectEquipped()",
 			"object": "warhammer",
-			"expect": false,
+			"expect": true,
 			"hint": "Warhammer is already unequipped"
 		}],
 		"actions": [{
 			"method": "setObjectEquipped()",
 			"object": "warhammer",
-			"state": true,
+			"state": false,
 			"text": "Warhammer has been unequipped"
 		}]
 	}, {
@@ -6742,7 +6742,7 @@
 			"expect": true,
 			"hint": "Iron trunk not visible"
 		}, {
-			"method": "isObjUnlocked()",
+			"method": "isObjectUnlocked()",
 			"object": "iron trunk",
 			"expect": false,
 			"hint": "Iron trunk is already unlocked"
@@ -6753,7 +6753,7 @@
 			"hint": "You don't have the right key"
 		}],
 		"actions": [{
-			"method": "setOnjectUnlocked()",
+			"method": "setObjectUnlocked()",
 			"object": "iron trunk",
 			"state": true,
 			"text": "Iron trunk has been unlocked"

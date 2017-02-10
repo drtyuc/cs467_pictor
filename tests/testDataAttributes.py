@@ -1454,7 +1454,7 @@ class ObjectLookInside(unittest.TestCase):
              {'object':'gem',         'expected':True},
              {'object':'cooking hearth',      'expected':False},
              {'object':'helmet',      'expected':False},
-             {'object':'golden key',         'expected':False},     
+             {'object':'golden key',         'expected':True},     
              {'object':'key rung',     'expected':False},
              {'object':'kitchen knife',       'expected':False},
              {'object':'broken lantern',     'expected':False},

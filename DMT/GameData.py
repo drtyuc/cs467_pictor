@@ -141,6 +141,9 @@ class DataManager():
 	    
     def isPlayerVisible(self):
 	    return self.__players[0].visible
+        
+    def setPlayerHealth(self, health):
+        self.__players[0].health = health
 	    
     def adjustPlayerHealth(self, name, status=None):
 		index = self.getObjectIndex(name)
@@ -231,7 +234,7 @@ class DataManager():
                     objectlighted = True   
         return (self.__rooms[index].lighted or objectlighted)
 	
-    def setRoomLighted(self, status):
+    def setRoomLighted(self, obj, status):
 		location = self.getPlayerLocation()
 		index = self.getRoomIndex(location)
 		self.__rooms[index].lighted = status
@@ -349,7 +352,7 @@ class DataManager():
         return self.__objects[index].lookBehind
         
     def isObjectAccessible(self, name):
-        return (isObjectInInventory(name) or isObjectInRoom(name))    
+        return (self.isObjectInInventory(name) or self.isObjectInRoom(name))    
     		
     def isObjectAcquirable(self, name):
 		index = self.getObjectIndex(name)
@@ -368,7 +371,7 @@ class DataManager():
         if self.__objects[index].wieldable:
             for i in self.getInventoryObjects():
                 idx = self.getObjectIndex(i)
-                if self.__objects[index].wieldable == True:
+                if self.__objects[index].equipped == True:
                     return False
         return self.__objects[index].equippable
 	
@@ -456,11 +459,11 @@ class DataManager():
         index = self.getObjectIndex(name)
         return self.__objects[index].wieldable		
 			 
-    def getObjectLongDescription(self, name):
+    def getObjectLongDescription(self, name, state=None):
 		index = self.getObjectIndex(name)
 		return self.__objects[index].longDescription
 	
-    def getObjectShortDescription(self, name):
+    def getObjectShortDescription(self, name, state=None):
 		index = self.getObjectIndex(name)
 		return self.__objects[index].shortDescription   
         		
@@ -672,10 +675,13 @@ class DataManager():
 		
     def getGhostDamagePoints(self, name):
 		index = self.getGhostIndex(name)
-		return self.__ghosts[index].damagePoints	
+		return self.__ghosts[index].damagePoints
+    
+    def adjustGhostHealth(self, name, status=None):
+        x = 1
 				
 	    
-	#------------------- Index Methods ----------------------    
+    #------------------- Index Methods ----------------------    
     def getObjectIndex(self, name):
 		index = 0
 		for i in self.__objects:
