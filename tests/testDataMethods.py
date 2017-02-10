@@ -92,7 +92,7 @@ class Rooms(unittest.TestCase):
     #R3
     def test_getRoomShortDescription(self):
         dm.setPlayerLocation('kt')
-        self.assertEqual(dm.getRoomShortDescription(), "Kitchen Short Description", "#R3  Failed getRoomShortDescription")
+        self.assertEqual(dm.getRoomShortDescription(), "Kitchen", "#R3  Failed getRoomShortDescription")
     #R4
     def test_isRoomDiscovered(self):
         dm.setPlayerLocation('kt')

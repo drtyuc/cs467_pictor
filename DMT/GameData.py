@@ -137,7 +137,7 @@ class DataManager():
 		return self.__players[0].health
 		
     def getPlayerLocation(self):
-	    return self.__players[0].location
+        return self.__players[0].location
 	    
     def isPlayerVisible(self):
 	    return self.__players[0].visible
@@ -158,6 +158,10 @@ class DataManager():
     def movePlayer(self, direction, status=None):
         index = self.getExitIndex(direction)
         self.__players[0].location = self.__exits[index].toRoom	
+    
+    def getCurrentRoom(self):
+        index = self.getRoomIndex(self.__players[0].location)
+        return self.__rooms[index].shortDescription
 	
 	#------------------- Inventory Methods ----------------------	
     def getInventoryCapacity(self):
@@ -255,11 +259,20 @@ class DataManager():
 		location = self.getPlayerLocation()
 		index = self.getRoomIndex(location)
 		self.__rooms[index].objects.remove(name)
-	
+        
     def getRoomExits(self):
 		location = self.getPlayerLocation()
 		index = self.getRoomIndex(location)
 		return self.__rooms[index].exits
+	
+    def getRoomExitDescriptions(self):
+        exits = []
+        location = self.getPlayerLocation()
+        index = self.getRoomIndex(location)
+        for i in self.__rooms[index].exits:
+            eindex = self.getExitIndex(i)
+            exits.append(self.__exits[eindex].shortDescription)
+        return exits
 		
     def clearRoomObjects(self):
 		location = self.getPlayerLocation()
@@ -518,6 +531,16 @@ class DataManager():
     def setObjectKeyObject(self, name, value):
 		index = self.getObjectIndex(name)
 		self.__objects[index].keyObject	= value
+        
+    def getVisibleObjects(self):
+        objects = []
+        room = self.getPlayerLocation()
+        roomLit = self.isRoomLighted(room)
+        for i in self.getRoomObjects():
+            index = self.getObjectIndex(i)
+            if (self.__objects[index].visible == True) and roomLit:
+                objects.append(i)
+        return objects
 
     def getObjectNames(self):
         objects = []
