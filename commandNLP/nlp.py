@@ -59,7 +59,7 @@ class nlp():
 
 	def buildSynonymDict(self):
 
-		synonymFilePath = self.cwd + "/data/synonymFile.txt" #file source: https://justenglish.me/2014/04/18/synonyms-for-the-96-most-commonly-used-words-in-english/
+		synonymFilePath = self.__cwd + "/data/synonymFile.txt" #file source: https://justenglish.me/2014/04/18/synonyms-for-the-96-most-commonly-used-words-in-english/
 		with open(synonymFilePath, 'r') as f:
 			for line in f:
 				splitLine = line.split('-')
@@ -69,7 +69,7 @@ class nlp():
 				parsedSynonyms = synonymList.split(",")
 				for word in parsedSynonyms:
 					word = word.strip(' \t\n\r')
-					self.synonymsDictionary[word] = verb
+					self.__synonymsDictionary[word] = verb
 
 	'''
 
@@ -103,8 +103,8 @@ class nlp():
 
 		#get the verb, check to see if it exists in the dict, if it doesn't, return empty tuple, 
 		verbCommand = parsedCommand[0] 
-		if verbCommand in self.synonymsDictionary:
-			verbCommand = self.synonymsDictionary[verbCommand]
+		if verbCommand in self.__synonymsDictionary:
+			verbCommand = self.__synonymsDictionary[verbCommand]
 		else:
 			return tupleReturned
 
@@ -112,15 +112,15 @@ class nlp():
 
 		if len(parsedCommand) == 2:
 			prepositionCommand = None
-			permittedPreps = self.verbPrepositionCombos[verbCommand]
+			permittedPreps = self.__verbPrepositionCombos[verbCommand]
 			if any(permittedPreps):
 				return tupleReturned 
 
 		else:
 			prepositionCommand = parsedCommand[1]
-			if prepositionCommand in self.synonymsDictionary:
-				prepositionCommand = self.synonymsDictionary[prepositionCommand]
-				permittedPreps = self.verbPrepositionCombos[verbCommand]
+			if prepositionCommand in self.__synonymsDictionary:
+				prepositionCommand = self.__synonymsDictionary[prepositionCommand]
+				permittedPreps = self.__verbPrepositionCombos[verbCommand]
 				if prepositionCommand not in permittedPreps:
 					return tupleReturned 
 			else:
@@ -133,7 +133,7 @@ class nlp():
 		else:
 			objectCommand = parsedCommand[2]
 	
-		if objectCommand not in self.gameObjects:
+		if objectCommand not in self.__gameObjects:
 			return tupleReturned
 
 		#build the actual tuple and return it
