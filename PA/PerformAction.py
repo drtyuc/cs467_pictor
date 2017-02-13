@@ -84,8 +84,7 @@ class PerformAction():
 
 
     def __getCommandDependenciesHint(self, dm):
-	""" Gets first failed dependency hint """
-	# TODO(DL) modify to set display module with text instead of returning text
+	""" Gets first failed dependency hint and prints it """
 	self.__hint = ""
 	for dep in self.__dependencies:
 	    cmd = "dm." + dep["method"]
@@ -95,7 +94,7 @@ class PerformAction():
 	        cmd = merge_object
 	    result = eval(cmd)
 	    if result != dep["expect"]:
-               self.__hint = dep["hint"]
+               print dep["hint"]
 	return 
 
 
@@ -120,8 +119,7 @@ class PerformAction():
 
 
     def doCommandActions(self, dm):
-	""" Execute the action methods return list of success text """
-	# TODO(DL) modify to set display module with text instead of returning text
+	""" Execute the action methods return print success text """
 	success = []
 	for dep in self.__actions:
 	    cmd = "dm." + dep["method"]
@@ -129,13 +127,14 @@ class PerformAction():
 	    merge_object = cmd[:index] + "'" + dep["object"] + "', " + str(dep["state"]) + cmd[index:] 
 	    cmd = merge_object
 	    result = eval(cmd)
-	    success.append(dep["text"])
-	return success 
+	    print dep["text"]
+	return 
 
 
     def setGhostActions(self):
 	""" triggers after player peforms one action """
 	# TODO(DL): flesh out
+	# Each ghost will have a turn after the player has a turn
 	return 
 
 
