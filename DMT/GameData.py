@@ -50,7 +50,8 @@ class DataManager():
         self.__exits = []
         self.__objects = []
         self.__ghosts = []
-        self.__help = []
+        self.__verbs = []
+        self.__prepositions = []
         self.__dependencies = []
 	
 	#--------------------- Load New Game -----------------------
@@ -90,8 +91,11 @@ class DataManager():
         for i in self.__primitives['ghosts']:
 			self.__ghosts.append(Data(i))
             
-        for i in self.__primitives['help']:
-            self.__help.append(Data(i))
+        for i in self.__primitives['verbs']:
+            self.__verbs.append(Data(i))
+            
+        for i in self.__primitives['prepositions']:
+            self.__prepositions.append(Data(i))
             
         self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
 
@@ -104,7 +108,8 @@ class DataManager():
         s["exits"] = []
         s["objects"] = []
         s["ghosts"] = []
-        s["help"] = []
+        s["verbs"] = []
+        s["prepositions"] = []
 
         for i in self.__players:
 	        s["players"].append(json.loads(json.dumps(i.__dict__)))
@@ -118,8 +123,10 @@ class DataManager():
 	        s["objects"].append(json.loads(json.dumps(i.__dict__)))
         for i in self.__ghosts:
 	        s["ghosts"].append(json.loads(json.dumps(i.__dict__)))
-        for i in self.__help:
-	        s["help"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__verbs:
+	        s["verbs"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__prepostions:
+	        s["prepositions"].append(json.loads(json.dumps(i.__dict__)))
 
         response = raw_input("Please enter a filename: ")
         filename = SAVED_GAME_DIRECTORY + response
@@ -755,17 +762,41 @@ class DataManager():
 
 #----------------- Miscellaneous Methods -------------------  
 
-    def getHelpVerbs(self):
+    def getVerbs(self):
         verbs = []
-        for i in self.__help:
+        for i in self.__verbs:
             verbs.append(i.verb)
         return verbs
         
-    def getHelpDescriptions(self):
+    def getVerbDescriptions(self):
         descriptions = []
-        for i in self.__help:
+        for i in self.__verbs:
             descriptions.append(i.description)
         return descriptions
+    
+    def getPrepositions(self):
+        prepositions = []
+        for i in self.__prepositions:
+            prepositions.append(i.preposition)
+        return prepositions
+        
+    def getObjects(self):
+        objects = []
+        for i in self.__objects:
+			objects.append(i.name)
+        return objects	
+        
+    def getExits(self):
+        exits = ['west','north','south','east']
+        for i in self.__exits:
+			exits.append(i.shortDescription)
+        return exits	
+        
+    def getVerbPrepositionCombos(self):
+        combo = {}
+        for i in self.__verbs:
+            combo[i.verb] = i.prepositions
+        return combo
 
     def getEquippedObjects(self):
         objects = []

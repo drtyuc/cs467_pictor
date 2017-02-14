@@ -3159,89 +3159,108 @@
 		"health": 40,
 		"damagePoints": 5
 	}],
-    "help": [{
+    "verbs": [{
 		"verb": "active",
-		"description": "active: Used to list inventory objects that are equipped"
+		"description": "active: Used to list inventory objects that are equipped",
+        "prepositions": []
     }, {
-        "verb": "drink {object}",
-		"description": "drink {object}: Used to certain objects to restore health"
+        "verb": "drink",
+		"description": "drink <object>: Used to certain objects to restore health",
+        "prepositions": []
 	}, {
-        "verb": "drop {object}",
-		"description": "drop {object}: Used to remove objects from inventory"
+        "verb": "drop",
+		"description": "drop <object>: Used to remove objects from inventory",
+        "prepositions": []
     }, {
-        "verb": "eat {object}",
-		"description": "eat {object}: Used on certain objects to restore heatlh"
+        "verb": "eat",
+		"description": "eat <object>: Used on certain objects to restore heatlh",
+        "prepositions": []
     }, {
-        "verb": "equip {object}",
-		"description": "equip {object}: Used to activate wearable and wieldable objects"
+        "verb": "equip",
+		"description": "equip <object>: Used to activate wearable and wieldable objects",
+        "prepositions": []
     }, {
-        "verb": "go {direction or exit description}",
-		"description": "go {direction or exit description}: Used to move a player to another room"
-    }, {
-        "verb": "{direction or exit description}",
-		"description": "{direction or exit description}: Used to move a player to another room"
+        "verb": "go",
+		"description": "go <direction|exit description>: Used to move a player to another room",
+        "prepositions": []
     }, {
         "verb": "help",
-		"description": "help: Used to list supported verbs"
+		"description": "help: Used to list supported verbs",
+        "prepositions": []
     }, {
         "verb": "inventory",
-		"description": "inventory: Used to list all objects in the player's inventory"
+		"description": "inventory: Used to list all objects in the player's inventory",
+        "prepositions": []
     }, {
-        "verb": "lay on {object}",
-		"description": "lay on {object}: Used on certain objects to modify health"
+        "verb": "lay",
+		"description": "lay <on> <object>: Used on certain objects to modify health",
+        "prepositions": [ "on" ]
     }, {
-        "verb": "light {object}",
-		"description": "light {object}: Used to light certain objects"    
+        "verb": "light",
+		"description": "light <object>: Used to light certain objects",    
+        "prepositions": []
     }, {
         "verb": "loadgame",
-		"description": "loadgame: Loads a saved game"
+		"description": "loadgame: Loads a saved game",
+        "prepositions": []
     }, {
         "verb": "look",
-		"description": "look: Used to display long descriptions of room and exits"
+		"description": "look <at|under|on|behind|inside|above> <object>: Used to look on an object",   
+        "prepositions": [ "at", "under", "on", "behind", "inside", "above" ]   
     }, {
-        "verb": "look above {object}",
-		"description": "look above {object}: Used to look above an object"
+        "verb": "pull",
+		"description": "pull <object>: Used to pull on an object",
+        "prepositions": []
     }, {
-        "verb": "look at {object}",
-		"description": "look at {object}: Used to display long description of an object"
+        "verb": "push",
+		"description": "push <object>: Used to push on an object",
+        "prepositions": []
     }, {
-        "verb": "look behind {object}",
-		"description": "look behind {object}: Used to look behind an object"
-    }, {
-        "verb": "look inside {object}",
-		"description": "look inside {object}: Used to look inside an object"
-    }, {
-        "verb": "look on {object}",
-		"description": "look on {object}: Used to look on an object"    
-    }, {
-        "verb": "look under {object}",
-		"description": "look under {object}: Used to look under an object"       
-    }, {
-        "verb": "pull {object}",
-		"description": "pull {object}: Used to pull on an object"
-    }, {
-        "verb": "push {object}",
-		"description": "push {object}: Used to push on an object"
-    }, {
-        "verb": "read {object}",
-		"description": "read {object}: Used to read an object"    
+        "verb": "read",
+		"description": "read <object>: Used to read an object",   
+        "prepositions": [] 
     }, {
         "verb": "savegame",
-		"description": "savegame: Used to save the game state to a file"     
+		"description": "savegame: Used to save the game state to a file",   
+        "prepositions": []  
     }, {
-        "verb": "sit on {object}",
-		"description": "sit on {object}: Used to sit on certain objects to restore health"
+        "verb": "sit",
+		"description": "sit <on> <object>: Used to sit on certain objects to restore health",
+        "prepositions": ["on"]
     }, {
-        "verb": "take {object}",
-		"description": "take {object}: Used to place an object in the player's inventory"    
+        "verb": "take",
+		"description": "take <object>: Used to place an object in the player's inventory",  
+        "prepositions": []  
     }, {
-        "verb": "unequip {object}",
-		"description": "unequip {object}: Used to deactivate wearable and wieldable objects"   
+        "verb": "unequip",
+		"description": "unequip <object>: Used to deactivate wearable and wieldable objects",
+        "prepositions": []   
     }, {
-        "verb": "unlock {object, direction, or exit description}",
-		"description": "unlock {object, direction or exit description}: Used to unlock an object or a door"    
+        "verb": "unlock",
+		"description": "unlock <object|direction|exit description>: Used to unlock an object or a door", 
+        "prepositions": []   
     }, {
-        "verb": "wield {object}",
-        "description": "wield {object}: Used to swing a weapon at a ghost"
+        "verb": "wield",
+        "description": "wield <object>: Used to swing a weapon at a ghost",
+        "prepositions": []
+    }],
+    "prepositions": [{
+		"preposition": "on",
+		"description": ""
+    }, {
+        "preposition": "at",
+		"description": ""
+	}, {
+        "preposition": "inside",
+		"description": ""
+    }, {
+        "preposition": "under",
+		"description": ""
+    }, {
+        "preposition": "behind",
+		"description": ""
+    }, {
+        "preposition": "above",
+		"description": ""
     }]
 }
