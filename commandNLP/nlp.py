@@ -7,32 +7,55 @@ import unittest
 
 
 class nlp():
-	"""I have the values for the properties already loaded here. See below function for the likely
-	future state of the constructor """
+	
+	'''
+
+	Definition: this is the old constructor with hard coded values used. We can use this for midway test.
+	Hopefully, we wll get this sorted out!
+
+	'''
+	
 	def __init__(self):
 		
-		self.__cwd = os.getcwd()
 
 		self.__gameVerbs = ["drink", "drop", "east", "eat", "equip", "go", "help", "hit", "inventory", "lay", "light", "loadgame", "look", "north", 
 							"pull", "push", "read", "savegame", "sit", "south", "take", "unequip", "unlock", "use", "wear", "west", "wield"]
 
 		self.__prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
 
-		self.__gameObjects = [ "altar", "apple", "armor", "axe", "bearskin", "bed", "book", "books", "bones", "bottle", "chair", "chairs",
-                 			"chandelier", "cloak", "desk", "dinnerware", "east", "gem", "hearth", "helmet", "key", "key-rung", "knife",
-                 			"lantern", "lever", "lockpick", "matches", "mattress", "mushrooms", "nightstand", "north", "note",
-	  						"painting", "paintings", "ring", "rocks", "rug", "runes", "safe", "scroll", "shelf", "shelves", "sign", "stool",
-                 			"stools", "south", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer", "west"]
+		self.__gameObjects = [ "altar", "apple", "armor", "axe", "bat skeleton", "bearskin", "bed","bell archway", "book", "books", "bones", "bottle", "cat skeleton", "chair", "chairs",
+                 			"chandelier", "cloak", "corrugated steel door", "creaking cell door", "desk", "dinnerware", "east", "gem", "hearth", "helmet", "human skeleton" "key", "key-rung", "knife",
+                 			"lantern", "lever", "lockpick", "long dark tunnel", "matches", "mattress", "mushrooms", "monstrous archway", "nightstand", "north", "note", "oblivion gate", "old wooden door",
+	  						"painting", "paintings", "ring", "rocks", "rolling shutter door", "rug", "runes", "rusted spiral staircase", "rusting iron door", "safe", "scroll", "shelf", "shelves", "sign", 
+                 			"smoky glazed doors", "solid metal door", "splintered double doors", "south", "stool", "stools", "swinging door", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer", "west", "winder stairs"]
 
-		self.__verbPrepositionCombos = {'drink':[], 'drop' : ['at', 'behind', 'into', 'on'], "east": [], 'eat': [], 'equip': [], 'go':[], 
+		self.__verbPrepositionCombos = {'drink':[], 'drop' : ['at', 'behind', 'into', 'on'], 'eat': [], 'equip': [], 'go':[], 
 										'help': ['with'], 'hit': [], 'inventory': [], 'lay' : ['on'], 'light': [],  'look':['at', 'under', 'above', 'into', 'behind'], 
-										"north": [], 'pull': [],  'put': ['on', 'into', 'under', 'above', 'with'], 'push': ['on'], 'read' : [], 
-										'sit': ['on'], "south": [], 'take': [], 'unequip': [], 'unlock': [], 'use': ['on', 'with'], 'wear': [], "west": [], 'wield': []}
+										'pull': [],  'put': ['on', 'into', 'under', 'above', 'with'], 'push': ['on'], 'read' : [], 
+										'sit': ['on'], 'take': [], 'unequip': [], 'unlock': [], 'use': ['on', 'with'], 'wear': [], 'wield': []}
 		
-
 		self.__synonymsDictionary = {}
 
+
+	'''
 	
+	Description: This will be the new constuctor. The arguments will be the return values of calls to DM methods. verbList is the 
+	return call to getVerbs() etc. This DM methods may not exist yet. 
+
+
+	def __init__(self, verbList = [], prepList =[], objList =[], vpCombos = {}):
+		
+		self.__cwd = os.getcwd()
+		self.__gameVerbs = verbList
+		self.__prepositions = prepList
+		self.__gameObjects = objList
+		self.__verbPrepositionCombos = vpComboList
+		self.__synonymsDictionary = {}
+
+
+	
+	'''
+
 	'''
 
 	Definition: this function sets the properties that will be used by the nlp object to potentially match
@@ -42,7 +65,7 @@ class nlp():
 	'''
 
 
-	def loadProperties(verbList, prepList, objList, vpComboList):
+	def loadProperties(self, verbList, prepList, objList, vpComboList):
 
 		self.__gameVerbs = verbList
 		self.__prepositions = prepList
@@ -98,46 +121,57 @@ class nlp():
 
 		tupleReturned = ()
 
-		#get tokens
+		#get tokens - parsedCommand should contain a list of at most 3 items in these formats: (verb, prep, object), (verb, object), (object)
 		parsedCommand = self.parseCommand(commandString)
 
-		#get the verb, check to see if it exists in the dict, if it doesn't, return empty tuple, 
-		verbCommand = parsedCommand[0] 
-		if verbCommand in self.__synonymsDictionary:
-			verbCommand = self.__synonymsDictionary[verbCommand]
-		else:
-			return tupleReturned
-
-	#get the preposition, check to see if it exists in the dictionary, if so, check to see if pair with verb is valid
-
-		if len(parsedCommand) == 2:
-			prepositionCommand = None
-			permittedPreps = self.__verbPrepositionCombos[verbCommand]
-			if any(permittedPreps):
-				return tupleReturned 
-
-		else:
-			prepositionCommand = parsedCommand[1]
-			if prepositionCommand in self.__synonymsDictionary:
-				prepositionCommand = self.__synonymsDictionary[prepositionCommand]
-				permittedPreps = self.__verbPrepositionCombos[verbCommand]
-				if prepositionCommand not in permittedPreps:
-					return tupleReturned 
+		if len(parsedCommand) > 1:
+			
+			#get the verb, check to see if it exists in the dict, if it doesn't, return empty tuple, 
+			verbCommand = parsedCommand[0] 
+			if verbCommand in self.__synonymsDictionary:
+				verbCommand = self.__synonymsDictionary[verbCommand]
 			else:
 				return tupleReturned
 
-		#get the object 
+		#get the preposition, check to see if it exists in the dictionary, if so, check to see if pair with verb is valid
 
-		if len(parsedCommand) == 2:
-			objectCommand = parsedCommand[1]
-		else:
-			objectCommand = parsedCommand[2]
+			if len(parsedCommand) == 2:
+				prepositionCommand = None
+				permittedPreps = self.__verbPrepositionCombos[verbCommand]
+				if any(permittedPreps):
+					return tupleReturned 
+
+			else:
+				prepositionCommand = parsedCommand[1]
+				if prepositionCommand in self.__synonymsDictionary:
+					prepositionCommand = self.__synonymsDictionary[prepositionCommand]
+					permittedPreps = self.__verbPrepositionCombos[verbCommand]
+					if prepositionCommand not in permittedPreps:
+						return tupleReturned 
+				else:
+					return tupleReturned
+
+			#get the object 
+
+			if len(parsedCommand) == 2:
+				objectCommand = parsedCommand[1]
+			else:
+				objectCommand = parsedCommand[2]
 	
-		if objectCommand not in self.__gameObjects:
+			if objectCommand not in self.__gameObjects:
+				return tupleReturned
+		
+		#occurs when only an "object/direct object is enter by the user "	
+		elif len(parsedCommand) == 1:
+			verbCommand = None
+			prepositionCommand = None
+			objectCommand = parsedCommand[0]
+		
+		#when nothing is received
+		else:
 			return tupleReturned
 
 		#build the actual tuple and return it
-
 		tupleReturned = (verbCommand, prepositionCommand, objectCommand)
 		return tupleReturned
 
