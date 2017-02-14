@@ -30,6 +30,7 @@
 
 from DMT.GameData import DataManager
 from commandNLP.nlp import nlp
+from PA.PerformAction import PerformAction
 
 
 class HauntedDungeon():
@@ -46,15 +47,28 @@ class HauntedDungeon():
 	# while not end of game
 	# print display text for current locale to player
 	self.generateText()
-	# get input
-	commandTuple = ()
-	while not any(commandTuple):
-	    command = raw_input("Your move: ")
-	    commandTuple = self.nlp.buildTuple(command)
-	    if not any(commandTuple):
-		print "I don't understand..."
-	print commandTuple
-	# do action
+	# comment out - get input - nlp doesnt work
+	#commandTuple = ()
+	#while not any(commandTuple):
+	#    command = raw_input("Your move: ")
+	#    commandTuple = self.nlp.buildTuple(command)
+	#    if not any(commandTuple):
+	#	print "I don't understand..."
+	#        print commandTuple
+	#print commandTuple
+	# do action - tests bypassing commandNLP
+	commands = ['look at machete', 'go north', 'take tools', 'look at tools', 'go north']
+	for command in commands:
+	    print "Your move: " + command
+	    pa = PerformAction(command, self.dm)
+	    if pa.isCommandValid() == True:
+	        if pa.areCommandDependenciesMet() == False:
+	            pa.getCommandDependenciesHint()
+	        else:
+	            pa.doCommandActions(self.dm)
+	    else:
+	        print "You can't do that"
+	    self.generateText()
         return
 
 
@@ -92,6 +106,7 @@ class HauntedDungeon():
 
         #print header info
 
+        print
         print "Haunted Dungeon\t\t\t", "Health: " , self.dm.getPlayerHealth()
 
         if self.dm.isRoomDiscovered() == False:
