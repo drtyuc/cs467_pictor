@@ -19,10 +19,10 @@ class nlp():
 		self.__prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
 
 		self.__gameObjects = [ "altar", "apple", "armor", "axe", "bearskin", "bed", "book", "books", "bones", "bottle", "chair", "chairs",
-                 			"chandelier", "cloak", "desk", "dinnerware", "gem", "hearth", "helmet", "key", "key-rung", "knife",
-                 			"lantern", "lever", "lockpick", "matches", "mattress", "mushrooms", "nightstand", "note",
+                 			"chandelier", "cloak", "desk", "dinnerware", "east", "gem", "hearth", "helmet", "key", "key-rung", "knife",
+                 			"lantern", "lever", "lockpick", "matches", "mattress", "mushrooms", "nightstand", "north", "note",
 	  						"painting", "paintings", "ring", "rocks", "rug", "runes", "safe", "scroll", "shelf", "shelves", "sign", "stool",
-                 			"stools", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer"]
+                 			"stools", "south", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer", "west"]
 
 		self.__verbPrepositionCombos = {'drink':[], 'drop' : ['at', 'behind', 'into', 'on'], "east": [], 'eat': [], 'equip': [], 'go':[], 
 										'help': ['with'], 'hit': [], 'inventory': [], 'lay' : ['on'], 'light': [],  'look':['at', 'under', 'above', 'into', 'behind'], 
