@@ -37,29 +37,21 @@ class HauntedDungeon():
 
 
     def newGame(self):
-	# TODO(DL): add working new game functionality
-	# this will break when you type a command that
-	# like go south
+	# TODO(DL): functionality lacks nlp.py
+	# This just has simple input grabbing
         self.dm = DataManager()
         self.dm.loadNewGame()
-	self.nlp = nlp()
-	self.nlp.buildSynonymDict()
 	# while not end of game
 	# print display text for current locale to player
 	self.generateText()
-	# comment out - get input - nlp doesnt work
-	#commandTuple = ()
-	#while not any(commandTuple):
-	#    command = raw_input("Your move: ")
-	#    commandTuple = self.nlp.buildTuple(command)
-	#    if not any(commandTuple):
-	#	print "I don't understand..."
-	#        print commandTuple
-	#print commandTuple
-	# do action - tests bypassing commandNLP
-	commands = ['look at machete', 'go north', 'take tools', 'look at tools', 'go north']
-	for command in commands:
-	    print "Your move: " + command
+	# basic input until we can get nlp to work
+	command = ""
+	while command != "quit":
+	    command = raw_input("Your move: ")
+	    # do action
+	    if command == "quit":
+		print "GOOD BYE!"
+		return
 	    pa = PerformAction(command, self.dm)
 	    if pa.isCommandValid() == True:
 	        if pa.areCommandDependenciesMet() == False:
@@ -67,8 +59,29 @@ class HauntedDungeon():
 	        else:
 	            pa.doCommandActions(self.dm)
 	    else:
-	        print "You can't do that"
+	        print "You can't do that!"
 	    self.generateText()
+        return
+
+
+    def newGameBroken(self):
+        # (DL): This is broken when I use nlp.py
+        # right now it just prints the command if successful 
+        self.dm = DataManager()
+        self.dm.loadNewGame()
+        self.nlp = nlp()
+        self.nlp.buildSynonymDict()
+        # while not end of game
+        # print display text for current locale to player
+        self.generateText()
+        # comment out - get input - nlp doesnt work
+        commandTuple = ()
+        while not any(commandTuple):
+            command = raw_input("Your move: ")
+            commandTuple = self.nlp.buildTuple(command)
+            if not any(commandTuple):
+                print "I don't understand..."
+        print commandTuple
         return
 
 
