@@ -13,7 +13,6 @@ class nlp():
 	Definition: this is the old constructor with hard coded values used. We can use this for midway test.
 	Hopefully, we wll get this sorted out!
 
-	'''
 	
 	def __init__(self):
 		
@@ -24,10 +23,10 @@ class nlp():
 		self.__prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
 
 		self.__gameObjects = [ "altar", "apple", "armor", "axe", "bat skeleton", "bearskin", "bed","bell archway", "book", "books", "bones", "bottle", "cat skeleton", "chair", "chairs",
-                 			"chandelier", "cloak", "corrugated steel door", "creaking cell door", "desk", "dinnerware", "east", "gem", "hearth", "helmet", "human skeleton" "key", "key-rung", "knife",
-                 			"lantern", "lever", "lockpick", "long dark tunnel", "matches", "mattress", "mushrooms", "monstrous archway", "nightstand", "north", "note", "oblivion gate", "old wooden door",
-	  						"painting", "paintings", "ring", "rocks", "rolling shutter door", "rug", "runes", "rusted spiral staircase", "rusting iron door", "safe", "scroll", "shelf", "shelves", "sign", 
-                 			"smoky glazed doors", "solid metal door", "splintered double doors", "south", "stool", "stools", "swinging door", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer", "west", "winder stairs"]
+							"chandelier", "cloak", "corrugated steel door", "creaking cell door", "desk", "dinnerware", "east", "gem", "hearth", "helmet", "human skeleton" "key", "key-rung", "knife",
+							"lantern", "lever", "lockpick", "long dark tunnel", "matches", "mattress", "mushrooms", "monstrous archway", "nightstand", "north", "note", "oblivion gate", "old wooden door",
+							"painting", "paintings", "ring", "rocks", "rolling shutter door", "rug", "runes", "rusted spiral staircase", "rusting iron door", "safe", "scroll", "shelf", "shelves", "sign", 
+							"smoky glazed doors", "solid metal door", "splintered double doors", "south", "stool", "stools", "swinging door", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer", "west", "winder stairs"]
 
 		self.__verbPrepositionCombos = {'drink':[], 'drop' : ['at', 'behind', 'into', 'on'], 'eat': [], 'equip': [], 'go':[], 
 										'help': ['with'], 'hit': [], 'inventory': [], 'lay' : ['on'], 'light': [],  'look':['at', 'under', 'above', 'into', 'behind'], 
@@ -38,29 +37,29 @@ class nlp():
 
 
 	'''
+
+	'''
 	
-	Description: This will be the new constuctor. The arguments will be the return values of calls to DM methods. verbList is the 
-	return call to getVerbs() etc. This DM methods may not exist yet. 
+	Description: constructor for NLP objects
 
+	'''
 
-	def __init__(self, verbList = [], prepList =[], objList =[], vpCombos = {}):
+	def __init__(self):
 		
 		self.__cwd = os.getcwd()
-		self.__gameVerbs = verbList
-		self.__prepositions = prepList
-		self.__gameObjects = objList
-		self.__verbPrepositionCombos = vpComboList
+		self.__gameVerbs = []
+		self.__prepositions = []
+		self.__gameObjects = []
+		self.__verbPrepositionCombos = {}
 		self.__synonymsDictionary = {}
+		self.__exits = []
 
 
 	
 	'''
 
-	'''
-
-	Definition: this function sets the properties that will be used by the nlp object to potentially match
-	strings. It will likely take the string returned by the call to dm.getObjectList(). I may move this
-	into the constructor but for right now it easier for testing purposes to do it with this function
+	Definition: this method loads the properties to an nlp object with the returns to calls 
+	to the DM module methods
 
 	'''
 
@@ -158,14 +157,18 @@ class nlp():
 			else:
 				objectCommand = parsedCommand[2]
 	
-			if objectCommand not in self.__gameObjects:
+			if objectCommand not in self.__gameObjects and objectCommand not in self.__exits:
 				return tupleReturned
 		
 		#occurs when only an "object/direct object is enter by the user "	
 		elif len(parsedCommand) == 1:
+			
 			verbCommand = None
 			prepositionCommand = None
 			objectCommand = parsedCommand[0]
+
+			if objectCommand not in self.__gameObjects and objectCommand not in self.__exits:
+				return tupleReturned
 		
 		#when nothing is received
 		else:
@@ -174,6 +177,36 @@ class nlp():
 		#build the actual tuple and return it
 		tupleReturned = (verbCommand, prepositionCommand, objectCommand)
 		return tupleReturned
+
+
+
+	'''
+	Definition: getter methods for instance properties
+	'''
+
+	def printVerbs(self):
+		for i in self.__gameVerbs:
+			print i
+		print ""
+	
+	def printPrepositions(self):
+		for i in self.__prepositions:
+			print i
+		print ""
+			
+	def printObjects(self):
+		for i in self.__gameObjects:
+			print i
+		print ""
+	
+	def printVerbPrepositionCombos(self):
+		print self.__verbPrepositionCombos
+		print ""
+			
+	def printExits(self):
+		for i in self.__exits:
+			print i
+		print ""
 
 
 	'''
