@@ -549,6 +549,7 @@ class DataManager():
                 objects.append(i)
         return objects
 
+
     def getObjectNames(self):
         objects = []
         for i in self.__objects:

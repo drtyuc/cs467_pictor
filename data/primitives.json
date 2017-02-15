@@ -169,7 +169,7 @@
 	"exits": [{
 		"filename": "",
 		"name": "ap1",
-		"longDescription": "AP1 Long Description",
+		"longDescription": "oblivion gate ... long description text here",
 		"direction": "west",
 		"shortDescription": "oblivion gate",
 		"visible": true,
@@ -179,7 +179,7 @@
 	}, {
 		"filename": "",
 		"name": "ar1",
-		"longDescription": "AR1 Long Description",
+		"longDescription": "winder stairs ... long description text here",
 		"direction": "north",
 		"shortDescription": "winder stairs",
 		"visible": true,
@@ -189,7 +189,7 @@
 	}, {
 		"filename": "",
 		"name": "ar2",
-		"longDescription": "AR2 Long Description",
+		"longDescription": "rusting iron door (long description text here)",
 		"direction": "east",
 		"shortDescription": "rusting iron door",
 		"visible": true,
@@ -199,7 +199,7 @@
 	}, {
 		"filename": "",
 		"name": "ar3",
-		"longDescription": "AR3 Long Description",
+		"longDescription": "solid metal door (long description text here)",
 		"direction": "south",
 		"shortDescription": "solid metal door",
 		"visible": true,
@@ -209,7 +209,7 @@
 	}, {
 		"filename": "",
 		"name": "bd1",
-		"longDescription": "BD1 Long Description",
+		"longDescription": "old wooden door (long description text here)",
 		"direction": "east",
 		"shortDescription": "old wooden door",
 		"visible": true,
@@ -219,7 +219,7 @@
 	}, {
 		"filename": "",
 		"name": "bh1",
-		"longDescription": "BH1 Long Description",
+		"longDescription": "splintered double doors (long description text here)",
 		"direction": "north",
 		"shortDescription": "splintered double doors",
 		"visible": true,
@@ -229,7 +229,7 @@
 	}, {
 		"filename": "",
 		"name": "bh2",
-		"longDescription": "BH2 Long Description",
+		"longDescription": "monstrous archway (long description text here)",
 		"direction": "east",
 		"shortDescription": "monstrous archway",
 		"visible": true,
@@ -239,7 +239,7 @@
 	}, {
 		"filename": "",
 		"name": "ca1",
-		"longDescription": "CA1 Long Description",
+		"longDescription": "rolling shutter door (long description text here)",
 		"direction": "south",
 		"shortDescription": "rolling shutter door",
 		"visible": true,
@@ -249,7 +249,7 @@
 	}, {
 		"filename": "",
 		"name": "ca2",
-		"longDescription": "CA2 Long Description",
+		"longDescription": "smoky glazed doors (long description text here)",
 		"direction": "east",
 		"shortDescription": "smoky glazed doors",
 		"visible": true,
@@ -259,7 +259,7 @@
 	}, {
 		"filename": "",
 		"name": "ce1",
-		"longDescription": "CE1 Long Description",
+		"longDescription": "corrugated steel door (long description text here)",
 		"direction": "south",
 		"shortDescription": "corrugated steel door",
 		"visible": true,
@@ -269,7 +269,7 @@
 	}, {
 		"filename": "",
 		"name": "ce2",
-		"longDescription": "CE2 Long Description",
+		"longDescription": "long dark tunnel (long description text here)",
 		"direction": "north",
 		"shortDescription": "long dark tunnel",
 		"visible": true,
@@ -279,7 +279,7 @@
 	}, {
 		"filename": "",
 		"name": "cl1",
-		"longDescription": "CL1 Long Description",
+		"longDescription": "creaking cell door (long description text here)",
 		"direction": "west",
 		"shortDescription": "creaking cell door",
 		"visible": true,
@@ -289,7 +289,7 @@
 	}, {
 		"filename": "",
 		"name": "hw1",
-		"longDescription": "HW1 Long Description",
+		"longDescription": "monstrous archway (long description text here)",
 		"direction": "west",
 		"shortDescription": "monstrous archway",
 		"visible": true,
@@ -299,7 +299,7 @@
 	}, {
 		"filename": "",
 		"name": "hw2",
-		"longDescription": "HW2 Long Description",
+		"longDescription": "bell archway (long description text here)",
 		"direction": "east",
 		"shortDescription": "bell archway",
 		"visible": true,
@@ -309,7 +309,7 @@
 	}, {
 		"filename": "",
 		"name": "hw3",
-		"longDescription": "HW3 Long Description",
+		"longDescription": "winder stairs (long description text here)",
 		"direction": "south",
 		"shortDescription": "winder stairs",
 		"visible": true,
@@ -319,7 +319,7 @@
 	}, {
 		"filename": "",
 		"name": "jl1",
-		"longDescription": "JL1 Long Description",
+		"longDescription": "rusting iron door (long description text here)",
 		"direction": "west",
 		"shortDescription": "rusting iron door",
 		"visible": true,
@@ -329,7 +329,7 @@
 	}, {
 		"filename": "",
 		"name": "jl2",
-		"longDescription": "JL2 Long Description",
+		"longDescription": "creaking cell door (long description text here)",
 		"direction": "east",
 		"shortDescription": "creaking cell door",
 		"visible": true,
@@ -339,7 +339,7 @@
 	}, {
 		"filename": "",
 		"name": "kt1",
-		"longDescription": "KT1 Long Description",
+		"longDescription": "smoky glazed doors (long description text here)",
 		"direction": "west",
 		"shortDescription": "smoky glazed doors",
 		"visible": true,
@@ -349,7 +349,7 @@
 	}, {
 		"filename": "",
 		"name": "kt2",
-		"longDescription": "KT2 Long Description",
+		"longDescription": "swinging door (long description text here)",
 		"direction": "east",
 		"shortDescription": "swinging door",
 		"visible": true,
@@ -359,7 +359,7 @@
 	}, {
 		"filename": "",
 		"name": "kt3",
-		"longDescription": "KT3 Long Description",
+		"longDescription": "splintered double doors (long description text here)",
 		"direction": "south",
 		"shortDescription": "splintered double doors",
 		"visible": true,
@@ -369,7 +369,7 @@
 	}, {
 		"filename": "",
 		"name": "out",
-		"longDescription": "OUT Long Description",
+		"longDescription": "corrugated steel door (long description text here)",
 		"direction": "north",
 		"shortDescription": "corrugated steel door",
 		"visible": true,
@@ -379,7 +379,7 @@
 	}, {
 		"filename": "",
 		"name": "pw1",
-		"longDescription": "PW1 Long Description",
+		"longDescription": "long dark tunnel (long description text here)",
 		"direction": "south",
 		"shortDescription": "long dark tunnel",
 		"visible": true,
@@ -389,7 +389,7 @@
 	}, {
 		"filename": "",
 		"name": "pw2",
-		"longDescription": "PW2 Long Description",
+		"longDescription": "rolling shutter door (long description text here)",
 		"direction": "north",
 		"shortDescription": "rolling shutter door",
 		"visible": true,
@@ -399,7 +399,7 @@
 	}, {
 		"filename": "",
 		"name": "sq1",
-		"longDescription": "SQ1 Long Description",
+		"longDescription": "solid metal door (long description text here)",
 		"direction": "north",
 		"shortDescription": "solid metal door",
 		"visible": true,
@@ -409,7 +409,7 @@
 	}, {
 		"filename": "",
 		"name": "sq2",
-		"longDescription": "SQ2 Long Description",
+		"longDescription": "old wooden door (long description text here)",
 		"direction": "west",
 		"shortDescription": "old wooden door",
 		"visible": true,
@@ -419,7 +419,7 @@
 	}, {
 		"filename": "",
 		"name": "sr1",
-		"longDescription": "SR1 Long Description",
+		"longDescription": "swinging door (long description text here)",
 		"direction": "west",
 		"shortDescription": "swinging door",
 		"visible": true,
@@ -429,7 +429,7 @@
 	}, {
 		"filename": "",
 		"name": "tr1",
-		"longDescription": "TR1 Long Description",
+		"longDescription": "rusted spiral staircase (long description text here)",
 		"direction": "west",
 		"shortDescription": "rusted spiral staircase",
 		"visible": true,
@@ -439,7 +439,7 @@
 	}, {
 		"filename": "",
 		"name": "wl1",
-		"longDescription": "WL1 Long Description",
+		"longDescription": "bell archway (long description text here)",
 		"direction": "west",
 		"shortDescription": "bell archway",
 		"visible": true,
@@ -449,7 +449,7 @@
 	}, {
 		"filename": "",
 		"name": "wl2",
-		"longDescription": "WL2 Long Description",
+		"longDescription": "oblivion gate (long description text here)",
 		"direction": "east",
 		"shortDescription": "oblivion gate",
 		"visible": true,
