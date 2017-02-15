@@ -70,6 +70,7 @@ class HauntedDungeon():
         self.dm = DataManager()
         self.dm.loadNewGame()
         self.nlp = nlp()
+        self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits())
         self.nlp.buildSynonymDict()
         # while not end of game
         # print display text for current locale to player
