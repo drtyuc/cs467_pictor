@@ -64,12 +64,13 @@ class nlp():
 	'''
 
 
-	def loadProperties(self, verbList, prepList, objList, vpComboList):
+	def loadProperties(self, verbList, prepList, objList, vpComboList, exitList):
 
 		self.__gameVerbs = verbList
 		self.__prepositions = prepList
 		self.__gameObjects = objList
 		self.__verbPrepositionCombos = vpComboList
+		self.__exits = exitList
 
 
 

@@ -36,7 +36,7 @@ from PA.PerformAction import PerformAction
 class HauntedDungeon():
 
 
-    def newGame(self):
+    def newGame1(self):
 	# TODO(DL): functionality lacks nlp.py
 	# This just has simple input grabbing
         self.dm = DataManager()
@@ -64,7 +64,7 @@ class HauntedDungeon():
         return
 
 
-    def newGameBroken(self):
+    def newGame(self):
         # (DL): This is broken when I use nlp.py
         # right now it just prints the command if successful 
         self.dm = DataManager()
