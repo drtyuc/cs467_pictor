@@ -127,6 +127,8 @@ class PerformAction():
 	    merge_object = cmd[:index] + "'" + dep["object"] + "', " + str(dep["state"]) + cmd[index:] 
 	    cmd = merge_object
 	    result = eval(cmd)
+	    if result:
+		print result
 	    print dep["text"]
 	return 
 
