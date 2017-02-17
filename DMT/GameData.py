@@ -53,6 +53,7 @@ class DataManager():
         self.__verbs = []
         self.__prepositions = []
         self.__dependencies = []
+        self.__help = []
 	
 	#--------------------- Load New Game -----------------------
     def loadNewGame(self):
@@ -96,6 +97,9 @@ class DataManager():
             
         for i in self.__primitives['prepositions']:
             self.__prepositions.append(Data(i))
+        
+        for i in self.__primitives['help']:
+            self.__help.append(Data(i))
             
         self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
 
@@ -110,6 +114,7 @@ class DataManager():
         s["ghosts"] = []
         s["verbs"] = []
         s["prepositions"] = []
+        s["help"] = []
 
         for i in self.__players:
 	        s["players"].append(json.loads(json.dumps(i.__dict__)))
@@ -127,6 +132,8 @@ class DataManager():
 	        s["verbs"].append(json.loads(json.dumps(i.__dict__)))
         for i in self.__prepostions:
 	        s["prepositions"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__help:
+	        s["help"].append(json.loads(json.dumps(i.__dict__)))
 
         response = raw_input("Please enter a filename: ")
         filename = SAVED_GAME_DIRECTORY + response
@@ -165,6 +172,8 @@ class DataManager():
     def movePlayer(self, direction, status=None):
         index = self.getExitIndex(direction)
         self.__players[0].location = self.__exits[index].toRoom	
+        index = self.getRoomIndex(self.__players[0].location)
+        return "You entered the " + self.__rooms[index].shortDescription
     
     def getCurrentRoom(self):
         index = self.getRoomIndex(self.__players[0].location)
@@ -187,7 +196,17 @@ class DataManager():
 	
     def getInventoryObjects(self):
 		return self.__bags[0].objects
-	
+        
+    def getInventory(self, name=None, status=None):
+        inventory = ""
+        if self.__bags[0].objects:
+            inventory = "  Inventory Items" + "\n"
+            for i in self.__bags[0].objects:
+                inventory += "     Item: " + i + "\n"
+        else:
+            inventory = "No items are in the player's inventory"
+        return inventory
+
     def clearInventoryObjects(self):
         self.__bags[0].objects = []
 
@@ -215,12 +234,12 @@ class DataManager():
 			rooms.append(i.name)
 		return rooms   
 		
-    def getRoomLongDescription(self):
+    def getRoomLongDescription(self, name=None, status=None):
 		location = self.getPlayerLocation()
 		index = self.getRoomIndex(location)
 		return self.__rooms[index].longDescription
 		
-    def getRoomShortDescription(self):
+    def getRoomShortDescription(self, name=None, status=None):
 		location = self.getPlayerLocation()
 		index = self.getRoomIndex(location)
 		return self.__rooms[index].shortDescription
@@ -391,7 +410,7 @@ class DataManager():
         if self.__objects[index].wieldable:
             for i in self.getInventoryObjects():
                 idx = self.getObjectIndex(i)
-                if self.__objects[index].equipped == True:
+                if self.__objects[idx].equipped == True:
                     return False
         return self.__objects[index].equippable
 	
@@ -558,10 +577,27 @@ class DataManager():
 		
 	# methods supporting look {on, inside, above, behind, under}	
     def setOnObjectsVisible(self, name, status):
+        response = ""
+        objs = []
         objects = self.getOnNames(name)
         for i in objects:
             index = self.getObjectIndex(i)
+            objs.append(i)
             self.__objects[index].visible = status
+        if len(objs) > 0:
+            count = 0
+            response += "You see the following items(s): "
+            for i in objs:
+                count += 1
+                if count == len(objs):
+                    response += i
+                else:
+                    response += i + ", "
+        else:
+            response += "You do not see anything"
+        return response
+        
+        
             
     def getOnObjectsVisible(self, name):
         objects = []
@@ -579,10 +615,26 @@ class DataManager():
         return objects
 
     def setInsideObjectsVisible(self, name, status):
+        response = ""
+        objs = []
         objects = self.getInsideNames(name)
         for i in objects:
             index = self.getObjectIndex(i)
+            objs.append(i)
             self.__objects[index].visible = status
+        if len(objs) > 0:
+            count = 0
+            response += "You see the following items(s): "
+            for i in objs:
+                count += 1
+                if count == len(objs):
+                    response += i
+                else:
+                    response += i + ", "
+        else:
+            response += "You do not see anything"
+        return response
+    
             
     def getInsideObjectsVisible(self, name):
         objects = []
@@ -601,10 +653,25 @@ class DataManager():
 						
                         
     def setBehindObjectsVisible(self, name, status):
+        response = ""
+        objs = []
         objects = self.getBehindNames(name)
         for i in objects:
             index = self.getObjectIndex(i)
+            objs.append(i)
             self.__objects[index].visible = status
+        if len(objs) > 0:
+            count = 0
+            response += "You see the following items(s): "
+            for i in objs:
+                count += 1
+                if count == len(objs):
+                    response += i
+                else:
+                    response += i + ", "
+        else:
+            response += "You do not see anything"
+        return response
             
     def getBehindObjectsVisible(self, name):
         objects = []
@@ -623,10 +690,26 @@ class DataManager():
      
      
     def setUnderObjectsVisible(self, name, status):
+        response = ""
+        objs = []
         objects = self.getUnderNames(name)
         for i in objects:
             index = self.getObjectIndex(i)
+            objs.append(i)
             self.__objects[index].visible = status
+        if len(objs) > 0:
+            count = 0
+            response += "You see the following items(s): "
+            for i in objs:
+                count += 1
+                if count == len(objs):
+                    response += i
+                else:
+                    response += i + ", "
+        else:
+            response += "You do not see anything"
+        return response
+
             
     def getUnderObjectsVisible(self, name):
         objects = []
@@ -644,10 +727,26 @@ class DataManager():
         return objects    
      
     def setAboveObjectsVisible(self, name, status):
+        response = ""
+        objs = []
         objects = self.getAboveNames(name)
         for i in objects:
             index = self.getObjectIndex(i)
+            objs.append(i)
             self.__objects[index].visible = status
+        if len(objs) > 0:
+            count = 0
+            response += "You see the following items(s): "
+            for i in objs:
+                count += 1
+                if count == len(objs):
+                    response += i
+                else:
+                    response += i + ", "
+        else:
+            response += "You do not see anything"
+        return response
+    
             
     def getAboveObjectsVisible(self, name):
         objects = []
@@ -672,11 +771,11 @@ class DataManager():
 			ghosts.append(i.name)
         return ghosts	
         
-    def getGhostLongDescription(self, name):
+    def getGhostLongDescription(self, name, status=None):
 		index = self.getGhostIndex(name)
 		return self.__ghosts[index].longDescription
 		
-    def getGhostShortDescription(self, name):
+    def getGhostShortDescription(self, name, status=None):
 		index = self.getGhostIndex(name)
 		return self.__ghosts[index].shortDescription
 	
@@ -688,7 +787,7 @@ class DataManager():
 		index = self.getGhostIndex(name)
 		self.__ghosts[index].visible = status
 		
-    def getGhostLocation(self, name):
+    def getGhostLocation(self, name, status=None):
 		index = self.getGhostIndex(name)
 		return self.__ghosts[index].location
 		
@@ -696,7 +795,7 @@ class DataManager():
 		index = self.getGhostIndex(name)
 		self.__ghosts[index].location = location
 		
-    def getGhostHealth(self, name):
+    def getGhostHealth(self, name, status=None):
 		index = self.getGhostIndex(name)
 		return self.__ghosts[index].health
 		
@@ -704,9 +803,10 @@ class DataManager():
 		index = self.getGhostIndex(name)
 		self.__ghosts[index].health = health
 		
-    def getGhostDamagePoints(self, name):
+    def getGhostDamagePoints(self, name, status=None):
 		index = self.getGhostIndex(name)
 		return self.__ghosts[index].damagePoints
+        
     
     def adjustGhostHealth(self, name, status=None):
         x = 1
@@ -749,7 +849,7 @@ class DataManager():
                     if (self.__exits[index].direction == name):
                         return index
                 else:
-                    if (self.__exits[index].shortDescription == name):
+                    if (self.__exits[index].commandName == name):
                         return index
             return -1	
         
@@ -761,33 +861,65 @@ class DataManager():
 			index += 1
 		return -1
 
-#----------------- Miscellaneous Methods -------------------  
+#----------------- Miscellaneous Methods -------------------
 
-    def getVerbs(self):
+    def getActive(self, name=None, status=None):
+        help = "\n"
+        for i in self.__help:
+            help += i.verb + "\n"
+            help += i.description + "\n"
+        return help  
+
+    def getEquipped(self, name=None, status=None):
+        equipped = False
+        Items = ""
+        for i in self.__bags[0].objects:
+            index = self.getObjectIndex(i)
+            if self.__objects[index].equipped == True:
+                equipped = True
+                break
+        if equipped:
+            Items += "  Equipped Items\n"
+            for i in self.__bags[0].objects:
+                index = self.getObjectIndex(i)
+                if self.__objects[index].equipped == True:
+                    Items += "    Item: " + i + "\n"
+        else:
+            Items += "There are no equipped items"
+        return Items
+
+    def getHelp(self, name=None, status=None):
+        help = "Verbs used in Haunted Dungeon\n"
+        for i in self.__help:
+            help += i.verb + "\n"
+            help += i.description + "\n"
+        return help
+
+    def getVerbs(self, name=None, status=None):
         verbs = []
         for i in self.__verbs:
             verbs.append(i.verb)
         return verbs
         
-    def getVerbDescriptions(self):
+    def getVerbDescriptions(self, name=None, status=None):
         descriptions = []
         for i in self.__verbs:
             descriptions.append(i.description)
         return descriptions
     
-    def getPrepositions(self):
+    def getPrepositions(self, name=None, status=None):
         prepositions = []
         for i in self.__prepositions:
             prepositions.append(i.preposition)
         return prepositions
         
-    def getObjects(self):
+    def getObjects(self, name=None, status=None):
         objects = []
         for i in self.__objects:
 			objects.append(i.name)
         return objects	
         
-    def getExits(self):
+    def getExits(self, name=None, status=None):
         exits = ['west','north','south','east']
         for i in self.__exits:
 			exits.append(i.shortDescription)
