@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 ###############################################
 from DMT.GameData import DataManager
-from DMT.nlp import nlp
+#from DMT.nlp import nlp
+from commandNLP.nlp import nlp
 
 
 class Test():
@@ -16,7 +17,8 @@ class Test():
                           dm.getPrepositions(),
                           dm.getObjects(), 
                           dm.getVerbPrepositionCombos(),
-                          dm.getExits())
+                          dm.getExits(),
+                          dm.getCommandTuples())
                           
                           
             
@@ -26,13 +28,15 @@ class Test():
         self.andrew.printObjects()
         self.andrew.printVerbPrepositionCombos()
         self.andrew.printExits()
+        print "COMMAND TUPLES"
+        print self.andrew.printCommandTuples()
+        print "COMMAND TUPLES LIST"
+        print self.andrew.getCommandTupleProperty()
  
 
     def runit(self):
 	self.showProperties()
-
-   
-
+ 
 
 if __name__ == "__main__":
     test = Test()

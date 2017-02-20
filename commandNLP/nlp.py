@@ -9,36 +9,6 @@ import unittest
 class nlp():
 	
 	'''
-
-	Definition: this is the old constructor with hard coded values used. We can use this for midway test.
-	Hopefully, we wll get this sorted out!
-
-	
-	def __init__(self):
-		
-
-		self.__gameVerbs = ["drink", "drop", "east", "eat", "equip", "go", "help", "hit", "inventory", "lay", "light", "loadgame", "look", "north", 
-							"pull", "push", "read", "savegame", "sit", "south", "take", "unequip", "unlock", "use", "wear", "west", "wield"]
-
-		self.__prepositions = ["above", "at", "behind", "into", "on", "under", "with" ]
-
-		self.__gameObjects = [ "altar", "apple", "armor", "axe", "bat skeleton", "bearskin", "bed","bell archway", "book", "books", "bones", "bottle", "cat skeleton", "chair", "chairs",
-							"chandelier", "cloak", "corrugated steel door", "creaking cell door", "desk", "dinnerware", "east", "gem", "hearth", "helmet", "human skeleton" "key", "key-rung", "knife",
-							"lantern", "lever", "lockpick", "long dark tunnel", "matches", "mattress", "mushrooms", "monstrous archway", "nightstand", "north", "note", "oblivion gate", "old wooden door",
-							"painting", "paintings", "ring", "rocks", "rolling shutter door", "rug", "runes", "rusted spiral staircase", "rusting iron door", "safe", "scroll", "shelf", "shelves", "sign", 
-							"smoky glazed doors", "solid metal door", "splintered double doors", "south", "stool", "stools", "swinging door", "sword", "table", "tables", "tapestries", "tools", "treasure", "tree", "trunk", "warhammer", "west", "winder stairs"]
-
-		self.__verbPrepositionCombos = {'drink':[], 'drop' : ['at', 'behind', 'into', 'on'], 'eat': [], 'equip': [], 'go':[], 
-										'help': ['with'], 'hit': [], 'inventory': [], 'lay' : ['on'], 'light': [],  'look':['at', 'under', 'above', 'into', 'behind'], 
-										'pull': [],  'put': ['on', 'into', 'under', 'above', 'with'], 'push': ['on'], 'read' : [], 
-										'sit': ['on'], 'take': [], 'unequip': [], 'unlock': [], 'use': ['on', 'with'], 'wear': [], 'wield': []}
-		
-		self.__synonymsDictionary = {}
-
-
-	'''
-
-	'''
 	
 	Description: constructor for NLP objects
 
@@ -53,26 +23,46 @@ class nlp():
 		self.__verbPrepositionCombos = {}
 		self.__synonymsDictionary = {}
 		self.__exits = []
+		self.__commandTuples = []
 
 
 	
 	'''
 
 	Definition: this method loads the properties to an nlp object with the returns to calls 
-	to the DM module methods
+	to the DM module methods. This method has been deprecated as the approach to NLP has changed
 
 	'''
 
 
-	def loadProperties(self, verbList, prepList, objList, vpComboList, exitList):
+	def loadProperties(self, verbList, prepList, objList, vpComboList, exitList, tupleLists):
 
 		self.__gameVerbs = verbList
 		self.__prepositions = prepList
 		self.__gameObjects = objList
 		self.__verbPrepositionCombos = vpComboList
 		self.__exits = exitList
+		self.__commandTuples = tupleLists
+
+	'''
+
+	Definition: this method loads the command tuple property to an nlp object with a return call 
+	to the DM module getObjectTuples() as the argument. 
+
+	'''
 
 
+	def setCommandTupleProperty(tupleLists):
+		self.__commandTuples = tupleLists
+
+	'''
+
+	Definition: accessor method for the command tuples 
+
+	''' 
+
+	def getCommandTupleProperty(self):
+		return self.__commandTuples 
 
 	'''
 
@@ -206,6 +196,11 @@ class nlp():
 			
 	def printExits(self):
 		for i in self.__exits:
+			print i
+		print ""
+
+	def printCommandTuples(self):
+		for i in self.__commandTuples:
 			print i
 		print ""
 
