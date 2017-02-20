@@ -47,7 +47,7 @@ class nlp():
 	'''
 
 	Definition: this method loads the command tuple property to an nlp object with a return call 
-	to the DM module getObjectTuples() as the argument. 
+	to the DM module getCommandTuples() as the argument. 
 
 	'''
 
@@ -72,6 +72,7 @@ class nlp():
 
 	def buildSynonymDict(self):
 
+		#synonymFilePath = '/Users/andrewbagwell/Desktop/capstone/cs467_pictor/data/synonymFile.txt'
 		synonymFilePath = self.__cwd + "/data/synonymFile.txt" #file source: https://justenglish.me/2014/04/18/synonyms-for-the-96-most-commonly-used-words-in-english/
 		with open(synonymFilePath, 'r') as f:
 			for line in f:
@@ -100,11 +101,54 @@ class nlp():
 			word = word.strip('.,!;')
 		return commandString
 
+	'''
+	Definition: This function takes the user input and returns the tuple that it matched to. 
+	This is similar to the older method buildTuple() but supports or token oriented approach to NLP. This method iterates through 
+	each supported tuple and attempts to match 
+
+	'''
+
+	
+	def matchTuple(self, commandString):
+
+		commandTokens = self.parseCommand(commandString)
+
+		highScore = 0
+		currentScore = 0
+		tupleList = self.getCommandTupleProperty()
+
+		tupleReturned = ()
+
+		for commandTuple in tupleList:
+			#parse the tuple itself into token
+			tupleParts = commandTuple.split()
+			currentScore = 0
+
+			#iterate through tokens produced by user input
+			for word in commandTokens:
+
+				for tupPart in tupleParts:
+					if word == tupPart:
+						currentScore += 1
+				
+					elif word in self.__synonymsDictionary:
+						dictVal = self.__synonymsDictionary[word]
+						if dictVal == tupPart:
+							currentScore +=1									
+					else:
+						print ''
+			
+			if currentScore > highScore:
+				highScore = currentScore
+				tupleReturned = commandTuple
+		
+		return tupleReturned
+
 
 	'''
 
 	Definition: takes the command string entered by the user. It then tokenizes that input. Next, it performs
-	the processes that input: 
+	the processes that input. THIS METHOD IS DEPRECATED AND WILL BE DELETED
 	
 	'''
 	def buildTuple(self, commandString):
@@ -210,14 +254,13 @@ class nlp():
 
 	'''
 
-	def testBuildTuple(self):
-		assert(self.buildTuple("drink bottle")==('drink', None, 'bottle'))
-		assert(self.buildTuple("drop with armor")==())
-		assert(self.buildTuple("drop at bed")==('drop', 'at', 'bed'))
-		assert(self.buildTuple("eat under book")==())
-		assert(self.buildTuple("eat apple")==('eat', None, 'apple'))
-		assert(self.buildTuple("help hit bearskin")==())
-		assert(self.buildTuple("help with bones")==('help', 'with', 'bones'))
+	def testMatchTuple(self):
+		assert(self.matchTuple(['drink', 'bottle'])==('drink bottle'))
+		assert(self.matchTuple(['drop', 'with', 'armor'])==())
+		assert(self.matchTuple(['drop', 'matches'])==('drop matches'))
+		assert(self.matchTuple(['eat', 'mushrooms'])==('eat mushrooms'))
+
+
 		print "Tests passed!"
 
 if __name__ == '__main__':
