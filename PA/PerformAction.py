@@ -33,10 +33,12 @@ pathparent = os.path.abspath(os.path.join(
 sys.path.insert(0, pathparent)
 
 from DMT.GameData import DataManager
+import textwrap
 
 
 class PerformAction():
 
+    MAX_WIDTH = 70
 
     def __init__(self, command, dm):
 	""" Constructor - need command & data manager object """
@@ -84,23 +86,24 @@ class PerformAction():
 
 
     def __getCommandDependenciesHint(self, dm):
-	""" Gets first failed dependency hint and prints it """
-	self.__hint = ""
-	for dep in self.__dependencies:
-	    cmd = "dm." + dep["method"]
-	    if 'object' in dep:                        # If we have an object, insert it
-	        index = cmd.find(')')
-	        merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
-	        cmd = merge_object
-	    result = eval(cmd)
-	    if result != dep["expect"]:
-               print dep["hint"]
-	return 
+        """ Gets first failed dependency hint and prints it """
+        self.__hint = ""
+        for dep in self.__dependencies:
+            cmd = "dm." + dep["method"]
+            if 'object' in dep:                        # If we have an object, insert it
+                index = cmd.find(')')
+                merge_object = cmd[:index] + "'" + dep["object"] + "'" + cmd[index:] 
+                cmd = merge_object
+            result = eval(cmd)
+            if result != dep["expect"]:
+                print ""
+                print dep["hint"]
+        return 
 
 
     def isCommandValid(self):
-	""" Public is the command valid """
-	return self.__valid
+        """ Public is the command valid """
+        return self.__valid
 
 
     def getCommand(self):
@@ -109,28 +112,36 @@ class PerformAction():
 
 
     def areCommandDependenciesMet(self):
-	""" Returns if all dependencies were met """
-	return self.__all_met
+        """ Returns if all dependencies were met """
+        return self.__all_met
 
 
     def getCommandDependenciesHint(self):
-	""" Return the hint as a string for the failed dependency """
-	return self.__hint
+        """ Return the hint as a string for the failed dependency """
+        return self.__hint
 
+    def printIt(self, list):
+        for element in list:
+            print element
 
     def doCommandActions(self, dm):
-	""" Execute the action methods return print success text """
-	success = []
-	for dep in self.__actions:
-	    cmd = "dm." + dep["method"]
-	    index = cmd.find(')')
-	    merge_object = cmd[:index] + "'" + dep["object"] + "', " + str(dep["state"]) + cmd[index:] 
-	    cmd = merge_object
-	    result = eval(cmd)
-	    if result:
-		print result
-	    print dep["text"]
-	return 
+        success = []
+        for dep in self.__actions:
+            cmd = "dm." + dep["method"]
+            index = cmd.find(')')
+            merge_object = cmd[:index] + "'" + dep["object"] + "', " + str(dep["state"]) + cmd[index:] 
+            cmd = merge_object
+            result = eval(cmd)
+            if result:
+                print ""
+                lines = []
+                for i in result.split('\n'):
+                    lines += (textwrap.wrap(i, width=self.MAX_WIDTH, replace_whitespace=False))
+                self.printIt(lines)
+            if dep["text"]:
+                print ""
+                print dep["text"]
+        return 
 
 
     def setGhostActions(self):
