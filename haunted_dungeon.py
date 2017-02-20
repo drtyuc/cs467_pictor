@@ -35,32 +35,35 @@ from PA.PerformAction import PerformAction
 
 class HauntedDungeon():
 
+    dm = DataManager()
 
     def newGame1(self):
-	# TODO(DL): functionality lacks nlp.py
-	# This just has simple input grabbing
-        self.dm = DataManager()
+        # TODO(DL): functionality lacks nlp.py
+        # This just has simple input grabbing
+        #(JH) self.dm = DataManager()  Move this as a class attribute
         self.dm.loadNewGame()
-	# while not end of game
-	# print display text for current locale to player
-	self.generateText()
-	# basic input until we can get nlp to work
-	command = ""
-	while command != "quit":
-	    command = raw_input("Your move: ")
-	    # do action
-	    if command == "quit":
-		print "GOOD BYE!"
-		return
-	    pa = PerformAction(command, self.dm)
-	    if pa.isCommandValid() == True:
-	        if pa.areCommandDependenciesMet() == False:
-	            pa.getCommandDependenciesHint()
-	        else:
-	            pa.doCommandActions(self.dm)
-	    else:
-	        print "You can't do that!"
-	    self.generateText()
+        # while not end of game
+        # print display text for current locale to player
+        #(JH) self.generateText()
+        self.generateText1()
+        # basic input until we can get nlp to work
+        command = ""
+        while command != "quit":
+            command = raw_input("Your move: ")
+            # do action
+            if command == "quit":
+                print "GOOD BYE!"
+                return
+            pa = PerformAction(command, self.dm)
+            if pa.isCommandValid() == True:
+                if pa.areCommandDependenciesMet() == False:
+                    pa.getCommandDependenciesHint()
+                else:
+                    pa.doCommandActions(self.dm)
+            else:
+                print "You can't do that!"
+            #(JH)self.generateText()
+            self.generateText1()
         return
 
 
@@ -102,7 +105,8 @@ class HauntedDungeon():
             print
             choice = str(raw_input("Enter your choice> "))
         if choice == "1":
-       	    self.newGame()
+       	    #(JH) self.newGame()   
+            self.newGame1()
         if choice == "2":
             self.loadGame()
         return
@@ -169,6 +173,63 @@ class HauntedDungeon():
             if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
                 if self.dm.isGhostVisible(g):
                     print "You see " + self.dm.getGhostShortDescription(g) 
+
+
+    #(JH) Added this as a temporary method for instructor cheat sheet
+    def generateText1(self):
+
+        #print header info
+
+        print
+        print "Health: " , self.dm.getPlayerHealth()
+        
+        #Print inventory
+        if self.dm.getInventoryObjects():
+            print "Inventory Capacity: " , self.dm.getInventoryCapacity()
+            print "Inventory Weight: " , self.dm.getInventoryWeight()
+            items = []
+            for i in self.dm.getInventoryObjects():
+                items.append(i)
+            print "Invertory items: " + str(items)
+                
+        #Print equipped items
+        if self.dm.getEquippedObjects():
+            equipped = []
+            for i in self.dm.getEquippedObjects():
+                equipped.append(i)
+            print "Equipped items: " + str(equipped)
+            
+        
+        #Print room items
+        if self.dm.getRoomObjects():
+            roomitems = []
+            for i in self.dm.getRoomObjects():
+                roomitems.append(i)
+            print "Room items: " + str(roomitems)
+        
+        #Print room and exit descriptions
+        roomExits = self.dm.getRoomExits()
+        if self.dm.isRoomDiscovered() == False: 
+            print "Room: ", self.dm.getRoomLongDescription()
+            for i in roomExits:
+                if self.dm.isExitVisible(i):
+                    print "Exit:  " +  self.dm.getExitLongDescription(i) + " to the " + self.dm.getExitDirection(i)
+        else:
+            print "Room: ", self.dm.getRoomShortDescription()
+            for i in roomExits:
+                if self.dm.isExitVisible(i):
+                    print "Exit:  " +  self.dm.getExitShortDescription(i) + " to the " + self.dm.getExitDirection(i)
+        self.dm.setRoomDiscovered(True) 
+        
+        
+        #Print visible objects
+        if self.dm.getVisibleObjects():
+            print "You see these items..."
+            for item in self.dm.getVisibleObjects():
+                print "*", item
+        else:
+            print "You do not see any items"
+
 
 
 

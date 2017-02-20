@@ -11,6 +11,11 @@
 			"object": "bottle of gatorade",
 			"expect": true,
 			"hint": "Bottle of gatorade is not drinkable"
+        }, {
+			"method": "isObjectInInventory()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "You do not have a bottleopener to open the bottle of gatorade"
 		}],
 		"actions": [{
 			"method": "removeInventoryObject()",
@@ -35,6 +40,11 @@
 			"object": "bottle of water",
 			"expect": true,
 			"hint": "Bottle of water is not drinkable"
+        }, {
+			"method": "isObjectInInventory()",
+			"object": "bottleopener",
+			"expect": true,
+			"hint": "You do not have a bottleopener to open the bottle of water"
 		}],
 		"actions": [{
 			"method": "removeInventoryObject()",
@@ -995,7 +1005,7 @@
 			"method": "movePlayer()",
 			"object": "west",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go east",
@@ -1019,7 +1029,7 @@
 			"method": "movePlayer()",
 			"object": "east",
 			"state": false,
-			"text": "You moved to another room"
+			 "text": ""
 		}]
 	}, {
 		"tuple": "go south",
@@ -1043,7 +1053,7 @@
 			"method": "movePlayer()",
 			"object": "south",
 			"state": false,
-			"text": "You moved to another room"
+			 "text": ""
 		}]
 	}, {
 		"tuple": "go north",
@@ -1067,7 +1077,7 @@
 			"method": "movePlayer()",
 			"object": "north",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "west",
@@ -1091,7 +1101,7 @@
 			"method": "movePlayer()",
 			"object": "west",
 			"state": false,
-			"text": "You moved to another room"
+			 "text": ""
 		}]
 	}, {
 		"tuple": "east",
@@ -1115,7 +1125,7 @@
 			"method": "movePlayer()",
 			"object": "east",
 			"state": false,
-			"text": "You moved to another room"
+			 "text": ""
 		}]
 	}, {
 		"tuple": "south",
@@ -1139,7 +1149,7 @@
 			"method": "movePlayer()",
 			"object": "south",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "north",
@@ -1163,7 +1173,7 @@
 			"method": "movePlayer()",
 			"object": "north",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go bell archway",
@@ -1187,7 +1197,7 @@
 			"method": "movePlayer()",
 			"object": "bell archway",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go corrugated steel door",
@@ -1211,7 +1221,7 @@
 			"method": "movePlayer()",
 			"object": "corrugated steel door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go creaking cell door",
@@ -1235,7 +1245,7 @@
 			"method": "movePlayer()",
 			"object": "creaking cell door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go long dark tunnel",
@@ -1259,7 +1269,7 @@
 			"method": "movePlayer()",
 			"object": "long dark tunnel",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go monstrous archway",
@@ -1283,7 +1293,7 @@
 			"method": "movePlayer()",
 			"object": "monstrous archway",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go oblivion gate",
@@ -1307,7 +1317,7 @@
 			"method": "movePlayer()",
 			"object": "oblivion gate",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go old wooden door",
@@ -1331,7 +1341,7 @@
 			"method": "movePlayer()",
 			"object": "old wooden door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go rolling shutter door",
@@ -1355,7 +1365,7 @@
 			"method": "movePlayer()",
 			"object": "rolling shutter door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go rusted spiral staircase",
@@ -1379,7 +1389,7 @@
 			"method": "movePlayer()",
 			"object": "rusted spiral staircase",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go rusting iron door",
@@ -1403,7 +1413,7 @@
 			"method": "movePlayer()",
 			"object": "rusting iron door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go smoky glazed doors",
@@ -1427,7 +1437,7 @@
 			"method": "movePlayer()",
 			"object": "smoky glazed doors",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go solid metal door",
@@ -1451,7 +1461,7 @@
 			"method": "movePlayer()",
 			"object": "solid metal door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go splintered double doors",
@@ -1475,7 +1485,7 @@
 			"method": "movePlayer()",
 			"object": "splintered double doors",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go swinging door",
@@ -1499,7 +1509,7 @@
 			"method": "movePlayer()",
 			"object": "swinging door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "go winder stairs",
@@ -1523,7 +1533,7 @@
 			"method": "movePlayer()",
 			"object": "winder stairs",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "bell archway",
@@ -1547,7 +1557,7 @@
 			"method": "movePlayer()",
 			"object": "bell archway",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "corrugated steel door",
@@ -1571,7 +1581,7 @@
 			"method": "movePlayer()",
 			"object": "corrugated steel door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "creaking cell door",
@@ -1595,7 +1605,7 @@
 			"method": "movePlayer()",
 			"object": "creaking cell door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "long dark tunnel",
@@ -1619,7 +1629,7 @@
 			"method": "movePlayer()",
 			"object": "long dark tunnel",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "monstrous archway",
@@ -1643,7 +1653,7 @@
 			"method": "movePlayer()",
 			"object": "monstrous archway",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "oblivion gate",
@@ -1667,7 +1677,7 @@
 			"method": "movePlayer()",
 			"object": "oblivion gate",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "old wooden door",
@@ -1691,7 +1701,7 @@
 			"method": "movePlayer()",
 			"object": "old wooden door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "rolling shutter door",
@@ -1715,7 +1725,7 @@
 			"method": "movePlayer()",
 			"object": "rolling shutter door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "rusted spiral staircase",
@@ -1739,7 +1749,7 @@
 			"method": "movePlayer()",
 			"object": "rusted spiral staircase",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "rusting iron door",
@@ -1763,7 +1773,7 @@
 			"method": "movePlayer()",
 			"object": "rusting iron door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "smoky glazed doors",
@@ -1787,7 +1797,7 @@
 			"method": "movePlayer()",
 			"object": "smoky glazed doors",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "solid metal door",
@@ -1811,7 +1821,7 @@
 			"method": "movePlayer()",
 			"object": "solid metal door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "splintered double doors",
@@ -1835,7 +1845,7 @@
 			"method": "movePlayer()",
 			"object": "splintered double doors",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "swinging door",
@@ -1859,7 +1869,7 @@
 			"method": "movePlayer()",
 			"object": "swinging door",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
 	}, {
 		"tuple": "winder stairs",
@@ -1883,8 +1893,35 @@
 			"method": "movePlayer()",
 			"object": "winder stairs",
 			"state": false,
-			"text": "You moved to another room"
+			"text": ""
 		}]
+    }, {
+		"tuple": "help",
+		"dependencies": [],
+		"actions": [{
+			"method": "getHelp()",
+			"object": "",
+			"state": false,
+			"text": ""
+		}]    
+    }, {
+		"tuple": "inventory",
+		"dependencies": [],
+		"actions": [{
+			"method": "getInventory()",
+			"object": "",
+			"state": false,
+			"text": ""
+		}] 
+    }, {
+		"tuple": "equipped",
+		"dependencies": [],
+		"actions": [{
+			"method": "getEquipped()",
+			"object": "",
+			"state": false,
+			"text": ""
+		}] 
 	}, {
 		"tuple": "lay on altar",
 		"dependencies": [{
@@ -2117,6 +2154,15 @@
 			"state": true,
 			"text": "The brass lantern is lit"
 		}]
+   	}, {
+		"tuple": "look",
+		"dependencies": [],
+		"actions": [{
+			"method": "getRoomLongDescription()",
+			"object": "",
+			"state": true,
+			"text": ""
+		}]     
 	}, {
 		"tuple": "look above altar",
 		"dependencies": [{
@@ -3821,6 +3867,42 @@
 			"state": false,
 			"text": ""
 		}]
+    }, {
+		"tuple": "look at blinky",
+		"dependencies": [],
+		"actions": [{
+			"method": "getGhostLongDescription()",
+			"object": "blinky",
+			"state": false,
+			"text": ""
+		}]
+    }, {
+		"tuple": "look at clyde",
+		"dependencies": [],
+		"actions": [{
+			"method": "getGhostLongDescription()",
+			"object": "clyde",
+			"state": false,
+			"text": ""
+		}]    
+    }, {
+		"tuple": "look at pinky",
+		"dependencies": [],
+		"actions": [{
+			"method": "getGhostLongDescription()",
+			"object": "pinky",
+			"state": false,
+			"text": ""
+		}]   
+    }, {
+		"tuple": "look at inky",
+		"dependencies": [],
+		"actions": [{
+			"method": "getGhostLongDescription()",
+			"object": "inky",
+			"state": false,
+			"text": ""
+		}]   
 	}, {
 		"tuple": "look at wooden lever",
 		"dependencies": [{
@@ -3949,7 +4031,7 @@
 			"method": "setBehindObjectsVisible()",
 			"object": "wooden shelves",
 			"state": true,
-			"text": ""
+			"text": "You found a wooden lever behind the shelves"
 		}]
 	}, {
 		"tuple": "look inside armoire",
@@ -4641,7 +4723,7 @@
 			"method": "changeLocation()",
 			"object": "wooden lever",
 			"state": false,
-			"text": "You are transported to another room!"
+			"text": "You are transported to the Closet!"
 		}]
 	}, {
 		"tuple": "pull trapdoor",
@@ -4670,7 +4752,7 @@
 			"method": "changeLocation()",
 			"object": "trapdoor",
 			"state": false,
-			"text": "You are transported to another room!"
+			"text": "You are transported to the Treasure Room!"
 		}]
 	}, {
 		"tuple": "push iron lever",
@@ -4699,7 +4781,7 @@
 			"method": "changeLocation()",
 			"object": "iron lever",
 			"state": false,
-			"text": "You are transported to another room!"
+			"text": "You are transported to the Bedroom!"
 		}]
 	}, {
 		"tuple": "read book of locks",
@@ -4790,7 +4872,7 @@
 		}, {
 			"method": "setObjectUnlocked()",
 			"object": "safe",
-			"state": "true",
+			"state": true,
 			"text": ""
 		}]
 	}, {

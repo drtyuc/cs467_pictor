@@ -15,7 +15,7 @@
 	"rooms": [{
 		"filename": "alternate.json",
 		"name": "ap",
-		"longDescription": "Alternate Plane Long Description",
+		"longDescription": "A very unique room containing other-worldly objects. The room glows from the light of a wall of flames that burns without consuming the room. On the other side of the room floats a lidless eye that is ever watchful of those that enter the room.",
 		"shortDescription": "Alternate Plane",
 		"discovered": false,
 		"lighted": true,
@@ -24,7 +24,7 @@
 	}, {
 		"filename": "armory.json",
 		"name": "ar",
-		"longDescription": "Armory Long Description",
+		"longDescription": "A naturally lit room for storing items of wars fought centuries ago. The room has many have chips on the walls.  Did knights of old do sword fighting in this room?",
 		"shortDescription": "Armory",
 		"discovered": false,
 		"lighted": true,
@@ -33,7 +33,7 @@
 	}, {
 		"filename": "bedroom.json",
 		"name": "bd",
-		"longDescription": "Bedroom Long Description",
+		"longDescription": "A room used exclusively by the dungeon's master torturer. Without a lantern, it is difficult to identify the shadowy outlines of objects that appear to be in the room.",
 		"shortDescription": "Bedroom",
 		"discovered": false,
 		"lighted": false,
@@ -42,7 +42,7 @@
 	}, {
 		"filename": "banquethall.json",
 		"name": "bh",
-		"longDescription": "Banquet Hall Long Description",
+		"longDescription": "A large lit room containing a massive chandelier that hangs over a large dining table centered in the middle of the room.  There is a set of earthenware made from clay that adrons the corners of the room",
 		"shortDescription": "Banquet Hall",
 		"discovered": false,
 		"lighted": true,
@@ -51,7 +51,7 @@
 	}, {
 		"filename": "common.json",
 		"name": "ca",
-		"longDescription": "Common Area Long Description",
+		"longDescription": "A room with a high ceiling that is lit from torches placed high on all four walls. There is a large portrait of a hideous looking old man on the western wall and a large gateleg table in the center of the room. Next to the table is a bar stool.",
 		"shortDescription": "Common Area",
 		"discovered": false,
 		"lighted": true,
@@ -60,7 +60,7 @@
 	}, {
 		"filename": "entrance.json",
 		"name": "ce",
-		"longDescription": "Cave Entrance Long Description",
+		"longDescription": "A room that is lit from the beams of sunshine piercing through the slats of a corrugated steel door. The walls and ceiling are composed of coarse granite stone while the floor is mostly dirt covered with crawling insects and scattered shale rocks.",
 		"shortDescription": "Cave Entrance",
 		"discovered": false,
 		"lighted": true,
@@ -69,7 +69,7 @@
 	}, {
 		"filename": "cell.json",
 		"name": "cl",
-		"longDescription": "Cell Long Description",
+		"longDescription": "A dark musty room that still reeks from the smell of rotting flesh. The room was used to confine subjects used in the Wizard's experiments.",
 		"shortDescription": "Cell",
 		"discovered": false,
 		"lighted": false,
@@ -78,7 +78,7 @@
 	}, {
 		"filename": "closet.json",
 		"name": "ct",
-		"longDescription": "Closet Long Description",
+		"longDescription": "A dark room that does not appear to have any exits. If one can illuminate the room with artificial light, maybe one can find a secret panel or lever to use",
 		"shortDescription": "Closet",
 		"discovered": false,
 		"lighted": false,
@@ -87,7 +87,7 @@
 	}, {
 		"filename": "hallway.json",
 		"name": "hw",
-		"longDescription": "Hallway Long Description",
+		"longDescription": "A lighted long room with exits on three of it's walls. A wool rug lays in middle of the room and a painting is hanging on it's northern wall",
 		"shortDescription": "Hallway",
 		"discovered": false,
 		"lighted": true,
@@ -96,7 +96,7 @@
 	}, {
 		"filename": "jail.json",
 		"name": "jl",
-		"longDescription": "Jail Long Description",
+		"longDescription": "The room was used by the Wizard's personal jailors. Although the room has no natural lighting, the outline of several objects can be seen as well as a small glittering of light reflecting off cell bars at the western end of the room",
 		"shortDescription": "Jail",
 		"discovered": false,
 		"lighted": false,
@@ -105,7 +105,7 @@
 	}, {
 		"filename": "kitchen.json",
 		"name": "kt",
-		"longDescription": "Kitchen Long Description",
+		"longDescription": "A room used to perpare meals for the dungeon's inhabitants.  It has skylighting in the ceiling which highlights the filthy conditions of the room.",
 		"shortDescription": "Kitchen",
 		"discovered": false,
 		"lighted": true,
@@ -114,7 +114,7 @@
 	}, {
 		"filename": "outside.json",
 		"name": "ot",
-		"longDescription": "Outside Long Description",
+		"longDescription": "CONGRATULATIONS!!! ... you have escaped the Haunted Dungeon",
 		"shortDescription": "Outside",
 		"discovered": false,
 		"lighted": true,
@@ -123,7 +123,7 @@
 	}, {
 		"filename": "passageway.json",
 		"name": "pw",
-		"longDescription": "Passage Way Long Description",
+		"longDescription": "A long dark narrow corridor that leads deeper into the dungeon's depths. It's one big labyrinth of twists and turns connecting the evils inside with the outside world.",
 		"shortDescription": "Passage Way",
 		"discovered": false,
 		"lighted": false,
@@ -132,7 +132,7 @@
 	}, {
 		"filename": "sleeping.json",
 		"name": "sq",
-		"longDescription": "Sleeping Quarters Long Description",
+		"longDescription": "A large lighted room that was used by the wizard's staff. The room has a bunk bed in the south west corner of the room and a round table in the northeast corner.  There is a large bearshin in the center of the floor and a rocking chair next to the table.",
 		"shortDescription": "Sleeping Quarters",
 		"discovered": false,
 		"lighted": true,
@@ -141,7 +141,7 @@
 	}, {
 		"filename": "storeroom.json",
 		"name": "sr",
-		"longDescription": "Storeroom Long Description",
+		"longDescription": "A room used to store food and other household items.  It's covered in cobwebs, crawling insects and dead insects.",
 		"shortDescription": "Storeroom",
 		"discovered": false,
 		"lighted": false,
@@ -150,7 +150,7 @@
 	}, {
 		"filename": "treasureroom.json",
 		"name": "tr",
-		"longDescription": "Treasure Room Long Description",
+		"longDescription": "A secret room filled with treasures hidden in the darkness.  The smell of dust and mold is overpowering.  Does this room really contain priceless items or was it used to perform hideous acts of evil?",
 		"shortDescription": "Treasure Room",
 		"discovered": false,
 		"lighted": false,
@@ -159,7 +159,7 @@
 	}, {
 		"filename": "laboratory.json",
 		"name": "wl",
-		"longDescription": "Wizard's Laboratory Long Description",
+		"longDescription": "A laboratory containing various items used by the Wizard.  It does not have any natural lighting, therefore a working lantern is required to see the contents of the room",
 		"shortDescription": "Wizard's Laboratory",
 		"discovered": false,
 		"lighted": false,
@@ -169,9 +169,10 @@
 	"exits": [{
 		"filename": "",
 		"name": "ap1",
-		"longDescription": "AP1 Long Description",
+		"longDescription": "An strange portal that looks like an 'oblivion gate' on the western wall surrounded by intricate carvings of gargoyle like creatures",
 		"direction": "west",
-		"shortDescription": "oblivion gate",
+		"shortDescription": "An 'oblivion gate' on the west wall",
+        "commandName": "oblivion gate",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -179,9 +180,10 @@
 	}, {
 		"filename": "",
 		"name": "ar1",
-		"longDescription": "AR1 Long Description",
+		"longDescription": "A set of 'winder stairs' consisting of circular steps leading north towards to the Hallway.  More than half of the handrails have been broken, suggesting that a potentially violent event may have occurred here",
 		"direction": "north",
-		"shortDescription": "winder stairs",
+		"shortDescription": "'Winder stairs' going north",
+        "commandName": "winder stairs",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -189,9 +191,10 @@
 	}, {
 		"filename": "",
 		"name": "ar2",
-		"longDescription": "AR2 Long Description",
+		"longDescription": "A old 'rusting iron door' with many battlescars on the east wall that leads to the Jail.  Many of the dents and scratches in the door appear to be caused by a sharp object. Dark red stains appear at several locations on the door.",
 		"direction": "east",
-		"shortDescription": "rusting iron door",
+		"shortDescription": "'Rusting iron door' on the east wall",
+        "commandName": "rusting iron door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -199,9 +202,10 @@
 	}, {
 		"filename": "",
 		"name": "ar3",
-		"longDescription": "AR3 Long Description",
+		"longDescription": "A very heavy grey 'solid metal door' mounted insided a welded frame on the south wall.  The door leads to the Sleeping Quarters and has a deadbolt assembly mounted on it although it appears the lock's cylinder bolt is missing",
 		"direction": "south",
-		"shortDescription": "solid metal door",
+		"shortDescription": "'Solid metal door' on the south wall",
+        "commandName": "solid metal door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -209,9 +213,10 @@
 	}, {
 		"filename": "",
 		"name": "bd1",
-		"longDescription": "BD1 Long Description",
+		"longDescription": "An 'old wooden door' on the eastern wall with many boot marks on it that leads to the Sleeping Quarters. The excessing kicking has produced significant cracking of the wood",
 		"direction": "east",
-		"shortDescription": "old wooden door",
+		"shortDescription": "'Old wooden door' on the east wall",
+        "commandName": "old wooden door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -219,9 +224,10 @@
 	}, {
 		"filename": "",
 		"name": "bh1",
-		"longDescription": "BH1 Long Description",
+		"longDescription": "A set of 'splintered double doors' on the north wall leading to the Kitchen. Food strains and other dark stains are spattered across the doors",
 		"direction": "north",
-		"shortDescription": "splintered double doors",
+		"shortDescription": "'Splintered double doors' on the north wall",
+        "commandName": "splintered double doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -229,9 +235,10 @@
 	}, {
 		"filename": "",
 		"name": "bh2",
-		"longDescription": "BH2 Long Description",
+		"longDescription": "A 'monstrous archway' on the east wall over 16 feet high going into the Hallway.  Mystical creatures of various kinds are carved into the archway.",
 		"direction": "east",
-		"shortDescription": "monstrous archway",
+		"shortDescription": "'Monstrous archway' on the east wall",
+        "commandName": "monstrous archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -239,9 +246,10 @@
 	}, {
 		"filename": "",
 		"name": "ca1",
-		"longDescription": "CA1 Long Description",
+		"longDescription": "A large heavy 'rolling shutter door' on the south wall that goes to the Passage Way.",
 		"direction": "south",
-		"shortDescription": "rolling shutter door",
+		"shortDescription": "'Rolling shutter door' on the south wall",
+        "commandName": "rolling shutter door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -249,9 +257,10 @@
 	}, {
 		"filename": "",
 		"name": "ca2",
-		"longDescription": "CA2 Long Description",
+		"longDescription": "A pair of 'smoky glazed doors' on the east wall that leads into the Kitchen",
 		"direction": "east",
-		"shortDescription": "smoky glazed doors",
+		"shortDescription": "'Smoky glazed doors' on the east wall",
+        "commandName": "smoky glazed doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -259,9 +268,10 @@
 	}, {
 		"filename": "",
 		"name": "ce1",
-		"longDescription": "CE1 Long Description",
+		"longDescription": "A 'corrugated steel door' on the south wall leading to the outside world.",
 		"direction": "south",
-		"shortDescription": "corrugated steel door",
+		"shortDescription": "'Corrugated steel door' on the south wall",
+        "commandName": "corrugated steel door",
 		"visible": true,
 		"unlocked": false,
 		"keyObject": "golden key",
@@ -269,9 +279,10 @@
 	}, {
 		"filename": "",
 		"name": "ce2",
-		"longDescription": "CE2 Long Description",
+		"longDescription": "A 'long dark tunnel' heading north that is filled with crawling insects and other creatures.  The tunnel is used to enter the Passage Way room",
 		"direction": "north",
-		"shortDescription": "long dark tunnel",
+		"shortDescription": "'Long dark tunnel' at the north end of the cave",
+        "commandName": "long dark tunnel",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -279,9 +290,10 @@
 	}, {
 		"filename": "",
 		"name": "cl1",
-		"longDescription": "CL1 Long Description",
+		"longDescription": "A 'creaking cell door' on the west side of the room that leads to the Jail. The door has multiple handcuffs clamped to its bars",
 		"direction": "west",
-		"shortDescription": "creaking cell door",
+		"shortDescription": "'Creaking cell door' on the west side",
+        "commandName": "creaking cell door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -289,9 +301,10 @@
 	}, {
 		"filename": "",
 		"name": "hw1",
-		"longDescription": "HW1 Long Description",
+		"longDescription": "A 'monstrous archway' on the west wall over 16 feet high going into the Banquet Hall.  Mystical creatures of various kinds are carved into the archway.",
 		"direction": "west",
-		"shortDescription": "monstrous archway",
+		"shortDescription": "'Monstrous archway' on the west wall",
+        "commandName": "monstrous archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -299,9 +312,10 @@
 	}, {
 		"filename": "",
 		"name": "hw2",
-		"longDescription": "HW2 Long Description",
+		"longDescription": "A large 'bell archway' on the east wall connecting the Hallway to the Wizard's Laboratory",
 		"direction": "east",
-		"shortDescription": "bell archway",
+		"shortDescription": "'Bell archway' on the east wall",
+        "commandName": "bell archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -309,9 +323,10 @@
 	}, {
 		"filename": "",
 		"name": "hw3",
-		"longDescription": "HW3 Long Description",
+		"longDescription": "A set of 'winder stairs' on the south end of the room consisting of circular steps leading to the Armory.  More than half of the handrails have been broken, suggesting that a potentially violent event may have occurred on them",
 		"direction": "south",
-		"shortDescription": "winder stairs",
+		"shortDescription": "'Winder stairs' on the south end of the room",
+        "commandName": "winder stairs",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -319,9 +334,10 @@
 	}, {
 		"filename": "",
 		"name": "jl1",
-		"longDescription": "JL1 Long Description",
+		"longDescription": "An old 'rusting iron door' on the west wall with many battlescars leading to the Armory.  Many of the dents and scratches in the door appear to be caused by a sharp object. Deep red stains appear at several locations on the door.",
 		"direction": "west",
-		"shortDescription": "rusting iron door",
+		"shortDescription": "'Rusting iron door' on the west wall",
+        "commandName": "rusting iron door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -329,9 +345,10 @@
 	}, {
 		"filename": "",
 		"name": "jl2",
-		"longDescription": "JL2 Long Description",
+		"longDescription": "A 'creaking cell door' on the east end of the room that leads to a cell. The door has multiple handcuffs clamped to its bars",
 		"direction": "east",
-		"shortDescription": "creaking cell door",
+		"shortDescription": "'Creaking cell door' on the east end of the room",
+        "commandName": "creaking cell door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -339,9 +356,10 @@
 	}, {
 		"filename": "",
 		"name": "kt1",
-		"longDescription": "KT1 Long Description",
+		"longDescription": "A pair of 'smoky glazed doors' on the west wall that leads to the Common Area",
 		"direction": "west",
-		"shortDescription": "smoky glazed doors",
+		"shortDescription": "'Smoky glazed doors' on the west wall",
+        "commandName": "smoky glazed doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -349,9 +367,10 @@
 	}, {
 		"filename": "",
 		"name": "kt2",
-		"longDescription": "KT2 Long Description",
+		"longDescription": "A 'swinging door' on the east wall that creaks a high pitched sound when going to the Storeroom",
 		"direction": "east",
-		"shortDescription": "swinging door",
+		"shortDescription": "'Swinging door' on the east wall",
+        "commandName": "swinging door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -359,9 +378,10 @@
 	}, {
 		"filename": "",
 		"name": "kt3",
-		"longDescription": "KT3 Long Description",
+		"longDescription": "A set of 'splintered double doors' on the south wall leading to the Banquet Hall. Food strains and other dark stains are spattered across the doors",
 		"direction": "south",
-		"shortDescription": "splintered double doors",
+		"shortDescription": "'Splintered double doors' on the south wall",
+        "commandName": "splintered double doors",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -369,9 +389,10 @@
 	}, {
 		"filename": "",
 		"name": "out",
-		"longDescription": "OUT Long Description",
+		"longDescription": "A 'corrugated steel door' on the north wall used to access the cave entrance.",
 		"direction": "north",
-		"shortDescription": "corrugated steel door",
+		"shortDescription": "'Corrugated steel door' on the north wall",
+        "commandName": "corrugated steel door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -379,9 +400,10 @@
 	}, {
 		"filename": "",
 		"name": "pw1",
-		"longDescription": "PW1 Long Description",
+		"longDescription": "A 'long dark tunnel' going south filled with crawling insects and other creatures take connects to the Cave Entrance",
 		"direction": "south",
-		"shortDescription": "long dark tunnel",
+		"shortDescription": "'Long dark tunnel' going south",
+        "commandName": "long dark tunnel",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -389,9 +411,10 @@
 	}, {
 		"filename": "",
 		"name": "pw2",
-		"longDescription": "PW2 Long Description",
+		"longDescription": "A large heavy 'rolling shutter door' on the north wall that leads into the Common Area.",
 		"direction": "north",
-		"shortDescription": "rolling shutter door",
+		"shortDescription": "'Rolling shutter door' on the north wall",
+        "commandName": "rolling shutter door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -399,9 +422,10 @@
 	}, {
 		"filename": "",
 		"name": "sq1",
-		"longDescription": "SQ1 Long Description",
+		"longDescription": "A heavy grey 'solid metal door' mounted insided a welded frame on the north wall.  The door leads to the Armory and has a deadbolt assembly mounted on it, although it appears the lock's cylinder bolt is missing",
 		"direction": "north",
-		"shortDescription": "solid metal door",
+		"shortDescription": "'Solid metal door' on the north wall",
+        "commandName": "solid metal door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -409,9 +433,10 @@
 	}, {
 		"filename": "",
 		"name": "sq2",
-		"longDescription": "SQ2 Long Description",
+		"longDescription": "An 'old wooden door' on the west wall with many boot marks on it leading to the Bedroom. The excessing kicking has produced significant cracking of the wood",
 		"direction": "west",
-		"shortDescription": "old wooden door",
+		"shortDescription": "'Old wooden door' on the west wall",
+        "commandName": "old wooden door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -419,9 +444,10 @@
 	}, {
 		"filename": "",
 		"name": "sr1",
-		"longDescription": "SR1 Long Description",
+		"longDescription": "A 'swinging door' on the west wall that creaks a high pitched sound when going to the Kitchen",
 		"direction": "west",
-		"shortDescription": "swinging door",
+		"shortDescription": "'Swinging door' on the west wall",
+        "commandName": "swinging door",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -429,9 +455,10 @@
 	}, {
 		"filename": "",
 		"name": "tr1",
-		"longDescription": "TR1 Long Description",
+		"longDescription": "A 'rusted spiral staircase' on the west wall that makes several loops while ascending to the Storeroom",
 		"direction": "west",
-		"shortDescription": "rusted spiral staircase",
+		"shortDescription": "'Rusted spiral staircase' on the west wall",
+        "commandName": "rusted spiral staircase",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -439,9 +466,10 @@
 	}, {
 		"filename": "",
 		"name": "wl1",
-		"longDescription": "WL1 Long Description",
+		"longDescription": "A large 'bell archway' on the west wall connecting the Wizard's Laboratory to the Hallway",
 		"direction": "west",
-		"shortDescription": "bell archway",
+		"shortDescription": "'Bell archway' on the west wall",
+        "commandName": "bell archway",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -449,9 +477,10 @@
 	}, {
 		"filename": "",
 		"name": "wl2",
-		"longDescription": "WL2 Long Description",
+		"longDescription": "A strange portal on the east wall that looks like an 'oblivion gate' surrounded by intricate carvings of gargoyle like creatures",
 		"direction": "east",
-		"shortDescription": "oblivion gate",
+		"shortDescription": "'Oblivion gate' on the east wall",
+        "commandName": "oblivion gate",
 		"visible": true,
 		"unlocked": true,
 		"keyObject": "",
@@ -460,8 +489,8 @@
 	"objects": [{
 		"filename": "",
 		"name": "altar",
-		"longDescription": "Altar1 Long Description",
-		"shortDescription": "Altar1 Short Description",
+		"longDescription": "An elevated structure that was used in dark ceremonies performed by the Wizard. Blood stains still cover the top surface and flows down all sides in a pattern suggesting that someone had laid on the altar. What is that on the altar and also above it?.",
+		"shortDescription": "Altar",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -496,8 +525,8 @@
 	}, {
 		"filename": "",
 		"name": "green apple",
-		"longDescription": "Apple1 Long Description",
-		"shortDescription": "Apple1 Short Description",
+		"longDescription": "A crisp and juicy fleshy fruit that can improve your health when eaten",
+		"shortDescription": "Green Apple",
         "acquirable": true,
         "drinkable": false,
         "edible": true,
@@ -532,8 +561,8 @@
 	}, {
 		"filename": "",
 		"name": "red apple",
-		"longDescription": "Apple2 Long Description",
-		"shortDescription": "Apple2 Short Description",
+		"longDescription": "A crisp and juicy fleshy fruit that can improve your health when eaten",
+		"shortDescription": "Red Apple",
         "acquirable": true,
         "drinkable": false,
         "edible": true,
@@ -568,8 +597,8 @@
 	}, {
 		"filename": "",
 		"name": "armoire",
-		"longDescription": "Armoire1 Long Description",
-		"shortDescription": "Armoire1 Short Description",
+		"longDescription": "A tall cabinet used for storing clothes and occasionally weapons.  The armoire is made of dark antiquie walnut wood and has a single door that is opened on the front.",
+        "shortDescription": "Armoire",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -604,8 +633,8 @@
 	}, {
 		"filename": "",
 		"name": "armor",
-		"longDescription": "Armor1 Long Description",
-		"shortDescription": "Armor1 Short Description",
+		"longDescription": "The upper arms are protected by fully covering rounded rerebraces while the lower arms are covered by vambraces.  The breastplate is made from many layers of pointed metal sheets and the legs are protected by greaves which have a curved pointed edge at the knee joint.  Provides some protection to the player when equipped",
+		"shortDescription": "Armor",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -640,8 +669,8 @@
 	}, {
 		"filename": "",
 		"name": "axe",
-		"longDescription": "Axe1 Long Description",
-		"shortDescription": "Axe1 Short Description",
+		"longDescription": "Made from wrought iron with a carbon steel edge on a crescent-shaped head.  It is moderately heavy and can inflict significant damage to opponents when used.",
+		"shortDescription": "Axe",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -676,8 +705,8 @@
 	}, {
 		"filename": "",
 		"name": "bearskin",
-		"longDescription": "Bearskin1 Long Description",
-		"shortDescription": "Bearskin1 Short Description",
+		"longDescription": "A dark brown bear rug that has very soft and long hair with a silver tip color. The rug looks comfortable enough to lay on",
+		"shortDescription": "Bearskin",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -712,8 +741,8 @@
 	}, {
 		"filename": "",
 		"name": "bunk bed",
-		"longDescription": "Bed1 Long Description",
-		"shortDescription": "Bed1 Short Description",
+		"longDescription": "A double framed bed with one bed supported above another by four large pillars. The bed looks comfortable enough to lay on.  There appears to be an object under the bed",
+		"shortDescription": "Bunk Bed",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -748,8 +777,8 @@
 	}, {
 		"filename": "",
 		"name": "twin bed",
-		"longDescription": "Bed2 Long Description",
-		"shortDescription": "Bed2 Short Description",
+		"longDescription": "A bed that has been used extensively. The middle of the bed sags downward, hinting of a large person that once slept there",
+		"shortDescription": "Twin Bed",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -784,8 +813,8 @@
 	}, {
 		"filename": "",
 		"name": "bat skeleton",
-		"longDescription": "Bones1 Long Description",
-		"shortDescription": "Bones1 Short Description",
+		"longDescription": "The remains of a bat that died years ago. The greatly elongated bones of the fore limbs hint that the wing span of the bat exceeded 15 inches.",
+		"shortDescription": "Bat Skeleton",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -820,8 +849,8 @@
 	}, {
 		"filename": "",
 		"name": "cat skeleton",
-		"longDescription": "Bones2 Long Description",
-		"shortDescription": "Bones2 Short Description",
+		"longDescription": "The remains of a cat that died in the passageway. The unsually large eye sockets and powerful jaws suggest that the cat was an efficient predator within the haunted dungeon.",
+		"shortDescription": "Cat Skeleton",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -856,8 +885,8 @@
 	}, {
 		"filename": "",
 		"name": "human skeleton",
-		"longDescription": "Bones3 Long Description",
-		"shortDescription": "Bones3 Short Description",
+		"longDescription": "The remains of one of the unfortunate subjects used in the Wizard's experiments. The skeleton still has some flesh attached to it that is giving off a horrendous decaying odor ",
+		"shortDescription": "Human Skeleton",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -892,8 +921,8 @@
 	}, {
 		"filename": "",
 		"name": "book of spells",
-		"longDescription": "Book1 Long Description",
-		"shortDescription": "Book1 Short Description",
+		"longDescription": "A book containing various spells used by the Wizard. One spell is used to create a demonic portal to a different dimension",
+		"shortDescription": "Book of Spells",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -928,8 +957,8 @@
 	}, {
 		"filename": "",
 		"name": "book of locks",
-		"longDescription": "Book2 Long Description",
-		"shortDescription": "Book2 Short Description",
+		"longDescription": "A catch-all book about locksmithing.  Probably a best seller for those locked in a Haunted Dungeon cell.",
+		"shortDescription": "Book of Locks",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -964,8 +993,8 @@
 	}, {
 		"filename": "",
 		"name": "bottle of water",
-		"longDescription": "Bottle1 Long Description",
-		"shortDescription": "Bottle1 Short Description",
+		"longDescription": "Contains water that can replinish the health of a player when drank",
+		"shortDescription": "Bottle of Water",
         "acquirable": true,
         "drinkable": true,
         "edible": false,
@@ -1000,8 +1029,8 @@
     }, {
 		"filename": "",
 		"name": "bottle of gatorade",
-		"longDescription": "Bottle2 Long Description",
-		"shortDescription": "Bottle2 Short Description",
+		"longDescription": "Contains a beverage that can replinish the health of a player when drank",
+		"shortDescription": "Bottle of Gatorade",
         "acquirable": true,
         "drinkable": true,
         "edible": false,
@@ -1036,8 +1065,8 @@
 	}, {
 		"filename": "",
 		"name": "bottleopener",
-		"longDescription": "BottleOpener1 Long Description",
-		"shortDescription": "BottleOpener1 Short Description",
+		"longDescription": "A device that is used to open bottles.  When in the player's inventory, any bottle that is also in the inventory can be drank.",
+		"shortDescription": "Bottleopener",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1072,8 +1101,8 @@
 	}, {
 		"filename": "",
 		"name": "carver chair",
-		"longDescription": "Chair1 Long Description",
-		"shortDescription": "Chair1 Short Description",
+		"longDescription": "A spool chair having three vertical and three horizontal spindles in the back. The chair looks comfortable enough that sitting on it might refresh the player",
+		"shortDescription": "Carver Chair",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1108,8 +1137,8 @@
 	}, {
 		"filename": "",
 		"name": "rocking chair",
-		"longDescription": "Chair2 Long Description",
-		"shortDescription": "Chair2 Short Description",
+		"longDescription": "A chair frame mounted on rockers that allows the chair to gently rock back and forth. Looks good enough to sit on",
+		"shortDescription": "Rocking Chair",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1144,8 +1173,8 @@
 	}, {
 		"filename": "",
 		"name": "chandelier",
-		"longDescription": "Chandelier1 Long Description",
-		"shortDescription": "Chandelier1 Short Description",
+		"longDescription": "A large decorative hangling light with eight branches for holding candles. All the candles are missing and the cobwebs are so thick bewteen the branches that it almost appears as one solid structure",
+		"shortDescription": "Chandelier",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1180,8 +1209,8 @@
 	}, {
 		"filename": "",
 		"name": "cloak",
-		"longDescription": "Cloak1 Long Description",
-		"shortDescription": "Cloak1 Short Description",
+		"longDescription": "A sleeveless overgarment that hangs loosely from the shoulders. The garment gives hints of magical powers when equipped. Could this be an invisibility cloak?",
+		"shortDescription": "Cloak",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1216,8 +1245,8 @@
 	}, {
 		"filename": "",
 		"name": "desk",
-		"longDescription": "Desk1 Long Description",
-		"shortDescription": "Desk1 Short Description",
+		"longDescription": "An old steel office desk that looks very heavy. It appears that there maybe something on the desk as well as inside it",
+		"shortDescription": "Desk",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1252,8 +1281,8 @@
 	}, {
 		"filename": "",
 		"name": "stoneware",
-		"longDescription": "Dinnerware1 Long Description",
-		"shortDescription": "Dinnerware1 Short Description",
+		"longDescription": "Hard nontranslucent set of pottery dishes. The heavy dishes were probably used by the staff serving the Wizard.",
+		"shortDescription": "Stoneware",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1288,8 +1317,8 @@
 	}, {
 		"filename": "",
 		"name": "fine china",
-		"longDescription": "Dinnerware2 Long Description",
-		"shortDescription": "Dinnerware2 Short Description",
+		"longDescription": "A set of soft-paste porcelain dishes that were probably exclusively used by the Wizard",
+		"shortDescription": "Fine China",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1324,8 +1353,8 @@
 	}, {
 		"filename": "",
 		"name": "earthenware",
-		"longDescription": "Dinnerware3 Long Description",
-		"shortDescription": "Dinnerware3 Short Description",
+		"longDescription": "A set of low quality clay pottery dishes used by the prisoners in the Haunted Dungeon",
+		"shortDescription": "Earthenware",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1360,8 +1389,8 @@
 	}, {
 		"filename": "",
 		"name": "lidless eye",
-		"longDescription": "Eye1 Long Description",
-		"shortDescription": "Eye1 Short Description",
+		"longDescription": "A large floating lidless eye that follows and closely watches any visitor to the Alternate Plane",
+		"shortDescription": "lidless eye",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1396,8 +1425,8 @@
 	}, {
 		"filename": "",
 		"name": "wall of flames",
-		"longDescription": "Flames1 Long Description",
-		"shortDescription": "Flames1 Short Description",
+		"longDescription": "A 10ft high wall of flames that generates soaring temperatures and hellish conditions to those around it",
+		"shortDescription": "Wall of Flames",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1432,8 +1461,8 @@
 	}, {
 		"filename": "",
 		"name": "gem",
-		"longDescription": "Gem1 Long Description",
-		"shortDescription": "Gem1 Short Description",
+		"longDescription": "A mineral crystal that almost glows green with its own internal light. Must be very valueable",
+		"shortDescription": "Gem",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1468,8 +1497,8 @@
 	}, {
 		"filename": "",
 		"name": "cooking hearth",
-		"longDescription": "Hearth1 Long Description",
-		"shortDescription": "Hearth1 Short Description",
+		"longDescription": "A stone lined fireplace with a heavy iron pot that is used to heat meals.  There does not appear to be any fire wood for lighting the hearth",
+		"shortDescription": "Cooking hearth",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1504,8 +1533,8 @@
 	}, {
 		"filename": "",
 		"name": "helmet",
-		"longDescription": "Helmet1 Long Description",
-		"shortDescription": "Helmet1 Short Description",
+		"longDescription": "A sugar loaf visored helmet that was popular in the 14th century. Provides some protection to the player when equipped.",
+		"shortDescription": "Helmet",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1540,8 +1569,8 @@
     }, {
 		"filename": "",
 		"name": "golden key",
-		"longDescription": "Key1 Long Description",
-		"shortDescription": "Key1 Short Description",
+		"longDescription": "A key with intricate markings on it. Seems to be an important object due to the high craftsmanship required to make the key. Could this key be ticket out of the Haunted Dungeon?",
+		"shortDescription": "Golden Key",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1576,8 +1605,8 @@
 	}, {
 		"filename": "",
 		"name": "key rung",
-		"longDescription": "Keyrung1 Long Description",
-		"shortDescription": "Keyrung1 Short Description",
+		"longDescription": "A wall fixture for hanging keys. The fixture is empty",
+		"shortDescription": "Key Rung",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1612,8 +1641,8 @@
 	}, {
 		"filename": "",
 		"name": "kitchen knife",
-		"longDescription": "Knife1 Long Description",
-		"shortDescription": "Knife1 Short Description",
+		"longDescription": "A large chef knife used for carving turkeys. Its big enough to use as a weapon when equipped",
+		"shortDescription": "Kitchen Knife",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1648,8 +1677,8 @@
 	}, {
 		"filename": "",
 		"name": "broken lantern",
-		"longDescription": "Lantern1 Long Description",
-		"shortDescription": "Lantern1 Short Description",
+		"longDescription": "A lantern that has had its gas burner removed. No way to light this lantern",
+		"shortDescription": "Broken Lantern",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1684,8 +1713,8 @@
 	}, {
 		"filename": "",
 		"name": "brass lantern",
-		"longDescription": "Lantern2 Long Description",
-		"shortDescription": "Lantern2 Short Description",
+		"longDescription": "A working 24 inch polished brass clipper ship lantern.  All that's needed to light the lantern is some matches.",
+		"shortDescription": "Brass Lantern",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1720,8 +1749,8 @@
 	}, {
 		"filename": "",
 		"name": "wooden lever",
-		"longDescription": "Lever1 Long Description",
-		"shortDescription": "Lever1 Short Description",
+		"longDescription": "A wooden handle that has been worn down by being pulled often.",
+		"shortDescription": "Wooden lever",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1756,8 +1785,8 @@
 	}, {
 		"filename": "",
 		"name": "iron lever",
-		"longDescription": "Lever2 Long Description",
-		"shortDescription": "Lever2 Short Description",
+		"longDescription": "An iron bar that looks to have been pushed many times",
+		"shortDescription": "Iron Lever",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1792,8 +1821,8 @@
 	}, {
 		"filename": "",
 		"name": "lockpick",
-		"longDescription": "Lockpick1 Long Description",
-		"shortDescription": "Lockpick1 Short Description",
+		"longDescription": "A large hook pick used to open tumbler locks found on common iron trunks",
+		"shortDescription": "Lockpick",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1828,8 +1857,8 @@
 	}, {
 		"filename": "",
 		"name": "matches",
-		"longDescription": "Matches1 Long Description",
-		"shortDescription": "Matches1 Short Description",
+		"longDescription": "A large box of stick matches that are coated on one end with a compound that ignites when scratched",
+		"shortDescription": "Matches",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1864,8 +1893,8 @@
 	}, {
 		"filename": "",
 		"name": "mattress",
-		"longDescription": "Mattress1 Long Description",
-		"shortDescription": "Mattress1 Short Description",
+		"longDescription": "A small dirty mattress that offers very little padding. Doesn't look comfortable enough to lay on.  There appears to be something on the mattress and under the mattress",
+		"shortDescription": "Mattress",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -1900,8 +1929,8 @@
 	}, {
 		"filename": "",
 		"name": "mushrooms",
-		"longDescription": "Mushrooms1 Long Description",
-		"shortDescription": "Mushrooms1 Short Description",
+		"longDescription": "An assortment of edible mushrooms that offers healing powers when eaten",
+		"shortDescription": "Mushrooms",
         "acquirable": true,
         "drinkable": false,
         "edible": true,
@@ -1936,8 +1965,8 @@
 	}, {
 		"filename": "",
 		"name": "note",
-		"longDescription": "Note1 Long Description",
-		"shortDescription": "Note1 Short Description",
+		"longDescription": "A folded note that has top secret scribbled on the outside. Maybe it's secret would be revealed if it was read",
+		"shortDescription": "Note",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -1972,8 +2001,8 @@
 	}, {
 		"filename": "",
 		"name": "portrait",
-		"longDescription": "Painting1 Long Description",
-		"shortDescription": "Painting1 Short Description",
+		"longDescription": "A portrait of an old geezer that resembles the Scrooge. Seems the geezer is hiding something ... what's that behind the portrait?",
+		"shortDescription": "Portrait",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2008,8 +2037,8 @@
 	}, {
 		"filename": "",
 		"name": "painting",
-		"longDescription": "Painting2 Long Description",
-		"shortDescription": "Painting2 Short Description",
+		"longDescription": "A painting of the Haunted Dungeon as seen from the cliffs below",
+		"shortDescription": "Painting",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2044,8 +2073,8 @@
 	}, {
 		"filename": "",
 		"name": "magical ring",
-		"longDescription": "Ring1 Long Description",
-		"shortDescription": "Ring1 Short Description",
+		"longDescription": "A ring that has strange writings on it that glow in the dark. Could it have magical powers when equipped?",
+		"shortDescription": "Magical Ring",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2080,8 +2109,8 @@
 	}, {
 		"filename": "",
 		"name": "shale rocks",
-		"longDescription": "Rocks1 Long Description",
-		"shortDescription": "Rocks1 Short Description",
+		"longDescription": "A fined-grained clastic sedimentary rock that is composed of mud that is a mix of flakes of clay minerals and tiny fragments of other minerals",
+		"shortDescription": "Shale Rocks",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2116,8 +2145,8 @@
 	}, {
 		"filename": "",
 		"name": "slate rocks",
-		"longDescription": "Rocks2 Long Description",
-		"shortDescription": "Rocks2 Short Description",
+		"longDescription": "A fine-grained homogenous metamorphic rock derived from a sedimentary rock composed of clay or volcanic ash",
+		"shortDescription": "Slate Rocks",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2152,8 +2181,8 @@
 	}, {
 		"filename": "",
 		"name": "turkish rug",
-		"longDescription": "Rug1 Long Description",
-		"shortDescription": "Rug1 Short Description",
+		"longDescription": "A rug made from a combination of wool and silk and displays a motif of colors and patterns. Could this rug be safe to lay on?  Looking closer it appears that something may be under the rug",
+		"shortDescription": "Turkish Rug",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2188,8 +2217,8 @@
 	}, {
 		"filename": "",
 		"name": "wool rug",
-		"longDescription": "Rug2 Long Description",
-		"shortDescription": "Rug2 Short Description",
+		"longDescription": "An ordinary grey colored wool rug. Could laying on this rug help restore health?",
+		"shortDescription": "Wool Rug",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2224,8 +2253,8 @@
 	}, {
 		"filename": "",
 		"name": "slate of runes",
-		"longDescription": "Runes1 Long Description",
-		"shortDescription": "Runes1 Short Description",
+		"longDescription": "A large slate tablet filled with various odd symbols all over it, somehow untouched by time and the elements",
+		"shortDescription": "Slate of Runes",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2260,8 +2289,8 @@
 	}, {
 		"filename": "",
 		"name": "safe",
-		"longDescription": "Safe1 Long Description",
-		"shortDescription": "Safe1 Short Description",
+		"longDescription": "A small combination safe used to store valuables. One must first know the combination before they can look inside to see what it contains ",
+		"shortDescription": "Safe",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2296,8 +2325,8 @@
 	}, {
 		"filename": "",
 		"name": "scroll",
-		"longDescription": "Scroll1 Long Description",
-		"shortDescription": "Scroll1 Short Description",
+		"longDescription": "A small scroll that is sealed with a skull and cross bones seal.  Wonder what secrets can be learned by reading it",
+		"shortDescription": "Scroll",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2332,8 +2361,8 @@
 	}, {
 		"filename": "",
 		"name": "metal shelves",
-		"longDescription": "Shelf1 Long Description",
-		"shortDescription": "Shelf1 Short Description",
+		"longDescription": "Heavy metal shelving units used to store items on. Could there be any items on the shelves now?",
+		"shortDescription": "Metal Shelves",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2368,8 +2397,8 @@
 	}, {
 		"filename": "",
 		"name": "corner shelves",
-		"longDescription": "Shelf2 Long Description",
-		"shortDescription": "Shelf2 Short Description",
+		"longDescription": "A 4-Tier corner shelf used to store items on. Could there be items on the shelf now?",
+		"shortDescription": "Corner Shelves",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2404,8 +2433,8 @@
 	}, {
 		"filename": "",
 		"name": "wooden shelves",
-		"longDescription": "Shelf3 Long Description",
-		"shortDescription": "Shelf3 Short Description",
+		"longDescription": "A set of wooden shelves mounted to the wall that are used to store items on. Could there be items on the shelves now?   What's that behind the shelves?",
+		"shortDescription": "Wooden Shelves",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2440,8 +2469,8 @@
 	}, {
 		"filename": "",
 		"name": "sign",
-		"longDescription": "Sign1 Long Description",
-		"shortDescription": "Sign1 Short Description",
+		"longDescription": "A sign posted outside the cave entrance with large letters printed on it." ,
+		"shortDescription": "Sign",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2476,8 +2505,8 @@
 	}, {
 		"filename": "",
 		"name": "bar stool",
-		"longDescription": "Stool1 Long Description",
-		"shortDescription": "Stool1 Short Description",
+		"longDescription": "A tall chair with a rigid seat and a foot rest to support the feet. Looks like a good place to sit on when tired",
+		"shortDescription": "Bar Stool",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2512,7 +2541,7 @@
 	}, {
 		"filename": "",
 		"name": "milking stool",
-		"longDescription": "Stool2 Long Description",
+		"longDescription": "A short stool with three legs and no backrest. It doesn't look that comfortable, however how bad could it be when sitting on it.",
 		"shortDescription": "Stool2 Short Description",
         "acquirable": false,
         "drinkable": false,
@@ -2548,8 +2577,8 @@
 	}, {
 		"filename": "",
 		"name": "machete",
-		"longDescription": "Sword1 Long Description",
-		"shortDescription": "Sword1 Short Description",
+		"longDescription": "A large heavy knife used for clearing underbrush that can also be used as a weapon when equipped",
+		"shortDescription": "machete",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2584,8 +2613,8 @@
 	}, {
 		"filename": "",
 		"name": "sabre",
-		"longDescription": "Sword2 Long Description",
-		"shortDescription": "Sword2 Short Description",
+		"longDescription": "A curved single-edge blade optimized for delivering a cut or slash. When equipped the sabre can be used as an effective weapon",
+		"shortDescription": "Sabre",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2620,8 +2649,8 @@
 	}, {
 		"filename": "",
 		"name": "gateleg table",
-		"longDescription": "Table1 Long Description",
-		"shortDescription": "Table1 Short Description",
+		"longDescription": "An oak table with drop leaves supported by movable paired legs.  Could there be any items on the table?",
+		"shortDescription": "Gateleg Table",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2656,8 +2685,8 @@
 	}, {
 		"filename": "",
 		"name": "kitchen table",
-		"longDescription": "Table2 Long Description",
-		"shortDescription": "Table2 Short Description",
+		"longDescription": "A long barrack style wooden table with benches on each side.  Could there be any items on the table?",
+		"shortDescription": "Kitchen Table",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2692,8 +2721,8 @@
 	}, {
 		"filename": "",
 		"name": "dining table",
-		"longDescription": "Table3 Long Description",
-		"shortDescription": "Table3 Short Description",
+		"longDescription": "A plank surface antique table of exceptional quality that comfortably seats twelve. Could there be any items on the table?",
+		"shortDescription": "Dining Table",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2728,8 +2757,8 @@
 	}, {
 		"filename": "",
 		"name": "high table",
-		"longDescription": "Table4 Long Description",
-		"shortDescription": "Table4 Short Description",
+		"longDescription": "A table with its surface a full four feet above the floor.  Could there be any items on the table?",
+		"shortDescription": "High Table",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2764,8 +2793,8 @@
     }, {
 		"filename": "",
 		"name": "round table",
-		"longDescription": "Table5 Long Description",
-		"shortDescription": "Table5 Short Description",
+		"longDescription": "A large circular table with heavy legs for holding heavy objects. Could there be any items on the table?",
+		"shortDescription": "Round Table",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2800,8 +2829,8 @@
     }, {
 		"filename": "",
 		"name": "trestle table",
-		"longDescription": "Table6 Long Description",
-		"shortDescription": "Table6 Short Description",
+		"longDescription": "A long bench table consisting of three trestle supports linked by a longitudinal cross-member. Could there be any items on the table?",
+		"shortDescription": "Trestle Table",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2836,8 +2865,8 @@
 	}, {
 		"filename": "",
 		"name": "tapestries",
-		"longDescription": "Tapestries1 Long Description",
-		"shortDescription": "Tapestries1 Short Description",
+		"longDescription": "A thick textile fabric with intricate design patterns hanging on the wall",
+		"shortDescription": "Tapestries",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2872,8 +2901,8 @@
     }, {
 		"filename": "",
 		"name": "tools",
-		"longDescription": "Tools1 Long Description",
-		"shortDescription": "Tools1 Short Description",
+		"longDescription": "A heavy set of tools used when shoeing horses",
+		"shortDescription": "Tools",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2908,8 +2937,8 @@
     }, {
 		"filename": "",
 		"name": "trapdoor",
-		"longDescription": "Trapdoor1 Long Description",
-		"shortDescription": "Trapdoor1 Short Description",
+		"longDescription": "A small square hinged door that is flush with the surface of the floor. There is a handle in the center of the door.  Wonder what happens then the trapdoor is pulled",
+		"shortDescription": "Trapdoor",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -2944,8 +2973,8 @@
 	}, {
 		"filename": "",
 		"name": "treasure",
-		"longDescription": "Treasure1 Long Description",
-		"shortDescription": "Treasure1 Short Description",
+		"longDescription": "A valuable collection of gold coins and trinkets",
+		"shortDescription": "Treasure",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -2980,8 +3009,8 @@
 	}, {
 		"filename": "",
 		"name": "tree",
-		"longDescription": "Tree1 Long Description",
-		"shortDescription": "Tree1 Short Description",
+		"longDescription": "A large oak tree with branches spaning above the entrace to the cave",
+		"shortDescription": "Tree",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -3016,8 +3045,8 @@
 	}, {
 		"filename": "",
 		"name": "iron trunk",
-		"longDescription": "Trunk1 Long Description",
-		"shortDescription": "Trunk1 Short Description",
+		"longDescription": "A trunk made of iron that uses a tumbler lock to secure the valuable items inside.  A look inside the trunk requires a lockpick in the players inventory",
+		"shortDescription": "Iron Trunk",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -3052,8 +3081,8 @@
 	}, {
 		"filename": "",
 		"name": "cedar trunk",
-		"longDescription": "Trunk2 Long Description",
-		"shortDescription": "Trunk2 Short Description",
+		"longDescription": "An Amish trunk that is normally used to store blankets and bedding accessories. Wonder what is stored inside this trunk",
+		"shortDescription": "Cedar Trunk",
         "acquirable": false,
         "drinkable": false,
         "edible": false,
@@ -3088,8 +3117,8 @@
 	}, {
 		"filename": "",
 		"name": "warhammer",
-		"longDescription": "Warhammer1 Long Description",
-		"shortDescription": "Warhamer1 Short Description",
+		"longDescription": "A heavy medieval weapon of war intended for close combat action. The warhammer is a lethal weapon when equipped.",
+		"shortDescription": "Warhammer",
         "acquirable": true,
         "drinkable": false,
         "edible": false,
@@ -3125,8 +3154,8 @@
 	"ghosts": [{
 		"filename": "",
 		"name": "blinky",
-		"longDescription": "Blinky Long Description",
-		"shortDescription": "Blinky Short Description",
+		"longDescription": "Considered the leader of the ghost gang, Blinky is the toughest and most lethal ghost in the game. He randomly traverses all the rooms in the game and switches between visibile and non-visible modes depending upon his mood. He does not actively pursue the player, however when visible and in the same room as the player he is a force to be reckoned with.",
+		"shortDescription": "Blinky",
 		"visible": false,
 		"location": "pw",
 		"health": 100,
@@ -3134,8 +3163,8 @@
 	}, {
 		"filename": "",
 		"name": "clyde",
-		"longDescription": "Clyde Long Description",
-		"shortDescription": "Clyde Short Description",
+		"longDescription": "Although not as lethal as Blinky, Clyde is still a major threat to the player. He is both tough to kill and deadly in his attacks against the player. Clyde restricts himself to a subset of the rooms in the game and has a higher potential of being visible than Blinky. Since ghosts can only attack when uncloaked, the player has a higher probability of engaging with Clyde than with Blinky.",
+		"shortDescription": "Clyde",
 		"visible": false,
 		"location": "bh",
 		"health": 80,
@@ -3143,8 +3172,8 @@
 	}, {
 		"filename": "",
 		"name": "inky",
-		"longDescription": "Inky Long Description",
-		"shortDescription": "Inky Short Description",
+		"longDescription": "Inky is the most fickle of all the ghost. Sometimes she feels aggressive and other times not so much. She tends to restrict herself to a subset of the rooms and will either try to flee from the player or fight, depending upon her mood. She is more powerful than Pinky, however not as tough or lethal as either Clyde or Blinky.",
+		"shortDescription": "Inky",
 		"visible": false,
 		"location": "ct",
 		"health": 60,
@@ -3152,8 +3181,8 @@
 	}, {
 		"filename": "",
 		"name": "pinky",
-		"longDescription": "Pinky Long Description",
-		"shortDescription": "Pinky Short Description",
+		"longDescription": "Pinky is the most aggressive ghost in the game. Fortunately for the player she is also the weakest and least deadly. She often positions herself in either the room the player is in or an adjoining room hoping to ambush the player when he comes in. She can be found in any of the rooms.",
+		"shortDescription": "Pinky",
 		"visible": false,
 		"location": "sq",
 		"health": 40,
@@ -3243,6 +3272,100 @@
         "verb": "wield",
         "description": "wield <object>: Used to swing a weapon at a ghost",
         "prepositions": []
+    }],
+    "help": [{
+        "verb": " drink <object>",
+		"description": "   -->Used to drink objects that restore health"
+	}, {
+        "verb": " drop <object>",
+		"description": "   -->Used to remove objects from inventory"
+    }, {
+        "verb": " eat <object>",
+		"description": "   -->Used on eat objects that restore heatlh"
+    }, {
+        "verb": " equip <object>",
+		"description": "   -->Used to activate wearable and wieldable objects"
+    }, {
+        "verb": " equipped",
+		"description": "   -->Used to list inventory objects that are equipped"
+    }, {
+        "verb": " go <direction>",
+		"description": "   -->Used to move a player a direction"
+    }, {
+        "verb": " go <exit description>",
+		"description": "   -->Used to move a player through an exit"
+    }, {
+        "verb": " <direction>",
+		"description": "   -->Used to move a player a direction"
+    }, {
+        "verb": " <exit description>",
+		"description": "   -->Used to move a player through an exit"   
+    }, {
+        "verb": " help",
+		"description": "   -->Used to list supported verbs"
+    }, {
+        "verb": " inventory",
+		"description": "   -->Used to list objects in the player's inventory"
+    }, {
+        "verb": " lay on <object>",
+		"description": "   -->Used to lay on objects that modify health"
+    }, {
+        "verb": " light <object>",
+		"description": "   -->Used to light certain objects"   
+    }, {
+        "verb": " loadgame",
+		"description": "   -->Loads a saved game"
+    }, {
+        "verb": " look at <object>",
+		"description": "   -->Used to get the long description of an object"  
+    }, {
+        "verb": " look under <object>",
+		"description": "   -->Used to look under an object"   
+    }, {
+        "verb": " look on <object>",
+		"description": "   -->Used to look on top of an object"       
+    }, {
+        "verb": " look behind <object>",
+		"description": "   -->Used to look behind an object"     
+    }, {
+        "verb": " look inside <object>",
+		"description": "   -->Used to look inside an object"  
+    }, {
+        "verb": " look above <object>",
+		"description": "   -->Used to look above an object"    
+    }, {
+        "verb": " pull <object>",
+		"description": "   -->Used to pull an object"
+    }, {
+        "verb": " push <object>",
+		"description": "   -->Used to push an object"
+    }, {
+        "verb": " read <object>",
+		"description": "   -->Used to read an object"   
+    }, {
+        "verb": " savegame",
+		"description": "   -->Used to save the game state to a file"   
+    }, {
+        "verb": " sit on <object>",
+		"description": "   -->Used to sit on certain objects to restore health"
+    }, {
+        "verb": " take <object>",
+		"description": "   -->Used to place an object in the player's inventory"  
+    }, {
+        "verb": " unequip <object>",
+		"description": "   -->Used to deactivate wearable and wieldable objects" 
+    }, {
+        "verb": " unlock <direction>",
+        "description": "   -->Used to unlock an exit in a given direction."
+    }, {
+        "verb": " unlock <exit description>",
+        "description": "   -->Used to unlock an exit."    
+    }, {
+        "verb": " unlock <object>",
+        "description": "   -->Used to unlock an object."      
+    }, {
+        "verb": " wield <object>",
+        "description": "   -->Used to swing a weapon at a ghost"
     }],
     "prepositions": [{
 		"preposition": "on",
