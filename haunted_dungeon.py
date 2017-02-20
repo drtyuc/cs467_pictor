@@ -73,20 +73,35 @@ class HauntedDungeon():
         self.dm = DataManager()
         self.dm.loadNewGame()
         self.nlp = nlp()
-        self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits())
+        self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits(), self.dm.getCommandTuples())
         self.nlp.buildSynonymDict()
         # while not end of game
         # print display text for current locale to player
         self.generateText()
-        # comment out - get input - nlp doesnt work
-        commandTuple = ()
-        while not any(commandTuple):
+        command = ""
+        while command != "quit":
             command = raw_input("Your move: ")
-            commandTuple = self.nlp.buildTuple(command)
-            if not any(commandTuple):
-                print "I don't understand..."
-        print commandTuple
+            # do action
+            if command == "quit":
+                print "GOOD BYE!"
+                return
+            else:
+                commandTuple = self.nlp.matchTuple(command)
+                if not any(commandTuple):
+                    print "I don't understand..."
+
+            pa = PerformAction(command, self.dm)
+            if pa.isCommandValid() == True:
+                if pa.areCommandDependenciesMet() == False:
+                    pa.getCommandDependenciesHint()
+                else:
+                    pa.doCommandActions(self.dm)
+            else:
+                print "You can't do that!"
+            #(JH)self.generateText()
+            self.generateText1()
         return
+ 
 
 
     def loadGame(self):
