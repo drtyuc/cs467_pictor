@@ -94,11 +94,20 @@ class nlp():
 
 	'''
 
-	def doFuzzyMatch(self, inputPart, tuplePart):
+	def doFuzzyMatchNaive(self, inputPart, tuplePart):
 
-		#attempt to fuzzy match words
+		#simple attempt to fuzzy match words
 		sm = difflib.SequenceMatcher(None, inputPart, tuplePart)
 		straightFuzzMatchRatio = sm.ratio()
+
+		if straightFuzzMatchRatio > .6: # kind of arbitrary 
+			return straightFuzzMatchRatio
+		else:
+			return 0
+
+
+
+		''' might scrap this...too slow
 
 		#attempt a synonym fuzzy match
 
@@ -120,6 +129,7 @@ class nlp():
 			return fuzzSynRatioHigh
 		else:
 			return straightMatchRatio
+	'''
 
 	'''
 
@@ -172,8 +182,8 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore +=1									
 					else:
-						currentScore = currentScore #filler until i work out how to fuzzy matching efficiently 
-						#currentScore = self.doFuzzyMatch(word, tupPart)
+						#currentScore = currentScore #filler until i work out how to fuzzy matching efficiently 
+						currentScore = self.doFuzzyMatchNaive(word, tupPart)
 
 			if currentScore > highScore:
 					#check to see if the length of the tuple is greater than the length of the input tokenlist

@@ -1,50 +1,20 @@
-Answer - answer, reply, respond, retort, acknowledge
-Ask - ask, question, inquire of, seek information from, put a question to, demand, request, expect, inquire, query, interrogate, examine, quiz
-Begin - begin, start, open, launch, initiate, commence, inaugurate, originate
-Break - break, fracture, rupture, shatter, smash, wreck, crash, demolish, atomize
-Come - come, approach, advance, near, arrive, reach
-Cry - cry, shout, yell, yowl, scream, roar, bellow, weep, wail, sob, bawl
-Cut- cut, gash, slash, prick, nick, sever, slice, carve, cleave, slit, chop, crop, lop, reduce
-Decide - decide, determine, settle, choose, resolve
-Describe - describe, portray, characterize, picture, narrate, relate, recount, represent, report, record
-Destroy - destroy, ruin, demolish, raze, waste, kill, slay, end, extinguish
-Do - do, execute, enact, carry out, finish, conclude, effect, accomplish, achieve, attain
 Drink - drink, swallow, gulp, sip, chug
-Drop - drop, discard
+Drop - drop, discard, put, place, set
 Eat - eat, grub, snack, munch 
-End - end, stop, finish, terminate, conclude, close, halt, cessation, discontinuance
-Equip - equip, adorn
-Explain - explain, elaborate, clarify, define, interpret, justify, account for
-Get - get, acquire, obtain, secure, procure, gain, fetch, find, score, accumulate, win, earn, rep, catch, net, bag, derive, collect, gather, glean, pick up, accept, come by, regain, salvage
-Go - go, recede, depart, fade, disappear, move, travel, proceed
-Help - help, aid, assist, support, encourage, back, wait on, attend, serve, relieve, succor, benefit, befriend, abet
-Hide - hide, conceal, cover, mask, cloak, camouflage, screen, shroud, veil
-Hit - hit, punch, smack, slap
-Hurry - hurry, rush, run, speed, race, hasten, urge, accelerate, bustle
-Hurt - hurt, damage, harm, injure, wound, distress, afflict, pain
-Keep - keep, hold, retain, withhold, preserve, maintain, sustain, support
-Kill - kill, slay, execute, assassinate, murder, destroy, cancel, abolish
+Equip - equip, adorn, use, employ, utilize, exhaust, spend, expend, consume, exercise
+Go - go, recede, depart, fade, disappear, move, travel, proceed, show, display, exhibit, present, note, point to, indicate, explain, reveal, prove, demonstrate, expose
 Lay - lay, lie
+Light - light, turn on
 Look - look, gaze, see, glance, watch, survey, study, seek, search for, peek, peep, glimpse, stare, contemplate, examine, gape, ogle, scrutinize, inspect, leer, behold, observe, view, witness, perceive, spy, sight, discover, notice, recognize, peer, eye, gawk, peruse, explore
-Love - love, like, admire, esteem, fancy, care for, cherish, adore, treasure, worship, appreciate, savor
-Make - make, create, originate, invent, beget, form, construct, design, fabricate, manufacture, produce, build, develop, do, effect, execute, compose, perform, accomplish, earn, gain, obtain, acquire, get
-Mark - mark, label, tag, price, ticket, impress, effect, trace, imprint, stamp, brand, sign, note, heed, notice, designate
-Move - move, plod, go, creep, crawl, inch, poke, drag, toddle, shuffle, trot, dawdle, walk, traipse, mosey, jog, plug, trudge, slump, lumber, trail, lag, run, sprint, trip, bound, hotfoot, hightail, streak, stride, tear, breeze, whisk, rush, dash, dart, bolt, fling, scamper, scurry, skedaddle, scoot, scuttle, scramble, race, chase, hasten, hurry, hump, gallop, lope, accelerate, stir, budge, travel, wander, roam, journey, trek, ride, spin, slip, glide, slide, slither, coast, flow, sail, saunter, hobble, amble, stagger, paddle, slouch, prance, straggle, meander, perambulate, waddle, wobble, pace, swagger, promenade, lunge
-Part - part, portion, share, piece, allotment, section, fraction, fragment
-Place - place, space, area, spot, plot, region, location, situation, position, residence, dwelling, set, site, station, status, state
-Plan - plan, plot, scheme, design, draw, map, diagram, procedure, arrangement, intention, device, contrivance, method, way, blueprint
-Pull - pull, pull on, pop
-Put - put, place, set, attach, establish, assign, keep, save, set aside, effect, achieve, do, build
-Run - run, race, speed, hurry, hasten, sprint, dash, rush, escape, elope, flee
-Say - say, inform, notify, advise, relate, recount, narrate, explain, reveal, disclose, divulge, declare, command, order, bid, enlighten, instruct, insist, teach, train, direct, issue, remark, converse, speak, affirm, suppose, utter, negate, express, verbalize, voice, articulate, pronounce, deliver, convey, impart, assert, state, allege, mutter, mumble, whisper, sigh, exclaim, yell, sing, yelp, snarl, hiss, grunt, snort, roar, bellow, thunder, boom, scream, shriek, screech, squawk, whine, philosophize, stammer, stutter, lisp, drawl, jabber, protest, announce, swear, vow, content, assure, deny, dispute, tell
-Show - show, display, exhibit, present, note, point to, indicate, explain, reveal, prove, demonstrate, expose
-Stop - stop, cease, halt, stay, pause, discontinue, conclude, end, finish, quit
-Take - take, hold, catch, seize, grab, grasp, win, capture, acquire, pick, choose, select, prefer, remove, steal, lift, rob, engage, bewitch, purchase, buy, retract, recall, assume, occupy, consume
-Tell - tell, disclose, reveal, show, expose, uncover, relate, narrate, inform, advise, explain, divulge, declare, command, order, bid, recount, repeat
-Think - think, judge, deem, assume, believe, consider, contemplate, reflect, mediate
-Use - use, employ, utilize, exhaust, spend, expend, consume, exercise
+Pull - pull, pull down, pop, tug, yank
+Push - push 
+Read - read
+Sit - sit, sit down
+Take - take, hold, catch, seize, get, grab, grasp, win, capture, acquire, pick, choose, select, prefer, remove, steal, lift, rob, engage, bewitch, purchase, buy, retract, recall, assume, occupy, consume
+Unequip - unequip, return 
+Unlock - unlock 
 Wear - wear, put on, don, get into
-Wield - wield, swing, brandish, wrap, 
+Wield - wield, swing, brandish, wrap 
 above - above, over
 at - at, by, near, near to, toward
 behind - behind, back of
