@@ -24,6 +24,7 @@ Hurry - hurry, rush, run, speed, race, hasten, urge, accelerate, bustle
 Hurt - hurt, damage, harm, injure, wound, distress, afflict, pain
 Keep - keep, hold, retain, withhold, preserve, maintain, sustain, support
 Kill - kill, slay, execute, assassinate, murder, destroy, cancel, abolish
+Lay - lay, lie
 Look - look, gaze, see, glance, watch, survey, study, seek, search for, peek, peep, glimpse, stare, contemplate, examine, gape, ogle, scrutinize, inspect, leer, behold, observe, view, witness, perceive, spy, sight, discover, notice, recognize, peer, eye, gawk, peruse, explore
 Love - love, like, admire, esteem, fancy, care for, cherish, adore, treasure, worship, appreciate, savor
 Make - make, create, originate, invent, beget, form, construct, design, fabricate, manufacture, produce, build, develop, do, effect, execute, compose, perform, accomplish, earn, gain, obtain, acquire, get

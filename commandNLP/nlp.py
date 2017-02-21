@@ -161,9 +161,9 @@ class nlp():
 			currentScore = 0
 
 			#iterate through tokens produced by user input
-			for word in commandTokens:
+			for tupPart in tupleParts:
+				for word in commandTokens:
 
-				for tupPart in tupleParts:
 					if word == tupPart:
 						currentScore += 1
 				
@@ -172,12 +172,19 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore +=1									
 					else:
-						currentScore = self.doFuzzyMatch(word, tupPart)
-			
+						currentScore = currentScore #filler until i work out how to fuzzy matching efficiently 
+						#currentScore = self.doFuzzyMatch(word, tupPart)
+
 			if currentScore > highScore:
-				highScore = currentScore
-				tupleReturned = commandTuple
-		
+					#check to see if the length of the tuple is greater than the length of the input tokenlist
+					#this should control against look at/look at altar problem but creates problem with "go to door" and (go corrugated door)
+				if len(tupleParts) > len(commandTokens):
+					continue 
+				else:
+					highScore = currentScore
+					tupleReturned = commandTuple
+			
+
 		return tupleReturned
 
 

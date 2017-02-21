@@ -87,7 +87,8 @@ class HauntedDungeon():
                 return
             else:
                 commandTuple = self.nlp.matchTuple(command)
-                print "***CommandTuple is " + commandTuple 
+                print "***CommandTuple is " 
+                print commandTuple 
                 if not any(commandTuple):
                     print "I don't understand..."
 
