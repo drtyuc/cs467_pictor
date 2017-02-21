@@ -100,36 +100,13 @@ class nlp():
 		sm = difflib.SequenceMatcher(None, inputPart, tuplePart)
 		straightFuzzMatchRatio = sm.ratio()
 
-		if straightFuzzMatchRatio > .6: # kind of arbitrary 
+		#debugging
+		#print "FUZZ MATCH RATIO for "  + inputPart + "&" + tuplePart + "- " + str(straightFuzzMatchRatio)
+
+		if straightFuzzMatchRatio > .62: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
 			return straightFuzzMatchRatio
 		else:
 			return 0
-
-
-
-		''' might scrap this...too slow
-
-		#attempt a synonym fuzzy match
-
-		allSyns = self.__synonymsDictionary.keys()
-
-		fuzzSynRatioHigh = 0
-		#fuzzSynRatioCurrent = 0
-
-		for synword in allSyns:
-			fm = difflib.SequenceMatcher(None, inputPart, synword)
-			fuzzSynRatioCurrent = fm.ratio()
-
-			if fuzzSynRatioCurrent > fuzzSynRatioHigh:
-				fuzzSynRatioHigh = fuzzSynRatioCurrent
-
-		#compare ratios and return the highest
-
-		if fuzzSynRatioHigh > fuzzSynRatioCurrent:
-			return fuzzSynRatioHigh
-		else:
-			return straightMatchRatio
-	'''
 
 	'''
 
@@ -183,25 +160,27 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore += 1									
 					else:
-						#currentScore = currentScore #filler until i work out how to fuzzy matching efficiently 
 						currentScore += self.doFuzzyMatchNaive(word, tupPart)
 			
 			if currentScore > highScore:
-					#check to see if the length of the tuple is greater than the length of the input tokenlist
-					#this should control against look at/look at altar problem but creates problem with "go to door" and (go corrugated door)
+					
+				highScore = currentScore
+				tupleReturned = commandTuple
+
+				'''
+				#check to see if the length of the tuple is greater than the length of the input tokenlist
+				#this should control against look at/look at altar problem but creates problem with "light room" and (light brass lanterm)
+
 				if len(tupleParts) > len(commandTokens):
 					continue 
 				else:
 					highScore = currentScore
 					tupleReturned = commandTuple
+				'''
 
 		#DEBUGGING HERE - This comes out in production version
 		print "highest score = " + str(highScore)
 		print "matched tuple = " + str(tupleReturned)
-		
-		#this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms)
-		if highScore < .65:
-			tupleReturned = ()
 
 		return tupleReturned
 
