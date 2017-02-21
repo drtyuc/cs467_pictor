@@ -13,6 +13,7 @@ Drink - drink, swallow, gulp, sip, chug
 Drop - drop, discard
 Eat - eat, grub, snack, munch 
 End - end, stop, finish, terminate, conclude, close, halt, cessation, discontinuance
+Equip - equip, adorn
 Explain - explain, elaborate, clarify, define, interpret, justify, account for
 Get - get, acquire, obtain, secure, procure, gain, fetch, find, score, accumulate, win, earn, rep, catch, net, bag, derive, collect, gather, glean, pick up, accept, come by, regain, salvage
 Go - go, recede, depart, fade, disappear, move, travel, proceed
@@ -37,7 +38,7 @@ Run - run, race, speed, hurry, hasten, sprint, dash, rush, escape, elope, flee
 Say - say, inform, notify, advise, relate, recount, narrate, explain, reveal, disclose, divulge, declare, command, order, bid, enlighten, instruct, insist, teach, train, direct, issue, remark, converse, speak, affirm, suppose, utter, negate, express, verbalize, voice, articulate, pronounce, deliver, convey, impart, assert, state, allege, mutter, mumble, whisper, sigh, exclaim, yell, sing, yelp, snarl, hiss, grunt, snort, roar, bellow, thunder, boom, scream, shriek, screech, squawk, whine, philosophize, stammer, stutter, lisp, drawl, jabber, protest, announce, swear, vow, content, assure, deny, dispute, tell
 Show - show, display, exhibit, present, note, point to, indicate, explain, reveal, prove, demonstrate, expose
 Stop - stop, cease, halt, stay, pause, discontinue, conclude, end, finish, quit
-Take - take, hold, catch, seize, grasp, win, capture, acquire, pick, choose, select, prefer, remove, steal, lift, rob, engage, bewitch, purchase, buy, retract, recall, assume, occupy, consume
+Take - take, hold, catch, seize, grab, grasp, win, capture, acquire, pick, choose, select, prefer, remove, steal, lift, rob, engage, bewitch, purchase, buy, retract, recall, assume, occupy, consume
 Tell - tell, disclose, reveal, show, expose, uncover, relate, narrate, inform, advise, explain, divulge, declare, command, order, bid, recount, repeat
 Think - think, judge, deem, assume, believe, consider, contemplate, reflect, mediate
 Use - use, employ, utilize, exhaust, spend, expend, consume, exercise

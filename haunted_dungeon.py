@@ -87,10 +87,11 @@ class HauntedDungeon():
                 return
             else:
                 commandTuple = self.nlp.matchTuple(command)
+                print "***CommandTuple is " + commandTuple 
                 if not any(commandTuple):
                     print "I don't understand..."
 
-            pa = PerformAction(command, self.dm)
+            pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
                     pa.getCommandDependenciesHint()
@@ -121,7 +122,7 @@ class HauntedDungeon():
             choice = str(raw_input("Enter your choice> "))
         if choice == "1":
        	    #(JH) self.newGame()   
-            self.newGame1()
+            self.newGame()
         if choice == "2":
             self.loadGame()
         return
