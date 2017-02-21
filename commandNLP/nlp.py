@@ -4,6 +4,7 @@
 import os
 import re
 import unittest
+import difflib #we should be able to use this...
 
 
 class nlp():
@@ -87,6 +88,41 @@ class nlp():
 
 	'''
 
+	Definition: Fuzzy matches two words and returns a score based on that match
+
+	
+
+	'''
+
+	def doFuzzyMatch(self, inputPart, tuplePart):
+
+		#attempt to fuzzy match words
+		sm = difflib.SequenceMatcher(None, inputPart, tuplePart)
+		straightFuzzMatchRatio = sm.ratio()
+
+		#attempt a synonym fuzzy match
+
+		allSyns = self.__synonymsDictionary.keys()
+
+		fuzzSynRatioHigh = 0
+		#fuzzSynRatioCurrent = 0
+
+		for synword in allSyns:
+			fm = difflib.SequenceMatcher(None, inputPart, synword)
+			fuzzSynRatioCurrent = fm.ratio()
+
+			if fuzzSynRatioCurrent > fuzzSynRatioHigh:
+				fuzzSynRatioHigh = fuzzSynRatioCurrent
+
+		#compare ratios and return the highest
+
+		if fuzzSynRatioHigh > fuzzSynRatioCurrent:
+			return fuzzSynRatioHigh
+		else:
+			return straightMatchRatio
+
+	'''
+
 	Definition: parses command passed by user into tokens 
 
 	Post Conditions: Returns a list of token strings
@@ -136,7 +172,7 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore +=1									
 					else:
-						print ''
+						currentScore = self.doFuzzyMatch(word, tupPart)
 			
 			if currentScore > highScore:
 				highScore = currentScore
