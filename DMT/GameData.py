@@ -24,7 +24,7 @@
 #    0.4    02/06/2017   JH    Standardized method calls
 ########################################################
 import json
-import os.path
+import os
 
 PRIMITIVE_FILENAME = 'data/primitives.json'
 DEPENDENCY_FILENAME = 'data/dependency.json'
@@ -61,13 +61,21 @@ class DataManager():
         
     #-------------------- Load Saved Game -----------------------
     def loadSavedGame(self):
+        filenames = os.listdir(SAVED_GAME_DIRECTORY)
+        print "Saved games:"
+        for i in filenames:
+            if not i.startswith('.'):
+                print "   " + i
         response = raw_input("Please enter a filename: ")
         filename = SAVED_GAME_DIRECTORY + response
         
         if os.path.isfile(filename):
             self.loadHelper(filename)
+            return 1
         else:
             print("File not found!")
+            return 0
+            
         
     #----------------------- Load Helper -------------------------    
     def loadHelper(self, filename):
@@ -104,7 +112,7 @@ class DataManager():
         self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
 
     #----------------------- Save Game -----------------------
-    def saveGame(self):
+    def saveGame(self, name=None, status=None):
         s = {}
         s["players"] = []
         s["bags"] = []

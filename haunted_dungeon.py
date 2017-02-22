@@ -51,17 +51,15 @@ class HauntedDungeon():
         command = ""
         # while not end of game
         while command != "quit":
-	    print ""
+            print ""
             command = raw_input("Your move: ")
-	    print ""
-	    print "-----------------------------------------------------------------------"
+            print ""
+            print "-----------------------------------------------------------------------"
             # do action
             if command == "quit":
                 print "GOOD BYE!"
                 return
-	    if command == "savegame":
-		print "saving game..."
-		continue
+
             print "***From leven Dist function" #for debugging
             self.nlp.levenDistTuple(command) #for debugging
             commandTuple = self.nlp.matchTuple(command)
@@ -77,17 +75,19 @@ class HauntedDungeon():
                 else:
                     pa.doCommandActions(self.dm)
             else:
-		print ""
-		print "HINT:  You can't do that!"
+                print ""
+                print "HINT:  You can't do that!"
             self.generateText()
         return
 
 
-    def loadGame(self):
+    def loadGame(self, choice):
 	""" load a saved game """
-	self.dm.loadSavedGame()
-	self.playGame()
-        return
+        if self.dm.loadSavedGame():
+            self.playGame()
+            return choice
+        else:
+            return 0
 
     
     def loadNewGame(self):
@@ -108,10 +108,10 @@ class HauntedDungeon():
             print "3) Exit"
             print
             choice = str(raw_input("Enter your choice> "))
-        if choice == "1":
-            self.loadNewGame()
-        if choice == "2":
-            self.loadGame()
+            if choice == "1":
+                self.loadNewGame()
+            if choice == "2":
+                choice = self.loadGame(choice)
         return
 
 
