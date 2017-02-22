@@ -95,13 +95,14 @@ class nlp():
 
 	def levenDistTuple(self, commandString):
 
-		minAcceptableDist = 8
+		#since there is currently no synonym matching for this function, we have to set the threshold low
+		minAcceptableDist = 3
 		returnDist = 10000
 		tupleReturned = ()
 
 		#clean up the user input
 		cleanString = commandString.strip('.,!;')
-		print "CLEAN STRING " + cleanString
+		#print "CLEAN STRING " + cleanString #debugging
 
 		#get Length of clean string
 		csLength = len(cleanString)
@@ -142,16 +143,19 @@ class nlp():
 
 			ld = dpTable[tupLength][csLength]
 
+			#if it's lower than the current lowest distance, make it the lowest current
+
 			if ld < returnDist:
 				returnDist = ld
 				tupleReturned = comTup
 
-		if returnDist > minAcceptableDist:
-			returnDist = -1
-			tupleReturned = ()
+		#used to filter out too high of matches 
+		#if returnDist > minAcceptableDist:
+			#returnDist = -1
+			#tupleReturned = ()
 
-
-		print "TUPLE RETURNED: " + tupleReturned + " Distance: " + str(returnDist)
+		print "LEV DEV MATCH METHOD"
+		print "TUPLE RETURNED: " + str(tupleReturned) + " Distance: " + str(returnDist)
 	
 
 
@@ -246,6 +250,7 @@ class nlp():
 				'''
 
 		#DEBUGGING HERE - This comes out in production version
+		print "FUZZY MATCH METHOD"
 		print "highest score = " + str(highScore)
 		print "matched tuple = " + str(tupleReturned)
 

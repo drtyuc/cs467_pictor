@@ -62,11 +62,8 @@ class HauntedDungeon():
 	    if command == "savegame":
 		print "saving game..."
 		continue
-            print "***From leven Dist function" #for debugging
             self.nlp.levenDistTuple(command) #for debugging
             commandTuple = self.nlp.matchTuple(command)
-            print "***CommandTuple from fuzzMatch is "    #For debugging??
-            print commandTuple             #For debugging??
             if not any(commandTuple):
                 print "I don't understand..."
 
