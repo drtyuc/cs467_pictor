@@ -26,71 +26,48 @@
 #    0.1    02/04/2017   DL    Initial Version
 #    0.2    02/08/2017   AB    added generateText()
 #    0.3    02/08/2017   DL    updated newGame()
+#    0.4    02/21/2017   DL    added JH code and cleanedup 
 ###############################################
 
 from DMT.GameData import DataManager
 from commandNLP.nlp import nlp
 from PA.PerformAction import PerformAction
+import textwrap
 
 
 class HauntedDungeon():
 
     dm = DataManager()
+    nlp = nlp()
+    MAX_WIDTH = 70
 
-    def newGame1(self):
-        # TODO(DL): functionality lacks nlp.py
-        # This just has simple input grabbing
-        #(JH) self.dm = DataManager()  Move this as a class attribute
-        self.dm.loadNewGame()
-        # while not end of game
-        # print display text for current locale to player
-        #(JH) self.generateText()
-        self.generateText1()
-        # basic input until we can get nlp to work
-        command = ""
-        while command != "quit":
-            command = raw_input("Your move: ")
-            # do action
-            if command == "quit":
-                print "GOOD BYE!"
-                return
-            pa = PerformAction(command, self.dm)
-            if pa.isCommandValid() == True:
-                if pa.areCommandDependenciesMet() == False:
-                    pa.getCommandDependenciesHint()
-                else:
-                    pa.doCommandActions(self.dm)
-            else:
-                print "You can't do that!"
-            #(JH)self.generateText()
-            self.generateText1()
-        return
-
-
-    def newGame(self):
-        # (DL): This is broken when I use nlp.py
-        # right now it just prints the command if successful 
-        self.dm = DataManager()
-        self.dm.loadNewGame()
-        self.nlp = nlp()
+    def playGame(self):
+	""" haunted dungeon game play method loop """
+	# setup nlp module prerequisites
         self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits(), self.dm.getCommandTuples())
         self.nlp.buildSynonymDict()
-        # while not end of game
         # print display text for current locale to player
         self.generateText()
         command = ""
+        # while not end of game
         while command != "quit":
+	    print ""
             command = raw_input("Your move: ")
+	    print ""
+	    print "-----------------------------------------------------------------------"
             # do action
             if command == "quit":
                 print "GOOD BYE!"
                 return
-            else:
-                commandTuple = self.nlp.matchTuple(command)
-                print "***CommandTuple is " 
-                print commandTuple 
-                if not any(commandTuple):
-                    print "I don't understand..."
+	    if command == "savegame":
+		print "saving game..."
+		continue
+
+            commandTuple = self.nlp.matchTuple(command)
+            print "***CommandTuple is "    #For debugging??
+            print commandTuple             #For debugging??
+            if not any(commandTuple):
+                print "I don't understand..."
 
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
@@ -99,19 +76,28 @@ class HauntedDungeon():
                 else:
                     pa.doCommandActions(self.dm)
             else:
-                print "You can't do that!"
-            #(JH)self.generateText()
-            self.generateText1()
+		print ""
+		print "HINT:  You can't do that!"
+            self.generateText()
         return
- 
 
 
     def loadGame(self):
-	# TODO(DL): add load game functionality
+	""" load a saved game """
+	self.dm.loadSavedGame()
+	self.playGame()
         return
 
     
+    def loadNewGame(self):
+	""" load a new game """
+	self.dm.loadNewGame()
+	self.playGame()
+        return
+
+
     def showMenu(self):
+	""" show the main menu to the player and grab menu choice """
         choice = "" 
         while (choice != "1") and (choice != "2") and (choice != "3"):
             print "HAUNTED DUNGEON!!"
@@ -122,124 +108,78 @@ class HauntedDungeon():
             print
             choice = str(raw_input("Enter your choice> "))
         if choice == "1":
-       	    #(JH) self.newGame()   
-            self.newGame()
+            self.loadNewGame()
         if choice == "2":
             self.loadGame()
         return
 
 
     def runit(self):
+	""" run the game """
 	self.showMenu()
+        return
+    
 
-    '''
-    Description: This function will generate the first portion for the display text for the game:
-    the room description, the objects available, the exits, and any ghosts that are already visible
+    def formatList(self, list):
+	""" assist with formatting text for display (eg. inventory) """
+	s = "[ "
+	count = len(list)
+	item = 0
+	for i in list:
+	    item += 1
+	    if item == count:
+		s += i
+	    else:
+		s += i + ", "
+	return s + " ]"
 
-    '''
+
+    def printIt(self, list):
+	""" assist with printing list structures (eg. game objects, inventory) """
+	for element in list:
+	    print element
+	return
+
+
     def generateText(self):
-
+        """ method used to display the game fiction to the player """
         #print header info
-
-        print
-        print "Haunted Dungeon\t\t\t", "Health: " , self.dm.getPlayerHealth()
-
-        if self.dm.isRoomDiscovered() == False:
-            #print appropriate room description
-
-            print self.dm.getRoomLongDescription()
-
-            #get the objects in the room and print the visible ones 
-
-            objectsAvailable = self.dm.getRoomObjects()
-
-            print "You see these items..."
-
-            for item in objectsAvailable:
-                if self.dm.isObjectVisible(item):
-                    print "*", item 
-
-            #get the room exits and print the visible 
-            print "You see these exits..."
-            roomExits = self.dm.getRoomExits()
-
-            for exit in roomExits:
-                if self.dm.isExitVisible(exit):
-                    print "To the " + self.dm.getExitDirection(exit), "..." + self.dm.getExitLongDescription(exit)
-
-        else:
-            print self.dm.getRoomShortDescription()
-            objectsAvailable = self.dm.getRoomObjects()
-
-            print "You see these items..."
-
-            for item in objectsAvailable:
-                if self.dm.isObjectVisible(item):
-                    print "*", item 
-
-            print "You see these exits..."
-            roomExits = self.dm.getRoomExits()
-
-            for exit in roomExits:
-                if self.dm.isExitVisible(exit):
-                    print "To the " + self.dm.getExitDirection(exit), "..." + self.dm.getExitShortDescription(exit)
-
-        ghosts = self.dm.getGhostNames()
-
-        for g in ghosts:
-            if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
-                if self.dm.isGhostVisible(g):
-                    print "You see " + self.dm.getGhostShortDescription(g) 
-
-
-    #(JH) Added this as a temporary method for instructor cheat sheet
-    def generateText1(self):
-
-        #print header info
-
-        print
-        print "Health: " , self.dm.getPlayerHealth()
+        print ""
+	print "-----------------------------------------------------------------------"
+        print "HEALTH: " , self.dm.getPlayerHealth()
         
         #Print inventory
         if self.dm.getInventoryObjects():
-            print "Inventory Capacity: " , self.dm.getInventoryCapacity()
-            print "Inventory Weight: " , self.dm.getInventoryWeight()
-            items = []
-            for i in self.dm.getInventoryObjects():
-                items.append(i)
-            print "Invertory items: " + str(items)
+            print "INVENTORY CAPACITY: " , self.dm.getInventoryCapacity()
+            print "INVENTORY WEIGHT: " , self.dm.getInventoryWeight()
+	    self.printIt(textwrap.wrap("INVENTORTY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
                 
         #Print equipped items
         if self.dm.getEquippedObjects():
-            equipped = []
-            for i in self.dm.getEquippedObjects():
-                equipped.append(i)
-            print "Equipped items: " + str(equipped)
-            
+	    self.printIt(textwrap.wrap("EQUIPPED ITEMS: " + self.formatList(self.dm.getEquippedObjects()), width=self.MAX_WIDTH))
         
         #Print room items
         if self.dm.getRoomObjects():
-            roomitems = []
-            for i in self.dm.getRoomObjects():
-                roomitems.append(i)
-            print "Room items: " + str(roomitems)
+	    self.printIt(textwrap.wrap("ROOM ITEMS: " + self.formatList(self.dm.getRoomObjects()), width=self.MAX_WIDTH))
         
         #Print room and exit descriptions
         roomExits = self.dm.getRoomExits()
         if self.dm.isRoomDiscovered() == False: 
-            print "Room: ", self.dm.getRoomLongDescription()
+	    print ""
+	    self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomLongDescription(), width=self.MAX_WIDTH))
             for i in roomExits:
                 if self.dm.isExitVisible(i):
-                    print "Exit:  " +  self.dm.getExitLongDescription(i) + " to the " + self.dm.getExitDirection(i)
+		    print ""
+		    self.printIt(textwrap.wrap("EXIT:  " +  self.dm.getExitLongDescription(i) , width=self.MAX_WIDTH))
         else:
-            print "Room: ", self.dm.getRoomShortDescription()
+	    self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomShortDescription(), width=self.MAX_WIDTH))
             for i in roomExits:
                 if self.dm.isExitVisible(i):
-                    print "Exit:  " +  self.dm.getExitShortDescription(i) + " to the " + self.dm.getExitDirection(i)
+		    self.printIt(textwrap.wrap("EXIT:  " +  self.dm.getExitShortDescription(i) , width=self.MAX_WIDTH))
         self.dm.setRoomDiscovered(True) 
         
-        
         #Print visible objects
+	print ""
         if self.dm.getVisibleObjects():
             print "You see these items..."
             for item in self.dm.getVisibleObjects():
@@ -247,6 +187,15 @@ class HauntedDungeon():
         else:
             print "You do not see any items"
 
+	# TODO(DL): Print ghosts
+	"""
+        ghosts = self.dm.getGhostNames()
+
+        for g in ghosts:
+            if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
+                if self.dm.isGhostVisible(g):
+                    print "You see " + self.dm.getGhostShortDescription(g) 
+        """
 
 
 
