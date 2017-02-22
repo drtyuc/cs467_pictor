@@ -87,10 +87,77 @@ class nlp():
 					self.__synonymsDictionary[word] = verb
 
 	'''
+	Definition: this method takes a command string from the user and performs levenshtein
+	distance analysis on every command tuple and then returns the tuple with the least distance
+	This method would replace is alternative to the matchTuple approach
+
+	'''
+
+	def levenDistTuple(self, commandString):
+
+		minAcceptableDist = 8
+		returnDist = 10000
+		tupleReturned = ()
+
+		#clean up the user input
+		cleanString = commandString.strip('.,!;')
+		print "CLEAN STRING " + cleanString
+
+		#get Length of clean string
+		csLength = len(cleanString)
+
+		#get list of supported tuples
+		tupleList = self.getCommandTupleProperty()
+
+		#iterate through all supported tuples
+		for comTup in tupleList:
+
+			#get the length of the tuple
+			tupLength = len(comTup)
+
+			#build table for dynamic programming
+			dpTable = [[0 for x in range(csLength +1)] for y in range(tupLength+1)]
+			#fill in the first position
+			dpTable[0][0] = 0
+			#fill in table's top row 
+			for val in range(1, csLength+1):
+				dpTable[0][val] = val
+			#fill in table's first column
+			for val in range(1, tupLength+1):
+				dpTable[val][0] = val
+
+			#compute table
+
+			for row in range(1, tupLength+1):
+
+				for column in range(1, csLength+1):
+
+					if comTup[row-1] == cleanString[column-1]:
+						dpTable[row][column] = dpTable[row-1][column-1]
+					else:
+						neighbors = [(dpTable[row-1][column]), (dpTable[row][column-1]), (dpTable[row-1][column-1])]
+						dpTable[row][column] = min(neighbors)+1
+
+			#get levenshtein distance
+
+			ld = dpTable[tupLength][csLength]
+
+			if ld < returnDist:
+				returnDist = ld
+				tupleReturned = comTup
+
+		if returnDist > minAcceptableDist:
+			returnDist = -1
+			tupleReturned = ()
+
+
+		print "TUPLE RETURNED: " + tupleReturned + " Distance: " + str(returnDist)
+	
+
+
+	'''
 
 	Definition: Fuzzy matches two words and returns a score based on that match
-
-	
 
 	'''
 
