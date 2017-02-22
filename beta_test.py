@@ -38,8 +38,7 @@ class HauntedDungeon():
     dm = DataManager()
     MAX_WIDTH = 70
 
-    def newGame(self):
-        self.dm.loadNewGame()
+    def playGame(self):
         self.generateText()
         command = ""
         while command != "quit":
@@ -52,6 +51,10 @@ class HauntedDungeon():
             if command == "quit":
                 print "GOOD BYE!"
                 return
+	    if command == "savegame":
+		print "saving game..."
+		self.dm.saveGame()
+		continue
             pa = PerformAction(command, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
@@ -65,13 +68,20 @@ class HauntedDungeon():
         return
 
 
-
-
     def loadGame(self):
-	# TODO(DL): add load game functionality
+	""" load a saved game """
+	self.dm.loadSavedGame()
+	self.playGame()
         return
 
     
+    def loadNewGame(self):
+	""" load a new game """
+	self.dm.loadNewGame()
+	self.playGame()
+        return
+
+
     def showMenu(self):
         choice = "" 
         while (choice != "1") and (choice != "2") and (choice != "3"):
@@ -83,7 +93,7 @@ class HauntedDungeon():
             print
             choice = str(raw_input("Enter your choice> "))
         if choice == "1":
-            self.newGame()
+            self.loadNewGame()
         if choice == "2":
             self.loadGame()
         return
