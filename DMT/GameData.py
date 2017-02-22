@@ -130,7 +130,7 @@ class DataManager():
 	        s["ghosts"].append(json.loads(json.dumps(i.__dict__)))
         for i in self.__verbs:
 	        s["verbs"].append(json.loads(json.dumps(i.__dict__)))
-        for i in self.__prepostions:
+        for i in self.__prepositions:
 	        s["prepositions"].append(json.loads(json.dumps(i.__dict__)))
         for i in self.__help:
 	        s["help"].append(json.loads(json.dumps(i.__dict__)))
