@@ -4,7 +4,7 @@ Eat - eat, grub, snack, munch
 Equip - equip, adorn, use, employ, utilize, exhaust, spend, expend, consume, exercise
 Go - go, recede, depart, fade, disappear, move, travel, proceed, show, display, exhibit, present, note, point to, indicate, explain, reveal, prove, demonstrate, expose
 Lay - lay, lie
-Light - light, turn on
+Light - light, illuminate
 Look - look, gaze, see, glance, watch, survey, study, seek, search for, peek, peep, glimpse, stare, contemplate, examine, gape, ogle, scrutinize, inspect, leer, behold, observe, view, witness, perceive, spy, sight, discover, notice, recognize, peer, eye, gawk, peruse, explore
 Pull - pull, pull down, pop, tug, yank
 Push - push 
