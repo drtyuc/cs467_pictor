@@ -1896,6 +1896,15 @@
 			"text": ""
 		}]
     }, {
+		"tuple": "savegame",
+		"dependencies": [],
+		"actions": [{
+			"method": "saveGame()",
+			"object": "",
+			"state": false,
+			"text": ""
+		}]   
+    }, {
 		"tuple": "help",
 		"dependencies": [],
 		"actions": [{

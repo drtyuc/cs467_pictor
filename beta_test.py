@@ -29,7 +29,7 @@
 ###############################################
 
 from DMT.GameData import DataManager
-from DMT.PerformAction import PerformAction
+from PA.PerformAction import PerformAction
 import textwrap
 
 
@@ -51,10 +51,6 @@ class HauntedDungeon():
             if command == "quit":
                 print "GOOD BYE!"
                 return
-	    if command == "savegame":
-		print "saving game..."
-		self.dm.saveGame()
-		continue
             pa = PerformAction(command, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
@@ -68,11 +64,13 @@ class HauntedDungeon():
         return
 
 
-    def loadGame(self):
+    def loadGame(self, choice):
 	""" load a saved game """
-	self.dm.loadSavedGame()
-	self.playGame()
-        return
+        if self.dm.loadSavedGame():
+            self.playGame()
+            return choice
+        else:
+            return 0
 
     
     def loadNewGame(self):
@@ -92,10 +90,10 @@ class HauntedDungeon():
             print "3) Exit"
             print
             choice = str(raw_input("Enter your choice> "))
-        if choice == "1":
-            self.loadNewGame()
-        if choice == "2":
-            self.loadGame()
+            if choice == "1":
+                self.loadNewGame()
+            if choice == "2":
+                choice = self.loadGame(choice)
         return
 
 

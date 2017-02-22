@@ -400,7 +400,7 @@
 	}, {
 		"filename": "",
 		"name": "pw1",
-		"longDescription": "A 'long dark tunnel' going south filled with crawling insects and other creatures take connects to the Cave Entrance",
+		"longDescription": "A 'long dark tunnel' going south filled with crawling insects and other creatures that connects to the Cave Entrance",
 		"direction": "south",
 		"shortDescription": "'Long dark tunnel' going south",
         "commandName": "long dark tunnel",
