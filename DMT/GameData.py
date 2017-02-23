@@ -170,6 +170,16 @@ class DataManager():
     def adjustPlayerHealth(self, name, status=None):
 		index = self.getObjectIndex(name)
 		self.__players[0].health += self.__objects[index].healthPoints
+        
+    def getPlayerProtectionPoints(self):
+        return self.__players[0].protection     
+        
+    def setPlayerProtectionPoints(self, name, status):
+        index = self.getObjectIndex(name)
+        if status:
+            self.__players[0].protection += self.__objects[index].protectionPoints
+        else:
+            self.__players[0].protection -= self.__objects[index].protectionPoints
 	
     def setPlayerLocation(self, location):
 		self.__players[0].location = location
@@ -377,6 +387,12 @@ class DataManager():
     def changeLocation(self, name, status=None):
         index = self.getObjectIndex(name)
         self.__players[0].location = self.__objects[index].keyObject	
+        
+    def getEquippedWeapon(self):
+        for i in self.getEquippedObjects():
+            if self.isObjectWieldable(i):
+                return i
+        return None
     
     def isLookOnPossible(self, name):
         index = self.getObjectIndex(name)

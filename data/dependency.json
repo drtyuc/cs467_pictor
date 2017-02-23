@@ -786,7 +786,12 @@
 			"object": "armor",
 			"state": true,
 			"text": "You are now wearing the armor"
-		}]
+		}, {
+            "method": "setPlayerProtectionPoints()",
+			"object": "armor",
+			"state": true,
+			"text": ""
+        }]
 	}, {
 		"tuple": "equip axe",
 		"dependencies": [{
@@ -867,7 +872,12 @@
 			"object": "helmet",
 			"state": true,
 			"text": "You are now wearing the helmet"
-		}]
+		}, {
+            "method": "setPlayerProtectionPoints()",
+			"object": "helmet",
+			"state": true,
+			"text": ""
+        }]
 	}, {
 		"tuple": "equip kitchen knife",
 		"dependencies": [{
@@ -6527,7 +6537,12 @@
 			"object": "armor",
 			"state": false,
 			"text": "Armor has been unequipped"
-		}]
+		}, {
+            "method": "setPlayerProtectionPoints()",
+			"object": "armor",
+			"state": false,
+			"text": ""
+        }]
 	}, {
 		"tuple": "unequip axe",
 		"dependencies": [{
@@ -6603,7 +6618,12 @@
 			"object": "helmet",
 			"state": false,
 			"text": "Helmet has been unequipped"
-		}]
+		}, {
+            "method": "setPlayerProtectionPoints()",
+			"object": "helmet",
+			"state": false,
+			"text": ""
+        }]
 	}, {
 		"tuple": "unequip kitchen knife",
 		"dependencies": [{

@@ -127,6 +127,9 @@ class HauntedDungeon():
         print ""
         print "-----------------------------------------------------------------------"
         print "HEALTH: " , self.dm.getPlayerHealth()
+        print "PROTECTION: " , self.dm.getPlayerProtectionPoints()
+        print "EQUIPPED WEAPON: ", self.dm.getEquippedWeapon()
+        
         
         #Print inventory
         if self.dm.getInventoryObjects():
@@ -150,12 +153,12 @@ class HauntedDungeon():
             for i in roomExits:
                 if self.dm.isExitVisible(i):
                     print ""
-                    self.printIt(textwrap.wrap("EXIT:  " +  self.dm.getExitLongDescription(i) , width=self.MAX_WIDTH))
+                    self.printIt(textwrap.wrap("EXIT: " +  self.dm.getExitLongDescription(i) , width=self.MAX_WIDTH))
         else:
             self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomShortDescription(), width=self.MAX_WIDTH))
             for i in roomExits:
                 if self.dm.isExitVisible(i):
-                    self.printIt(textwrap.wrap("EXIT:  " +  self.dm.getExitShortDescription(i) , width=self.MAX_WIDTH))
+                    self.printIt(textwrap.wrap("EXIT: " +  self.dm.getExitShortDescription(i) , width=self.MAX_WIDTH))
         self.dm.setRoomDiscovered(True) 
         
         

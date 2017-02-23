@@ -150,6 +150,8 @@ class HauntedDungeon():
         print ""
 	print "-----------------------------------------------------------------------"
         print "HEALTH: " , self.dm.getPlayerHealth()
+        print "PROTECTION: " , self.dm.getPlayerProtectionPoints()
+        print "EQUIPPED WEAPON: ", self.dm.getEquippedWeapon()
         
         #Print inventory
         if self.dm.getInventoryObjects():

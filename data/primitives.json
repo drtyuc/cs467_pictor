@@ -3,6 +3,7 @@
 		"filename": "",
 		"name": "player",
 		"health": 100,
+        "protection": 0,
 		"visible": true,
 		"location": "ce"
 	}],
