@@ -31,6 +31,7 @@
 from DMT.GameData import DataManager
 from PA.PerformAction import PerformAction
 import textwrap
+import readline
 
 
 class HauntedDungeon():
