@@ -289,8 +289,8 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore += 1									
 					else:
-						#currentScore += self.doRatOberNative(word, tupPart)
-						currentScore += self.doLevDist(word, tupPart)
+						currentScore += self.doRatOberNative(word, tupPart)
+						#currentScore += self.doLevDist(word, tupPart)
 			
 			if currentScore > highScore:
 				highScore = currentScore
