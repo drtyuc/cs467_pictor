@@ -150,10 +150,20 @@ class PerformAction():
 	# TODO(DL): flesh out
 	for g in dm.getGhostNames():
 	    if dm.getGhostLocation(g) == dm.getPlayerLocation():
+		# There's a chance the ghost will appear
 		if dm.isGhostVisible(g) == False:
 		    r = random.randint(0,3)
 		    if r >= 1:
 		        dm.setGhostVisible(g, "true")
+	        # pseudo code for planning what  to implement
+	        # if visible... attack player 
+		#   r = random integer from 0..20 
+		#   if r >= (playerProtection points / 2) 
+		#     then the ghost hits... roll for damage
+		#     r = random integer from 0 .. ghostmaxdamage
+		#     player health -= r - (protectionPoints / 2)
+	   #else:
+	   #  ghost moves to random room
 	return 
 
 
