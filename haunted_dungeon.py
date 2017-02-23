@@ -63,8 +63,6 @@ class HauntedDungeon():
 	    if command == "savegame":
 		print "saving game..."
 		continue
-
-            self.nlp.levenDistTuple(command) #for debugging
             commandTuple = self.nlp.matchTuple(command)
             if not any(commandTuple):
                 print "I don't understand..."

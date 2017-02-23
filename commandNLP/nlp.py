@@ -30,7 +30,7 @@ class nlp():
 	
 	'''
 
-	Definition: this method loads the properties to an nlp object with the returns to calls 
+	Description: this method loads the properties to an nlp object with the returns to calls 
 	to the DM module methods. This method has been deprecated as the approach to NLP has changed
 
 	'''
@@ -47,7 +47,7 @@ class nlp():
 
 	'''
 
-	Definition: this method loads the command tuple property to an nlp object with a return call 
+	Description: this method loads the command tuple property to an nlp object with a return call 
 	to the DM module getCommandTuples() as the argument. 
 
 	'''
@@ -56,9 +56,9 @@ class nlp():
 	def setCommandTupleProperty(tupleLists):
 		self.__commandTuples = tupleLists
 
-	'''
+	'''Enter a positive integer seed (9 digits or less)
 
-	Definition: accessor method for the command tuples 
+	Description: accessor method for the command tuples 
 
 	''' 
 
@@ -67,7 +67,7 @@ class nlp():
 
 	'''
 
-	Definition: builds the dictionary used to check if a command issued is synonymous with a supported game word (verbs/prepositions)
+	Description: builds the dictionary used to check if a command issued is synonymous with a supported game word (verbs/prepositions)
 
 	'''
 
@@ -87,7 +87,7 @@ class nlp():
 					self.__synonymsDictionary[word] = verb
 
 	'''
-	Definition: this method takes a command string from the user and performs levenshtein
+	Description: this method takes a command string from the user and performs levenshtein
 	distance analysis on every command tuple and then returns the tuple with the least distance
 	This method would replace is alternative to the matchTuple approach
 
@@ -102,7 +102,8 @@ class nlp():
 
 		#clean up the user input
 		cleanString = commandString.strip('.,!;')
-		#print "CLEAN STRING " + cleanString #debugging
+		cleanString = cleanString.replace(" ", "")
+		print "CLEAN STRING " + cleanString #debugging
 
 		#get Length of clean string
 		csLength = len(cleanString)
@@ -113,8 +114,11 @@ class nlp():
 		#iterate through all supported tuples
 		for comTup in tupleList:
 
+			#condense tuple into one string
+			tupleCondensed = comTup.replace(" ", "")
+
 			#get the length of the tuple
-			tupLength = len(comTup)
+			tupLength = len(tupleCondensed)
 
 			#build table for dynamic programming
 			dpTable = [[0 for x in range(csLength +1)] for y in range(tupLength+1)]
@@ -154,36 +158,91 @@ class nlp():
 			#returnDist = -1
 			#tupleReturned = ()
 
-		print "LEV DEV MATCH METHOD"
+		print "LEV DISTANCE METHOD - over entire tuple and input string"
 		print "TUPLE RETURNED: " + str(tupleReturned) + " Distance: " + str(returnDist)
 	
 
 
 	'''
 
-	Definition: Fuzzy matches two words and returns a score based on that match
+	Description: This function compares two words by using python's difflib module. It calls difflib's sequence matcher
+	constructor on with the two words as arguments, then calls it's ratio function. The funcitonality of difflib
+	relies on a modification/tweeking of the Ratcliff Obershelp algorithm for pattern recognition
 
 	'''
 
-	def doFuzzyMatchNaive(self, inputPart, tuplePart):
+	def doRatOberNative(self, inputPart, tuplePart):
 
 		#simple attempt to fuzzy match words
 		sm = difflib.SequenceMatcher(None, inputPart, tuplePart)
-		straightFuzzMatchRatio = sm.ratio()
+		matchRatio = sm.ratio()
 
-		#debugging
-		#print "FUZZ MATCH RATIO for "  + inputPart + "&" + tuplePart + "- " + str(straightFuzzMatchRatio)
-
-		if straightFuzzMatchRatio > .62: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
-			return straightFuzzMatchRatio
+		#if the word isn't a 75% match, return a score of 0
+		if matchRatio > .75: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
+			return matchRatio
 		else:
 			return 0
 
 	'''
 
-	Definition: parses command passed by user into tokens 
+	Description: This function compares two words using the Levenshtein Distance Algorithm. This function
+	is called within the matchTuple function below. 
 
-	Post Conditions: Returns a list of token strings
+	'''
+
+	def doLevDist(self, inputPart, tuplePart):
+
+		#since there is currently no synonym matching for this function, we have to set the threshold low
+		minRatio = .75
+		currentLow = 0
+
+		#get length
+		inputTokenLength = len(inputPart)
+
+		#get the length of the tuple
+		tupLength = len(tuplePart)
+
+		#build table for dynamic programming
+		dpTable = [[0 for x in range(inputTokenLength +1)] for y in range(tupLength+1)]
+		#fill in the first position
+		dpTable[0][0] = 0
+		#fill in table's top row 
+		for val in range(1, inputTokenLength+1):
+			dpTable[0][val] = val
+		#fill in table's first column
+		for val in range(1, tupLength+1):
+			dpTable[val][0] = val
+
+		#compute table
+
+		for row in range(1, tupLength+1):
+
+			for column in range(1, inputTokenLength+1):
+
+				if tuplePart[row-1] == inputPart[column-1]:
+					dpTable[row][column] = dpTable[row-1][column-1]
+				else:
+					neighbors = [(dpTable[row-1][column]), (dpTable[row][column-1]), (dpTable[row-1][column-1])]
+					dpTable[row][column] = min(neighbors)+1
+
+		#get levenshtein distance
+		ld = dpTable[tupLength][inputTokenLength]
+		maxLength = max([inputTokenLength, tupLength])
+		matchRatio = 1- ld/(maxLength * 1.0)
+		print matchRatio
+
+		#if the word isn't a 75% match, return a score of 0
+		if matchRatio > minRatio: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
+			return matchRatio
+		else:
+			return 0
+
+	
+
+	'''
+
+	Description: parses command passed by user into tokens 
+
 
 	'''
 
@@ -196,13 +255,12 @@ class nlp():
 		return commandString
 
 	'''
-	Definition: This function takes the user input and returns the tuple that it matched to. 
+	Description: This function takes the user input and returns the tuple that it matched to. 
 	This is similar to the older method buildTuple() but supports or token oriented approach to NLP. This method iterates through 
 	each supported tuple and attempts to match 
 
 	'''
 
-	
 	def matchTuple(self, commandString):
 
 		commandTokens = self.parseCommand(commandString)
@@ -231,26 +289,17 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore += 1									
 					else:
-						currentScore += self.doFuzzyMatchNaive(word, tupPart)
+						#currentScore += self.doRatOberNative(word, tupPart)
+						currentScore += self.doLevDist(word, tupPart)
 			
 			if currentScore > highScore:
-					
 				highScore = currentScore
 				tupleReturned = commandTuple
 
-				'''
-				#check to see if the length of the tuple is greater than the length of the input tokenlist
-				#this should control against look at/look at altar problem but creates problem with "light room" and (light brass lanterm)
 
-				if len(tupleParts) > len(commandTokens):
-					continue 
-				else:
-					highScore = currentScore
-					tupleReturned = commandTuple
-				'''
 
 		#DEBUGGING HERE - This comes out in production version
-		print "FUZZY MATCH METHOD"
+		print "matchTuple METHOD"
 		print "highest score = " + str(highScore)
 		print "matched tuple = " + str(tupleReturned)
 
@@ -259,7 +308,7 @@ class nlp():
 
 	'''
 
-	Definition: takes the command string entered by the user. It then tokenizes that input. Next, it performs
+	Description: takes the command string entered by the user. It then tokenizes that input. Next, it performs
 	the processes that input. THIS METHOD IS DEPRECATED AND WILL BE DELETED
 	
 	'''
@@ -328,7 +377,7 @@ class nlp():
 
 
 	'''
-	Definition: getter methods for instance properties
+	Description: getter methods for instance properties
 	'''
 
 	def printVerbs(self):
@@ -362,7 +411,7 @@ class nlp():
 
 
 	'''
-	Definition: Function used for unit Testing 
+	Description: Function used for unit Testing 
 
 	'''
 
