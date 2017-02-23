@@ -78,6 +78,7 @@ class HauntedDungeon():
             else:
                 print ""
                 print "HINT:  You can't do that!"
+	    pa.doGhostActions(self.dm)
             self.generateText()
         return
 
@@ -189,15 +190,13 @@ class HauntedDungeon():
         else:
             print "You do not see any items"
 
-	# TODO(DL): Print ghosts
-	"""
+	# TODO(DL): Flesh out Print ghosts
         ghosts = self.dm.getGhostNames()
 
         for g in ghosts:
             if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
                 if self.dm.isGhostVisible(g):
-                    print "You see " + self.dm.getGhostShortDescription(g) 
-        """
+                   self.printIt(textwrap.wrap("OH NO!!! You see " + self.dm.getGhostShortDescription(g), width=self.MAX_WIDTH)) 
 
 
 

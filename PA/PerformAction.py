@@ -27,6 +27,7 @@
 import json
 import os.path
 import sys
+import random
 
 pathparent = os.path.abspath(os.path.join(
     os.path.dirname(__file__), os.path.pardir))
@@ -144,10 +145,15 @@ class PerformAction():
         return 
 
 
-    def setGhostActions(self):
+    def doGhostActions(self, dm):
 	""" triggers after player peforms one action """
 	# TODO(DL): flesh out
-	# Each ghost will have a turn after the player has a turn
+	for g in dm.getGhostNames():
+	    if dm.getGhostLocation(g) == dm.getPlayerLocation():
+		if dm.isGhostVisible(g) == False:
+		    r = random.randint(0,3)
+		    if r >= 1:
+		        dm.setGhostVisible(g, "true")
 	return 
 
 
