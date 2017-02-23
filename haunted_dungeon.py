@@ -105,7 +105,7 @@ class HauntedDungeon():
             print "HAUNTED DUNGEON!!"
             print
             print "1) Start A New Game"
-            print "2) Load A New Game"
+            print "2) Load A Saved Game"
             print "3) Exit"
             print
             choice = str(raw_input("Enter your choice> "))
