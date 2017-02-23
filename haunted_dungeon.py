@@ -33,6 +33,7 @@ from DMT.GameData import DataManager
 from commandNLP.nlp import nlp
 from PA.PerformAction import PerformAction
 import textwrap
+import readline
 
 
 class HauntedDungeon():
