@@ -63,6 +63,7 @@ class HauntedDungeon():
                 
 	    if command == "savegame":
 		print "saving game..."
+		self.dm.saveGame()
 		continue
             commandTuple = self.nlp.matchTuple(command)
             if not any(commandTuple):
