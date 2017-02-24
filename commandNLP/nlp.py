@@ -177,6 +177,26 @@ class nlp():
 		sm = difflib.SequenceMatcher(None, inputPart, tuplePart)
 		matchRatio = sm.ratio()
 
+		#fuzzy match synonyms
+		high = 0
+		
+		synKeys = self.__synonymsDictionary.keys()
+		
+		for key in synKeys:
+			sm2 = difflib.SequenceMatcher(None, inputPart, key)
+			synRatio = sm2.ratio()
+			if synRatio > high:
+				high = synRatio
+				highKey = key 
+
+
+		#check that synonym proposed matches that tuple in question
+
+		if self.__synonymsDictionary[highKey] == tuplePart:
+			#compare ratios and use the highest
+			if high > matchRatio:
+				matchRatio = high
+
 		#if the word isn't a 75% match, return a score of 0
 		if matchRatio > .75: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
 			return matchRatio
