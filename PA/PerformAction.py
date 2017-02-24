@@ -23,6 +23,7 @@
 # 
 #  VERSION     DATE      WHO        DETAIL
 #    0.1    02/05/2017   DL    Initial Version
+#    0.2    02/23/2017   DL    Support added for ghosts
 ###############################################
 import json
 import os.path
