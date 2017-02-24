@@ -155,7 +155,7 @@ class PerformAction():
 		if dm.isGhostVisible(g) == False:
 		    # There's a chance the ghost will appear
 		    self.__randomGhostVisible(g,dm)
-		elif dm.isGhostVisible(g) == True:
+		else:
 		    # Attack if ghost is visible
 		    self.__ghostAttacks(g,dm)
 	    else:
