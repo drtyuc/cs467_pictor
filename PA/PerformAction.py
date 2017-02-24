@@ -146,25 +146,76 @@ class PerformAction():
 
 
     def doGhostActions(self, dm):
-	""" triggers after player peforms one action """
-	# TODO(DL): flesh out
+	""" perform the ghost actions """
 	for g in dm.getGhostNames():
+	    if dm.getGhostHealth(g) < 1:
+	        # if ghost has no health, skip
+		continue
 	    if dm.getGhostLocation(g) == dm.getPlayerLocation():
-		# There's a chance the ghost will appear
 		if dm.isGhostVisible(g) == False:
-		    r = random.randint(0,3)
-		    if r >= 1:
-		        dm.setGhostVisible(g, "true")
-	        # pseudo code for planning what  to implement
-	        # if visible... attack player 
-		#   r = random integer from 0..20 
-		#   if r >= (playerProtection points / 2) 
-		#     then the ghost hits... roll for damage
-		#     r = random integer from 0 .. ghostmaxdamage
-		#     player health -= r - (protectionPoints / 2)
-	   #else:
-	   #  ghost moves to random room
+		    # There's a chance the ghost will appear
+		    self.__randomGhostVisible(g,dm)
+		elif dm.isGhostVisible(g) == True:
+		    # Attack if ghost is visible
+		    self.__ghostAttacks(g,dm)
+	    else:
+		# move ghosts not in same room as player
+		self.__randomMoveGhost(g, dm)
 	return 
+
+
+    def __randomMoveGhost(self, ghost, dm, r1=0, r2=10, r3=9):
+	""" move a ghost to another room  """
+	# r1 and r2 modify random range
+	# r3 modifies chance ghost will move
+	r = random.randint(r1,r2)
+	if r >= r3:
+            rooms = dm.getRoomNames()
+            r = random.randint(0,(len(rooms)-1))
+	    # move the ghost to the new room
+            dm.setGhostLocation(ghost,rooms[r])
+	return
+
+
+    def __randomGhostVisible(self, ghost, dm, r1=0, r2=3, r3=1):
+	""" randomly make a ghost visible """
+	# r1 and r2 modify the random range
+	# r3 sets the bar for the visibility chance
+	r = random.randint(r1,r2)
+	if r >= r3:
+	    dm.setGhostVisible(ghost, True)
+	return
+
+
+    def __ghostAttacks(self, ghost, dm, r1=0, r2=20, r3=2, r4=1):
+	""" ghost attack method """
+	# r1 and r2 modify random range
+	# r3 and r4 used to modify player protection expressions
+        r = random.randint(r1,r2)
+        # chance to hit gets reduced by players protection rating
+        if r >= int(dm.getPlayerProtectionPoints() / r3) + r4:
+            # if the ghost lands a blow, roll for damage
+	    r = random.randint(0,dm.getGhostDamagePoints(ghost))
+	    # if damage exceeds 0
+	    if r > 0:
+	        # damage is lessened by the player's protection points
+	        health = dm.getPlayerHealth() - (r - (dm.getPlayerProtectionPoints() / r3))
+	        dm.setPlayerHealth(health)
+	        damageText = "FIGHT: " + ghost + " attacked you and reduced your health to " + str(health)
+		print ""
+		self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+		# if the damage was 0
+     	    else:
+	        damageText = "FIGHT: " + ghost + " attacked you, but fails to inflict a wound!"
+		print ""
+		self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+	    # if the ghost misses the player
+	else:
+	    damageText = "FIGHT: " + ghost + " attempts an attack, but misses!"
+	    print ""
+	    self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+	return
+
 
 
 """ using this so i can test functionality """

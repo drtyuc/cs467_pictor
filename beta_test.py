@@ -177,6 +177,7 @@ class HauntedDungeon():
         for g in ghosts:
             if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
                 if self.dm.isGhostVisible(g):
+		    print ""
                     self.printIt(textwrap.wrap("OH NO!!! You see a ghost! It's " + self.dm.getGhostShortDescription(g), width=self.MAX_WIDTH)) 
 
 
