@@ -206,14 +206,14 @@ class PerformAction():
 		self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
 		# if the damage was 0
      	    else:
-	        damageText = "FIGHT: " + ghost + " attacked you, but fails to inflict a wound!"
+	        noDamageText = "FIGHT: " + ghost + " attacked you, but fails to inflict a wound!"
 		print ""
-		self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+		self.printIt(textwrap.wrap(noDamageText, width=self.MAX_WIDTH))
 	    # if the ghost misses the player
 	else:
-	    damageText = "FIGHT: " + ghost + " attempts an attack, but misses!"
+	    missText = "FIGHT: " + ghost + " attempts an attack, but misses!"
 	    print ""
-	    self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+	    self.printIt(textwrap.wrap(missText, width=self.MAX_WIDTH))
 	return
 
 
