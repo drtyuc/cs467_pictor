@@ -144,62 +144,62 @@ class HauntedDungeon():
 	return
 
 
+
     def generateText(self):
-        """ method used to display the game fiction to the player """
+
         #print header info
+
         print ""
-	print "-----------------------------------------------------------------------"
-        print "HEALTH: " , self.dm.getPlayerHealth()
-        print "PROTECTION: " , self.dm.getPlayerProtectionPoints()
-        print "EQUIPPED WEAPON: ", self.dm.getEquippedWeapon()
+        print "-----------------------------------------------------------------------"
+        print "HEALTH: " + str(self.dm.getPlayerHealth())
+        print "PROTECTION: " + str(self.dm.getPlayerProtectionPoints())
+        if self.dm.getEquippedWeapon():
+            print "EQUIPPED WEAPON: " + str(self.dm.getEquippedWeapon()) + "   DAMAGE POTENTIAL: " + str(self.dm.getObjectDamagePoints(self.dm.getEquippedWeapon()))
         
         #Print inventory
         if self.dm.getInventoryObjects():
+            print ""
             print "INVENTORY CAPACITY: " , self.dm.getInventoryCapacity()
             print "INVENTORY WEIGHT: " , self.dm.getInventoryWeight()
-	    self.printIt(textwrap.wrap("INVENTORTY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
-                
-        #Print equipped items
-        if self.dm.getEquippedObjects():
-	    self.printIt(textwrap.wrap("EQUIPPED ITEMS: " + self.formatList(self.dm.getEquippedObjects()), width=self.MAX_WIDTH))
-        
-        #Print room items
-        if self.dm.getRoomObjects():
-	    self.printIt(textwrap.wrap("ROOM ITEMS: " + self.formatList(self.dm.getRoomObjects()), width=self.MAX_WIDTH))
-        
+            self.printIt(textwrap.wrap("INVENTORTY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
+            if self.dm.getEquippedObjects():
+                self.printIt(textwrap.wrap("EQUIPPED ITEMS: " + self.formatList(self.dm.getEquippedObjects()), width=self.MAX_WIDTH))    
+    
+       
         #Print room and exit descriptions
+        print ""
         roomExits = self.dm.getRoomExits()
         if self.dm.isRoomDiscovered() == False: 
-	    print ""
-	    self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomLongDescription(), width=self.MAX_WIDTH))
+            self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomLongDescription(), width=self.MAX_WIDTH))
             for i in roomExits:
                 if self.dm.isExitVisible(i):
-		    print ""
-		    self.printIt(textwrap.wrap("EXIT:  " +  self.dm.getExitLongDescription(i) , width=self.MAX_WIDTH))
+                    print ""
+                    self.printIt(textwrap.wrap("EXIT: " +  self.dm.getExitLongDescription(i) , width=self.MAX_WIDTH))
         else:
-	    self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomShortDescription(), width=self.MAX_WIDTH))
+            self.printIt(textwrap.wrap("ROOM: " + self.dm.getRoomShortDescription(), width=self.MAX_WIDTH))
             for i in roomExits:
                 if self.dm.isExitVisible(i):
-		    self.printIt(textwrap.wrap("EXIT:  " +  self.dm.getExitShortDescription(i) , width=self.MAX_WIDTH))
+                    self.printIt(textwrap.wrap("EXIT: " +  self.dm.getExitShortDescription(i) , width=self.MAX_WIDTH))
         self.dm.setRoomDiscovered(True) 
         
+        
         #Print visible objects
-	print ""
+        print ""
         if self.dm.getVisibleObjects():
             print "You see these items..."
             for item in self.dm.getVisibleObjects():
                 print "*", item
         else:
             print "You do not see any items"
-
-	# TODO(DL): Flesh out Print ghosts
+	            
+        # TODO(DL): Flesh out Print ghosts
         ghosts = self.dm.getGhostNames()
 
         for g in ghosts:
             if self.dm.getGhostLocation(g) == self.dm.getPlayerLocation():
                 if self.dm.isGhostVisible(g):
-		   print ""
-                   self.printIt(textwrap.wrap("OH NO!!! You see a ghost! It's " + self.dm.getGhostShortDescription(g), width=self.MAX_WIDTH)) 
+		    print ""
+                    self.printIt(textwrap.wrap("OH NO!!! You see a ghost! It's " + self.dm.getGhostShortDescription(g), width=self.MAX_WIDTH)) 
 
 
 

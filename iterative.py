@@ -30,6 +30,7 @@
 
 from DMT.GameData import DataManager
 from PA.PerformAction import PerformAction
+from DMT.NLP import NLP
 import textwrap
 import readline
 
@@ -37,6 +38,7 @@ import readline
 class HauntedDungeon():
 
     dm = DataManager()
+    nlp = NLP()
     MAX_WIDTH = 70
 
     def playGame(self):
@@ -52,6 +54,8 @@ class HauntedDungeon():
             if command == "quit":
                 print "GOOD BYE!"
                 return
+            command = self.nlp.getCommandMatch(command.lower(), "iterative")
+            print "Command: " + command
             pa = PerformAction(command, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:

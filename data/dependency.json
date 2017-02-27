@@ -1932,15 +1932,6 @@
 			"state": false,
 			"text": ""
 		}] 
-    }, {
-		"tuple": "equipped",
-		"dependencies": [],
-		"actions": [{
-			"method": "getEquipped()",
-			"object": "",
-			"state": false,
-			"text": ""
-		}] 
 	}, {
 		"tuple": "lay on altar",
 		"dependencies": [{

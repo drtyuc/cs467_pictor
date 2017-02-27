@@ -3190,10 +3190,6 @@
 		"damagePoints": 5
 	}],
     "verbs": [{
-		"verb": "active",
-		"description": "active: Used to list inventory objects that are equipped",
-        "prepositions": []
-    }, {
         "verb": "drink",
 		"description": "drink <object>: Used to certain objects to restore health",
         "prepositions": []
@@ -3286,9 +3282,6 @@
     }, {
         "verb": " equip <object>",
 		"description": "   -->Used to activate wearable and wieldable objects"
-    }, {
-        "verb": " equipped",
-		"description": "   -->Used to list inventory objects that are equipped"
     }, {
         "verb": " go <direction>",
 		"description": "   -->Used to move a player a direction"
@@ -3386,5 +3379,108 @@
     }, {
         "preposition": "above",
 		"description": ""
-    }]
+    }],
+    "synonyms": [{
+        "word":"sip", 
+        "map": "drink" 
+	}, {
+        "word":"swig", 
+        "map": "drink" 
+	}, {
+        "word":"gulp", 
+        "map": "drink"
+    }, {
+        "word":"guzzle", 
+        "map": "drink"
+    }, {
+        "word":"swallow", 
+        "map": "drink"
+	}, {
+        "word":"discard", 
+        "map": "drop"
+	}, {
+        "word":"dump", 
+        "map": "drop"
+    }, {
+        "word":"unload", 
+        "map": "drop"
+    }, {
+        "word":"leave", 
+        "map": "drop"
+	}, {
+        "word":"ingest", 
+        "map": "eat"
+	}, {
+        "word":"devour", 
+        "map": "eat"
+	}, {
+        "word":"arm", 
+        "map": "equip"
+    }, {
+        "word":"provision", 
+        "map": "equip"
+    }, {
+        "word":"rig", 
+        "map": "equip"
+    }, {
+        "word":"rest", 
+        "map": "lay"
+    }, {
+        "word":"plunk", 
+        "map": "lay"
+    }, {
+        "word":"ignite", 
+        "map": "light"
+    }, {
+        "word":"kindle", 
+        "map": "light"
+    }, {
+        "word":"examine", 
+        "map": "look"
+    }, {
+        "word":"inspect", 
+        "map": "look"
+    }, {
+        "word":"view", 
+        "map": "look"
+    }, {
+        "word":"draw", 
+        "map": "pull"
+    }, {
+        "word":"yank", 
+        "map": "pull"
+    }, {
+        "word":"tug", 
+        "map": "pull"
+    }, {
+        "word":"shove", 
+        "map": "push"
+    }, {
+        "word":"depress", 
+        "map": "push"
+    }, {
+        "word":"press", 
+        "map": "push"
+    }, {
+        "word":"interpret", 
+        "map": "read"
+    }, {
+        "word":"decipher", 
+        "map": "read"
+    }, {
+        "word":"grab", 
+        "map": "take"
+    }, {
+        "word":"acquire", 
+        "map": "take"
+    }, {
+        "word":"attain", 
+        "map": "take"
+    }, {
+        "word":"grab", 
+        "map": "take"
+    }, {
+        "word":"unsuited", 
+        "map": "unequip"
+	}]
 }

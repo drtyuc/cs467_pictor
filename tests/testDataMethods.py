@@ -88,7 +88,7 @@ class Rooms(unittest.TestCase):
     #R2
     def test_getRoomLongDescription(self):
         dm.setPlayerLocation('kt')
-        self.assertEqual(dm.getRoomLongDescription(), "Kitchen Long Description", "#R2  Failed getRoomLongDescription")
+        self.assertEqual(dm.getRoomLongDescription(), "A room used to perpare meals for the dungeon's inhabitants.  It has skylighting in the ceiling which highlights the filthy conditions of the room.", "#R2  Failed getRoomLongDescription")
     #R3
     def test_getRoomShortDescription(self):
         dm.setPlayerLocation('kt')
@@ -159,10 +159,10 @@ class Exits(unittest.TestCase):
         self.assertItemsEqual(dm.getExitNames(), elist,  "#E1  FAILED  getExitNames") 
     #E2
     def test_getExitLongDescription(self):
-        self.assertEqual(dm.getExitLongDescription('kt1'), "KT1 Long Description", "#E2 Failed  getExitLongDesciption")
+        self.assertEqual(dm.getExitLongDescription('kt1'), "A pair of 'smoky glazed doors' on the west wall that leads to the Common Area", "#E2 Failed  getExitLongDesciption")
     #E3
     def test_getExitShortDescription(self):
-        self.assertEqual(dm.getExitShortDescription('kt1'), "smoky glazed doors", "#E3 Failed  getExitShortDesciption")
+        self.assertEqual(dm.getExitShortDescription('kt1'), "'Smoky glazed doors' on the west wall", "#E3 Failed  getExitShortDesciption")
     #E4
     def test_isExitVisible(self):
         dm.setExitVisible('kt1', False)
@@ -242,15 +242,12 @@ class Objects(unittest.TestCase):
     def test_ObjectsVisible(self):
         self.assertFalse(dm.isObjectVisible('lockpick'), "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('mushrooms'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('metal shelves'), [], "#O4  Failed  ObjectsVisible")
         dm.setOnObjectsVisible('metal shelves', True)
         self.assertTrue(dm.isObjectVisible('lockpick'), "#O4  Failed  ObjectsVisible")
         self.assertTrue(dm.isObjectVisible('mushrooms'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('metal shelves'), ['lockpick', 'mushrooms'], "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('scroll'), "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('bottle of gatorade'), "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('bottleopener'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getOnObjectsVisible('desk'), [], "#O4  Failed  ObjectsVisible")
         dm.setOnObjectsVisible('desk', True)
         self.assertFalse(dm.isObjectVisible('scroll'), "#O4  Failed  ObjectsVisible")
         self.assertTrue(dm.isObjectVisible('bottle of gatorade'), "#O4  Failed  ObjectsVisible")
@@ -268,7 +265,6 @@ class Objects(unittest.TestCase):
         self.assertItemsEqual(dm.getBehindObjectsVisible('wooden shelves'), ['wooden lever'], "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('book of locks'), "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('human skeleton'), "#O4  Failed  ObjectsVisible")
-        self.assertItemsEqual(dm.getUnderObjectsVisible('mattress'), [], "#O4  Failed  ObjectsVisible")
         dm.setUnderObjectsVisible('mattress', True)
         self.assertTrue(dm.isObjectVisible('book of locks'), "#O4  Failed  ObjectsVisible")
         self.assertFalse(dm.isObjectVisible('human skeleton'), "#O4  Failed  ObjectsVisible")
@@ -322,10 +318,6 @@ class Objects(unittest.TestCase):
         dm.clearInventoryObjects() 
         self.assertFalse(dm.isObjectEquippable('green apple'),  "#O10  Failed isObjectEquippable")
         self.assertTrue(dm.isObjectEquippable('axe'),  "#O10  Failed isObjectEquippable")
-        self.assertTrue(dm.isObjectEquippable('machete'),  "#O10  Failed isObjectEquippable")
-        dm.addInventoryObject("axe")
-        self.assertFalse(dm.isObjectEquippable('machete'),  "#O10  Failed isObjectEquippable")
-        dm.removeInventoryObject("axe")
         self.assertTrue(dm.isObjectEquippable('machete'),  "#O10  Failed isObjectEquippable")
 
     #O11
