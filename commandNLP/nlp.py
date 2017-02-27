@@ -201,7 +201,7 @@ class nlp():
 				replacement = token
 			cleanCommandList.append(replacement)
 
-		print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
+		#print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
 		return cleanCommandList
 
 	'''
