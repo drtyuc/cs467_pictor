@@ -218,6 +218,45 @@ class PerformAction():
 	return
 
 
+    def attackGhost(self, ghost, dm, r1=0, r2=20, r3=7):
+	""" attack the ghost """
+	# Player must be able to see the ghost and have a weapon
+	if dm.getGhostLocation(ghost) == dm.getPlayerLocation() and dm.isGhostVisible(ghost):
+ 	    weapon = dm.getEquippedWeapon():
+	    if weapon == None:
+	        noWeaponText = "FIGHT: You don't have a weapon!"
+	        print ""
+	        self.printIt(textwrap.wrap(noWeaponText, width=self.MAX_WIDTH))
+	    else:
+		# Chance to hit is a dull mechanic at the moment
+		r = random.randint(r1,r2)
+		if r >= r3:
+		    # roll for damage
+		    r = random.randint(0,dm.getObjectDamagePoints(weapon))
+		    if r > 0:
+			health = dm.getGhostHealth(ghost) - r
+			dm.setGhostHealth(ghost,health)
+			# check if ghost has <= 0 health
+			if health <= 0:
+			    dm.setGhostVisible(ghost,False)
+			    victoryText = "FIGHT: You defeated the ghost!"
+			    print ""
+			    self.printIt(textwrap.wrap(victoryText, width=self.MAX_WIDTH))
+			else:
+			    damageText = "FIGHT: You landed a mighty blow dealing " + str(r) + " damage!"
+			    print ""
+			    self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+	        else:
+		    noDamageText = "FIGHT: You landed a blow, but didn't damage the ghost!"
+		    print ""
+		    self.printIt(textwrap.wrap(noDamageText, width=self.MAX_WIDTH))
+	else:
+	    failText = "FIGHT: You can't attack that."
+	    print ""
+	    self.printIt(textwrap.wrap(failText, width=self.MAX_WIDTH))
+	return
+
+
 
 """ using this so i can test functionality """
 if __name__ == "__main__":
