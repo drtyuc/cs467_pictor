@@ -222,7 +222,7 @@ class PerformAction():
 	""" attack the ghost """
 	# Player must be able to see the ghost and have a weapon
 	if dm.getGhostLocation(ghost) == dm.getPlayerLocation() and dm.isGhostVisible(ghost):
- 	    weapon = dm.getEquippedWeapon():
+ 	    weapon = dm.getEquippedWeapon()
 	    if weapon == None:
 	        noWeaponText = "FIGHT: You don't have a weapon!"
 	        print ""
