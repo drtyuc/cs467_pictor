@@ -44,15 +44,15 @@ class HauntedDungeon():
     MAX_WIDTH = 70
 
     def playGame(self):
-	""" haunted dungeon game play method loop """
-	# setup nlp module prerequisites
+        """ haunted dungeon game play method loop """
+        # setup nlp module prerequisites
         self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits(), self.dm.getCommandTuples())
         self.nlp.buildSynonymDict()
         # print display text for current locale to player
         self.generateText()
         command = ""
-	# compile the attack {object} regex for repeated use
-	attackPattern = re.compile('(attack) (\w+)')
+        # compile the attack {object} regex for repeated use
+        attackPattern = re.compile('(attack) (\w+)')
         # while not end of game
         while command != "quit":
             print ""
@@ -64,33 +64,41 @@ class HauntedDungeon():
                 print "GOOD BYE!"
                 return
                 
-	    if command == "savegame":
-		print "saving game..."
-		self.dm.saveGame()
-		continue
+            """   
+            #This can all be removed since savegame and attack {ghost} are supported commands" 
+	        if command == "savegame":
+		        print "saving game..."
+		        self.dm.saveGame()
+		        continue
 
-	    # is the player attacking? attack
-	    if attackPattern.match(command):
-		m = attackPattern.match(command)
-		pa.attackGhost(m.group(2), self.dm)
-	        pa.doGhostActions(self.dm)
+	        # is the player attacking? attack
+	        if attackPattern.match(command):
+		        m = attackPattern.match(command)
+                pa.attackGhost(m.group(2), self.dm)
+	            pa.doGhostActions(self.dm)
                 self.generateText()
-		continue
-
+		        continue
+        
+            """
             commandTuple = self.nlp.matchTuple(command)
+            """
+             #Don't need this since its covered in the hint
             if not any(commandTuple):
                 print "I don't understand..."
-
+            """                
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
                     pa.getCommandDependenciesHint()
                 else:
                     pa.doCommandActions(self.dm)
+                    if attackPattern.match(commandTuple):
+                        m = attackPattern.match(commandTuple)
+                        pa.attackGhost(m.group(2), self.dm)
             else:
                 print ""
-                print "HINT:  You can't do that!"
-	    pa.doGhostActions(self.dm)
+                print "HINT:  You can't " + command + "!"
+            pa.doGhostActions(self.dm)
             self.generateText()
         return
 

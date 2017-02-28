@@ -57,6 +57,62 @@
 			"state": false,
 			"text": "Your health has increased!"
 		}]
+   	}, {
+		"tuple": "attack blinky",
+		"dependencies": [{
+			"method": "isWeaponEquipped()",
+			"object": "",
+			"expect": true,
+			"hint": "You do not have a weapon equipped!"
+		}],
+		"actions": [{
+			"method": "attackGhost()",
+			"object": "blinky",
+			"state": false,
+			"text": ""
+		}]   
+    }, {
+		"tuple": "attack clyde",
+		"dependencies": [{
+			"method": "isWeaponEquipped()",
+			"object": "",
+			"expect": true,
+			"hint": "You do not have a weapon equipped!"
+		}],
+		"actions": [{
+			"method": "attackGhost()",
+			"object": "clyde",
+			"state": false,
+			"text": ""
+		}] 
+    }, {
+		"tuple": "attack pinky",
+		"dependencies": [{
+			"method": "isWeaponEquipped()",
+			"object": "",
+			"expect": true,
+			"hint": "You do not have a weapon equipped!"
+		}],
+		"actions": [{
+			"method": "attackGhost()",
+			"object": "pinky",
+			"state": false,
+			"text": ""
+		}] 
+    }, {
+		"tuple": "attack inky",
+		"dependencies": [{
+			"method": "isWeaponEquipped()",
+			"object": "",
+			"expect": true,
+			"hint": "You do not have a weapon equipped!"
+		}],
+		"actions": [{
+			"method": "attackGhost()",
+			"object": "inky",
+			"state": false,
+			"text": ""
+		}] 
 	}, {
 		"tuple": "drop armor",
 		"dependencies": [{
@@ -1922,7 +1978,16 @@
 			"object": "",
 			"state": false,
 			"text": ""
-		}]    
+		}]   
+    }, {
+		"tuple": "ghosts",
+		"dependencies": [],
+		"actions": [{
+			"method": "getGhosts()",
+			"object": "all",
+			"state": false,
+			"text": ""
+		}] 
     }, {
 		"tuple": "inventory",
 		"dependencies": [],

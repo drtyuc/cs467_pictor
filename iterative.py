@@ -33,6 +33,7 @@ from PA.PerformAction import PerformAction
 from DMT.NLP import NLP
 import textwrap
 import readline
+import re
 
 
 class HauntedDungeon():
@@ -44,6 +45,9 @@ class HauntedDungeon():
     def playGame(self):
         self.generateText()
         command = ""
+        # compile the attack {object} regex for repeated use
+        attackPattern = re.compile('(attack) (\w+)')
+        
         while command != "quit":
             print ""
             command = raw_input("Your move: ")
@@ -54,18 +58,21 @@ class HauntedDungeon():
             if command == "quit":
                 print "GOOD BYE!"
                 return
-            command = self.nlp.getCommandMatch(command.lower(), "iterative")
-            print "Command: " + command
-            pa = PerformAction(command, self.dm)
+            commandTuple = self.nlp.getCommandMatch(command.lower(), "iterative")
+            print "Command:" + commandTuple
+            pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
                     pa.getCommandDependenciesHint()
                 else:
                     pa.doCommandActions(self.dm)
+                    if attackPattern.match(commandTuple):
+                        m = attackPattern.match(commandTuple)
+                        pa.attackGhost(m.group(2), self.dm)
             else:
                 print ""
-                print "HINT:  You can't do that!"
-	    pa.doGhostActions(self.dm)
+                print "HINT:  You can't " + command + "!"
+            pa.doGhostActions(self.dm)
             self.generateText()
         return
 

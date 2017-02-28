@@ -3190,6 +3190,10 @@
 		"damagePoints": 5
 	}],
     "verbs": [{
+        "verb": "attack",
+		"description": "attack <ghost>: Used to attack a ghost",
+        "prepositions": []
+	}, {
         "verb": "drink",
 		"description": "drink <object>: Used to certain objects to restore health",
         "prepositions": []
@@ -3208,6 +3212,10 @@
     }, {
         "verb": "go",
 		"description": "go <direction|exit description>: Used to move a player to another room",
+        "prepositions": []
+    }, {
+        "verb": "ghosts",
+		"description": "help: Used to list status of all ghosts",
         "prepositions": []
     }, {
         "verb": "help",
@@ -3265,12 +3273,11 @@
         "verb": "unlock",
 		"description": "unlock <object|direction|exit description>: Used to unlock an object or a door", 
         "prepositions": []   
-    }, {
-        "verb": "wield",
-        "description": "wield <object>: Used to swing a weapon at a ghost",
-        "prepositions": []
     }],
     "help": [{
+        "verb": " attack <ghost>",
+		"description": "   -->Used to attack a ghost"
+	}, {
         "verb": " drink <object>",
 		"description": "   -->Used to drink objects that restore health"
 	}, {
@@ -3294,6 +3301,9 @@
     }, {
         "verb": " <exit description>",
 		"description": "   -->Used to move a player through an exit"   
+    }, {
+        "verb": " ghosts",
+		"description": "   -->Used to list status of all ghosts"
     }, {
         "verb": " help",
 		"description": "   -->Used to list supported verbs"
@@ -3357,9 +3367,6 @@
     }, {
         "verb": " unlock <object>",
         "description": "   -->Used to unlock an object."      
-    }, {
-        "verb": " wield <object>",
-        "description": "   -->Used to swing a weapon at a ghost"
     }],
     "prepositions": [{
 		"preposition": "on",
@@ -3480,7 +3487,10 @@
         "word":"grab", 
         "map": "take"
     }, {
-        "word":"unsuited", 
+        "word":"unsuit", 
         "map": "unequip"
+	}, {
+        "word":"strike", 
+        "map": "attack"
 	}]
 }

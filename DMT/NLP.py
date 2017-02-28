@@ -112,7 +112,8 @@ class NLP:
                 else:
                     sen += word + " "
         
-        newsentence = self.replaceSynonyms(sen)        
+        sentence = self.replaceSynonyms(sen)
+        newsentence = self.reorderWords(sentence)        
         return newsentence
     
         
@@ -133,5 +134,60 @@ class NLP:
                 sen += word + " "
                 
         return sen
+    
+    #----------------------             
+    def reorderWords(self, sentence):
+        """Reorder the sequence of words as verb-preposition-object"""
+        tokens = re.findall(r'(?ms)\W*(\w+)', sentence)
+        words = []
+        #Find a verb if it exists
+        verbFound = False
+        for i in tokens:
+            if verbFound:
+                break
+            for j in self.dm.getVerbs():
+                if i == j:
+                    words.append(i)
+                    verbFound = True
+                    break
+                    
+        #Find a prepostion if it exits            
+        prepFound = False
+        for i in tokens:
+            if prepFound:
+                break
+            for j in self.dm.getPrepositions():
+                if i == j:
+                    words.append(i)
+                    prepFound = True
+                    break  
+        
+        #Find an object if it exists
+        objectFound = False
+        for i in tokens:
+            if objectFound:
+                break
+            for j in self.dm.getObjects():
+                if i == j:
+                    words.append(i)
+                    objectFound = True
+                    break         
+        
+        #Add left over words
+        for i in tokens:
+            if i not in words:
+                words.append(i)
+        
+        #Build sentence
+        sen = ""
+        for i in range(0, len(words)):
+            if i == len(words) - 1:
+                sen += words[i]
+            else:
+                sen += words[i] + " "
+            
+                
+        return sen
+        
                     
 

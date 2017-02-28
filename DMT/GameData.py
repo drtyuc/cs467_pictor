@@ -556,6 +556,17 @@ class DataManager():
             if self.isObjectWieldable(i): 
                 return i
         return None
+        
+    #-----------------------------     
+    def isWeaponEquipped(self, name=None, status=None):
+        """Returns a Boolean indicating if the player has a weapon equipped"""
+        #Look through all items that are equipped
+        for i in self.getEquippedObjects():
+            #If item is a weapon, then return its name. Note that only
+            #one weapon can be equipped at a time.
+            if self.isObjectWieldable(i): 
+                return True
+        return False
     
     #----------------------------- 
     def isLookOnPossible(self, name):
@@ -1032,8 +1043,8 @@ class DataManager():
         return self.__ghosts[index].damagePoints
         
     #----------------------------- 
-    def adjustGhostHealth(self, name, status=None):
-        x = 1
+    def attackGhost(self, name, status=None):
+        return
 				
 	    
     #############################################################
@@ -1129,6 +1140,30 @@ class DataManager():
             help += i.verb + "\n"
             help += i.description + "\n"
         return help
+        
+    #----------------------------- 
+    def getGhosts(self, name, status=None):
+        """Returns formatted string describing status of all ghosts used in game"""
+        ghosts = ""
+        if name == "all":
+            for i in self.__ghosts:
+                loc_mnemonic = self.getGhostLocation(i.name)
+                index = self.getRoomIndex(loc_mnemonic)
+                location = self.__rooms[index].shortDescription
+                name = '%14s' % (i.shortDescription + "   ")
+                health = '%-12s' % ("Health:" + str(i.health))
+                damage = '%-12s' % ("Damage:" + str(i.damagePoints))
+                location = '%-25s' % ("Location:" + location)
+                ghosts += name + health + damage + location + "\n"
+        else:
+                ghost_index = self.getGhostIndex(name)
+                i = self.__ghosts[ghost_index]
+                loc_mnemonic = self.getGhostLocation(i.name)
+                index = self.getRoomIndex(loc_mnemonic)
+                location = self.__rooms[index].shortDescription
+                ghosts += i.shortDescription + "  Health:" + str(i.health) +  "  Damage:" + str(i.damagePoints) + "   Location:"  + location + "\n"
+                          
+        return ghosts
 
 
     #----------------------------- 
