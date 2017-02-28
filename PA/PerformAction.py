@@ -202,9 +202,19 @@ class PerformAction():
 	        # damage is lessened by the player's protection points
 	        health = dm.getPlayerHealth() - (r - (dm.getPlayerProtectionPoints() / r3))
 	        dm.setPlayerHealth(health)
-	        damageText = "FIGHT: " + ghost + " attacked you and reduced your health to " + str(health)
-		print ""
-		self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+		# check if player dies
+		if health <= 0:
+		    deathText = "FIGHT: " + ghost + " attacks... you perish from the blow!"
+		    print ""
+		    self.printIt(textwrap.wrap(deathText, width=self.MAX_WIDTH))
+		    gameOverText = "********** GAME OVER **********"
+		    print ""
+		    self.printIt(textwrap.wrap(gameOverText, width=self.MAX_WIDTH))
+		    sys.exit()
+		else:
+	            damageText = "FIGHT: " + ghost + " attacked you and reduced your health to " + str(health)
+		    print ""
+		    self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
 		# if the damage was 0
      	    else:
 	        noDamageText = "FIGHT: " + ghost + " attacked you, but fails to inflict a wound!"
