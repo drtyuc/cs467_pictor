@@ -34,6 +34,7 @@ from commandNLP.nlp import nlp
 from PA.PerformAction import PerformAction
 import textwrap
 import readline
+import re
 
 
 class HauntedDungeon():
@@ -50,6 +51,8 @@ class HauntedDungeon():
         # print display text for current locale to player
         self.generateText()
         command = ""
+	# compile the attack {object} regex for repeated use
+	attackPattern = re.compile('(attack) (\w+)')
         # while not end of game
         while command != "quit":
             print ""
@@ -65,6 +68,15 @@ class HauntedDungeon():
 		print "saving game..."
 		self.dm.saveGame()
 		continue
+
+	    # is the player attacking? attack
+	    if attackPattern.match(command):
+		m = attackPattern.match(command)
+		pa.attackGhost(m.group(2), self.dm)
+	        pa.doGhostActions(self.dm)
+                self.generateText()
+		continue
+
             commandTuple = self.nlp.matchTuple(command)
             if not any(commandTuple):
                 print "I don't understand..."
