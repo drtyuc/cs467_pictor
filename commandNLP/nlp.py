@@ -33,7 +33,7 @@ class nlp():
 	'''
 
 	Description: this method loads the properties to an nlp object with the returns to calls 
-	to the DM module methods. This method has been deprecated as the approach to NLP has changed
+	to the DM module methods. This loader function has consolidated 
 
 	'''
 
@@ -45,41 +45,17 @@ class nlp():
 		self.__gameObjects = objList
 		self.__verbPrepositionCombos = vpComboList
 		self.__exits = exitList
-		#self.__commandTuples = tupleLists
-		self.__commands = []
 
-
+		#create faux tuples to "catch" imprecise commands 
+		tupleLists.extend(self.__gameVerbs)
 		catchers = ['drink bottle', 'lay on', 'look at', 'look behind', 
 		'look inside', 'look on', 'look under', 'sit on', 'take book']
-
-		tupleLists.extend(self.getVerbs())
 		tupleLists.extend(catchers)
-
+		
 		sortedTupleLists = sorted(tupleLists)
-
 		self.__commandTuples = sortedTupleLists
 
-
-
-
-	'''
-
-	Description: accessor method for the command tuples 
-
-	''' 
-
-	def getCommandTupleProperty(self):
-		return self.__commandTuples 
-
-	'''
-
-	Description: builds the dictionary used to check if a command issued is synonymous with a supported game word (verbs/prepositions)
-
-	'''
-
-	def buildSynonymDict(self):
-
-		#synonymFilePath = '/Users/andrewbagwell/Desktop/capstone/cs467_pictor/data/synonymFile.txt'
+		# build the dictionary 
 		synonymFilePath = self.__cwd + "/data/synonymFile.txt" #file source: https://justenglish.me/2014/04/18/synonyms-for-the-96-most-commonly-used-words-in-english/
 		with open(synonymFilePath, 'r') as f:
 			for line in f:
@@ -191,7 +167,7 @@ class nlp():
 	def cleanCommands(self, commandList):
 
 		cleanCommandList = []
-		wordList = self.__synonymsDictionary
+		wordList = self.__synonymsDictionary.keys()
 		threshold = .75
 	
 		for token in commandList:
@@ -230,7 +206,7 @@ class nlp():
 		cleanTokens = self.cleanCommands(commandTokens)
 
 		#get list of supported tuples
-		tupleList = self.getCommandTupleProperty()
+		tupleList = self.__commandTuples
 
 		#variables for looping
 		highScore = 0
@@ -258,7 +234,6 @@ class nlp():
 						#currentScore += self.doRatOberNative(word, tupPart)
 						currentScore += self.doLevDist(word, tupPart)
 					
-
 			if currentScore > highScore:
 				highScore = currentScore
 				tupleReturned = commandTuple
@@ -274,9 +249,6 @@ class nlp():
 	'''
 	Description: getter methods for instance properties
 	'''
-
-	def getVerbs(self):
-		return self.__gameVerbs
 
 	def printVerbs(self):
 		for i in self.__gameVerbs:

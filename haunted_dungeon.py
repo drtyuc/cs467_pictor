@@ -47,8 +47,12 @@ class HauntedDungeon():
         """ haunted dungeon game play method loop """
         # setup nlp module prerequisites
         self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits(), self.dm.getCommandTuples())
-        self.nlp.buildSynonymDict()
         # print display text for current locale to player
+        
+        self.nlp.printVerbs()
+        self.nlp.printPrepositions()
+        self.nlp.printObjects()
+        self.nlp.printExits()
         self.generateText()
         command = ""
         # compile the attack {object} regex for repeated use
