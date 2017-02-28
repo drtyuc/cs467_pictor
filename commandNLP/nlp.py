@@ -5,6 +5,7 @@ import os
 import re
 import unittest
 import difflib #we should be able to use this...
+import timeit
 
 
 class nlp():
@@ -44,21 +45,24 @@ class nlp():
 		self.__gameObjects = objList
 		self.__verbPrepositionCombos = vpComboList
 		self.__exits = exitList
-		self.__commandTuples = tupleLists
+		#self.__commandTuples = tupleLists
 		self.__commands = []
 
+
+		catchers = ['drink bottle', 'lay on', 'look at', 'look behind', 
+		'look inside', 'look on', 'look under', 'sit on', 'take book']
+
+		tupleLists.extend(self.getVerbs())
+		tupleLists.extend(catchers)
+
+		sortedTupleLists = sorted(tupleLists)
+
+		self.__commandTuples = sortedTupleLists
+
+
+
+
 	'''
-
-	Description: this method loads the command tuple property to an nlp object with a return call 
-	to the DM module getCommandTuples() as the argument. 
-
-	'''
-
-
-	def setCommandTupleProperty(tupleLists):
-		self.__commandTuples = tupleLists
-
-	'''Enter a positive integer seed (9 digits or less)
 
 	Description: accessor method for the command tuples 
 
@@ -118,7 +122,7 @@ class nlp():
 	def doLevDist(self, inputPart, tuplePart):
 
 		#since there is currently no synonym matching for this function, we have to set the threshold low
-		minRatio = .75
+		minRatio = .70
 
 		#get length
 		inputTokenLength = len(inputPart)
@@ -191,17 +195,22 @@ class nlp():
 		threshold = .75
 	
 		for token in commandList:
+			
 			highScore = 0
+			
 			for word in wordList:
 				currentScore = self.doLevDist(token, word)
+				
 				if currentScore > highScore:
 					highScore = currentScore
 					replacement = word
+			
 			if highScore < threshold:
 				replacement = token
+			
 			cleanCommandList.append(replacement)
 
-		#print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
+		print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
 		return cleanCommandList
 
 	'''
@@ -265,6 +274,9 @@ class nlp():
 	'''
 	Description: getter methods for instance properties
 	'''
+
+	def getVerbs(self):
+		return self.__gameVerbs
 
 	def printVerbs(self):
 		for i in self.__gameVerbs:
