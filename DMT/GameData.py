@@ -63,7 +63,7 @@ class DataManager():
         self.__loadHelper(PRIMITIVE_FILENAME)
         
     #-------------------- Load Saved Game -----------------------
-    def loadSavedGame(self):
+    def loadSavedGame(self, name=None, status=None):
         """Loads a saved game from the /savedgames directory"""
         filenames = os.listdir(SAVED_GAME_DIRECTORY)
         print "Saved games:"
@@ -632,7 +632,7 @@ class DataManager():
         if self.__objects[index].wieldable:
             for i in self.getInventoryObjects():
                 idx = self.getObjectIndex(i)
-                if self.__objects[idx].equipped == True:
+                if self.__objects[idx].equipped == True and self.__objects[idx].wieldable == True:
                     return False   #Player already has a weapon equipped.
         return self.__objects[index].equippable
     
