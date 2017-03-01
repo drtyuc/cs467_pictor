@@ -1,9 +1,9 @@
-Attack - attack, battle, fight, kill, 
+Attack - attack, battle, fight, kill, slay, execute
 Drink - drink, swallow, gulp, sip, chug
 Drop - drop, discard, put, place, set
 Eat - eat, grub, snack, munch 
 Equip - equip, adorn, use, employ, utilize, exhaust, spend, expend, consume, exercise
-Go - go, recede, depart, fade, disappear, move, travel, proceed, show, display, exhibit, present, note, point to, indicate, explain, reveal, prove, demonstrate, expose
+Go - go, recede, depart, fade, disappear, move, travel, proceed, walk, run,
 Lay - lay, lie
 Light - light, illuminate
 Look - look, gaze, see, glance, watch, survey, study, seek, search for, peek, peep, glimpse, stare, contemplate, examine, gape, ogle, scrutinize, inspect, leer, behold, observe, view, witness, perceive, spy, sight, discover, notice, recognize, peer, eye, gawk, peruse, explore

@@ -79,7 +79,7 @@ class HauntedDungeon():
 		        continue
         
             """
-            commandTuple = self.nlp.makeTuple(command)
+            commandTuple = self.nlp.matchTuple(command)
             """
              #Don't need this since its covered in the hint
             if not any(commandTuple):
