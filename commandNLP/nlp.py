@@ -201,6 +201,8 @@ class nlp():
 		print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
 		return cleanCommandList
 
+
+
 	'''
 	Description: This function takes the user input and returns the tuple that it matched to. 
 	This is similar to the older method buildTuple() but supports or token oriented approach to NLP. This method iterates through 
@@ -258,6 +260,25 @@ class nlp():
 		return tupleReturned
 
 
+
+	'''
+	
+	Decription: replaces synonyms for buildTuple, this isn't necessary with matchTuple...
+	If buildTuple becomes the official method, this function can be subsumed into 
+	cleanCommands
+
+	'''
+
+	def replaceSyns(self, cleanList):
+
+		newTokens = []
+
+		for word in cleanList:
+			newTokens.append(self.__synonymsDictionary[word])
+
+		return newTokens
+
+
 	'''
 	Description: different method of returning a tuple. attempts to build a tuple from the
 	commands passed 
@@ -271,15 +292,16 @@ class nlp():
 
 		#clean the tokens
 		cleanTokens = self.cleanCommands(commandTokens)
+		cleanTokens = self.replaceSyns(cleanTokens)
 
 		tupleReturned = " "
 
 		for token in cleanTokens:
-			print token 
 			if token in self.__synonymsDictionary.keys():
 				tupleReturned += token + " "
 
 		tupleReturned = tupleReturned.strip()
+
 
 		#DEBUGGING HERE - This comes out in production version
 		print "buildTuple METHOD"
