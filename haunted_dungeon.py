@@ -48,11 +48,6 @@ class HauntedDungeon():
         # setup nlp module prerequisites
         self.nlp.loadProperties(self.dm.getVerbs(), self.dm.getPrepositions(), self.dm.getObjects(), self.dm.getVerbPrepositionCombos(), self.dm.getExits(), self.dm.getCommandTuples())
         # print display text for current locale to player
-        
-        self.nlp.printVerbs()
-        self.nlp.printPrepositions()
-        self.nlp.printObjects()
-        self.nlp.printExits()
         self.generateText()
         command = ""
         # compile the attack {object} regex for repeated use
@@ -84,7 +79,7 @@ class HauntedDungeon():
 		        continue
         
             """
-            commandTuple = self.nlp.matchTuple(command)
+            commandTuple = self.nlp.buildTuple(command)
             """
              #Don't need this since its covered in the hint
             if not any(commandTuple):

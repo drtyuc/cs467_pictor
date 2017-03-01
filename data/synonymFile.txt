@@ -1,23 +1,20 @@
+Attack - attack, battle, fight, kill, 
 Drink - drink, swallow, gulp, sip, chug
 Drop - drop, discard, put, place, set
 Eat - eat, grub, snack, munch 
-East - east
 Equip - equip, adorn, use, employ, utilize, exhaust, spend, expend, consume, exercise
 Go - go, recede, depart, fade, disappear, move, travel, proceed, show, display, exhibit, present, note, point to, indicate, explain, reveal, prove, demonstrate, expose
 Lay - lay, lie
 Light - light, illuminate
 Look - look, gaze, see, glance, watch, survey, study, seek, search for, peek, peep, glimpse, stare, contemplate, examine, gape, ogle, scrutinize, inspect, leer, behold, observe, view, witness, perceive, spy, sight, discover, notice, recognize, peer, eye, gawk, peruse, explore
-North - north
 Pull - pull, pull down, pop, tug, yank
 Push - push 
 Read - read
 Sit - sit, sit down
-South - south
 Take - take, hold, catch, seize, get, grab, grasp, win, capture, acquire, pick, choose, select, prefer, remove, steal, lift, rob, engage, bewitch, purchase, buy, retract, recall, assume, occupy, consume
 Unequip - unequip, return 
 Unlock - unlock 
 Wear - wear, put on, don, get into
-West - west 
 Wield - wield, swing, brandish, wrap 
 above - above, over
 at - at, by, near, near to, toward

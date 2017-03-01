@@ -9,6 +9,7 @@ import timeit
 
 
 class nlp():
+
 	
 	'''
 	
@@ -26,7 +27,7 @@ class nlp():
 		self.__synonymsDictionary = {}
 		self.__exits = []
 		self.__commandTuples = []
-		self.__commands = []
+		self.__matchThreshold = .70
 
 
 	
@@ -51,7 +52,6 @@ class nlp():
 		catchers = ['drink bottle', 'lay on', 'look at', 'look behind', 
 		'look inside', 'look on', 'look under', 'sit on', 'take book']
 		tupleLists.extend(catchers)
-		
 		sortedTupleLists = sorted(tupleLists)
 		self.__commandTuples = sortedTupleLists
 
@@ -68,6 +68,21 @@ class nlp():
 					word = word.strip(' \t\n\r')
 					self.__synonymsDictionary[word] = verb
 
+
+		for item in exitList:
+			splitItem = item.split()
+			for word in splitItem:
+				self.__synonymsDictionary[word] = word
+
+		for item in objList:
+			splitItem = item.split()
+			for word in splitItem:
+				self.__synonymsDictionary[word] = word
+
+		print self.__synonymsDictionary
+
+
+
 	'''
 
 	Description: This function compares two words by using python's difflib module. It calls difflib's sequence matcher
@@ -83,7 +98,7 @@ class nlp():
 		matchRatio = sm.ratio()
 
 		#if the word isn't a 75% match, return a score of 0
-		if matchRatio > .75: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
+		if matchRatio > self.__matchThreshold: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
 			return matchRatio
 		else:
 			return 0
@@ -98,7 +113,7 @@ class nlp():
 	def doLevDist(self, inputPart, tuplePart):
 
 		#since there is currently no synonym matching for this function, we have to set the threshold low
-		minRatio = .70
+		minRatio = self.__matchThreshold
 
 		#get length
 		inputTokenLength = len(inputPart)
@@ -168,7 +183,7 @@ class nlp():
 
 		cleanCommandList = []
 		wordList = self.__synonymsDictionary.keys()
-		threshold = .75
+		#threshold = .70
 	
 		for token in commandList:
 			
@@ -181,7 +196,7 @@ class nlp():
 					highScore = currentScore
 					replacement = word
 			
-			if highScore < threshold:
+			if highScore < self.__matchThreshold:
 				replacement = token
 			
 			cleanCommandList.append(replacement)
@@ -247,6 +262,39 @@ class nlp():
 
 
 	'''
+	Description: different method of returning a tuple. attempts to build a tuple from the
+	commands passed 
+
+	'''
+
+	def buildTuple(self, commandString):
+
+		#tokenize user input
+		commandTokens = self.parseCommand(commandString)
+
+		#clean the tokens
+		cleanTokens = self.cleanCommands(commandTokens)
+
+		tupleReturned = " "
+
+		for token in cleanTokens:
+			print token 
+			if token in self.__synonymsDictionary.keys():
+				tupleReturned += token + " "
+
+		tupleReturned = tupleReturned.strip()
+
+		#DEBUGGING HERE - This comes out in production version
+		print "buildTuple METHOD"
+		print "matched tuple = " + str(tupleReturned)
+
+
+		return tupleReturned
+
+
+
+
+	'''
 	Description: getter methods for instance properties
 	'''
 
@@ -279,20 +327,6 @@ class nlp():
 			print i
 		print ""
 
-
-	'''
-	Description: Function used for unit Testing 
-
-	'''
-
-	def testMatchTuple(self):
-		assert(self.matchTuple(['drink', 'bottle'])==('drink bottle'))
-		assert(self.matchTuple(['drop', 'with', 'armor'])==())
-		assert(self.matchTuple(['drop', 'matches'])==('drop matches'))
-		assert(self.matchTuple(['eat', 'mushrooms'])==('eat mushrooms'))
-
-
-		print "Tests passed!"
 
 if __name__ == '__main__':
 	nlp()
