@@ -15,7 +15,7 @@ Take - take, hold, catch, seize, get, grab, grasp, win, capture, acquire, pick, 
 Unequip - unequip, return 
 Unlock - unlock 
 Wear - wear, put on, don, get into
-Wield - wield, swing, brandish, wrap 
+Wield - wield, swing, brandish
 above - above, over
 at - at, by, near, near to, toward
 behind - behind, back of

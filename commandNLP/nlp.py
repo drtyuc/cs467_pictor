@@ -294,6 +294,38 @@ class nlp():
 		cleanTokens = self.cleanCommands(commandTokens)
 		cleanTokens = self.replaceSyns(cleanTokens)
 
+
+		#look for verbs
+		words = []
+		trash = []
+		verbFlag = False
+		tupleReturned = ""
+
+		for token in cleanTokens:
+			if token == self.__gameVerbs:
+				words.append(token)
+				verbFlag = True
+
+			elif token in self.__prepositions and verbFlag:
+				words.append(token)
+
+			else:
+				if verbFlag:
+					words.append(token)
+				else:
+					trash.append(token)
+
+		if verbFlag:
+			for word in words: 
+				tupleReturned += (word + " ")
+		else:
+			for word in trash:
+				tupleReturned += (word + " ")
+
+		tupleReturned = tupleReturned.strip()
+
+		'''
+
 		tupleReturned = " "
 
 		for token in cleanTokens:
@@ -302,6 +334,8 @@ class nlp():
 
 		tupleReturned = tupleReturned.strip()
 
+		'''
+
 
 		#DEBUGGING HERE - This comes out in production version
 		print "buildTuple METHOD"
@@ -309,8 +343,6 @@ class nlp():
 
 
 		return tupleReturned
-
-
 
 
 	'''
