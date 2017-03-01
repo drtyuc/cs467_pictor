@@ -27,7 +27,6 @@ class nlp():
 		self.__synonymsDictionary = {}
 		self.__exits = []
 		self.__commandTuples = []
-		self.__matchThreshold = .70
 
 
 	
@@ -107,10 +106,7 @@ class nlp():
 
 	'''
 
-	def doLevDist(self, inputPart, tuplePart):
-
-		#since there is currently no synonym matching for this function, we have to set the threshold low
-		minRatio = self.__matchThreshold
+	def doLevDist(self, inputPart, tuplePart, thresholdRatio):
 
 		#get length
 		inputTokenLength = len(inputPart)
@@ -147,7 +143,7 @@ class nlp():
 		#print matchRatio
 
 		#if the word isn't a 75% match, return a score of 0
-		if matchRatio > minRatio: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
+		if matchRatio > thresholdRatio: # kind of arbitrary, but this should handle some issues where there is only a low fuzzy match a tuple (e.g, light room being matched to drop mushrooms) 
 			return matchRatio
 		else:
 			return 0
@@ -185,16 +181,20 @@ class nlp():
 		for token in commandList:
 			
 			highScore = 0
+			replacement = token #new peience
 			
 			for word in wordList:
-				currentScore = self.doLevDist(token, word)
+				currentScore = self.doLevDist(token, word, .7)
 				
 				if currentScore > highScore:
 					highScore = currentScore
 					replacement = word
 			
-			if highScore < self.__matchThreshold:
+			#this may be redundant, so i'll comment out for now
+			'''
+			if highScore < .7:
 				replacement = token
+			'''
 			
 			cleanCommandList.append(replacement)
 
@@ -246,7 +246,7 @@ class nlp():
 							currentScore += 1							
 					else:
 						#currentScore += self.doRatOberNative(word, tupPart)
-						currentScore += self.doLevDist(word, tupPart)
+						currentScore += self.doLevDist(word, tupPart, .7)
 					
 			if currentScore > highScore:
 				highScore = currentScore
