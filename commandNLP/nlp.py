@@ -79,9 +79,6 @@ class nlp():
 			for word in splitItem:
 				self.__synonymsDictionary[word] = word
 
-		print self.__synonymsDictionary
-
-
 
 	'''
 
