@@ -1,0 +1,10 @@
+{
+    "filename": "entrance.json",
+    "name": "ce",
+    "longDescription": "A room that is lit from the beams of sunshine piercing through the slats of a corrugated steel door. The walls and ceiling are composed of coarse granite stone while the floor is mostly dirt covered with crawling insects and scattered shale rocks.",
+    "shortDescription": "Cave Entrance",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["bat skeleton", "machete", "shale rocks"],
+    "exits": ["ce1", "ce2"]
+}

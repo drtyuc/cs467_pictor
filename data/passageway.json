@@ -1,0 +1,10 @@
+{
+    "filename": "passageway.json",
+    "name": "pw",
+    "longDescription": "A long dark narrow corridor that leads deeper into the dungeon's depths. It's one big labyrinth of twists and turns connecting the evils inside with the outside world.",
+    "shortDescription": "Passage Way",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["slate rocks", "cat skeleton", "tools"],
+    "exits": ["pw1", "pw2"]
+}

@@ -1971,6 +1971,15 @@
 			"text": ""
 		}]   
     }, {
+		"tuple": "loadgame",
+		"dependencies": [],
+		"actions": [{
+			"method": "loadSavedGame()",
+			"object": "",
+			"state": false,
+			"text": ""
+		}]   
+    }, {
 		"tuple": "help",
 		"dependencies": [],
 		"actions": [{

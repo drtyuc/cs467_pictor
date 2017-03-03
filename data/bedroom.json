@@ -1,0 +1,10 @@
+{
+    "filename": "bedroom.json",
+    "name": "bd",
+    "longDescription": "A room used exclusively by the dungeon's master torturer. Without a lantern, it is difficult to identify the shadowy outlines of objects that appear to be in the room.",
+    "shortDescription": "Bedroom",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["twin bed", "safe", "wooden shelves", "gem", "wooden lever", "cedar trunk", "golden key"],
+    "exits": ["bd1"]
+}

@@ -1,0 +1,10 @@
+{
+    "filename": "closet.json",
+    "name": "ct",
+    "longDescription": "A dark room that does not appear to have any exits. If one can illuminate the room with artificial light, maybe one can find a secret panel or lever to use",
+    "shortDescription": "Closet",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["armoire", "cloak", "iron lever"],
+    "exits": []
+}

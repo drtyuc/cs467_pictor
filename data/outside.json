@@ -1,0 +1,10 @@
+{
+    "filename": "outside.json",
+    "name": "ot",
+    "longDescription": "CONGRATULATIONS!!! ... you have escaped the Haunted Dungeon",
+    "shortDescription": "Outside",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["tree", "sign"],
+    "exits": ["out"]
+}

@@ -1,0 +1,10 @@
+{
+    "filename": "hallway.json",
+    "name": "hw",
+    "longDescription": "A lighted long room with exits on three of it's walls. A wool rug lays in middle of the room and a painting is hanging on it's northern wall",
+    "shortDescription": "Hallway",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["wool rug", "painting"],
+    "exits": ["hw1", "hw2", "hw3"]
+}

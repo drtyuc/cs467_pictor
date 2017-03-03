@@ -1,0 +1,10 @@
+{
+    "filename": "banquethall.json",
+    "name": "bh",
+    "longDescription": "A large lit room containing a massive chandelier that hangs over a large dining table centered in the middle of the room.  There is a set of earthenware made from clay that adrons the corners of the room",
+    "shortDescription": "Banquet Hall",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["fine china", "chandelier", "dining table", "earthenware", "bottle of water"],
+    "exits": ["bh1", "bh2"]
+}

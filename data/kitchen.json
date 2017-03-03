@@ -1,0 +1,10 @@
+{
+    "filename": "kitchen.json",
+    "name": "kt",
+    "longDescription": "A room used to perpare meals for the dungeon's inhabitants.  It has skylighting in the ceiling which highlights the filthy conditions of the room.",
+    "shortDescription": "Kitchen",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["matches",  "cooking hearth", "green apple", "kitchen knife", "kitchen table"],
+    "exits": ["kt1", "kt2", "kt3"]
+}

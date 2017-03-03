@@ -1,0 +1,10 @@
+{
+    "filename": "common.json",
+    "name": "ca",
+    "longDescription": "A room with a high ceiling that is lit from torches placed high on all four walls. There is a large portrait of a hideous looking old man on the western wall and a large gateleg table in the center of the room. Next to the table is a bar stool.",
+    "shortDescription": "Common Area",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["stoneware", "bar stool", "gateleg table", "portrait", "note"],
+    "exits": ["ca1", "ca2"]
+}

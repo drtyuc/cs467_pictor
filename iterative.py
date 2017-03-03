@@ -59,7 +59,6 @@ class HauntedDungeon():
                 print "GOOD BYE!"
                 return
             commandTuple = self.nlp.getCommandMatch(command.lower(), "iterative")
-            print "Command:" + commandTuple
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
@@ -99,7 +98,7 @@ class HauntedDungeon():
             print "HAUNTED DUNGEON!!"
             print
             print "1) Start A New Game"
-            print "2) Load A New Game"
+            print "2) Load A Saved Game"
             print "3) Exit"
             print
             choice = str(raw_input("Enter your choice> "))

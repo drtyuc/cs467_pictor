@@ -1,0 +1,10 @@
+{
+    "filename": "armory.json",
+    "name": "ar",
+    "longDescription": "A naturally lit room for storing items of wars fought centuries ago. The room has many have chips on the walls.  Did knights of old do sword fighting in this room?",
+    "shortDescription": "Armory",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["sabre", "armor", "warhammer", "helmet", "trestle table"],
+    "exits": ["ar1", "ar2", "ar3"]
+}

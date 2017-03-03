@@ -33,8 +33,9 @@ SAVED_GAME_DIRECTORY = 'savedgames/'
 
 #Used to load class instance using a dedicated json file
 class Filename():
-	def __init__(self, filename):
-		self.__dict__ = json.loads(open(filename).read())
+    def __init__(self, f):
+        filename = 'data/' + f
+        self.__dict__ = json.loads(open(filename).read())
 	
 #Used to load class instance 		
 class Data():
@@ -60,11 +61,20 @@ class DataManager():
 	#--------------------- Load New Game -----------------------
     def loadNewGame(self):
         """Loads a new game with predefined initial starting conditions"""
-        self.__loadHelper(PRIMITIVE_FILENAME)
+        self.__loadHelper(PRIMITIVE_FILENAME, True)
         
     #-------------------- Load Saved Game -----------------------
     def loadSavedGame(self, name=None, status=None):
         """Loads a saved game from the /savedgames directory"""
+        
+        #If 'loadgame' was called during game play, ensure this is what the player really wants.
+        if status == False:
+            response = raw_input("Quit current game and load a saved game (y/n)?: ")
+            if response == "y":
+                pass
+            else:
+                return ""
+        
         filenames = os.listdir(SAVED_GAME_DIRECTORY)
         print "Saved games:"
         
@@ -77,15 +87,26 @@ class DataManager():
         filename = SAVED_GAME_DIRECTORY + response
         
         if os.path.isfile(filename):
-            self.__loadHelper(filename)
-            return 1
+            if status == False:    #If overidding a game currently loaded ... clear list.
+                self.__clearDynamicLists()
+            self.__loadHelper(filename, status)
+            return response + " loaded"
         else:
             print("File not found!")
-            return 0
+            return 
             
-        
+    #----------------------- Clear Lists ------------------------- 
+    def __clearDynamicLists(self):
+        """Internal method used to clear lists that hold state dependent data"""
+        del self.__players[:]
+        del self.__bags[:]
+        del self.__rooms[:]
+        del self.__exits[:]
+        del self.__objects[:]
+        del self.__ghosts[:]
+            
     #----------------------- Load Helper -------------------------    
-    def __loadHelper(self, filename):
+    def __loadHelper(self, filename, status=None):
         """Internal method used to load JSON into class instances"""
             
         self.__primitives = json.loads(open(filename).read())
@@ -95,9 +116,12 @@ class DataManager():
 		
         for i in self.__primitives['bags']:
             self.__bags.append(Data(i))		
-				
+		
         for i in self.__primitives['rooms']:
-            self.__rooms.append(Data(i))
+            if status == True:
+                self.__rooms.append(Filename(i['filename']))
+            else:
+                self.__rooms.append(Data(i))
 
         for i in self.__primitives['exits']:
             self.__exits.append(Data(i))
@@ -108,20 +132,22 @@ class DataManager():
         for i in self.__primitives['ghosts']:
 			self.__ghosts.append(Data(i))
             
-        for i in self.__primitives['verbs']:
-            self.__verbs.append(Data(i))
+        if status != False:
+            for i in self.__primitives['verbs']:
+                self.__verbs.append(Data(i))
             
-        for i in self.__primitives['prepositions']:
-            self.__prepositions.append(Data(i))
+            for i in self.__primitives['prepositions']:
+                self.__prepositions.append(Data(i))
         
-        for i in self.__primitives['help']:
-            self.__help.append(Data(i))
+            for i in self.__primitives['help']:
+                self.__help.append(Data(i))
             
-        for i in self.__primitives['synonyms']:
-            self.__synonyms.append(Data(i))
+            for i in self.__primitives['synonyms']:
+                self.__synonyms.append(Data(i))
             
-        #Load the JSON file used to describe command dependencies and actions    
-        self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
+            #Load the JSON file used to describe command dependencies and actions    
+            self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
+
 
     #----------------------- Save Game -----------------------
     def saveGame(self, name=None, status=None):

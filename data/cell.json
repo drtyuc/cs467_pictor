@@ -1,0 +1,10 @@
+{
+    "filename": "cell.json",
+    "name": "cl",
+    "longDescription": "A dark musty room that still reeks from the smell of rotting flesh. The room was used to confine subjects used in the Wizard's experiments.",
+    "shortDescription": "Cell",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["human skeleton", "mattress", "book of locks", "milking stool"],
+    "exits": ["cl1"]
+}

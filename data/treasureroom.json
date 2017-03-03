@@ -1,0 +1,10 @@
+{
+    "filename": "treasureroom.json",
+    "name": "tr",
+    "longDescription": "A secret room filled with treasures hidden in the darkness.  The smell of dust and mold is overpowering.  Does this room really contain priceless items or was it used to perform hideous acts of evil?",
+    "shortDescription": "Treasure Room",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["treasure", "iron trunk", "tapestries", "altar", "magical ring", "axe"],
+    "exits": ["tr1"]
+}

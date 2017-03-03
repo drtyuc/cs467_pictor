@@ -1,0 +1,10 @@
+{
+    "filename": "laboratory.json",
+    "name": "wl",
+    "longDescription": "A laboratory containing various items used by the Wizard.  It does not have any natural lighting, therefore a working lantern is required to see the contents of the room",
+    "shortDescription": "Wizard's Laboratory",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["corner shelves", "book of spells", "slate of runes", "high table", "broken lantern"],
+    "exits": ["wl1", "wl2"]
+}

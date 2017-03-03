@@ -1,0 +1,10 @@
+{
+    "filename": "alternate.json",
+    "name": "ap",
+    "longDescription": "A very unique room containing other-worldly objects. The room glows from the light of a wall of flames that burns without consuming the room. On the other side of the room floats a lidless eye that is ever watchful of those that enter the room.",
+    "shortDescription": "Alternate Plane",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["wall of flames", "lidless eye"],
+    "exits": ["ap1"]
+}

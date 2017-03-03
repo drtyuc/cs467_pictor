@@ -1,0 +1,10 @@
+{
+    "filename": "storeroom.json",
+    "name": "sr",
+    "longDescription": "A room used to store food and other household items.  It's covered in cobwebs, crawling insects and dead insects.",
+    "shortDescription": "Storeroom",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["lockpick", "mushrooms", "turkish rug", "metal shelves", "trapdoor"],
+    "exits": ["sr1"]
+}

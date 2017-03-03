@@ -1,0 +1,10 @@
+{
+    "filename": "jail.json",
+    "name": "jl",
+    "longDescription": "The room was used by the Wizard's personal jailors. Although the room has no natural lighting, the outline of several objects can be seen as well as a small glittering of light reflecting off cell bars at the western end of the room",
+    "shortDescription": "Jail",
+    "discovered": false,
+    "lighted": false,
+    "objects": ["carver chair", "scroll", "desk", "key rung", "bottle of gatorade", "bottleopener"],
+    "exits": ["jl1", "jl2"]
+}

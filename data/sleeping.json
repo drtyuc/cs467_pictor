@@ -1,0 +1,10 @@
+{
+    "filename": "sleeping.json",
+    "name": "sq",
+    "longDescription": "A large lighted room that was used by the wizard's staff. The room has a bunk bed in the south west corner of the room and a round table in the northeast corner.  There is a large bearshin in the center of the floor and a rocking chair next to the table.",
+    "shortDescription": "Sleeping Quarters",
+    "discovered": false,
+    "lighted": true,
+    "objects": ["bunk bed", "round table", "rocking chair", "brass lantern", "bearskin", "red apple"],
+    "exits": ["sq1", "sq2"]
+}
