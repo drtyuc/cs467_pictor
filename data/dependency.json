@@ -890,6 +890,11 @@
 			"object": "cloak",
 			"state": true,
 			"text": "You are now wearing the cloak"
+		},{
+			"method": "setPlayerVisible()",
+			"object": "",
+			"state": false,
+			"text": "You are now invisible"
 		}]
 	}, {
 		"tuple": "equip gem",
@@ -4953,11 +4958,6 @@
 			"object": "note",
 			"state": true,
 			"text": "You now know the combination to the safe"
-		}, {
-			"method": "setObjectUnlocked()",
-			"object": "safe",
-			"state": true,
-			"text": ""
 		}]
 	}, {
 		"tuple": "read scroll",
@@ -6923,10 +6923,10 @@
 			"expect": false,
 			"hint": "Iron trunk is already unlocked"
 		}, {
-			"method": "isObjectKeyInInventory()",
-			"object": "iron trunk",
+			"method": "isObjectInInventory()",
+			"object": "lockpick",
 			"expect": true,
-			"hint": "You don't have the right key"
+			"hint": "You do not have a lockpick in your inventory"
 		}],
 		"actions": [{
 			"method": "setObjectUnlocked()",
@@ -6957,10 +6957,10 @@
 			"expect": false,
 			"hint": "Safe is already unlocked"
 		}, {
-			"method": "isObjectKeyInInventory()",
-			"object": "safe",
+			"method": "isObjectRead()",
+			"object": "note",
 			"expect": true,
-			"hint": "You don't have the right key"
+			"hint": "You do not know the combination to the safe"
 		}],
 		"actions": [{
 			"method": "setObjectUnlocked()",

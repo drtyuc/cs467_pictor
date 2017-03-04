@@ -237,7 +237,7 @@ class DataManager():
         return self.__players[0].visible
     
     #-----------------------------
-    def setPlayerVisible(self, visible):
+    def setPlayerVisible(self, name=None, visible=True):
         """Boolean method that defines whether the player is visible or not"""
         self.__players[0].visible = visible   
         
