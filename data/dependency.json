@@ -6645,6 +6645,11 @@
 			"object": "cloak",
 			"state": false,
 			"text": "Cloak has been unequipped"
+		},{
+			"method": "setPlayerVisible()",
+			"object": "",
+			"state": true,
+			"text": "You are now visible"
 		}]
 	}, {
 		"tuple": "unequip gem",
