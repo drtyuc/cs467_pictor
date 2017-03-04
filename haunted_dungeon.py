@@ -62,29 +62,7 @@ class HauntedDungeon():
             if command == "quit":
                 print "GOOD BYE!"
                 return
-                
-            """   
-            #This can all be removed since savegame and attack {ghost} are supported commands" 
-	        if command == "savegame":
-		        print "saving game..."
-		        self.dm.saveGame()
-		        continue
-
-	        # is the player attacking? attack
-	        if attackPattern.match(command):
-		        m = attackPattern.match(command)
-                pa.attackGhost(m.group(2), self.dm)
-	            pa.doGhostActions(self.dm)
-                self.generateText()
-		        continue
-        
-            """
             commandTuple = self.nlp.matchTuple(command)
-            """
-             #Don't need this since its covered in the hint
-            if not any(commandTuple):
-                print "I don't understand..."
-            """                
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
