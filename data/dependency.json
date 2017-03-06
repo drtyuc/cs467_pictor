@@ -897,25 +897,6 @@
 			"text": "You are now invisible"
 		}]
 	}, {
-		"tuple": "equip gem",
-		"dependencies": [{
-			"method": "isObjectInInventory()",
-			"object": "gem",
-			"expect": true,
-			"hint": "Gem is not in your inventory"
-		}, {
-			"method": "isObjectEquipped()",
-			"object": "gem",
-			"expect": false,
-			"hint": "Gem is already equipped"
-		}],
-		"actions": [{
-			"method": "setObjectEquipped()",
-			"object": "gem",
-			"state": true,
-			"text": "The gem is now equipped"
-		}]
-	}, {
 		"tuple": "equip helmet",
 		"dependencies": [{
 			"method": "isObjectInInventory()",
@@ -1005,6 +986,11 @@
 			"object": "magical ring",
 			"state": true,
 			"text": "The magical ring is now equipped"
+		},{
+			"method": "adjustWeaponPotential()",
+			"object": "",
+			"state": true,
+			"text": "Weapons are energized"
 		}]
 	}, {
 		"tuple": "equip sabre",
@@ -2881,6 +2867,30 @@
 			"state": false,
 			"text": ""
 		}]
+    }, {
+		"tuple": "look at fine china",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see fine china"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "Fine china is not in this room or your inventory"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "fine china",
+			"expect": true,
+			"hint": "Fine china is not visible"
+		}],
+		"actions": [{
+			"method": "getObjectLongDescription()",
+			"object": "fine china",
+			"state": false,
+			"text": ""
+		}]    
 	}, {
 		"tuple": "look at gateleg table",
 		"dependencies": [{
@@ -6652,25 +6662,6 @@
 			"text": "You are now visible"
 		}]
 	}, {
-		"tuple": "unequip gem",
-		"dependencies": [{
-			"method": "isObjectInInventory()",
-			"object": "gem",
-			"expect": true,
-			"hint": "Gem is not in your inventory"
-		}, {
-			"method": "isObjectEquipped()",
-			"object": "gem",
-			"expect": true,
-			"hint": "Gem is already unequipped"
-		}],
-		"actions": [{
-			"method": "setObjectEquipped()",
-			"object": "gem",
-			"state": false,
-			"text": "Gem has been unequipped"
-		}]
-	}, {
 		"tuple": "unequip helmet",
 		"dependencies": [{
 			"method": "isObjectInInventory()",
@@ -6750,6 +6741,11 @@
 			"object": "magical ring",
 			"state": false,
 			"text": "Magical ring has been unequipped"
+		},{
+			"method": "adjustWeaponPotential()",
+			"object": "",
+			"state": false,
+			"text": "Weapons are de-energized"
 		}]
 	}, {
 		"tuple": "unequip sabre",

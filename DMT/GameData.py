@@ -971,7 +971,7 @@ class DataManager():
             self.__objects[index].visible = status
         if len(objs) > 0:
             count = 0
-            response += "You see the following items(s): "
+            response += "You see the following item(s): "
             for i in objs:
                 count += 1
                 if count == len(objs):
@@ -1000,6 +1000,19 @@ class DataManager():
                     objects.append(i.name)
         return objects    
   
+    #----------------------------- 	
+    """Adjust the damage of weapon objects"""
+    def adjustWeaponPotential(self, name=None, status=None):
+        for i in self.__objects:
+            if (i.wieldable):
+                if status:
+                    i.damagePoints *= 2
+                else:
+                    i.damagePoints *= 0.5
+                    
+ 
+ 
+ 
   
     #############################################################
 	#                    Ghost Methods 
