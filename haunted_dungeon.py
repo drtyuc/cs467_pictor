@@ -62,7 +62,7 @@ class HauntedDungeon():
             if command == "quit":
                 print "GOOD BYE!"
                 return
-            commandTuple = self.nlp.matchTuple(command)
+            commandTuple = self.nlp.buildTuple(command)
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
