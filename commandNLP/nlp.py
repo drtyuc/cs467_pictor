@@ -181,7 +181,7 @@ class nlp():
 		for token in commandList:
 			
 			highScore = 0
-			replacement = token #new peience
+			replacement = token #new piece
 			
 			for word in wordList:
 				currentScore = self.doLevDist(token, word, .7)
@@ -274,7 +274,8 @@ class nlp():
 		newTokens = []
 
 		for word in cleanList:
-			newTokens.append(self.__synonymsDictionary[word])
+			if word in self.__synonymsDictionary.keys():
+				newTokens.append(self.__synonymsDictionary[word])
 
 		return newTokens
 
@@ -292,7 +293,7 @@ class nlp():
 
 		#clean the tokens
 		cleanTokens = self.cleanCommands(commandTokens)
-		cleanTokens = self.replaceSyns(cleanTokens)
+		cleanTokens2 = self.replaceSyns(cleanTokens)
 
 
 		#look for verbs
@@ -301,7 +302,7 @@ class nlp():
 		verbFlag = False
 		tupleReturned = ""
 
-		for token in cleanTokens:
+		for token in cleanTokens2:
 			if token == self.__gameVerbs:
 				words.append(token)
 				verbFlag = True
