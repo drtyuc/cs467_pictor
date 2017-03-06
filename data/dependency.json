@@ -4132,6 +4132,10 @@
 			"state": true,
 			"text": "You found a wooden lever behind the shelves"
 		}]
+        
+        
+        
+        
 	}, {
 		"tuple": "look inside armoire",
 		"dependencies": [{
@@ -4302,6 +4306,176 @@
 			"state": true,
 			"text": ""
 		}]
+    }, {
+		"tuple": "look into armoire",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see armoire"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "Armoire is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "armoire",
+			"expect": true,
+			"hint": "You cannot look inside armoire"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "armoire",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look into cedar trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see cedar trunk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "Cedar trunk is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "cedar trunk",
+			"expect": true,
+			"hint": "You cannot look inside cedar trunk"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "cedar trunk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look into desk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see desk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "desk",
+			"expect": true,
+			"hint": "Desk is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "desk",
+			"expect": true,
+			"hint": "You cannot look inside desk"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "desk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look into iron trunk",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see iron trunk"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "Iron trunk is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "iron trunk",
+			"expect": true,
+			"hint": "You cannot look inside iron trunk"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "iron trunk",
+			"state": true,
+			"text": ""
+		}]
+	}, {
+		"tuple": "look into safe",
+		"dependencies": [{
+			"method": "isRoomLighted()",
+			"object": "",
+			"expect": true,
+			"hint": "Room is dark ... cannot see safe"
+		}, {
+			"method": "isObjectAccessible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not in this room"
+		}, {
+			"method": "isObjectVisible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is not visible"
+		}, {
+			"method": "isObjectUnlocked()",
+			"object": "safe",
+			"expect": true,
+			"hint": "Safe is locked"
+		}, {
+			"method": "isLookInsidePossible()",
+			"object": "safe",
+			"expect": true,
+			"hint": "You cannot look inside safe"
+		}],
+		"actions": [{
+			"method": "setInsideObjectsVisible()",
+			"object": "safe",
+			"state": true,
+			"text": ""
+		}]    
 	}, {
 		"tuple": "look on altar",
 		"dependencies": [{
