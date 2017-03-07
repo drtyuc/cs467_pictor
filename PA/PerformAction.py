@@ -261,10 +261,14 @@ class PerformAction():
 			    damageText = "FIGHT: You landed a mighty blow dealing " + str(r) + " damage!"
 			    print ""
 			    self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+	            else:
+		        noDamageText = "FIGHT: You landed a blow, but dealt no damage!"
+		        print ""
+		        self.printIt(textwrap.wrap(noDamageText, width=self.MAX_WIDTH))
 	        else:
-		    noDamageText = "FIGHT: You landed a blow, but didn't damage the ghost!"
+		    missedText = "FIGHT: You missed the ghost!"
 		    print ""
-		    self.printIt(textwrap.wrap(noDamageText, width=self.MAX_WIDTH))
+		    self.printIt(textwrap.wrap(missedText, width=self.MAX_WIDTH))
 	else:
 	    failText = "FIGHT: You can't attack that."
 	    print ""
