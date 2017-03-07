@@ -173,8 +173,9 @@ class PerformAction():
 	if r >= r3:
             rooms = dm.getRoomNames()
             r = random.randint(0,(len(rooms)-1))
-	    # move the ghost to the new room
-            dm.setGhostLocation(ghost,rooms[r])
+	    # move the ghost to the new room unless it's outside
+	    if rooms[r] != 'ot':
+                dm.setGhostLocation(ghost,rooms[r])
 	return
 
 
