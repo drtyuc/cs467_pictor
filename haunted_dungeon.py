@@ -189,7 +189,7 @@ class HauntedDungeon():
         else:
             print "You do not see any items"
 	            
-        # TODO(DL): Flesh out Print ghosts
+        #Print ghosts
         ghosts = self.dm.getGhostNames()
 
         for g in ghosts:
