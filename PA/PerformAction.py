@@ -156,7 +156,7 @@ class PerformAction():
 		if dm.isGhostVisible(g) == False:
 		    # There's a chance the ghost will appear
 		    self.__randomGhostVisible(g,dm)
-		elif dm.isGhostVisible(g) == True:
+		elif dm.isGhostVisible(g) == True and dm.isPlayerVisible() == True:
 		    # Attack if ghost is visible
 		    self.__ghostAttacks(g,dm)
 	    else:
@@ -238,6 +238,10 @@ class PerformAction():
 	        noWeaponText = "FIGHT: You don't have a weapon!"
 	        print ""
 	        self.printIt(textwrap.wrap(noWeaponText, width=self.MAX_WIDTH))
+	    elif dm.isPlayerVisible() == False:
+		invisibleText = "FIGHT: You cannot attack while invisible!"
+		print ""
+	        self.printIt(textwrap.wrap(invisibleText, width=self.MAX_WIDTH))
 	    else:
 		# Chance to hit is a dull mechanic at the moment
 		r = random.randint(r1,r2)
