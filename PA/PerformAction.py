@@ -199,8 +199,8 @@ class PerformAction():
 	    r = random.randint(0,dm.getGhostDamagePoints(ghost))
 	    # if damage exceeds 0
 	    if r > 0:
-	        # damage is lessened by the player's protection points
-	        health = dm.getPlayerHealth() - (r - (dm.getPlayerProtectionPoints() / r3))
+		# remove damage from health of player
+	        health = dm.getPlayerHealth() - r
 	        dm.setPlayerHealth(health)
 		# check if player dies
 		if health <= 0:
@@ -231,7 +231,7 @@ class PerformAction():
     def attackGhost(self, ghost, dm, r1=0, r2=20, r3=7):
 	""" attack the ghost """
 	# Player must be able to see the ghost and have a weapon
-	if dm.getGhostLocation(ghost) == dm.getPlayerLocation() and dm.isGhostVisible(ghost):
+	if (dm.getGhostLocation(ghost) == dm.getPlayerLocation()) and (dm.isGhostVisible(ghost) == True):
  	    weapon = dm.getEquippedWeapon()
 	    if weapon == None:
 	        noWeaponText = "FIGHT: You don't have a weapon!"
