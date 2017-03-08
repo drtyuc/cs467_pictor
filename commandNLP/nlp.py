@@ -276,6 +276,9 @@ class nlp():
 		for word in cleanList:
 			if word in self.__synonymsDictionary.keys():
 				newTokens.append(self.__synonymsDictionary[word])
+			else:
+				newTokens.append(word)
+		
 
 		return newTokens
 
@@ -295,10 +298,9 @@ class nlp():
 		cleanTokens = self.cleanCommands(commandTokens)
 		cleanTokens2 = self.replaceSyns(cleanTokens)
 
-
 		#look for verbs
 		words = []
-		trash = []
+		other = []
 		verbFlag = False
 		tupleReturned = ""
 
@@ -310,32 +312,22 @@ class nlp():
 			elif token in self.__prepositions and verbFlag:
 				words.append(token)
 
+			elif verbFlag:
+				words.append(token)
 			else:
-				if verbFlag:
-					words.append(token)
-				else:
-					trash.append(token)
+				other.append(token)
+		
+		print words #debugging
+		print other #debugging
 
 		if verbFlag:
 			for word in words: 
 				tupleReturned += (word + " ")
 		else:
-			for word in trash:
+			for word in other:
 				tupleReturned += (word + " ")
 
 		tupleReturned = tupleReturned.strip()
-
-		'''
-
-		tupleReturned = " "
-
-		for token in cleanTokens:
-			if token in self.__synonymsDictionary.keys():
-				tupleReturned += token + " "
-
-		tupleReturned = tupleReturned.strip()
-
-		'''
 
 
 		#DEBUGGING HERE - This comes out in production version
