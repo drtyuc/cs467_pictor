@@ -46,7 +46,7 @@ class nlp():
 		self.__verbPrepositionCombos = vpComboList
 		self.__exits = exitList
 
-		#create faux tuples to "catch" imprecise commands 
+		#create faux tuples to "catch" imprecise commands - for matchTuple() not applicable to buildTuple()
 		tupleLists.extend(self.__gameVerbs)
 		catchers = ['drink bottle', 'lay on', 'look at', 'look behind', 
 		'look inside', 'look on', 'look under', 'sit on', 'take book']
@@ -276,9 +276,6 @@ class nlp():
 		for word in cleanList:
 			if word in self.__synonymsDictionary.keys():
 				newTokens.append(self.__synonymsDictionary[word])
-			else:
-				newTokens.append(word)
-		
 
 		return newTokens
 
@@ -316,9 +313,6 @@ class nlp():
 				words.append(token)
 			else:
 				other.append(token)
-		
-		print words #debugging
-		print other #debugging
 
 		if verbFlag:
 			for word in words: 
