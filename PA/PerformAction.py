@@ -156,7 +156,7 @@ class PerformAction():
 		if dm.isGhostVisible(g) == False:
 		    # There's a chance the ghost will appear
 		    self.__randomGhostVisible(g,dm)
-		elif dm.isGhostVisible(g) == True:
+		elif dm.isGhostVisible(g) == True and dm.isPlayerVisible() == True:
 		    # Attack if ghost is visible
 		    self.__ghostAttacks(g,dm)
 	    else:
@@ -173,8 +173,9 @@ class PerformAction():
 	if r >= r3:
             rooms = dm.getRoomNames()
             r = random.randint(0,(len(rooms)-1))
-	    # move the ghost to the new room
-            dm.setGhostLocation(ghost,rooms[r])
+	    # move the ghost to the new room unless it's outside
+	    if rooms[r] != 'ot':
+                dm.setGhostLocation(ghost,rooms[r])
 	return
 
 
@@ -199,8 +200,8 @@ class PerformAction():
 	    r = random.randint(0,dm.getGhostDamagePoints(ghost))
 	    # if damage exceeds 0
 	    if r > 0:
-	        # damage is lessened by the player's protection points
-	        health = dm.getPlayerHealth() - (r - (dm.getPlayerProtectionPoints() / r3))
+		# remove damage from health of player
+	        health = dm.getPlayerHealth() - r
 	        dm.setPlayerHealth(health)
 		# check if player dies
 		if health <= 0:
@@ -231,12 +232,16 @@ class PerformAction():
     def attackGhost(self, ghost, dm, r1=0, r2=20, r3=7):
 	""" attack the ghost """
 	# Player must be able to see the ghost and have a weapon
-	if dm.getGhostLocation(ghost) == dm.getPlayerLocation() and dm.isGhostVisible(ghost):
+	if (dm.getGhostLocation(ghost) == dm.getPlayerLocation()) and (dm.isGhostVisible(ghost) == True):
  	    weapon = dm.getEquippedWeapon()
 	    if weapon == None:
 	        noWeaponText = "FIGHT: You don't have a weapon!"
 	        print ""
 	        self.printIt(textwrap.wrap(noWeaponText, width=self.MAX_WIDTH))
+	    elif dm.isPlayerVisible() == False:
+		invisibleText = "FIGHT: You cannot attack while invisible!"
+		print ""
+	        self.printIt(textwrap.wrap(invisibleText, width=self.MAX_WIDTH))
 	    else:
 		# Chance to hit is a dull mechanic at the moment
 		r = random.randint(r1,r2)
@@ -256,10 +261,14 @@ class PerformAction():
 			    damageText = "FIGHT: You landed a mighty blow dealing " + str(r) + " damage!"
 			    print ""
 			    self.printIt(textwrap.wrap(damageText, width=self.MAX_WIDTH))
+	            else:
+		        noDamageText = "FIGHT: You landed a blow, but dealt no damage!"
+		        print ""
+		        self.printIt(textwrap.wrap(noDamageText, width=self.MAX_WIDTH))
 	        else:
-		    noDamageText = "FIGHT: You landed a blow, but didn't damage the ghost!"
+		    missedText = "FIGHT: You missed the ghost!"
 		    print ""
-		    self.printIt(textwrap.wrap(noDamageText, width=self.MAX_WIDTH))
+		    self.printIt(textwrap.wrap(missedText, width=self.MAX_WIDTH))
 	else:
 	    failText = "FIGHT: You can't attack that."
 	    print ""

@@ -42,6 +42,7 @@ class HauntedDungeon():
     dm = DataManager()
     nlp = nlp()
     MAX_WIDTH = 70
+    CLEAR_SCREEN = True  # Enables clearing of the screen after actions
 
     def playGame(self):
         """ haunted dungeon game play method loop """
@@ -56,13 +57,17 @@ class HauntedDungeon():
         while command != "quit":
             print ""
             command = raw_input("Your move: ")
+	    if self.CLEAR_SCREEN == True:
+	        print ("\n" * 100)  # clear screen..
             print ""
             print "-----------------------------------------------------------------------"
             # do action
             if command == "quit":
                 print "GOOD BYE!"
                 return
+                
             commandTuple = self.nlp.buildTuple(command)
+
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:
                 if pa.areCommandDependenciesMet() == False:
@@ -107,10 +112,14 @@ class HauntedDungeon():
             print "3) Exit"
             print
             choice = str(raw_input("Enter your choice> "))
+	    if self.CLEAR_SCREEN == True:
+	        print ("\n" * 100)  # clear screen.. 
             if choice == "1":
                 self.loadNewGame()
             if choice == "2":
                 choice = self.loadGame(choice)
+            if choice == "3":
+	        print "GOOD BYE!"
         return
 
 
@@ -158,7 +167,7 @@ class HauntedDungeon():
             print ""
             print "INVENTORY CAPACITY: " , self.dm.getInventoryCapacity()
             print "INVENTORY WEIGHT: " , self.dm.getInventoryWeight()
-            self.printIt(textwrap.wrap("INVENTORTY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
+            self.printIt(textwrap.wrap("INVENTORY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
             if self.dm.getEquippedObjects():
                 self.printIt(textwrap.wrap("EQUIPPED ITEMS: " + self.formatList(self.dm.getEquippedObjects()), width=self.MAX_WIDTH))    
     
@@ -189,7 +198,7 @@ class HauntedDungeon():
         else:
             print "You do not see any items"
 	            
-        # TODO(DL): Flesh out Print ghosts
+        #Print ghosts
         ghosts = self.dm.getGhostNames()
 
         for g in ghosts:
