@@ -171,7 +171,7 @@ class HauntedDungeon():
             print ""
             print "INVENTORY CAPACITY: " , self.dm.getInventoryCapacity()
             print "INVENTORY WEIGHT: " , self.dm.getInventoryWeight()
-            self.printIt(textwrap.wrap("INVENTORTY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
+            self.printIt(textwrap.wrap("INVENTORY ITEMS: " + self.formatList(self.dm.getInventoryObjects()), self.MAX_WIDTH))
             if self.dm.getEquippedObjects():
                 self.printIt(textwrap.wrap("EQUIPPED ITEMS: " + self.formatList(self.dm.getEquippedObjects()), width=self.MAX_WIDTH))    
     
