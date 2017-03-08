@@ -66,18 +66,7 @@ class HauntedDungeon():
                 print "GOOD BYE!"
                 return
                 
-            """Temporary fix to NLP mapping problem
-               Use buildTuple only when player input
-               is not a supported command
-            ***************************************"""
-            if self.dm.isCommandTuple(command):
-                commandTuple = command
-            else:
-                commandTuple = self.nlp.buildTuple(command)
-                
-            """ (temparary bypass) 
-             commandTuple = self.nlp.buildTuple(command)
-            **************************************"""
+            commandTuple = self.nlp.buildTuple(command)
 
             pa = PerformAction(commandTuple, self.dm)
             if pa.isCommandValid() == True:

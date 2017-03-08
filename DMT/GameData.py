@@ -1240,7 +1240,7 @@ class DataManager():
     #----------------------------- 
     def getExits(self, name=None, status=None):
         """Returns a list of all exit names used in the game"""
-        exits = ['west','north','south','east']
+        exits = ['west','north','south','east', 'help', 'inventory', 'loadgame', 'savegame', 'ghosts', 'blinky', 'inky', 'clyde', 'pinky', ]
         for i in self.__exits:
 			exits.append(i.commandName)
         return exits	
