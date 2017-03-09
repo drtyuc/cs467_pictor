@@ -82,6 +82,10 @@ class HauntedDungeon():
                 print "HINT:  You can't " + command + "!"
             pa.doGhostActions(self.dm)
             self.generateText()
+	    if self.dm.getPlayerHealth() <= 0:
+		print ""
+		print "You feel weak.. the world fades away... you have died.."
+		return
         return
 
 
