@@ -220,6 +220,19 @@ class DataManager():
         """Adjusts the players health based upon the healthpoints of an object"""
         index = self.getObjectIndex(name)
         self.__players[0].health += self.__objects[index].healthPoints
+        if self.__players[0].health > 100:
+            self.__players[0].health = 100
+            return "You have maximized your health points!"
+        if self.__players[0].health < 0:
+            self.__players[0].health = 0
+            return "You are now deceased :("
+        if self.__objects[index].healthPoints > 0:
+            return "You have increased your health points!"
+        if self.__objects[index].healthPoints < 0:
+            return "You have lost some health points!"
+        if self.__objects[index].healthPoints == 0:
+            return "No change to your health points!"
+
         
     #-----------------------------
     def getPlayerLocation(self):

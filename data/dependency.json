@@ -26,7 +26,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "bottle of gatorade",
 			"state": false,
-			"text": "Your health has increased!"
+			"text": ""
 		}]
 	}, {
 		"tuple": "drink bottle of water",
@@ -55,7 +55,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "bottle of water",
 			"state": false,
-			"text": "Your health has increased!"
+			"text": ""
 		}]
    	}, {
 		"tuple": "attack blinky",
@@ -774,7 +774,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "green apple",
 			"state": false,
-			"text": "Your health has increased!"
+			"text": ""
 		}]
 	}, {
 		"tuple": "eat mushrooms",
@@ -798,7 +798,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "mushrooms",
 			"state": false,
-			"text": "Your health has increased!"
+			"text": ""
 		}]
 	}, {
 		"tuple": "eat red apple",
@@ -822,7 +822,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "red apple",
 			"state": false,
-			"text": "Your health has increased!"
+			"text": ""
 		}]
 	}, {
 		"tuple": "equip armor",
@@ -2024,7 +2024,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "altar",
 			"state": false,
-			"text": "You feel sick ... lost some health points"
+			"text": ""
 		}]
 	}, {
 		"tuple": "lay on bearskin",
@@ -2053,7 +2053,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "bearskin",
 			"state": false,
-			"text": "You have improved your health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "lay on bunk bed",
@@ -2082,7 +2082,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "bunk bed",
 			"state": false,
-			"text": "You have improved your health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "lay on mattress",
@@ -2111,7 +2111,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "mattress",
 			"state": false,
-			"text": "More aches and pains ... lost health points"
+			"text": ""
 		}]
 	}, {
 		"tuple": "lay on turkish rug",
@@ -2140,7 +2140,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "turkish rug",
 			"state": false,
-			"text": "You feel drained ... lost health points"
+			"text": ""
 		}]
 	}, {
 		"tuple": "lay on twin bed",
@@ -2169,7 +2169,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "twin bed",
 			"state": false,
-			"text": "You have improved your health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "lay on wool rug",
@@ -2198,7 +2198,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "wool rug",
 			"state": false,
-			"text": "Not feeling rested ... no improvement to your health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "light brass lantern",
@@ -5257,7 +5257,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "bar stool",
 			"state": true,
-			"text": "You catch your breath ... gain some health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "sit on bunk bed",
@@ -5286,7 +5286,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "bunk bed",
 			"state": true,
-			"text": "You catch your breath ... gain some health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "sit on carver chair",
@@ -5315,7 +5315,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "carver chair",
 			"state": true,
-			"text": "You catch your breath ... gain some health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "sit on milking stool",
@@ -5344,7 +5344,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "milking stool",
 			"state": true,
-			"text": "You catch your breath ... gain some health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "sit on rocking chair",
@@ -5373,7 +5373,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "rocking chair",
 			"state": true,
-			"text": "You catch your breath ... gain some health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "sit on twin bed",
@@ -5402,7 +5402,7 @@
 			"method": "adjustPlayerHealth()",
 			"object": "twin bed",
 			"state": true,
-			"text": "You catch your breath ... gain some health"
+			"text": ""
 		}]
 	}, {
 		"tuple": "take armor",
