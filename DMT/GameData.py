@@ -23,6 +23,7 @@
 #    0.3    02/04/2017   JH    loadSavedGame, saveGame
 #    0.4    02/13/2017   JH    Standardized method calls
 #    1.0    02/26/2017   JH    First Production version
+#    1.1    03/09/2017   JH    
 ########################################################
 import json
 import os
@@ -219,17 +220,19 @@ class DataManager():
     def adjustPlayerHealth(self, name, status=None):
         """Adjusts the players health based upon the healthpoints of an object"""
         index = self.getObjectIndex(name)
+        if self.__players[0].health >= 100 and self.__objects[index].healthPoints >= 0:
+            return "You are already at your maximum health level!"
         self.__players[0].health += self.__objects[index].healthPoints
-        if self.__players[0].health > 100:
+        if self.__players[0].health >= 100:
             self.__players[0].health = 100
             return "You have maximized your health points!"
-        if self.__players[0].health < 0:
+        if self.__players[0].health <= 0:
             self.__players[0].health = 0
             return "You are now deceased :("
         if self.__objects[index].healthPoints > 0:
-            return "You have increased your health points!"
+            return "You have increased your health by " + str(self.__objects[index].healthPoints) + " points!"
         if self.__objects[index].healthPoints < 0:
-            return "You have lost some health points!"
+            return "You have decreased your health by " + str(self.__objects[index].healthPoints) + " points!"
         if self.__objects[index].healthPoints == 0:
             return "No change to your health points!"
 
