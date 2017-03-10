@@ -5083,7 +5083,7 @@
 			"method": "setObjectRead()",
 			"object": "book of locks",
 			"state": true,
-			"text": "You read the book of locks"
+			"text": "Some scribbled text ... 'The key to freedom can be found in the bedroom'."
 		}]
 	}, {
 		"tuple": "read book of spells",
@@ -5112,7 +5112,7 @@
 			"method": "setObjectRead()",
 			"object": "book of spells",
 			"state": true,
-			"text": "You read the book of spells"
+			"text": "The book hints about special powers when the cloak and magical ring are equipped"
 		}]
 	}, {
 		"tuple": "read note",
@@ -5141,7 +5141,7 @@
 			"method": "setObjectRead()",
 			"object": "note",
 			"state": true,
-			"text": "You now know the combination to the safe"
+			"text": "A scribbled message ...'The combination to the safe is 6L-20R-35L.'"
 		}]
 	}, {
 		"tuple": "read scroll",
@@ -5170,7 +5170,7 @@
 			"method": "setObjectRead()",
 			"object": "scroll",
 			"state": true,
-			"text": "You read the scroll"
+			"text": "The scroll reads ... 'The Turkish rug hides the pathway to vast treasure'."
 		}]
 	}, {
 		"tuple": "read sign",
@@ -5199,7 +5199,7 @@
 			"method": "setObjectRead()",
 			"object": "sign",
 			"state": true,
-			"text": "You read the sign"
+			"text": "The signs reads ... 'Welcome to the Haunted Dungeon.  Enjoy your stay!'"
 		}]
 	}, {
 		"tuple": "read slate of runes",
@@ -5228,7 +5228,7 @@
 			"method": "setObjectRead()",
 			"object": "slate of runes",
 			"state": true,
-			"text": "You read the slate of ruins"
+			"text": "Strange symbols are printed arcoss the slate."
 		}]
 	}, {
 		"tuple": "sit on bar stool",
