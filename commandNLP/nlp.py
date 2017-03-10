@@ -10,11 +10,8 @@ import timeit
 
 class nlp():
 
-	
 	'''
-	
 	Description: constructor for NLP objects
-
 	'''
 
 	def __init__(self):
@@ -48,6 +45,7 @@ class nlp():
 
 		#create faux tuples to "catch" imprecise commands - for matchTuple() not applicable to buildTuple()
 		tupleLists.extend(self.__gameVerbs)
+		tupleLists.extend(self.__gameObjects)
 		catchers = ['drink bottle', 'lay on', 'look at', 'look behind', 
 		'look inside', 'look on', 'look under', 'sit on', 'take book']
 		tupleLists.extend(catchers)
@@ -67,12 +65,13 @@ class nlp():
 					word = word.strip(' \t\n\r')
 					self.__synonymsDictionary[word] = verb
 
-
+		#add exit names to synDict
 		for item in exitList:
 			splitItem = item.split()
 			for word in splitItem:
 				self.__synonymsDictionary[word] = word
 
+		#add object names to synDict
 		for item in objList:
 			splitItem = item.split()
 			for word in splitItem:
@@ -151,9 +150,7 @@ class nlp():
 	
 
 	'''
-
 	Description: parses command passed by user into tokens 
-
 
 	'''
 
@@ -167,16 +164,13 @@ class nlp():
 
 
 	'''
-	
 	Decription: cleans command tokens by fuzzy matching words
-
 	'''
 
 	def cleanCommands(self, commandList):
 
 		cleanCommandList = []
 		wordList = self.__synonymsDictionary.keys()
-		#threshold = .70
 	
 		for token in commandList:
 			
@@ -189,17 +183,12 @@ class nlp():
 				if currentScore > highScore:
 					highScore = currentScore
 					replacement = word
-			
-			#this may be redundant, so i'll comment out for now
-			'''
-			if highScore < .7:
-				replacement = token
-			'''
-			
+						
 			cleanCommandList.append(replacement)
-
+		'''
 		print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
 		return cleanCommandList
+		'''
 
 
 
@@ -245,17 +234,17 @@ class nlp():
 						if dictVal == tupPart:
 							currentScore += 1							
 					else:
-						#currentScore += self.doRatOberNative(word, tupPart)
 						currentScore += self.doLevDist(word, tupPart, .7)
 					
 			if currentScore > highScore:
 				highScore = currentScore
 				tupleReturned = commandTuple
-
+		'''
 		#DEBUGGING HERE - This comes out in production version
 		print "matchTuple METHOD"
 		print "highest score = " + str(highScore)
 		print "matched tuple = " + str(tupleReturned)
+		'''
 
 		return tupleReturned
 
@@ -333,7 +322,7 @@ class nlp():
 
 
 	'''
-	Description: getter methods for instance properties
+	Description: getter methods for instance properties, mainly for debugging
 	'''
 
 	def printVerbs(self):
