@@ -187,8 +187,9 @@ class nlp():
 			cleanCommandList.append(replacement)
 		'''
 		print "DEBUGGING CLEANED COMMAND List " + str(cleanCommandList)
-		return cleanCommandList
+		
 		'''
+		return cleanCommandList
 
 
 
