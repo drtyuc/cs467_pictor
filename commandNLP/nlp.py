@@ -313,10 +313,11 @@ class nlp():
 
 		tupleReturned = tupleReturned.strip()
 
-
+		'''
 		#DEBUGGING HERE - This comes out in production version
 		print "buildTuple METHOD"
 		print "matched tuple = " + str(tupleReturned)
+		'''
 
 
 		return tupleReturned
