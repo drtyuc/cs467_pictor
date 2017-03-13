@@ -19,8 +19,8 @@ class Drink(unittest.TestCase):
     dm = DataManager()
     dm.loadNewGame()
     
-    data = [ { "cmd":"drink bottle of gatorade",    "obj":"bottle of gatorade", "target": 135 },
-             { "cmd":"drink bottle of water",       "obj":"bottle of water" ,   "target": 125} ]
+    data = [ { "cmd":"drink bottle of gatorade",    "obj":"bottle of gatorade", "target": 85 },
+             { "cmd":"drink bottle of water",       "obj":"bottle of water" ,   "target": 75} ]
              
     def checkDependency(self, method, obj, expect):
         if method == 'isObjectInInventory()':
@@ -42,7 +42,7 @@ class Drink(unittest.TestCase):
             for j in [0,1]:
                 self.assertTrue(self.checkDependency(d[j]['method'], d[j]['object'], d[j]['expect']))
             a = dep['commands'][index]['actions']
-            self.dm.setPlayerHealth(100)
+            self.dm.setPlayerHealth(50)
             for k in [0,1]:
                 self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])
             self.assertEqual(self.dm.getPlayerHealth(), i['target'])
@@ -126,9 +126,9 @@ class Eat(unittest.TestCase):
     dm = DataManager()
     dm.loadNewGame()
     
-    data = [ { "cmd":"eat green apple",    "obj":"green apple",  "target": 115  },
-             { "cmd":"eat mushrooms",      "obj":"mushrooms",    "target": 130  },
-             { "cmd":"eat red apple",      "obj":"red apple",    "target": 115  } ]
+    data = [ { "cmd":"eat green apple",    "obj":"green apple",  "target": 65  },
+             { "cmd":"eat mushrooms",      "obj":"mushrooms",    "target": 80  },
+             { "cmd":"eat red apple",      "obj":"red apple",    "target": 65  } ]
              
     def checkDependency(self, method, obj, expect):
         if method == 'isObjectInInventory()':
@@ -150,7 +150,7 @@ class Eat(unittest.TestCase):
             for j in [0,1]:
                 self.assertTrue(self.checkDependency(d[j]['method'], d[j]['object'], d[j]['expect']))
             a = dep['commands'][index]['actions']
-            self.dm.setPlayerHealth(100)
+            self.dm.setPlayerHealth(50)
             for k in [0,1]:
                 self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])
             self.assertEqual(self.dm.getPlayerHealth(), i['target'])
@@ -203,7 +203,6 @@ class Equip2(unittest.TestCase):
     
     data = [ { "cmd":"equip armor",  "obj":"armor", },
              { "cmd":"equip cloak",  "obj":"cloak" },
-             { "cmd":"equip gem",    "obj":"gem" },
              { "cmd":"equip helmet", "obj":"helmet" },
              { "cmd":"equip magical ring", "obj":"magical ring" } ]
     
@@ -419,13 +418,13 @@ class LayOn(unittest.TestCase):
     dm = DataManager()
     dm.loadNewGame()
     
-    data = [  { "cmd":"lay on altar",     "obj":"altar",     "room":"tr", "target":70 }, 
-              { "cmd":"lay on bearskin",  "obj":"bearskin",  "room":"sq", "target":102 }, 
-              { "cmd":"lay on bunk bed",  "obj":"bunk bed",  "room":"sq", "target":110 },
-              { "cmd":"lay on mattress",  "obj":"mattress",  "room":"cl", "target":95 },
-              { "cmd":"lay on turkish rug",  "obj":"turkish rug",  "room":"sr", "target":95 },
-              { "cmd":"lay on twin bed",  "obj":"twin bed",  "room":"bd", "target":120 },
-              { "cmd":"lay on wool rug",  "obj":"wool rug",  "room":"hw", "target":100 }]
+    data = [  { "cmd":"lay on altar",     "obj":"altar",     "room":"tr", "target":50 }, 
+              { "cmd":"lay on bearskin",  "obj":"bearskin",  "room":"sq", "target":82 }, 
+              { "cmd":"lay on bunk bed",  "obj":"bunk bed",  "room":"sq", "target":90 },
+              { "cmd":"lay on mattress",  "obj":"mattress",  "room":"cl", "target":75 },
+              { "cmd":"lay on turkish rug",  "obj":"turkish rug",  "room":"sr", "target":75 },
+              { "cmd":"lay on twin bed",  "obj":"twin bed",  "room":"bd", "target":100 },
+              { "cmd":"lay on wool rug",  "obj":"wool rug",  "room":"hw", "target":80 }]
 
     def checkDependency(self, method, obj, expect):
         if method == 'isRoomLighted()':
@@ -450,7 +449,7 @@ class LayOn(unittest.TestCase):
             for j in [0,1,2,3]:
                 self.assertTrue(self.checkDependency(d[j]['method'], d[j]['object'], d[j]['expect']))
             a = dep['commands'][index]['actions']
-            self.dm.setPlayerHealth(100)
+            self.dm.setPlayerHealth(80)
             for k in [0]:
                 self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])
             self.assertEqual(self.dm.getPlayerHealth(), i['target'])    
@@ -900,10 +899,10 @@ class Read2(unittest.TestCase):
             for j in [0,1,2,3]:
                 self.assertTrue(self.checkDependency(d[j]['method'], d[j]['object'], d[j]['expect']))
             a = dep['commands'][index]['actions']
-            for k in [0,1]:
+            for k in [0]:
                 self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])  
             self.assertTrue(self.dm.isObjectRead(a[0]['object']))
-            self.assertTrue(self.dm.isObjectUnlocked('safe'))
+    
 
 
 class Sit(unittest.TestCase):
@@ -911,12 +910,12 @@ class Sit(unittest.TestCase):
     dm = DataManager()
     dm.loadNewGame()
     
-    data = [  { "cmd":"sit on bar stool",     "obj":"bar stool",     "room":"ca", "target":102 },
-              { "cmd":"sit on bunk bed",  "obj":"bunk bed",  "room":"sq", "target":110},
-              { "cmd":"sit on carver chair",  "obj":"carver chair",  "room":"jl", "target":105},
-              { "cmd":"sit on milking stool",  "obj":"milking stool",  "room":"cl", "target":102 },
-              { "cmd":"sit on rocking chair",  "obj":"rocking chair",  "room":"sq", "target":105 },
-              { "cmd":"sit on twin bed",  "obj":"twin bed",  "room":"bd", "target":120 } ]
+    data = [  { "cmd":"sit on bar stool",     "obj":"bar stool",     "room":"ca", "target":52 },
+              { "cmd":"sit on bunk bed",  "obj":"bunk bed",  "room":"sq", "target":60},
+              { "cmd":"sit on carver chair",  "obj":"carver chair",  "room":"jl", "target":55},
+              { "cmd":"sit on milking stool",  "obj":"milking stool",  "room":"cl", "target":52 },
+              { "cmd":"sit on rocking chair",  "obj":"rocking chair",  "room":"sq", "target":55 },
+              { "cmd":"sit on twin bed",  "obj":"twin bed",  "room":"bd", "target":70 } ]
 
     def checkDependency(self, method, obj, expect):
         if method == 'isRoomLighted()':
@@ -941,7 +940,7 @@ class Sit(unittest.TestCase):
             for j in [0,1,2,3]:
                 self.assertTrue(self.checkDependency(d[j]['method'], d[j]['object'], d[j]['expect']))
             a = dep['commands'][index]['actions']
-            self.dm.setPlayerHealth(100)
+            self.dm.setPlayerHealth(50)
             for k in [0]:
                 self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])
             self.assertEqual(self.dm.getPlayerHealth(), i['target'])    
@@ -1032,7 +1031,6 @@ class Unequip(unittest.TestCase):
     data = [  { "cmd":"unequip armor",     "obj":"armor"   },
               { "cmd":"unequip axe",     "obj":"axe"   },
               { "cmd":"unequip cloak",     "obj":"cloak"   },
-              { "cmd":"unequip gem",     "obj":"gem"   },
               { "cmd":"unequip helmet",     "obj":"helmet"   },
               { "cmd":"unequip kitchen knife",     "obj":"kitchen knife"   },
               { "cmd":"unequip machete",     "obj":"machete"   },
@@ -1117,8 +1115,8 @@ class Unlock2(unittest.TestCase):
             return self.dm.isObjectVisible(obj) == expect 
         if method == 'isObjectUnlocked()':
             return self.dm.isObjectUnlocked(obj) == expect        
-        if method == 'isObjectKeyInInventory()':
-            return self.dm.isObjectKeyInInventory(obj) == expect   
+        if method == 'isObjectInInventory()':
+            return self.dm.isObjectInInventory(obj) == expect   
             
     def takeAction(self, method, obj, state):
         if method == 'setObjectUnlocked()':
@@ -1137,43 +1135,6 @@ class Unlock2(unittest.TestCase):
             for k in [0]:
                 self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])
             self.assertTrue(self.dm.isExitUnlocked(a[k]['object']))
-
-class Wield(unittest.TestCase):
-    
-    dm = DataManager()
-    dm.loadNewGame()
-    
-    data = [  { "cmd":"wield axe",    "obj":"axe"    },
-              { "cmd":"wield kitchen knife",    "obj":"kitchen knife"    },
-              { "cmd":"wield machete",    "obj":"machete"    },
-              { "cmd":"wield sabre",    "obj":"sabre"    },
-              { "cmd":"wield warhammer",    "obj":"warhammer"    } ]
-
-    def checkDependency(self, method, obj, expect):
-        if method == 'isObjectInInventory()':
-            return self.dm.isObjectInInventory(obj) == expect
-        if method == 'isObjectEquipped()':
-            return self.dm.isObjectEquipped(obj) == expect     
-            
-    def takeAction(self, method, obj, state):
-        if method == 'adjustGhostHealth()':
-            self.dm.adjustGhostHealth(obj, state)
-
-    def test_Wield(self):
-        for i in self.data:
-            index = getDependencyIndex(i['cmd'])
-            self.dm.addInventoryObject(i['obj'], True)
-            self.dm.setObjectEquipped(i['obj'], True)
-            d = dep['commands'][index]['dependencies']
-            for j in [0,1]:
-                self.assertTrue(self.checkDependency(d[j]['method'], d[j]['object'], d[j]['expect']))
-            a = dep['commands'][index]['actions']
-            for k in [0]:
-                self.takeAction(a[k]['method'], a[k]['object'], a[k]['state'])
-
-
-
-
 
     
     

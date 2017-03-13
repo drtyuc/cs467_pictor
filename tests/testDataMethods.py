@@ -7,15 +7,16 @@ dm.loadNewGame()
 class Player(unittest.TestCase):
     #P1  
     def test_adjustPlayerHealth(self):
+        dm.setPlayerHealth(50)
         dm.adjustPlayerHealth('green apple')
-        self.assertEqual(dm.getPlayerHealth(), 115, "#P1: FAILED adjustPlayerHealth")
+        self.assertEqual(dm.getPlayerHealth(), 65, "#P1: FAILED adjustPlayerHealth")
     #P2
     def test_isPlayerVisible(self):
-        dm.setPlayerVisible(True)
+        dm.setPlayerVisible("", True)
         self.assertTrue(dm.isPlayerVisible(), "#P2  FAILED isPlayerVisible")
     #P3
     def test_setPlayerVisible(self):
-        dm.setPlayerVisible(False)
+        dm.setPlayerVisible("", False)
         self.assertFalse(dm.isPlayerVisible(), "#P3  FAILED setPlayerVisible")
     #P4
     def test_getPlayerLocation(self):
