@@ -27,6 +27,7 @@
 ########################################################
 import json
 import os
+import re
 
 PRIMITIVE_FILENAME = 'data/primitives.json'
 DEPENDENCY_FILENAME = 'data/dependency.json'
@@ -189,15 +190,19 @@ class DataManager():
 
         response = raw_input("Please enter a filename: ")
         filename = SAVED_GAME_DIRECTORY + response
-
-        with open(filename,'w') as outfile:
-	        json.dump(s, outfile, indent=4)		
+        
+        if re.match(r'^[\A-Za-z][A-Za-z0-9]+$', response):
+            with open(filename,'w') as outfile:
+	            json.dump(s, outfile, indent=4)		
+            return "Saved " + response
+        else:
+            return "Use only alphanumeric characters ... first character alpha"
             
     #-------------------- Dependencies---------------------------
     def getDependencies(self):
         """Returns JSON object containing command dependencies and actions"""
         return self.__dependencies
-        
+  
 
     #############################################################
 	#                      Player Methods 

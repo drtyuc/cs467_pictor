@@ -3393,45 +3393,45 @@
     }],
     "overhead": [{
         "word":"help", 
-        "map": "" 
+        "description": "" 
 	}, {
         "word":"inventory", 
-        "map": "" 
+        "description": "" 
 	}, {
         "word":"loadgame", 
-        "map": ""
+        "description": "" 
     }, {
         "word":"savegame", 
-        "map": ""
+        "description": "" 
     }, {
         "word":"ghosts", 
-        "map": ""
+        "description": "" 
 	}, {
         "word":"restore", 
-        "map": ""
+        "description": "" 
 	}, {
         "word":"blinky", 
-        "map": ""
+        "description": "" 
     }, {
         "word":"clyde", 
-        "map": ""
+        "description": "" 
     }, {
         "word":"inky", 
-        "map": ""
+        "description": "" 
 	}, {
         "word":"pinky", 
-        "map": ""
+        "description": "" 
 	}, {
         "word":"east", 
-        "map": ""
+        "description": "" 
 	}, {
         "word":"west", 
-        "map": ""
+        "description": "" 
     }, {
         "word":"south", 
-        "map": ""
+        "description": "" 
     }, {
         "word":"north", 
-        "map": ""
+        "description": "" 
 	}]
 }
