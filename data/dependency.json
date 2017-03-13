@@ -12,6 +12,11 @@
 			"expect": true,
 			"hint": "Bottle of gatorade is not drinkable"
         }, {
+			"method": "isHealthMaximum()",
+			"object": "bottle of gatorade",
+			"expect": false,
+			"hint": "You health is already at its maximum level!"
+		}, {
 			"method": "isObjectInInventory()",
 			"object": "bottleopener",
 			"expect": true,
@@ -40,6 +45,11 @@
 			"object": "bottle of water",
 			"expect": true,
 			"hint": "Bottle of water is not drinkable"
+        }, {
+			"method": "isHealthMaximum()",
+			"object": "bottle of water",
+			"expect": false,
+			"hint": "You health is already at its maximum level!"
         }, {
 			"method": "isObjectInInventory()",
 			"object": "bottleopener",
@@ -764,6 +774,11 @@
 			"object": "green apple",
 			"expect": true,
 			"hint": "Green apple is not edible"
+		}, {
+			"method": "isHealthMaximum()",
+			"object": "green apple",
+			"expect": false,
+			"hint": "You health is already at its maximum level!"
 		}],
 		"actions": [{
 			"method": "removeInventoryObject()",
@@ -788,6 +803,11 @@
 			"object": "mushrooms",
 			"expect": true,
 			"hint": "Mushrooms are not edible"
+		}, {
+			"method": "isHealthMaximum()",
+			"object": "mushrooms",
+			"expect": false,
+			"hint": "You health is already at its maximum level!"
 		}],
 		"actions": [{
 			"method": "removeInventoryObject()",
@@ -812,6 +832,11 @@
 			"object": "red apple",
 			"expect": true,
 			"hint": "Red apple is not edible"
+		}, {
+			"method": "isHealthMaximum()",
+			"object": "red apple",
+			"expect": false,
+			"hint": "You health is already at its maximum level!"
 		}],
 		"actions": [{
 			"method": "removeInventoryObject()",
@@ -1969,7 +1994,16 @@
 			"object": "",
 			"state": false,
 			"text": ""
-		}]   
+		}]  
+    }, {
+		"tuple": "restore",
+		"dependencies": [],
+		"actions": [{
+			"method": "restoreMaximumHealth()",
+			"object": "",
+			"state": false,
+			"text": ""
+		}] 
     }, {
 		"tuple": "help",
 		"dependencies": [],

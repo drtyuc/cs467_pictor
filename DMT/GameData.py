@@ -31,6 +31,7 @@ import os
 PRIMITIVE_FILENAME = 'data/primitives.json'
 DEPENDENCY_FILENAME = 'data/dependency.json'
 SAVED_GAME_DIRECTORY = 'savedgames/'
+MAXIMUM_HEALTH = 100
 
 #Used to load class instance using a dedicated json file
 class Filename():
@@ -57,7 +58,7 @@ class DataManager():
         self.__prepositions = []
         self.__dependencies = []
         self.__help = []
-        self.__synonyms = []
+        self.__overhead = []
 	
 	#--------------------- Load New Game -----------------------
     def loadNewGame(self):
@@ -143,8 +144,8 @@ class DataManager():
             for i in self.__primitives['help']:
                 self.__help.append(Data(i))
             
-            for i in self.__primitives['synonyms']:
-                self.__synonyms.append(Data(i))
+            for i in self.__primitives['overhead']:
+                self.__overhead.append(Data(i))
             
             #Load the JSON file used to describe command dependencies and actions    
             self.__dependencies = json.loads(open(DEPENDENCY_FILENAME).read())
@@ -163,7 +164,7 @@ class DataManager():
         s["verbs"] = []
         s["prepositions"] = []
         s["help"] = []
-        s["synonyms"] = []
+        s["overhead"] = []
 
         for i in self.__players:
 	        s["players"].append(json.loads(json.dumps(i.__dict__)))
@@ -183,8 +184,8 @@ class DataManager():
 	        s["prepositions"].append(json.loads(json.dumps(i.__dict__)))
         for i in self.__help:
 	        s["help"].append(json.loads(json.dumps(i.__dict__)))
-        for i in self.__synonyms:
-	        s["synonyms"].append(json.loads(json.dumps(i.__dict__)))
+        for i in self.__overhead:
+	        s["overhead"].append(json.loads(json.dumps(i.__dict__)))
 
         response = raw_input("Please enter a filename: ")
         filename = SAVED_GAME_DIRECTORY + response
@@ -197,15 +198,25 @@ class DataManager():
         """Returns JSON object containing command dependencies and actions"""
         return self.__dependencies
         
-    #----------------------- Synonyms ---------------------------
-    def getSynonyms(self):
-        return self.__synonyms     
-        
 
     #############################################################
 	#                      Player Methods 
     #############################################################	
     
+    #-----------------------------
+    def isHealthMaximum(self, name=None, status=None):
+        """Returns true if the player's health is at a maximum"""
+        if self.__players[0].health == MAXIMUM_HEALTH:
+            return True
+        else:
+            return False
+            
+    #-----------------------------   
+    def restoreMaximumHealth(self, name=None, status=None):
+        """Returns true if the player's health is at the maximum"""
+        self.__players[0].health = MAXIMUM_HEALTH
+        return "Player's health is at it's maximum level"
+        
     #-----------------------------
     def getPlayerHealth(self):
         """Returns the players health level"""
@@ -220,11 +231,11 @@ class DataManager():
     def adjustPlayerHealth(self, name, status=None):
         """Adjusts the players health based upon the healthpoints of an object"""
         index = self.getObjectIndex(name)
-        if self.__players[0].health >= 100 and self.__objects[index].healthPoints >= 0:
+        if self.__players[0].health >= MAXIMUM_HEALTH and self.__objects[index].healthPoints >= 0:
             return "You are already at your maximum health level!"
         self.__players[0].health += self.__objects[index].healthPoints
-        if self.__players[0].health >= 100:
-            self.__players[0].health = 100
+        if self.__players[0].health >= MAXIMUM_HEALTH:
+            self.__players[0].health = MAXIMUM_HEALTH
             return "You have maximized your health points!"
         if self.__players[0].health <= 0:
             self.__players[0].health = 0
@@ -236,7 +247,6 @@ class DataManager():
         if self.__objects[index].healthPoints == 0:
             return "No change to your health points!"
 
-        
     #-----------------------------
     def getPlayerLocation(self):
         """Returns the room index the player is currently in"""
@@ -1256,9 +1266,11 @@ class DataManager():
     #----------------------------- 
     def getExits(self, name=None, status=None):
         """Returns a list of all exit names used in the game"""
-        exits = ['west','north','south','east', 'help', 'inventory', 'loadgame', 'savegame', 'ghosts', 'blinky', 'inky', 'clyde', 'pinky', ]
+        exits = []
         for i in self.__exits:
 			exits.append(i.commandName)
+        for i in self.__overhead:
+            exits.append(i.word)
         return exits	
     
     #-----------------------------     

@@ -3254,6 +3254,10 @@
 		"description": "read <object>: Used to read an object",   
         "prepositions": [] 
     }, {
+        "verb": "restore",
+		"description": "restore: Used to restore the player's health to its maximum level",   
+        "prepositions": [] 
+    }, {
         "verb": "savegame",
 		"description": "savegame: Used to save the game state to a file",   
         "prepositions": []  
@@ -3387,110 +3391,47 @@
         "preposition": "above",
 		"description": ""
     }],
-    "synonyms": [{
-        "word":"sip", 
-        "map": "drink" 
+    "overhead": [{
+        "word":"help", 
+        "map": "" 
 	}, {
-        "word":"swig", 
-        "map": "drink" 
+        "word":"inventory", 
+        "map": "" 
 	}, {
-        "word":"gulp", 
-        "map": "drink"
+        "word":"loadgame", 
+        "map": ""
     }, {
-        "word":"guzzle", 
-        "map": "drink"
+        "word":"savegame", 
+        "map": ""
     }, {
-        "word":"swallow", 
-        "map": "drink"
+        "word":"ghosts", 
+        "map": ""
 	}, {
-        "word":"discard", 
-        "map": "drop"
+        "word":"restore", 
+        "map": ""
 	}, {
-        "word":"dump", 
-        "map": "drop"
+        "word":"blinky", 
+        "map": ""
     }, {
-        "word":"unload", 
-        "map": "drop"
+        "word":"clyde", 
+        "map": ""
     }, {
-        "word":"leave", 
-        "map": "drop"
+        "word":"inky", 
+        "map": ""
 	}, {
-        "word":"ingest", 
-        "map": "eat"
+        "word":"pinky", 
+        "map": ""
 	}, {
-        "word":"devour", 
-        "map": "eat"
+        "word":"east", 
+        "map": ""
 	}, {
-        "word":"arm", 
-        "map": "equip"
+        "word":"west", 
+        "map": ""
     }, {
-        "word":"provision", 
-        "map": "equip"
+        "word":"south", 
+        "map": ""
     }, {
-        "word":"rig", 
-        "map": "equip"
-    }, {
-        "word":"rest", 
-        "map": "lay"
-    }, {
-        "word":"plunk", 
-        "map": "lay"
-    }, {
-        "word":"ignite", 
-        "map": "light"
-    }, {
-        "word":"kindle", 
-        "map": "light"
-    }, {
-        "word":"examine", 
-        "map": "look"
-    }, {
-        "word":"inspect", 
-        "map": "look"
-    }, {
-        "word":"view", 
-        "map": "look"
-    }, {
-        "word":"draw", 
-        "map": "pull"
-    }, {
-        "word":"yank", 
-        "map": "pull"
-    }, {
-        "word":"tug", 
-        "map": "pull"
-    }, {
-        "word":"shove", 
-        "map": "push"
-    }, {
-        "word":"depress", 
-        "map": "push"
-    }, {
-        "word":"press", 
-        "map": "push"
-    }, {
-        "word":"interpret", 
-        "map": "read"
-    }, {
-        "word":"decipher", 
-        "map": "read"
-    }, {
-        "word":"grab", 
-        "map": "take"
-    }, {
-        "word":"acquire", 
-        "map": "take"
-    }, {
-        "word":"attain", 
-        "map": "take"
-    }, {
-        "word":"grab", 
-        "map": "take"
-    }, {
-        "word":"unsuit", 
-        "map": "unequip"
-	}, {
-        "word":"strike", 
-        "map": "attack"
+        "word":"north", 
+        "map": ""
 	}]
 }
